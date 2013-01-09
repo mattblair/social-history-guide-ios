@@ -1,0 +1,61 @@
+//
+// Prefix header for all source files of the 'knowYourCity' target in the 'knowYourCity' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define ON_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+#define HAS_SOCIAL_FRAMEWORK [SLComposeViewController class]
+
+#define HAS_TWITTER_FRAMEWORK [TWTweetComposeViewController class]
+
+#define IN_LANDSCAPE UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
+
+// From Marcus Zarra, as defined here:
+// http://www.cimgf.com/2010/05/02/my-current-prefix-pch-file/
+// and
+// https://github.com/ZarraStudios/ZDS_Shared
+// see ticket 24 for details
+
+#ifdef DEBUG
+#define MCRelease(x) [x release]
+#define DLog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
+#define DCLog(...) NSLog(@"%@", [NSString stringWithFormat:__VA_ARGS__])
+#define ALog(...) {NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__]);[[NSAssertionHandler currentHandler] handleFailureInFunction:[NSString stringWithCString:__PRETTY_FUNCTION__ encoding:NSUTF8StringEncoding] file:[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lineNumber:__LINE__ description:__VA_ARGS__];}
+#else
+#define MCRelease(x) [x release], x = nil
+#define DLog(...) do { } while (0)
+#define DCLog(...) do { } while (0)
+#ifndef NS_BLOCK_ASSERTIONS
+#define NS_BLOCK_ASSERTIONS
+#endif
+
+#define ALog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
+
+#endif
+
+#define ZAssert(condition, ...) do { if (!(condition)) { ALog(__VA_ARGS__); }} while(0)
+
+#define ISRETINADISPLAY (([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) ? [[UIScreen mainScreen] scale] > 1.0 : NO)
+
+#define degreesToRadians(x) (M_PI * x / 180.0)
+
+// https://gist.github.com/1057420
+// via http://lukeredpath.co.uk/blog/a-note-on-objective-c-singletons.html
+#define DEFINE_SHARED_INSTANCE_USING_BLOCK(block) \
+static dispatch_once_t pred = 0; \
+__strong static id _sharedObject = nil; \
+dispatch_once(&pred, ^{ \
+_sharedObject = block(); \
+}); \
+return _sharedObject; \
