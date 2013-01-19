@@ -6,6 +6,8 @@
 
 # Add project-specific ignores here, for example:
 
+KYCPrivateConstants.m
+
 # RESTConstants.m
 # .couchapprc
 
