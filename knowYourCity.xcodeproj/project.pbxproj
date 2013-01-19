@@ -12,6 +12,17 @@
 		C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92666F0169DC6920061F9AD /* CoreGraphics.framework */; };
 		C92666F7169DC6920061F9AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C92666F5169DC6920061F9AD /* InfoPlist.strings */; };
 		C92666F9169DC6920061F9AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92666F8169DC6920061F9AD /* main.m */; };
+		C93030E816AB320E0039D7B8 /* bill_hart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C93030E416AB320E0039D7B8 /* bill_hart.jpg */; };
+		C93030E916AB320E0039D7B8 /* bill_hart@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C93030E516AB320E0039D7B8 /* bill_hart@2x.jpg */; };
+		C93030EA16AB320E0039D7B8 /* guest_placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C93030E616AB320E0039D7B8 /* guest_placeholder.jpg */; };
+		C93030EB16AB320E0039D7B8 /* guest_placeholder@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C93030E716AB320E0039D7B8 /* guest_placeholder@2x.jpg */; };
+		C93030EF16AB32E10039D7B8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030EE16AB32E10039D7B8 /* HomeViewController.m */; };
+		C93030F216AB33050039D7B8 /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030F116AB33050039D7B8 /* ThemeViewController.m */; };
+		C93030F516AB33260039D7B8 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030F416AB33260039D7B8 /* StoryViewController.m */; };
+		C93030F816AB33570039D7B8 /* GuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030F716AB33570039D7B8 /* GuestViewController.m */; };
+		C93030FB16AB33710039D7B8 /* TidbitListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030FA16AB33710039D7B8 /* TidbitListViewController.m */; };
+		C93030FE16AB33890039D7B8 /* TidbitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030FD16AB33890039D7B8 /* TidbitDetailViewController.m */; };
+		C930310116AB34C40039D7B8 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = C930310016AB34C40039D7B8 /* about.html */; };
 		C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */; };
 		C97B44E4169DCCDA008A2793 /* KYCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E2169DCCDA008A2793 /* KYCViewController.m */; };
 		C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EA169DCF48008A2793 /* Default-568h@2x.png */; };
@@ -28,6 +39,23 @@
 		C92666F6169DC6920061F9AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C92666F8169DC6920061F9AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C92666FA169DC6920061F9AD /* knowYourCity-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "knowYourCity-Prefix.pch"; sourceTree = "<group>"; };
+		C93030E416AB320E0039D7B8 /* bill_hart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bill_hart.jpg; sourceTree = "<group>"; };
+		C93030E516AB320E0039D7B8 /* bill_hart@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bill_hart@2x.jpg"; sourceTree = "<group>"; };
+		C93030E616AB320E0039D7B8 /* guest_placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guest_placeholder.jpg; sourceTree = "<group>"; };
+		C93030E716AB320E0039D7B8 /* guest_placeholder@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "guest_placeholder@2x.jpg"; sourceTree = "<group>"; };
+		C93030ED16AB32E10039D7B8 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Classes/HomeViewController.h; sourceTree = "<group>"; };
+		C93030EE16AB32E10039D7B8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Classes/HomeViewController.m; sourceTree = "<group>"; };
+		C93030F016AB33050039D7B8 /* ThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThemeViewController.h; path = Classes/ThemeViewController.h; sourceTree = "<group>"; };
+		C93030F116AB33050039D7B8 /* ThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThemeViewController.m; path = Classes/ThemeViewController.m; sourceTree = "<group>"; };
+		C93030F316AB33260039D7B8 /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryViewController.h; path = Classes/StoryViewController.h; sourceTree = "<group>"; };
+		C93030F416AB33260039D7B8 /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryViewController.m; path = Classes/StoryViewController.m; sourceTree = "<group>"; };
+		C93030F616AB33570039D7B8 /* GuestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuestViewController.h; path = Classes/GuestViewController.h; sourceTree = "<group>"; };
+		C93030F716AB33570039D7B8 /* GuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuestViewController.m; path = Classes/GuestViewController.m; sourceTree = "<group>"; };
+		C93030F916AB33710039D7B8 /* TidbitListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitListViewController.h; path = Classes/TidbitListViewController.h; sourceTree = "<group>"; };
+		C93030FA16AB33710039D7B8 /* TidbitListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitListViewController.m; path = Classes/TidbitListViewController.m; sourceTree = "<group>"; };
+		C93030FC16AB33890039D7B8 /* TidbitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitDetailViewController.h; path = Classes/TidbitDetailViewController.h; sourceTree = "<group>"; };
+		C93030FD16AB33890039D7B8 /* TidbitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitDetailViewController.m; path = Classes/TidbitDetailViewController.m; sourceTree = "<group>"; };
+		C930310016AB34C40039D7B8 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		C97B44DF169DCCDA008A2793 /* KYCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCAppDelegate.h; path = Classes/KYCAppDelegate.h; sourceTree = "<group>"; };
 		C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCAppDelegate.m; path = Classes/KYCAppDelegate.m; sourceTree = "<group>"; };
 		C97B44E1169DCCDA008A2793 /* KYCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCViewController.h; path = Classes/KYCViewController.h; sourceTree = "<group>"; };
@@ -103,9 +131,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C93030E316AB320E0039D7B8 /* photos */ = {
+			isa = PBXGroup;
+			children = (
+				C93030E416AB320E0039D7B8 /* bill_hart.jpg */,
+				C93030E516AB320E0039D7B8 /* bill_hart@2x.jpg */,
+				C93030E616AB320E0039D7B8 /* guest_placeholder.jpg */,
+				C93030E716AB320E0039D7B8 /* guest_placeholder@2x.jpg */,
+			);
+			name = photos;
+			path = Resources/photos;
+			sourceTree = "<group>";
+		};
+		C93030FF16AB34C40039D7B8 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				C930310016AB34C40039D7B8 /* about.html */,
+			);
+			name = html;
+			path = Resources/html;
+			sourceTree = "<group>";
+		};
 		C97B44E5169DCD20008A2793 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C93030FF16AB34C40039D7B8 /* html */,
+				C93030E316AB320E0039D7B8 /* photos */,
 				C97B44E9169DCD95008A2793 /* default */,
 			);
 			name = Resources;
@@ -116,6 +167,18 @@
 			children = (
 				C97B44E1169DCCDA008A2793 /* KYCViewController.h */,
 				C97B44E2169DCCDA008A2793 /* KYCViewController.m */,
+				C93030ED16AB32E10039D7B8 /* HomeViewController.h */,
+				C93030EE16AB32E10039D7B8 /* HomeViewController.m */,
+				C93030F016AB33050039D7B8 /* ThemeViewController.h */,
+				C93030F116AB33050039D7B8 /* ThemeViewController.m */,
+				C93030F316AB33260039D7B8 /* StoryViewController.h */,
+				C93030F416AB33260039D7B8 /* StoryViewController.m */,
+				C93030F616AB33570039D7B8 /* GuestViewController.h */,
+				C93030F716AB33570039D7B8 /* GuestViewController.m */,
+				C93030F916AB33710039D7B8 /* TidbitListViewController.h */,
+				C93030FA16AB33710039D7B8 /* TidbitListViewController.m */,
+				C93030FC16AB33890039D7B8 /* TidbitDetailViewController.h */,
+				C93030FD16AB33890039D7B8 /* TidbitDetailViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -200,6 +263,11 @@
 				C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */,
 				C97B44EE169DCF48008A2793 /* Default.png in Resources */,
 				C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */,
+				C93030E816AB320E0039D7B8 /* bill_hart.jpg in Resources */,
+				C93030E916AB320E0039D7B8 /* bill_hart@2x.jpg in Resources */,
+				C93030EA16AB320E0039D7B8 /* guest_placeholder.jpg in Resources */,
+				C93030EB16AB320E0039D7B8 /* guest_placeholder@2x.jpg in Resources */,
+				C930310116AB34C40039D7B8 /* about.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +281,12 @@
 				C92666F9169DC6920061F9AD /* main.m in Sources */,
 				C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */,
 				C97B44E4169DCCDA008A2793 /* KYCViewController.m in Sources */,
+				C93030EF16AB32E10039D7B8 /* HomeViewController.m in Sources */,
+				C93030F216AB33050039D7B8 /* ThemeViewController.m in Sources */,
+				C93030F516AB33260039D7B8 /* StoryViewController.m in Sources */,
+				C93030F816AB33570039D7B8 /* GuestViewController.m in Sources */,
+				C93030FB16AB33710039D7B8 /* TidbitListViewController.m in Sources */,
+				C93030FE16AB33890039D7B8 /* TidbitDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
