@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KYCPrivateConstants : NSObject
+// TestFlight config
+extern NSString * const kTestFlightTeamToken;
 
-@end
+
+// =======================================================================
+
+// Add a KYCPrivateConstants.m files that looks like:
+
+// NSString* const kTestFlightTeamToken = @"teamToken";
+// Or comment out all reference to TestFlight if not using it.
