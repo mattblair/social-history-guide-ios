@@ -8,16 +8,18 @@
 
 #import "KYCAppDelegate.h"
 
-#import "KYCViewController.h"
+#import "HomeViewController.h"
 
 @implementation KYCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[KYCViewController alloc] initWithNibName:nil bundle:nil];
-    self.window.rootViewController = self.viewController;
+    
+    self.homeViewController = [[HomeViewController alloc] initWithNibName:nil bundle:nil];
+    
+    self.navVC = [[UINavigationController alloc] initWithRootViewController:self.homeViewController];
+    self.window.rootViewController = self.navVC;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class KYCViewController;
+@class HomeViewController;
 
 @interface KYCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) KYCViewController *viewController;
+@property (strong, nonatomic) UINavigationController *navVC;
+@property (strong, nonatomic) HomeViewController *homeViewController;
 
 @end
