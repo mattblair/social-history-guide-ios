@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+// use this one as a common super class for shared functionality, or remove it.
+
 @interface KYCViewController : UIViewController
 
 @end
