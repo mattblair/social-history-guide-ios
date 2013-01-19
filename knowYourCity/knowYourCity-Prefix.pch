@@ -11,6 +11,14 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #import "KYCConstants.h"
+    //#import "UIColor+KnowYourCity.h"
+    //#import "EWCoreDataManager.h"
+
+    // testflight
+    //#import "TestFlight.h"
+
 #endif
 
 #define ON_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
