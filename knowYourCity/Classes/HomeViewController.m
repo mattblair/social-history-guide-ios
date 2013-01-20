@@ -33,7 +33,8 @@
         [self loadDataFromJSON];
         self.themeList = [self.seedDictionary objectForKey:@"themes"];
         
-        self.title = NSLocalizedString(@"Know Your City", @"App title");
+        //self.title = NSLocalizedString(@"Know Your City", @"App title");
+        self.title = NSLocalizedString(@"Themes", @"Title for Home View Controller");
     }
     return self;
 }
