@@ -10,7 +10,8 @@
 #import "ThemeViewController.h"
 #import "TidbitListViewController.h"
 
-#import "JSONKit.h" // temporary, until data loading to Core Data is implemented
+// temporary, until data loading to Core Data is implemented and populated
+#import "JSONKit.h"
 
 @interface HomeViewController ()
 
@@ -29,8 +30,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        // this array is temporary, until Core Data implemented and populated
-        //self.themeList = @[@"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h"];
         [self loadDataFromJSON];
         self.themeList = [self.seedDictionary objectForKey:@"themes"];
         
@@ -98,7 +97,7 @@
     if ([self.themeList count] > indexPath.row) {
         cell.textLabel.text = [themeDictionary objectForKey:@"title"];
     } else {
-        cell.textLabel.text = @"Not Found.";
+        cell.textLabel.text = NSLocalizedString(@"Not Found.", @"Not found descriptive text.");
         DLog(@"Couldn't convert section %d and row %d into a theme.", indexPath.section, indexPath.row);
     }
     
@@ -121,6 +120,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     DLog(@"Tapped section %d and row %d", indexPath.section, indexPath.row);
+    
+    
+    NSDictionary *themeDictionary = self.themeList[indexPath.row];
+    
+    // switch this to a new intializer which accepts a theme object?
+    ThemeViewController *themeVC = [[ThemeViewController alloc] initWithNibName:nil bundle:nil];
+    themeVC.title = [themeDictionary objectForKey:@"title"];
+    [self.navigationController pushViewController:themeVC animated:YES];
 }
 
 #pragma mark - Loading JSON (temporary)
