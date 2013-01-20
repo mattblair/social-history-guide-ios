@@ -14,6 +14,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     self.homeViewController = [[HomeViewController alloc] initWithNibName:nil bundle:nil];

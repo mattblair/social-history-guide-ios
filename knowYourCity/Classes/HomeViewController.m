@@ -40,6 +40,9 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     
+    UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kNavAppLogoiPhone] ];
+    self.navigationItem.titleView = logoImage;
+    
     self.themeTableView = [[UITableView alloc] initWithFrame:[self.view bounds]
                                                        style:UITableViewStylePlain];
     

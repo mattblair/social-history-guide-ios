@@ -35,7 +35,7 @@ NSString* const kRefreshButtonImage = @"01-refresh";
 
 // Nav Toolbar
 NSString* const kNavAppLogoiPad = @"";
-NSString* const kNavAppLogoiPhone = @"";
+NSString* const kNavAppLogoiPhone = @"logo_header";
 NSString* const kBackButtonImage = @"";
 
 // Audio Player Images
