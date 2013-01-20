@@ -8,12 +8,16 @@
 
 #import "KYCAppDelegate.h"
 
+#import "KYCPrivateConstants.h"
 #import "HomeViewController.h"
+
 
 @implementation KYCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [TestFlight takeOff:kTestFlightTeamToken];
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     

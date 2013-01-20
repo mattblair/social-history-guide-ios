@@ -17,7 +17,7 @@
     //#import "EWCoreDataManager.h"
 
     // testflight
-    //#import "TestFlight.h"
+    #import "TestFlight.h"
 
 #endif
 
