@@ -37,12 +37,8 @@
 		C960758416AC59E7004B2672 /* theme_tn_ph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757D16AC59E7004B2672 /* theme_tn_ph@2x.png */; };
 		C960758816AC5A29004B2672 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C960758616AC5A29004B2672 /* Icon.png */; };
 		C960758916AC5A29004B2672 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960758716AC5A29004B2672 /* Icon@2x.png */; };
-		C960759516AC6CF5004B2672 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = C960759116AC6CF5004B2672 /* CHANGELOG.md */; };
 		C960759616AC6CF5004B2672 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C960759316AC6CF5004B2672 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C960759716AC6CF5004B2672 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C960759416AC6CF5004B2672 /* README.md */; };
 		C960759D16AC6CFF004B2672 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C960759916AC6CFF004B2672 /* libTestFlight.a */; };
-		C960759E16AC6CFF004B2672 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C960759A16AC6CFF004B2672 /* README.md */; };
-		C960759F16AC6CFF004B2672 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C960759B16AC6CFF004B2672 /* release_notes.md */; };
 		C96075A116AC6DC8004B2672 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C96075A016AC6DC8004B2672 /* libz.dylib */; };
 		C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */; };
 		C97B44E4169DCCDA008A2793 /* KYCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E2169DCCDA008A2793 /* KYCViewController.m */; };
@@ -415,10 +411,6 @@
 				C960758416AC59E7004B2672 /* theme_tn_ph@2x.png in Resources */,
 				C960758816AC5A29004B2672 /* Icon.png in Resources */,
 				C960758916AC5A29004B2672 /* Icon@2x.png in Resources */,
-				C960759516AC6CF5004B2672 /* CHANGELOG.md in Resources */,
-				C960759716AC6CF5004B2672 /* README.md in Resources */,
-				C960759E16AC6CFF004B2672 /* README.md in Resources */,
-				C960759F16AC6CFF004B2672 /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
