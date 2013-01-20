@@ -130,7 +130,6 @@
 		C92666DD169DC6920061F9AD = {
 			isa = PBXGroup;
 			children = (
-				C96075A016AC6DC8004B2672 /* libz.dylib */,
 				C92666F2169DC6920061F9AD /* knowYourCity */,
 				C92666EB169DC6920061F9AD /* Frameworks */,
 				C92666E9169DC6920061F9AD /* Products */,
@@ -148,6 +147,7 @@
 		C92666EB169DC6920061F9AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C96075A016AC6DC8004B2672 /* libz.dylib */,
 				C92666EC169DC6920061F9AD /* UIKit.framework */,
 				C92666EE169DC6920061F9AD /* Foundation.framework */,
 				C92666F0169DC6920061F9AD /* CoreGraphics.framework */,
