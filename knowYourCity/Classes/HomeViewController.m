@@ -10,10 +10,12 @@
 #import "ThemeViewController.h"
 #import "TidbitListViewController.h"
 
+#import "JSONKit.h" // temporary, until data loading to Core Data is implemented
+
 @interface HomeViewController ()
 
 @property (strong, nonatomic) NSArray *themeList;
-
+@property (strong, nonatomic) NSDictionary *seedDictionary; // temporary
 @property (strong, nonatomic) UITableView *themeTableView;
 
 @end
@@ -28,7 +30,10 @@
     if (self) {
         
         // this array is temporary, until Core Data implemented and populated
-        self.themeList = @[@"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h"];
+        //self.themeList = @[@"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h"];
+        [self loadDataFromJSON];
+        self.themeList = [self.seedDictionary objectForKey:@"themes"];
+        
         self.title = NSLocalizedString(@"Know Your City", @"App title");
     }
     return self;
@@ -56,6 +61,13 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    self.themeTableView.frame = [self.view bounds];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -79,14 +91,18 @@
                                       reuseIdentifier:CellIdentifier];
     }
     
+    NSDictionary *themeDictionary = self.themeList[indexPath.row];
+    
     // Configure the cell...
     
     if ([self.themeList count] > indexPath.row) {
-        cell.textLabel.text = self.themeList[indexPath.row];
+        cell.textLabel.text = [themeDictionary objectForKey:@"title"];
     } else {
         cell.textLabel.text = @"Not Found.";
         DLog(@"Couldn't convert section %d and row %d into a theme.", indexPath.section, indexPath.row);
     }
+    
+    cell.imageView.image = [UIImage imageNamed:[themeDictionary objectForKey:@"thumbnail"]];
     
     cell.textLabel.accessibilityLabel = cell.textLabel.text;
     cell.textLabel.accessibilityHint = NSLocalizedString(@"The name of a theme.", @"Hint for theme name in theme list.");
@@ -107,5 +123,30 @@
     DLog(@"Tapped section %d and row %d", indexPath.section, indexPath.row);
 }
 
+#pragma mark - Loading JSON (temporary)
+
+- (void)loadDataFromJSON {
+    
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:kSeedJSONFilename ofType:@"json"];
+	
+	NSError *fileLoadError = nil;
+	
+    NSData *seedJSONData = [NSData dataWithContentsOfFile:filepath
+                                                   options:NSDataReadingUncached
+                                                     error:&fileLoadError];
+    
+    if (!seedJSONData) {
+        NSLog(@"Loading JSON File Failed: %@, %@", fileLoadError, [fileLoadError userInfo]);
+    }
+    
+    NSError *jsonDeserializeError = nil;
+    
+    self.seedDictionary = [seedJSONData objectFromJSONDataWithParseOptions:JKParseOptionStrict
+                                                                     error:&jsonDeserializeError];
+    
+    if (!self.seedDictionary) {
+        NSLog(@"Loading JSON File Failed: %@, %@", jsonDeserializeError, [jsonDeserializeError userInfo]);
+    }
+}
 
 @end
