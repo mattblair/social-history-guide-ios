@@ -33,8 +33,8 @@
         [self loadDataFromJSON];
         self.themeList = [self.seedDictionary objectForKey:@"themes"];
         
-        //self.title = NSLocalizedString(@"Know Your City", @"App title");
-        self.title = NSLocalizedString(@"Themes", @"Title for Home View Controller");
+        // use this if you are showing standard text in nav bars and back buttons
+        //self.title = NSLocalizedString(@"Themes", @"Title for Home View Controller");
     }
     return self;
 }
@@ -43,10 +43,17 @@
     
     [super loadView];
     
+    // set background just for this nav bar:
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:kNavBarBackgroundiPhone]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    
+    // or configure header logo:
+    //UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kNavAppLogoiPhone] ];
+    //self.navigationItem.titleView = logoImage;
+    
     self.view.backgroundColor = [UIColor yellowColor];
     
-    UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kNavAppLogoiPhone] ];
-    self.navigationItem.titleView = logoImage;
+    
     
     self.themeTableView = [[UITableView alloc] initWithFrame:[self.view bounds]
                                                        style:UITableViewStylePlain];
@@ -127,8 +134,12 @@
     
     // switch this to a new intializer which accepts a theme object?
     ThemeViewController *themeVC = [[ThemeViewController alloc] initWithNibName:nil bundle:nil];
-    themeVC.title = [themeDictionary objectForKey:@"title"];
+    // sets title to diplay in the nav bar
+    //themeVC.title = [themeDictionary objectForKey:@"title"];
+    themeVC.themeDictionary = themeDictionary;
     [self.navigationController pushViewController:themeVC animated:YES];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 #pragma mark - Loading JSON (temporary)

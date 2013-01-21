@@ -10,4 +10,7 @@
 
 @interface ThemeViewController : UIViewController
 
+// temporary, for prototyping pending Core Data
+@property (strong, nonatomic) NSDictionary *themeDictionary;
+
 @end

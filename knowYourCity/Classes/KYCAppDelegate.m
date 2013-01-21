@@ -19,7 +19,7 @@
     
     [TestFlight takeOff:kTestFlightTeamToken];
     
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [self configureAppearance];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -56,6 +56,15 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)configureAppearance {
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    
+    // to use the same nav background for all view controllers
+    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:kNavBarBackgroundiPhone]
+    //                                   forBarMetrics:UIBarMetricsDefault];
 }
 
 @end

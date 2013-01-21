@@ -35,7 +35,8 @@ NSString* const kRefreshButtonImage = @"01-refresh";
 
 // Nav Toolbar
 NSString* const kNavAppLogoiPad = @"";
-NSString* const kNavAppLogoiPhone = @"logo_header";
+NSString* const kNavAppLogoiPhone = @"logo_header_black";
+NSString* const kNavBarBackgroundiPhone = @"kycNavBarBlack";
 NSString* const kBackButtonImage = @"";
 
 // Audio Player Images
@@ -81,7 +82,7 @@ NSString* const kFullScreenCameraRequestedNotification = @"kFullScreenCameraRequ
 // <some font property> = [UIFont fontWithName:kLineFontName size:kLineFontSize];
 
 NSString* const kTitleFontName = @"Baskerville-Bold";
-CGFloat const kTitleFontSize = 16.0;
+CGFloat const kTitleFontSize = 24.0;
 NSString* const kBodyFontName = @"Baskerville";
 CGFloat const kBodyFontSize = 16.0;
 NSString* const kPhotoCreditFontName = @"Baskerville-Italic";
