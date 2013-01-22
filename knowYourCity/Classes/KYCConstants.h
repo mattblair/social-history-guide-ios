@@ -6,6 +6,20 @@
 //  Copyright (c) 2013 Elsewise LLC. All rights reserved.
 //
 
+// Layout
+
+#define DEFAULT_CONTENT_WIDTH 300.0
+#define DEFAULT_LEFT_MARGIN 10.0
+
+#define VERTICAL_SPACER_STANDARD 10.0
+#define VERTICAL_SPACER_EXTRA 25.0
+
+#define MAIN_PHOTO_WIDTH 320.0
+#define MAIN_PHOTO_HEIGHT 240.0
+
+// Tag offsets (probably temporary. UIView subclasses could store an identifier.)
+#define STORY_TAG_OFFSET 342938
+
 // Core Data
 
 // EWCoreDataManager Configuration
@@ -74,6 +88,7 @@ extern NSString* const kFullScreenCameraRequestedNotification;
 // Fonts
 extern NSString* const kTitleFontName;
 extern CGFloat const kTitleFontSize;
+extern CGFloat const kSectionTitleFontSize;
 extern NSString* const kBodyFontName;
 extern CGFloat const kBodyFontSize;
 extern NSString* const kPhotoCreditFontName;
