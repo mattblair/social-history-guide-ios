@@ -16,51 +16,75 @@
     "themes": [
         {
             "thumbnail": "theme_tn_ph", 
-            "title": "African-American History"
+            "title": "African-American History",
+               "introduction": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+               "stories": ["A place to stay","The food smelled like home","Then and Now"]
         }, 
         {
             "thumbnail": "theme_tn_ph-b", 
-            "title": "Cast Iron District"
+            "title": "Cast Iron District",
+               "introduction": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+               "stories": ["First Arrival","Lamenting the Rain","When It Changed"]
         }, 
         {
             "thumbnail": "theme_tn_ph", 
-            "title": "Chinatown Plaques"
+            "title": "Chinatown Plaques",
+               "introduction": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+               "stories": ["A place to stay","The food smelled like home","Then and Now"]
         }, 
         {
             "thumbnail": "theme_tn_ph-b", 
-            "title": "Chinese-American History"
+            "title": "Chinese-American History",
+               "introduction": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+               "stories": ["First Arrival","Lamenting the Rain","When It Changed"]
         }, 
         {
             "thumbnail": "theme_tn_ph", 
-            "title": "Dead Freeways"
+            "title": "Dead Freeways",
+               "introduction": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+               "stories": ["A place to stay","The food smelled like home","Then and Now"]
         }, 
         {
             "thumbnail": "theme_tn_ph-b", 
-            "title": "Keller Fountain"
+            "title": "Keller Fountain",
+               "introduction": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+               "stories": ["First Arrival","Lamenting the Rain","When It Changed"]
         }, 
         {
             "thumbnail": "theme_tn_ph", 
-            "title": "Entrepreneurs in Old Town"
+            "title": "Entrepreneurs in Old Town",
+               "introduction": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+               "stories": ["A place to stay","The food smelled like home","Then and Now"]
         }, 
         {
             "thumbnail": "theme_tn_ph-b", 
-            "title": "Gay History"
+            "title": "Gay History",
+               "introduction": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+               "stories": ["First Arrival","Lamenting the Rain","When It Changed"]
         }, 
         {
             "thumbnail": "theme_tn_ph", 
-            "title": "Hispanic History"
+            "title": "Hispanic History",
+               "introduction": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+               "stories": ["A place to stay","The food smelled like home","Then and Now"]
         }, 
         {
             "thumbnail": "theme_tn_ph-b", 
-            "title": "Japanese-American History"
+            "title": "Japanese-American History",
+               "introduction": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+               "stories": ["First Arrival","Lamenting the Rain","When It Changed"]
         }, 
         {
             "thumbnail": "theme_tn_ph", 
-            "title": "Jewish History"
+            "title": "Jewish History",
+               "introduction": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+               "stories": ["A place to stay","The food smelled like home","Then and Now"]
         }, 
         {
             "thumbnail": "theme_tn_ph-b", 
-            "title": "Lesbian History"
+            "title": "Lesbian History",
+               "introduction": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+               "stories": ["First Arrival","Lamenting the Rain","When It Changed"]
         }
     ]
 }
