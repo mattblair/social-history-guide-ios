@@ -11,6 +11,7 @@
 @interface ThemeViewController : UIViewController
 
 // temporary, for prototyping pending Core Data
+// will be replaced by an NSManagedObject subclass called Theme
 @property (strong, nonatomic) NSDictionary *themeDictionary;
 
 @end
