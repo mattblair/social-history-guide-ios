@@ -31,6 +31,7 @@
 		C952427C16B0351600BD8F74 /* greek-plaque-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427816B0351600BD8F74 /* greek-plaque-ph.jpg */; };
 		C952427D16B0351600BD8F74 /* japantown-model-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427916B0351600BD8F74 /* japantown-model-ph.jpg */; };
 		C952427E16B0351600BD8F74 /* new-market-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427A16B0351600BD8F74 /* new-market-ph.jpg */; };
+		C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */ = {isa = PBXBuildFile; fileRef = C952428016B03F4700BD8F74 /* UIColor+KYC.m */; };
 		C960757016AC59B2004B2672 /* logo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756E16AC59B2004B2672 /* logo_header.png */; };
 		C960757116AC59B2004B2672 /* logo_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756F16AC59B2004B2672 /* logo_header@2x.png */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
@@ -95,6 +96,8 @@
 		C952427816B0351600BD8F74 /* greek-plaque-ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "greek-plaque-ph.jpg"; path = "Resources/photos/greek-plaque-ph.jpg"; sourceTree = "<group>"; };
 		C952427916B0351600BD8F74 /* japantown-model-ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "japantown-model-ph.jpg"; path = "Resources/photos/japantown-model-ph.jpg"; sourceTree = "<group>"; };
 		C952427A16B0351600BD8F74 /* new-market-ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "new-market-ph.jpg"; path = "Resources/photos/new-market-ph.jpg"; sourceTree = "<group>"; };
+		C952427F16B03F4700BD8F74 /* UIColor+KYC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+KYC.h"; path = "Classes/UIColor+KYC.h"; sourceTree = "<group>"; };
+		C952428016B03F4700BD8F74 /* UIColor+KYC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KYC.m"; path = "Classes/UIColor+KYC.m"; sourceTree = "<group>"; };
 		C960756E16AC59B2004B2672 /* logo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header.png; sourceTree = "<group>"; };
 		C960756F16AC59B2004B2672 /* logo_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_header@2x.png"; sourceTree = "<group>"; };
 		C960757416AC59C4004B2672 /* kyc-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kyc-data.json"; sourceTree = "<group>"; };
@@ -359,6 +362,8 @@
 				C930310F16AB44D60039D7B8 /* KYCConstants.m */,
 				C930310B16AB43B50039D7B8 /* KYCPrivateConstants.h */,
 				C930310C16AB43B50039D7B8 /* KYCPrivateConstants.m */,
+				C952427F16B03F4700BD8F74 /* UIColor+KYC.h */,
+				C952428016B03F4700BD8F74 /* UIColor+KYC.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -485,6 +490,7 @@
 				C960759616AC6CF5004B2672 /* JSONKit.m in Sources */,
 				C952427116B0311F00BD8F74 /* StoryStubView.m in Sources */,
 				C952427516B0313A00BD8F74 /* GuestStubView.m in Sources */,
+				C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
