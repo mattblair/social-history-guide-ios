@@ -7,6 +7,9 @@
 //
 
 #import "ThemeViewController.h"
+#import "StoryStubView.h"
+#import "StoryViewController.h"
+#import "GuestStubView.h"
 
 @interface ThemeViewController ()
 
@@ -126,9 +129,15 @@
     
     self.yForNextView = CGRectGetMaxY(self.guestLabel.frame) + VERTICAL_SPACER_STANDARD;
     
-    // Guest stub (will use a UIView subclass)
+    // Guests (allow for multiple)
     
+    NSDictionary *guestDictionary = @{@"name" : @"Guest Name", @"title": @"Title or fact that makes us want to read more."};
     
+    GuestStubView *guestStub = [[GuestStubView alloc] initWithDictionary:guestDictionary
+                                                                atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
+    
+    [self.scrollView addSubview:guestStub];
+    self.yForNextView = CGRectGetMaxY(guestStub.frame) + VERTICAL_SPACER_STANDARD;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

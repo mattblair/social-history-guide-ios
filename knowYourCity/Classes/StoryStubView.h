@@ -10,4 +10,6 @@
 
 @interface StoryStubView : UIView
 
+// will use a story object as an initializer eventually
+
 @end
