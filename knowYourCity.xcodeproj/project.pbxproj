@@ -27,6 +27,10 @@
 		C930311016AB44D60039D7B8 /* KYCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C930310F16AB44D60039D7B8 /* KYCConstants.m */; };
 		C952427116B0311F00BD8F74 /* StoryStubView.m in Sources */ = {isa = PBXBuildFile; fileRef = C952427016B0311F00BD8F74 /* StoryStubView.m */; };
 		C952427516B0313A00BD8F74 /* GuestStubView.m in Sources */ = {isa = PBXBuildFile; fileRef = C952427416B0313A00BD8F74 /* GuestStubView.m */; };
+		C952427B16B0351600BD8F74 /* golden-west-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427716B0351600BD8F74 /* golden-west-ph.jpg */; };
+		C952427C16B0351600BD8F74 /* greek-plaque-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427816B0351600BD8F74 /* greek-plaque-ph.jpg */; };
+		C952427D16B0351600BD8F74 /* japantown-model-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427916B0351600BD8F74 /* japantown-model-ph.jpg */; };
+		C952427E16B0351600BD8F74 /* new-market-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427A16B0351600BD8F74 /* new-market-ph.jpg */; };
 		C960757016AC59B2004B2672 /* logo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756E16AC59B2004B2672 /* logo_header.png */; };
 		C960757116AC59B2004B2672 /* logo_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756F16AC59B2004B2672 /* logo_header@2x.png */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
@@ -87,6 +91,10 @@
 		C952427016B0311F00BD8F74 /* StoryStubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryStubView.m; path = Classes/StoryStubView.m; sourceTree = "<group>"; };
 		C952427316B0313A00BD8F74 /* GuestStubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuestStubView.h; path = Classes/GuestStubView.h; sourceTree = "<group>"; };
 		C952427416B0313A00BD8F74 /* GuestStubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuestStubView.m; path = Classes/GuestStubView.m; sourceTree = "<group>"; };
+		C952427716B0351600BD8F74 /* golden-west-ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "golden-west-ph.jpg"; path = "Resources/photos/golden-west-ph.jpg"; sourceTree = "<group>"; };
+		C952427816B0351600BD8F74 /* greek-plaque-ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "greek-plaque-ph.jpg"; path = "Resources/photos/greek-plaque-ph.jpg"; sourceTree = "<group>"; };
+		C952427916B0351600BD8F74 /* japantown-model-ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "japantown-model-ph.jpg"; path = "Resources/photos/japantown-model-ph.jpg"; sourceTree = "<group>"; };
+		C952427A16B0351600BD8F74 /* new-market-ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "new-market-ph.jpg"; path = "Resources/photos/new-market-ph.jpg"; sourceTree = "<group>"; };
 		C960756E16AC59B2004B2672 /* logo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header.png; sourceTree = "<group>"; };
 		C960756F16AC59B2004B2672 /* logo_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_header@2x.png"; sourceTree = "<group>"; };
 		C960757416AC59C4004B2672 /* kyc-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kyc-data.json"; sourceTree = "<group>"; };
@@ -212,6 +220,17 @@
 			path = Resources/html;
 			sourceTree = "<group>";
 		};
+		C952427616B0350400BD8F74 /* placeholders */ = {
+			isa = PBXGroup;
+			children = (
+				C952427716B0351600BD8F74 /* golden-west-ph.jpg */,
+				C952427816B0351600BD8F74 /* greek-plaque-ph.jpg */,
+				C952427916B0351600BD8F74 /* japantown-model-ph.jpg */,
+				C952427A16B0351600BD8F74 /* new-market-ph.jpg */,
+			);
+			name = placeholders;
+			sourceTree = "<group>";
+		};
 		C960756D16AC59B2004B2672 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +315,7 @@
 		C97B44E5169DCD20008A2793 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C952427616B0350400BD8F74 /* placeholders */,
 				C97B44E9169DCD95008A2793 /* default */,
 				C960756D16AC59B2004B2672 /* graphics */,
 				C93030FF16AB34C40039D7B8 /* html */,
@@ -437,6 +457,10 @@
 				C9DE110216AD95FC00D93566 /* logo_header_black@2x.png in Resources */,
 				C9DE110616AD98ED00D93566 /* kycNavBarBlack.png in Resources */,
 				C9DE110716AD98ED00D93566 /* kycNavBarBlack@2x.png in Resources */,
+				C952427B16B0351600BD8F74 /* golden-west-ph.jpg in Resources */,
+				C952427C16B0351600BD8F74 /* greek-plaque-ph.jpg in Resources */,
+				C952427D16B0351600BD8F74 /* japantown-model-ph.jpg in Resources */,
+				C952427E16B0351600BD8F74 /* new-market-ph.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
