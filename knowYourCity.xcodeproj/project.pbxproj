@@ -25,6 +25,8 @@
 		C930310116AB34C40039D7B8 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = C930310016AB34C40039D7B8 /* about.html */; };
 		C930310D16AB43B50039D7B8 /* KYCPrivateConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C930310C16AB43B50039D7B8 /* KYCPrivateConstants.m */; };
 		C930311016AB44D60039D7B8 /* KYCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C930310F16AB44D60039D7B8 /* KYCConstants.m */; };
+		C952427116B0311F00BD8F74 /* StoryStubView.m in Sources */ = {isa = PBXBuildFile; fileRef = C952427016B0311F00BD8F74 /* StoryStubView.m */; };
+		C952427516B0313A00BD8F74 /* GuestStubView.m in Sources */ = {isa = PBXBuildFile; fileRef = C952427416B0313A00BD8F74 /* GuestStubView.m */; };
 		C960757016AC59B2004B2672 /* logo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756E16AC59B2004B2672 /* logo_header.png */; };
 		C960757116AC59B2004B2672 /* logo_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756F16AC59B2004B2672 /* logo_header@2x.png */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
@@ -81,6 +83,10 @@
 		C930310C16AB43B50039D7B8 /* KYCPrivateConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCPrivateConstants.m; path = Classes/KYCPrivateConstants.m; sourceTree = "<group>"; };
 		C930310E16AB44D60039D7B8 /* KYCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCConstants.h; path = Classes/KYCConstants.h; sourceTree = "<group>"; };
 		C930310F16AB44D60039D7B8 /* KYCConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCConstants.m; path = Classes/KYCConstants.m; sourceTree = "<group>"; };
+		C952426F16B0311F00BD8F74 /* StoryStubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryStubView.h; path = Classes/StoryStubView.h; sourceTree = "<group>"; };
+		C952427016B0311F00BD8F74 /* StoryStubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryStubView.m; path = Classes/StoryStubView.m; sourceTree = "<group>"; };
+		C952427316B0313A00BD8F74 /* GuestStubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuestStubView.h; path = Classes/GuestStubView.h; sourceTree = "<group>"; };
+		C952427416B0313A00BD8F74 /* GuestStubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuestStubView.m; path = Classes/GuestStubView.m; sourceTree = "<group>"; };
 		C960756E16AC59B2004B2672 /* logo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header.png; sourceTree = "<group>"; };
 		C960756F16AC59B2004B2672 /* logo_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_header@2x.png"; sourceTree = "<group>"; };
 		C960757416AC59C4004B2672 /* kyc-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kyc-data.json"; sourceTree = "<group>"; };
@@ -310,6 +316,10 @@
 				C93030EE16AB32E10039D7B8 /* HomeViewController.m */,
 				C93030F016AB33050039D7B8 /* ThemeViewController.h */,
 				C93030F116AB33050039D7B8 /* ThemeViewController.m */,
+				C952426F16B0311F00BD8F74 /* StoryStubView.h */,
+				C952427016B0311F00BD8F74 /* StoryStubView.m */,
+				C952427316B0313A00BD8F74 /* GuestStubView.h */,
+				C952427416B0313A00BD8F74 /* GuestStubView.m */,
 				C93030F316AB33260039D7B8 /* StoryViewController.h */,
 				C93030F416AB33260039D7B8 /* StoryViewController.m */,
 				C93030F616AB33570039D7B8 /* GuestViewController.h */,
@@ -449,6 +459,8 @@
 				C930310D16AB43B50039D7B8 /* KYCPrivateConstants.m in Sources */,
 				C930311016AB44D60039D7B8 /* KYCConstants.m in Sources */,
 				C960759616AC6CF5004B2672 /* JSONKit.m in Sources */,
+				C952427116B0311F00BD8F74 /* StoryStubView.m in Sources */,
+				C952427516B0313A00BD8F74 /* GuestStubView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
