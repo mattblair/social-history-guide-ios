@@ -10,4 +10,7 @@
 
 @interface StoryViewController : UIViewController
 
+// temporary. Will be replaced by an NSManagedObject subclass.
+@property (strong, nonatomic) NSDictionary *storyData;
+
 @end

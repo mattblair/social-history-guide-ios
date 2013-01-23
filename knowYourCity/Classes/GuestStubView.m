@@ -52,6 +52,7 @@
         CGRect thumbnailRect = CGRectMake(GUEST_STUB_MARGIN, GUEST_STUB_MARGIN, GUEST_THUMBNAIL_SIZE, GUEST_THUMBNAIL_SIZE);
         
         self.thumbnailView = [[UIImageView alloc] initWithFrame:thumbnailRect];
+        // if you use retina, init this by url with type jpg
         self.thumbnailView.image = [UIImage imageNamed:@"guest_placeholder.jpg"];
         
         [self addSubview:self.thumbnailView];

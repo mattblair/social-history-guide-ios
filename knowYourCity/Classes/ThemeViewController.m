@@ -167,6 +167,13 @@
     
     DLog(@"Would show story #%d", selectedStoryIndex);
     
+    StoryViewController *storyVC = [[StoryViewController alloc] initWithNibName:nil bundle:nil];
+    
+    NSArray *fakeStories = [self.themeDictionary objectForKey:@"stories"];
+    NSString *introText = @"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    storyVC.storyData = @{@"title" : fakeStories[selectedStoryIndex], @"mainText" : introText};
+    
+    [self.navigationController pushViewController:storyVC animated:YES];
 }
 
 @end
