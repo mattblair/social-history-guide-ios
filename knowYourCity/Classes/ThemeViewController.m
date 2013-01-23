@@ -22,7 +22,7 @@
 @property (strong, nonatomic) UILabel *introLabel;
 
 @property (strong, nonatomic) UILabel *guestLabel;
-@property (strong, nonatomic) UIView *guestView; // will be a custom subclass
+@property (strong, nonatomic) GuestStubView *guestView;
 
 @end
 
@@ -133,11 +133,11 @@
     
     NSDictionary *guestDictionary = @{@"name" : @"Guest Name", @"title": @"Title or fact that makes us want to read more."};
     
-    GuestStubView *guestStub = [[GuestStubView alloc] initWithDictionary:guestDictionary
-                                                                atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
+    self.guestView = [[GuestStubView alloc] initWithDictionary:guestDictionary
+                                                      atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
     
-    [self.scrollView addSubview:guestStub];
-    self.yForNextView = CGRectGetMaxY(guestStub.frame) + VERTICAL_SPACER_STANDARD;
+    [self.scrollView addSubview:self.guestView];
+    self.yForNextView = CGRectGetMaxY(self.guestView.frame) + VERTICAL_SPACER_STANDARD;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
