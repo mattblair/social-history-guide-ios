@@ -38,6 +38,8 @@
 
 @implementation EWMAudioPlayerView
 
+#pragma mark - View lifecycle
+
 - (id)initWithAudioURL:(NSURL *)audioURL {
     
     CGRect defaultFrame = CGRectMake(0.0, 0.0, 320.0, 44.0); // height was 52
@@ -97,12 +99,10 @@
         
         self.playButton = [[UIButton alloc] initWithFrame:buttonFrame];
         
-        //[self.playButton setTitle:@"Play" forState:UIControlStateNormal];
-        
-        [self.playButton setImage:[UIImage imageNamed:@"49-play"]
+        [self.playButton setImage:[UIImage imageNamed:PLAY_BUTTON_IMAGE]
                          forState:UIControlStateNormal];
         
-        [self.playButton setImage:[UIImage imageNamed:@"48-pause"]
+        [self.playButton setImage:[UIImage imageNamed:PAUSE_BUTTON_IMAGE]
                          forState:UIControlStateSelected];
         
         [self.playButton addTarget:self
@@ -110,16 +110,6 @@
                   forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:self.playButton];
-        
-        // or don't swap the button out, and just use the selected state instead?
-//        self.pauseButton = [[UIButton alloc] initWithFrame:buttonFrame];
-//        
-//        [self.pauseButton addTarget:self
-//                             action:@selector(togglePlayStatus)
-//                   forControlEvents:UIControlEventTouchUpInside];
-        
-        // don't add, just have this button ready
-        
     }
     return self;
 }
@@ -157,6 +147,23 @@
     
     [self updateCurrentTimeDisplay];
     [self updateScrubberThumbPosition];
+}
+
+#pragma mark - UISlider Styling
+
+- (void)setMinimumTrackColor:(UIColor *)minimumTrackColor {
+    
+    self.audioScrubber.minimumTrackTintColor = minimumTrackColor;
+}
+
+- (void)setMaximumTrackColor:(UIColor *)maximumTrackColor {
+    
+    self.audioScrubber.maximumTrackTintColor = maximumTrackColor;
+}
+
+- (void)setThumbColor:(UIColor *)thumbColor {
+    
+    self.audioScrubber.thumbTintColor = thumbColor;
 }
 
 #pragma mark - Handling Listener Actions
