@@ -1,5 +1,5 @@
 //
-//  EWAudioPlayerView.h
+//  EWMAudioPlayerView.h
 //  pdxPublicArt
 //
 //  Created by Matt Blair on 11/24/12.
@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface EWAudioPlayerView : UIView <AVAudioPlayerDelegate>
+@interface EWMAudioPlayerView : UIView <AVAudioPlayerDelegate>
 
 // setters for custom images
 @property (strong, nonatomic) UIImage *playButtonImage;

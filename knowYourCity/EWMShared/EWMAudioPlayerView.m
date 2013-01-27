@@ -1,5 +1,5 @@
 //
-//  EWAudioPlayerView.m
+//  EWMAudioPlayerView.m
 //  pdxPublicArt
 //
 //  Created by Matt Blair on 11/24/12.
@@ -11,7 +11,7 @@
 #endif
 
 
-#import "EWAudioPlayerView.h"
+#import "EWMAudioPlayerView.h"
 
 #define AUDIO_TIME_DEFAULT_Y 6.0
 #define AUDIO_TIME_LABEL_WIDTH 28.0
@@ -21,7 +21,7 @@
 // might not even move every second.
 #define AUDIO_DISPLAY_UPDATE_INTERVAL .5
 
-@interface EWAudioPlayerView ()
+@interface EWMAudioPlayerView ()
 
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
@@ -36,7 +36,7 @@
 
 @end
 
-@implementation EWAudioPlayerView
+@implementation EWMAudioPlayerView
 
 - (id)initWithAudioURL:(NSURL *)audioURL {
     

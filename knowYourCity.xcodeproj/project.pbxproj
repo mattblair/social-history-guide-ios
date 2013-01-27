@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C921484D16B58AF8007323D0 /* EWAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C921484A16B58AF8007323D0 /* EWAudioPlayerView.m */; };
 		C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C921484C16B58AF8007323D0 /* EWWebViewController.m */; };
+		C921485216B59417007323D0 /* EWMAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C921485116B59417007323D0 /* EWMAudioPlayerView.m */; };
 		C92666ED169DC6920061F9AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92666EC169DC6920061F9AD /* UIKit.framework */; };
 		C92666EF169DC6920061F9AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92666EE169DC6920061F9AD /* Foundation.framework */; };
 		C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92666F0169DC6920061F9AD /* CoreGraphics.framework */; };
@@ -65,6 +66,8 @@
 		C921484A16B58AF8007323D0 /* EWAudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWAudioPlayerView.m; path = EWMShared/EWAudioPlayerView.m; sourceTree = "<group>"; };
 		C921484B16B58AF8007323D0 /* EWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWWebViewController.h; path = EWMShared/EWWebViewController.h; sourceTree = "<group>"; };
 		C921484C16B58AF8007323D0 /* EWWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWWebViewController.m; path = EWMShared/EWWebViewController.m; sourceTree = "<group>"; };
+		C921485016B59417007323D0 /* EWMAudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWMAudioPlayerView.h; path = EWMShared/EWMAudioPlayerView.h; sourceTree = "<group>"; };
+		C921485116B59417007323D0 /* EWMAudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWMAudioPlayerView.m; path = EWMShared/EWMAudioPlayerView.m; sourceTree = "<group>"; };
 		C92666E8169DC6920061F9AD /* knowYourCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = knowYourCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92666EC169DC6920061F9AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C92666EE169DC6920061F9AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -377,6 +380,8 @@
 		C97B44E8169DCD77008A2793 /* EWMSharedClasses */ = {
 			isa = PBXGroup;
 			children = (
+				C921485016B59417007323D0 /* EWMAudioPlayerView.h */,
+				C921485116B59417007323D0 /* EWMAudioPlayerView.m */,
 				C921484916B58AF8007323D0 /* EWAudioPlayerView.h */,
 				C921484A16B58AF8007323D0 /* EWAudioPlayerView.m */,
 				C921484B16B58AF8007323D0 /* EWWebViewController.h */,
@@ -503,6 +508,7 @@
 				C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */,
 				C921484D16B58AF8007323D0 /* EWAudioPlayerView.m in Sources */,
 				C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */,
+				C921485216B59417007323D0 /* EWMAudioPlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
