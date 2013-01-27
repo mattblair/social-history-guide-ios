@@ -1,0 +1,6 @@
+Each of these shared classes is a work-in-progress. This notes indicate the last import from the primary app in which they're being developed, until they all solidify.
+
+[130127]
+
+Imported EWWebViewController from poetryboxes
+Imported EWAudioPlayerView from publicArtPDX
