@@ -45,7 +45,7 @@
         
         self.guestData = guestDictionary;
         
-        self.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+        self.backgroundColor = [UIColor lightGrayColor];
         
         // thumbnail
         
@@ -67,6 +67,7 @@
         self.nameLabel = [[UILabel alloc] initWithFrame:nameRect];
         self.nameLabel.text = [self.guestData objectForKey:@"name"];
         self.nameLabel.font = [UIFont fontWithName:kTitleFontName size:18.0];
+        self.nameLabel.backgroundColor = [UIColor clearColor];
         
         [self addSubview:self.nameLabel];
         
@@ -80,6 +81,7 @@
         self.titleLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
         self.titleLabel.numberOfLines = 2;
         self.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+        self.titleLabel.backgroundColor = [UIColor clearColor];
         
         [self addSubview:self.titleLabel];
         
