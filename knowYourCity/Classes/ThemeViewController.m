@@ -32,7 +32,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
+        // if you don't want a toolbar:
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }

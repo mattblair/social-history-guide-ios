@@ -42,6 +42,9 @@
         
         // use this if you are showing standard text in nav bars and back buttons
         //self.title = NSLocalizedString(@"Themes", @"Title for Home View Controller");
+        
+        // if you don't want a toolbar:
+        self.hidesBottomBarWhenPushed = NO;
     }
     return self;
 }
