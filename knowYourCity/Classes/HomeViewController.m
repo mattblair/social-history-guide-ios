@@ -19,6 +19,13 @@
 @property (strong, nonatomic) NSDictionary *seedDictionary; // temporary
 @property (strong, nonatomic) UITableView *themeTableView;
 
+// toolbar buttons
+@property (strong, nonatomic) UIBarButtonItem *mapButton;
+@property (strong, nonatomic) UIBarButtonItem *tidbitButton;
+@property (strong, nonatomic) UIBarButtonItem *newsButton;
+@property (strong, nonatomic) UIBarButtonItem *infoButton;
+@property (strong, nonatomic) UIBarButtonItem *timelineButton;
+
 @end
 
 @implementation HomeViewController
@@ -65,6 +72,8 @@
     //self.themeTableView.sectionIndexMinimumDisplayRowCount = 0;
     
     [self.view addSubview:self.themeTableView];
+    
+    [self configureToolbar];
     
 }
 
@@ -166,6 +175,101 @@
     if (!self.seedDictionary) {
         NSLog(@"Loading JSON File Failed: %@, %@", jsonDeserializeError, [jsonDeserializeError userInfo]);
     }
+}
+
+
+#pragma mark - Toolbar
+
+- (void)configureToolbar {
+    
+    // first, create all the buttons you need:
+    self.navigationController.toolbar.tintColor = [UIColor kycNavBarColor];
+    
+    // MapView
+    self.mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"103-map"]
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self
+                                                          action:@selector(showMap)];
+    
+    self.mapButton.accessibilityLabel = @"Show themes on a map.";
+    
+    // Tidbits
+    
+    self.tidbitButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"97-puzzle"]
+                                                         style:UIBarButtonItemStylePlain
+                                                        target:self
+                                                        action:@selector(showTidbits)];
+    
+    self.tidbitButton.accessibilityLabel = @"Show a list of tidbits";
+    
+    // Info
+    self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"123-id-card"]
+                                                       style:UIBarButtonItemStylePlain
+                                                      target:self
+                                                      action:@selector(showAbout)];
+    
+    self.infoButton.accessibilityLabel = @"Show About Page";
+    
+    
+    // might make more sense to fold this into about section
+    self.newsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"44-shoebox"]
+                                                          style:UIBarButtonItemStylePlain
+                                                         target:self
+                                                         action:@selector(showNews)];
+    
+    self.newsButton.accessibilityLabel = @"Show project news";
+    
+	// re-usable flex space (system)
+	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+																				   target:nil
+																				   action:nil];    
+            
+    self.navigationController.toolbarHidden = NO;
+    
+    self.toolbarItems = [NSArray arrayWithObjects:
+                         self.mapButton,
+                         flexibleSpace,
+                         self.tidbitButton,
+                         flexibleSpace,
+                         self.infoButton,
+                         flexibleSpace,
+                         self.newsButton,
+                         nil];
+}
+
+- (void)showMap {
+    
+    [self showComingSoon:@"Map View is not yet available."];
+}
+
+- (void)showTidbits {
+    
+    [self showComingSoon:@"Tidbits list is not yet available."];
+}
+
+- (void)showAbout {
+    
+    [self showComingSoon:@"About Page is not yet available."];
+}
+
+- (void)showNews {
+    
+    [self showComingSoon:@"Project News is not yet available."];
+}
+
+// probably a 1.5 feature?
+- (void)showTimeline {
+    DLog(@"Not implemented in v1.0?");
+}
+
+- (void)showComingSoon:(NSString *)thePromise {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Coming Soon"
+													message:thePromise
+												   delegate:nil
+										  cancelButtonTitle:nil
+										  otherButtonTitles:@"OK", nil];
+	[alert show];
 }
 
 @end
