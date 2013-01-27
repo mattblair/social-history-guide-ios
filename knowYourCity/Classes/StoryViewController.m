@@ -7,6 +7,7 @@
 //
 
 #import "StoryViewController.h"
+#import "EWMAudioPlayerView.h"
 #import "GuestStubView.h"
 
 @interface StoryViewController ()
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) UIImageView *mainPhoto;
 @property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) EWMAudioPlayerView *theAudioPlayerView;
 @property (strong, nonatomic) UILabel *mainTextLabel;
 
 @property (strong, nonatomic) UILabel *guestLabel;
@@ -74,6 +76,34 @@
     self.yForNextView = CGRectGetMaxY(self.titleLabel.frame) + VERTICAL_SPACER_STANDARD;
     
     // audio player
+    
+    // until Core Data is set up and we have multiple audio files
+    NSString *audioFilename = @"kycPlaceholder.mp3";
+    
+    if ([audioFilename length] > 0) {
+        
+        // file extension stored in data?
+        NSURL *bundleAudioURL = [[NSBundle mainBundle] URLForResource:audioFilename
+                                                        withExtension:nil];
+        
+        self.theAudioPlayerView = [[EWMAudioPlayerView alloc] initWithAudioURL:bundleAudioURL];
+        
+        // get frame and reset y
+        CGRect audioRect = self.theAudioPlayerView.frame;
+        audioRect.origin.y = self.yForNextView;
+        self.theAudioPlayerView.frame = audioRect;
+        self.theAudioPlayerView.backgroundColor = [UIColor whiteColor];
+        
+        // we'll probably use images for these instead
+        self.theAudioPlayerView.thumbColor = [UIColor grayColor];
+        self.theAudioPlayerView.minimumTrackColor = [UIColor darkGrayColor];
+        self.theAudioPlayerView.maximumTrackColor = [UIColor lightGrayColor];
+        
+        [self.scrollView addSubview:self.theAudioPlayerView];
+        
+        // increment y
+        self.yForNextView += audioRect.size.height + 10.0;
+    }
     
     // main text
     
