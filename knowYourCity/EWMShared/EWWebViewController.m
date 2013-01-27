@@ -13,8 +13,8 @@
 // for cancelling web requests gracefully...
 #import "Reachability.h"
 
-#define WEB_NAVIGATION_BACK @"09-arrow-west" // navBack
-#define WEB_NAVIGATION_FORWARD @"02-arrow-east" // navForward
+#define WEB_NAVIGATION_BACK @"nav-backward" // navBack
+#define WEB_NAVIGATION_FORWARD @"nav-forward" // navForward
 
 @interface EWWebViewController ()
 

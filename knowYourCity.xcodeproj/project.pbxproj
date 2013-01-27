@@ -13,6 +13,10 @@
 		C921485616B598A3007323D0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C921485516B598A3007323D0 /* AVFoundation.framework */; };
 		C921485916B59B4E007323D0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C921485816B59B4E007323D0 /* Reachability.m */; };
 		C921485B16B59B70007323D0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C921485A16B59B70007323D0 /* SystemConfiguration.framework */; };
+		C921486216B59D7C007323D0 /* pause-audio.png in Resources */ = {isa = PBXBuildFile; fileRef = C921485E16B59D7C007323D0 /* pause-audio.png */; };
+		C921486316B59D7C007323D0 /* play-audio.png in Resources */ = {isa = PBXBuildFile; fileRef = C921485F16B59D7C007323D0 /* play-audio.png */; };
+		C921486616B59DC8007323D0 /* nav-backward.png in Resources */ = {isa = PBXBuildFile; fileRef = C921486416B59DC8007323D0 /* nav-backward.png */; };
+		C921486716B59DC8007323D0 /* nav-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = C921486516B59DC8007323D0 /* nav-forward.png */; };
 		C92666ED169DC6920061F9AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92666EC169DC6920061F9AD /* UIKit.framework */; };
 		C92666EF169DC6920061F9AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92666EE169DC6920061F9AD /* Foundation.framework */; };
 		C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92666F0169DC6920061F9AD /* CoreGraphics.framework */; };
@@ -74,6 +78,10 @@
 		C921485716B59B4E007323D0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = 3rdParty/Reachability.h; sourceTree = "<group>"; };
 		C921485816B59B4E007323D0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = 3rdParty/Reachability.m; sourceTree = "<group>"; };
 		C921485A16B59B70007323D0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C921485E16B59D7C007323D0 /* pause-audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-audio.png"; path = "Resources/graphics/pause-audio.png"; sourceTree = "<group>"; };
+		C921485F16B59D7C007323D0 /* play-audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play-audio.png"; path = "Resources/graphics/play-audio.png"; sourceTree = "<group>"; };
+		C921486416B59DC8007323D0 /* nav-backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nav-backward.png"; path = "Resources/graphics/nav-backward.png"; sourceTree = "<group>"; };
+		C921486516B59DC8007323D0 /* nav-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nav-forward.png"; path = "Resources/graphics/nav-forward.png"; sourceTree = "<group>"; };
 		C92666E8169DC6920061F9AD /* knowYourCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = knowYourCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92666EC169DC6920061F9AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C92666EE169DC6920061F9AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -243,6 +251,10 @@
 		C952427616B0350400BD8F74 /* placeholders */ = {
 			isa = PBXGroup;
 			children = (
+				C921486416B59DC8007323D0 /* nav-backward.png */,
+				C921486516B59DC8007323D0 /* nav-forward.png */,
+				C921485E16B59D7C007323D0 /* pause-audio.png */,
+				C921485F16B59D7C007323D0 /* play-audio.png */,
 				C921485316B59529007323D0 /* kycPlaceholder.mp3 */,
 				C952427716B0351600BD8F74 /* golden-west-ph.jpg */,
 				C952427816B0351600BD8F74 /* greek-plaque-ph.jpg */,
@@ -493,6 +505,10 @@
 				C952427D16B0351600BD8F74 /* japantown-model-ph.jpg in Resources */,
 				C952427E16B0351600BD8F74 /* new-market-ph.jpg in Resources */,
 				C921485416B59529007323D0 /* kycPlaceholder.mp3 in Resources */,
+				C921486216B59D7C007323D0 /* pause-audio.png in Resources */,
+				C921486316B59D7C007323D0 /* play-audio.png in Resources */,
+				C921486616B59DC8007323D0 /* nav-backward.png in Resources */,
+				C921486716B59DC8007323D0 /* nav-forward.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
