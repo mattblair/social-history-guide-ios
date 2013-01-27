@@ -1,0 +1,17 @@
+
+#import "JSONKit.h"
+
+Commit: 82157634ca0ca5b6a4a67a194dd11f15d9b72835 from 120712
+Cloned from: https://github.com/johnezang/JSONKit on 120804
+Copied from ~/Documents/codeProjects/3rdParty/JSONKit
+
+NOTE: JSONKit does not support ARC, but the -fno-objc-arc flag seems to work.
+For Background:
+https://github.com/johnezang/JSONKit/issues/37
+
+
+#import "Reachability.h"
+
+Commit: dbc8bd178a6a0e06d963cd91812a6bc0b19fc235 from 130121
+Cloned from: https://github.com/tonymillion/Reachability
+Copied from: ~/Documents/codeProjects/3rdParty/ReachabilityARC

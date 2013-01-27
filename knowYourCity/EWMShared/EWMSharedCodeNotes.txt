@@ -3,4 +3,7 @@ Each of these shared classes is a work-in-progress. This notes indicate the last
 [130127]
 
 Imported EWWebViewController from poetryboxes
-Imported EWAudioPlayerView from publicArtPDX
+
+Imported EWAudioPlayerView from publicArtPDX. 
+Switched to a three letter prefix: EWMAudioPlayerView
+Because I'll be adding more styling properties here, this now becomes the primary version of the code.
