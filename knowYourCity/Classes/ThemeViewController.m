@@ -198,8 +198,8 @@
     
     if (!self.sharingMenu) {
         
-        // Facebook should be iOS 6 only, so test for HAS_SOCIAL_FRAMEWORK
-        if (YES) {
+        // Facebook should be iOS 6 only
+        if (HAS_SOCIAL_FRAMEWORK) {
             
             // Use UIActivity instead on iOS 6?
             self.sharingMenu = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Share", @"Title of sharing menu")

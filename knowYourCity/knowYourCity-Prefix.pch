@@ -23,7 +23,7 @@
 
 #define ON_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
-#define HAS_SOCIAL_FRAMEWORK [SLComposeViewController class]
+#define HAS_SOCIAL_FRAMEWORK NSClassFromString(@"SLComposeViewController")
 
 #define HAS_TWITTER_FRAMEWORK [TWTweetComposeViewController class]
 
