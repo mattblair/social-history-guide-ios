@@ -17,12 +17,15 @@
 
 // could use a UITableView here, but it would be more header/footer than cells, so that seems kind of restricting
 @property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) UIBarButtonItem *sharingButton;
 @property (strong, nonatomic) UIImageView *themeGraphic;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *introLabel;
 
 @property (strong, nonatomic) UILabel *guestLabel;
 @property (strong, nonatomic) GuestStubView *guestView;
+
+@property (strong, nonatomic) UIActionSheet *sharingMenu;
 
 @end
 
@@ -48,7 +51,12 @@
     // to hide background image on nav bar
     //[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     
-    // add share button
+    self.sharingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                       target:self
+                                                                       action:@selector(showSharingMenu:)];
+    
+    self.navigationItem.rightBarButtonItem = self.sharingButton;
+    
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.scrollView];
@@ -151,6 +159,11 @@
     self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.yForNextView + 20.0);
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [self closeSharingMenu];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -176,6 +189,105 @@
     storyVC.storyData = @{@"title" : fakeStories[selectedStoryIndex], @"mainText" : introText};
     
     [self.navigationController pushViewController:storyVC animated:YES];
+}
+
+#pragma mark - Show sharing menu
+// might go in a category...
+
+- (void)showSharingMenu:(id)sender {
+    
+    if (!self.sharingMenu) {
+        
+        // Facebook should be iOS 6 only, so test for HAS_SOCIAL_FRAMEWORK
+        if (YES) {
+            
+            // Use UIActivity instead on iOS 6?
+            self.sharingMenu = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Share", @"Title of sharing menu")
+                                                           delegate:self
+                                                  cancelButtonTitle:NSLocalizedString(@"Cancel", @"Title of cancel button on sharing menu")
+                                             destructiveButtonTitle:nil
+                                                  otherButtonTitles:
+                                NSLocalizedString(@"Email", @"Email button on sharing menu"),
+                                NSLocalizedString(@"Send to Twitter", @"Twitter button on sharing menu"),
+                                NSLocalizedString(@"Send to Facebook", @"Facebook button on sharing menu"), nil];
+        } else {
+            self.sharingMenu = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Share", @"Title of sharing menu")
+                                                           delegate:self
+                                                  cancelButtonTitle:NSLocalizedString(@"Cancel", @"Title of cancel button on sharing menu")
+                                             destructiveButtonTitle:nil
+                                                  otherButtonTitles:
+                                NSLocalizedString(@"Email", @"Email button on sharing menu"),
+                                NSLocalizedString(@"Send to Twitter", @"Twitter button on sharing menu"), nil];
+        }
+    }
+    
+    [self.sharingMenu showInView:self.view];
+}
+
+- (void)closeSharingMenu {
+    
+    if ([self.sharingMenu isVisible]) {
+        
+        [self.sharingMenu dismissWithClickedButtonIndex:-1
+                                               animated:YES];
+        
+        // always do this?
+        self.sharingMenu = nil;
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (buttonIndex) {
+            
+        case 0: {
+            
+            [self sendEmail];
+            break;
+        }
+        case 1: {
+            
+            [self sendToTwitter];
+            break;
+        }
+        case 2: {
+            
+            [self sendToFacebook];
+            break;
+        }
+            
+        case 3: {
+            DLog(@"User tapped cancel");
+            break;
+        }
+            
+        case -1: {
+            DLog(@"Sharing menu dismissed automatically");
+            break;
+        }
+            
+        default: {
+            
+            DLog(@"Unhandled sharing menu selection: %d", buttonIndex);
+            break;
+        }
+    }
+}
+
+- (void)sendEmail {
+    
+    DLog(@"Construct an email.");
+}
+
+- (void)sendToTwitter {
+    
+    DLog(@"Make a tweet from from the short social description of the content.");
+}
+
+
+- (void)sendToFacebook {
+    
+    DLog(@"Make a facebook post from the full social description of the the content.");
 }
 
 @end

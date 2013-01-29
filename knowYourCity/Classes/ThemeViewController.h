@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThemeViewController : UIViewController
+@interface ThemeViewController : UIViewController <UIActionSheetDelegate>
 
 // temporary, for prototyping pending Core Data
 // will be replaced by an NSManagedObject subclass called Theme
