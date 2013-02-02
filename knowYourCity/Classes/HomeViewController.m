@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "ThemeViewController.h"
 #import "TidbitListViewController.h"
+#import "EWWebViewController.h"
 
 // temporary, until data loading to Core Data is implemented and populated
 #import "JSONKit.h"
@@ -84,7 +85,19 @@
     
     [super viewWillAppear:animated];
     
+    [self.navigationController setToolbarHidden:NO];
     self.themeTableView.frame = [self.view bounds];
+}
+
+// always show the toolbar for this view controller
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    // could animate toolbar's return here, but themeTableView frame
+    // setting needs to happen after toolbar reappears
+    //[self.navigationController setToolbarHidden:NO animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -198,7 +211,8 @@
     
     // Tidbits
     
-    self.tidbitButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"97-puzzle"]
+    // 97-puzzle, 
+    self.tidbitButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"179-notepad"]
                                                          style:UIBarButtonItemStylePlain
                                                         target:self
                                                         action:@selector(showTidbits)];
@@ -215,7 +229,8 @@
     
     
     // might make more sense to fold this into about section
-    self.newsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"44-shoebox"]
+    // 44-shoebox
+    self.newsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"104-index-cards"]
                                                           style:UIBarButtonItemStylePlain
                                                          target:self
                                                          action:@selector(showNews)];
@@ -252,7 +267,13 @@
 
 - (void)showAbout {
     
-    [self showComingSoon:@"About Page is not yet available."];
+    //[self showComingSoon:@"About Page is not yet available."];
+    
+    EWWebViewController *webVC = [[EWWebViewController alloc] initWithNibName:nil bundle:nil];
+    
+    webVC.displayMode = EWWebViewAboutLocalMode;
+    
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 - (void)showNews {
