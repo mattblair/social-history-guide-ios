@@ -9,6 +9,7 @@
 #import "ThemeViewController.h"
 #import "StoryStubView.h"
 #import "StoryViewController.h"
+#import "StoryStubView.h"
 #import "GuestStubView.h"
 
 @interface ThemeViewController ()
@@ -104,6 +105,27 @@
     
     // Stories buttons (will use a UIView subclass)
     
+    NSDictionary *storyDictionary = @{ @"thumbnail" : @"kycCCBA", @"title" : @"Fascinating Story", @"quote" : @"It was fascinating to think about.", @"mediaType" : @0};
+    
+    StoryStubView *storyStub = [[StoryStubView alloc] initWithDictionary:storyDictionary atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
+    
+    [self.scrollView addSubview:storyStub];
+    
+    self.yForNextView = CGRectGetMaxY(storyStub.frame) + VERTICAL_SPACER_STANDARD;
+    
+    
+    // no image
+    NSDictionary *storyTextDictionary = @{@"title" : @"Another Fascinating Story", @"quote" : @"It was even more fascinating to think about.", @"mediaType" : @2};
+    
+    StoryStubView *storyTextStub = [[StoryStubView alloc] initWithDictionary:storyTextDictionary atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
+    
+    [self.scrollView addSubview:storyTextStub];
+    
+    self.yForNextView = CGRectGetMaxY(storyTextStub.frame) + VERTICAL_SPACER_EXTRA;
+    
+    
+    
+    
     NSArray *fakeStories = [self.themeDictionary objectForKey:@"stories"];
     
     NSUInteger storyCounter = 0;
@@ -185,7 +207,27 @@
     StoryViewController *storyVC = [[StoryViewController alloc] initWithNibName:nil bundle:nil];
     
     NSArray *fakeStories = [self.themeDictionary objectForKey:@"stories"];
-    NSString *introText = @"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    
+    NSString *introText;
+    
+    switch (selectedStoryIndex) {
+        case 0:
+            introText = kPlaceholderTextWords36;
+            break;
+            
+        case 1:
+            introText = kPlaceholderTextWords69;
+            break;
+            
+        case 2:
+            introText = kPlaceholderTextWords102;
+            break;
+            
+        default:
+            introText = kPlaceholderTextWords204;
+            break;
+    }
+    
     storyVC.storyData = @{@"title" : fakeStories[selectedStoryIndex], @"mainText" : introText};
     
     [self.navigationController pushViewController:storyVC animated:YES];

@@ -11,5 +11,7 @@
 @interface StoryStubView : UIView
 
 // will use a story object as an initializer eventually
+// expected keys: thumbnail, title, quote, mediaType
+- (id)initWithDictionary:(NSDictionary *)storyDictionary atOrigin:(CGPoint)origin;
 
 @end
