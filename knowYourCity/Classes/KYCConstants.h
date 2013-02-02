@@ -20,6 +20,20 @@
 // Tag offsets (probably temporary. UIView subclasses could store an identifier.)
 #define STORY_TAG_OFFSET 342938
 
+// tidbits will use this too
+typedef enum KYCStoryMediaType {
+    KYCStoryMediaTypeAudio = 0,       // default
+    KYCStoryMediaTypeAudioText,
+    KYCStoryMediaTypeText,
+    KYCStoryMediaTypePhotoAndCaption, // not much text
+    KYCStoryMediaTypePhotoAndText,    // 50 - 200 words of text
+    KYCStoryMediaTypeBiography,       // a brief profile
+    KYCStoryMediaTypeMapPoints,       // points only
+    KYCStoryMediaTypeMapComplex,      // may include poly-lines and polygrams
+    KYCStoryMediaTypeMapOverlay,      // geo-rectified image to display on map
+    KYCStoryMediaTypeVideo            // not supported in v1.0
+} KYCStoryMediaType;
+
 // Core Data
 
 // EWCoreDataManager Configuration
