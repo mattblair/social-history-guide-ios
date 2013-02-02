@@ -95,3 +95,10 @@ extern NSString* const kPhotoCreditFontName;
 extern CGFloat const kPhotoCreditFontSize;
 extern NSString* const kItalicFontName;
 extern CGFloat const kItalicFontSize;
+
+// Placeholder Text (temporary)
+extern NSString* const kPlaceholderTextWords36;
+extern NSString* const kPlaceholderTextWords52;
+extern NSString* const kPlaceholderTextWords69;
+extern NSString* const kPlaceholderTextWords102;
+extern NSString* const kPlaceholderTextWords204;
