@@ -119,9 +119,31 @@
     
     self.yForNextView = CGRectGetMaxY(self.mainTextLabel.frame) + VERTICAL_SPACER_EXTRA;
     
-    // guest list
     
-    // media, etc.
+    // guest list -- allow for multiple
+    
+    // Guest Label
+    self.guestLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
+    self.guestLabel.numberOfLines = 1;
+    self.guestLabel.text = NSLocalizedString(@"As Told By", @"Heading label for the Guest section of Story View Controller");
+    self.guestLabel.font = [UIFont fontWithName:kTitleFontName size:kSectionTitleFontSize];
+    
+    [self.scrollView addSubview:self.guestLabel];
+    
+    self.yForNextView = CGRectGetMaxY(self.guestLabel.frame) + VERTICAL_SPACER_STANDARD;
+    
+    // Guests (allow for multiple)
+    
+    NSDictionary *guestDictionary = @{@"name" : @"Guest Name", @"title": @"Title or fact that makes us want to read more."};
+    
+    self.guestView = [[GuestStubView alloc] initWithDictionary:guestDictionary
+                                                      atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
+    
+    [self.scrollView addSubview:self.guestView];
+    
+    self.yForNextView = CGRectGetMaxY(self.guestView.frame) + VERTICAL_SPACER_STANDARD;
+    
+    // additional media, etc.
     
 }
 
