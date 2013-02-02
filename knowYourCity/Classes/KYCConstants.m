@@ -82,10 +82,10 @@ NSString* const kFullScreenCameraRequestedNotification = @"kFullScreenCameraRequ
 // <some font property> = [UIFont fontWithName:kLineFontName size:kLineFontSize];
 
 NSString* const kTitleFontName = @"Baskerville-Bold";
-CGFloat const kTitleFontSize = 24.0;
-CGFloat const kSectionTitleFontSize = 20.0;
+CGFloat const kTitleFontSize = 28.0;
+CGFloat const kSectionTitleFontSize = 22.0;
 NSString* const kBodyFontName = @"Baskerville";
-CGFloat const kBodyFontSize = 15.0;
+CGFloat const kBodyFontSize = 16.0;
 NSString* const kPhotoCreditFontName = @"Baskerville-Italic";
 CGFloat const kPhotoCreditFontSize = 12.0;
 NSString* const kItalicFontName = @"Baskerville-SemiBoldItalic"; // should probably match line Font
