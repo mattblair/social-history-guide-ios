@@ -9,7 +9,6 @@
 #import "ThemeViewController.h"
 #import "StoryStubView.h"
 #import "StoryViewController.h"
-#import "StoryStubView.h"
 #import "GuestStubView.h"
 
 @interface ThemeViewController ()
@@ -22,6 +21,9 @@
 @property (strong, nonatomic) UIImageView *themeGraphic;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *introLabel;
+
+// temporary until we have ordered stories available in Core Data
+@property (strong, nonatomic) NSArray *jsonStories;
 
 @property (strong, nonatomic) UILabel *guestLabel;
 @property (strong, nonatomic) GuestStubView *guestView;
@@ -104,7 +106,7 @@
     // Stories label? Does this section need to be titled?
     
     // Stories buttons (will use a UIView subclass)
-    
+    /*
     NSDictionary *storyDictionary = @{ @"thumbnail" : @"kycCCBA", @"title" : @"Fascinating Story", @"quote" : @"It was fascinating to think about.", @"mediaType" : @0};
     
     StoryStubView *storyStub = [[StoryStubView alloc] initWithDictionary:storyDictionary atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
@@ -122,16 +124,32 @@
     [self.scrollView addSubview:storyTextStub];
     
     self.yForNextView = CGRectGetMaxY(storyTextStub.frame) + VERTICAL_SPACER_EXTRA;
+    */
     
-    
-    
-    
-    NSArray *fakeStories = [self.themeDictionary objectForKey:@"stories"];
+    self.jsonStories = [self.themeDictionary objectForKey:@"stories"];
     
     NSUInteger storyCounter = 0;
     
+    for (NSDictionary *storyData in self.jsonStories) {
+        
+        CGPoint storyOrigin = CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView);
+        
+        StoryStubView *aStoryStub = [[StoryStubView alloc] initWithDictionary:storyData
+                                                                     atOrigin:storyOrigin];
+        
+        aStoryStub.tag = STORY_TAG_OFFSET + storyCounter;
+        aStoryStub.delegate = self;
+        
+        [self.scrollView addSubview:aStoryStub];
+        
+        self.yForNextView = CGRectGetMaxY(aStoryStub.frame) + VERTICAL_SPACER_STANDARD;
+                
+        storyCounter++;
+    }
+    
+    // old string based button version
+    /*
     for (NSString *storyName in fakeStories) {
-        // draw a button
         
         UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         
@@ -148,6 +166,7 @@
         
         storyCounter++;
     }
+    */
     
     // Guest Label
     
@@ -194,10 +213,21 @@
 
 #pragma mark - Respond to User Actions
 
+// new way
+- (void)handleSelectionOfStoryStub:(StoryStubView *)storyStub {
+    
+    // just borrow the old functionality, until you have Core Data and store arrays set up
+    [self handleStorySelection:storyStub];
+}
+
+// old button way
 - (void)handleStorySelection:(id)sender {
     
-    // temporary, pending UIView subclass with real identifier as property
+    // may be temporary, pending UIView subclass with real identifier as property
+    // or use the tag as an index on an array of stories
     UIView *selectedView = (UIView *)sender;
+    
+    // bounds check here? tag is an NSInteger, so this could go haywire...
     NSUInteger selectedStoryIndex = selectedView.tag - STORY_TAG_OFFSET;
     
     // push a story VC for that story
@@ -206,29 +236,37 @@
     
     StoryViewController *storyVC = [[StoryViewController alloc] initWithNibName:nil bundle:nil];
     
-    NSArray *fakeStories = [self.themeDictionary objectForKey:@"stories"];
-    
-    NSString *introText;
-    
-    switch (selectedStoryIndex) {
-        case 0:
-            introText = kPlaceholderTextWords36;
-            break;
-            
-        case 1:
-            introText = kPlaceholderTextWords69;
-            break;
-            
-        case 2:
-            introText = kPlaceholderTextWords102;
-            break;
-            
-        default:
-            introText = kPlaceholderTextWords204;
-            break;
-    }
-    
-    storyVC.storyData = @{@"title" : fakeStories[selectedStoryIndex], @"mainText" : introText};
+    if (selectedStoryIndex < [self.jsonStories count]) {
+        
+        // inject intro text here?
+        storyVC.storyData = [self.jsonStories objectAtIndex:selectedStoryIndex];
+        
+    } else {
+        
+        // sub in a bogus dictionary for now
+        
+        NSString *introText;
+        
+        switch (selectedStoryIndex) {
+            case 0:
+                introText = kPlaceholderTextWords36;
+                break;
+                
+            case 1:
+                introText = kPlaceholderTextWords69;
+                break;
+                
+            case 2:
+                introText = kPlaceholderTextWords102;
+                break;
+                
+            default:
+                introText = kPlaceholderTextWords204;
+                break;
+        }
+        
+        storyVC.storyData = @{@"title" : @"A Story Title", @"mainText" : introText};
+    }    
     
     [self.navigationController pushViewController:storyVC animated:YES];
 }

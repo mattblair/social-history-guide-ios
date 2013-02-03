@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StoryStubView.h"
 
-@interface ThemeViewController : UIViewController <UIActionSheetDelegate>
+@interface ThemeViewController : UIViewController <StoryStubDelegate, UIActionSheetDelegate>
 
 // temporary, for prototyping pending Core Data
 // will be replaced by an NSManagedObject subclass called Theme

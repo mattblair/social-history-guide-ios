@@ -128,7 +128,28 @@
                 mediaImage = @"145-persondot";
                 break;
                 
-            default:
+            case KYCStoryMediaTypePhotoAndText:
+                mediaImage = @"41-picture-frame";
+                break;
+                
+            case KYCStoryMediaTypeAudioText:
+            case KYCStoryMediaTypePhotoAndCaption: {
+                
+                mediaImage = @"120-headphones";
+                DLog(@"WARNING: Not implemented yet.");
+                break;
+            }
+                
+            case KYCStoryMediaTypeMapComplex:
+            case KYCStoryMediaTypeMapOverlay:
+            case KYCStoryMediaTypeVideo: {
+                
+                mediaImage = @"120-headphones";
+                DLog(@"WARNING: Media type %d may not be implemented until version 1.1 or later.", mediaType);
+                break;
+            }
+                
+            default: // aka KYCStoryMediaTypeAudio
                 mediaImage = @"120-headphones";
                 break;
         }
@@ -165,7 +186,7 @@
     
     DLog(@"Story Button tapped.");
     
-    // somebody needs to do something about this...
+    [self.delegate handleSelectionOfStoryStub:self];
 }
 
 @end
