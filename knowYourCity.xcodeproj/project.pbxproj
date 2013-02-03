@@ -65,6 +65,7 @@
 		C952427D16B0351600BD8F74 /* japantown-model-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427916B0351600BD8F74 /* japantown-model-ph.jpg */; };
 		C952427E16B0351600BD8F74 /* new-market-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427A16B0351600BD8F74 /* new-market-ph.jpg */; };
 		C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */ = {isa = PBXBuildFile; fileRef = C952428016B03F4700BD8F74 /* UIColor+KYC.m */; };
+		C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */; };
 		C960757016AC59B2004B2672 /* logo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756E16AC59B2004B2672 /* logo_header.png */; };
 		C960757116AC59B2004B2672 /* logo_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756F16AC59B2004B2672 /* logo_header@2x.png */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
@@ -170,6 +171,8 @@
 		C952427A16B0351600BD8F74 /* new-market-ph.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "new-market-ph.jpg"; path = "Resources/photos/new-market-ph.jpg"; sourceTree = "<group>"; };
 		C952427F16B03F4700BD8F74 /* UIColor+KYC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+KYC.h"; path = "Classes/UIColor+KYC.h"; sourceTree = "<group>"; };
 		C952428016B03F4700BD8F74 /* UIColor+KYC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KYC.m"; path = "Classes/UIColor+KYC.m"; sourceTree = "<group>"; };
+		C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitTableViewCell.h; path = Classes/TidbitTableViewCell.h; sourceTree = "<group>"; };
+		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
 		C960756E16AC59B2004B2672 /* logo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header.png; sourceTree = "<group>"; };
 		C960756F16AC59B2004B2672 /* logo_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_header@2x.png"; sourceTree = "<group>"; };
 		C960757416AC59C4004B2672 /* kyc-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kyc-data.json"; sourceTree = "<group>"; };
@@ -464,6 +467,8 @@
 				C93030F716AB33570039D7B8 /* GuestViewController.m */,
 				C93030F916AB33710039D7B8 /* TidbitListViewController.h */,
 				C93030FA16AB33710039D7B8 /* TidbitListViewController.m */,
+				C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */,
+				C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */,
 				C93030FC16AB33890039D7B8 /* TidbitDetailViewController.h */,
 				C93030FD16AB33890039D7B8 /* TidbitDetailViewController.m */,
 			);
@@ -641,6 +646,7 @@
 				C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */,
 				C921485216B59417007323D0 /* EWMAudioPlayerView.m in Sources */,
 				C921485916B59B4E007323D0 /* Reachability.m in Sources */,
+				C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
