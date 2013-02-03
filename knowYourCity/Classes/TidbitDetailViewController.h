@@ -10,4 +10,7 @@
 
 @interface TidbitDetailViewController : UIViewController
 
+// replaced with an object or an identifier after Core Data
+@property (strong, nonatomic) NSDictionary *tidbitData;
+
 @end
