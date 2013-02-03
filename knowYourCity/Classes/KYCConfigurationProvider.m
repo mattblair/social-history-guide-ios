@@ -44,7 +44,11 @@
             break;
             
         case KYCStoryMediaTypeBiography:
-            mediaImage = @"145-persondot";
+            mediaImage = @"111-user";
+            break;
+            
+        case KYCStoryMediaTypeQuote:
+            mediaImage = @"145-persondot"; // or 08-chat
             break;
             
         case KYCStoryMediaTypePhotoAndText:

@@ -22,6 +22,8 @@
 
 // Media Type will determine layout and/or which view controllers to use to present content
 // tidbits will use this too
+
+// what about letters/ documents?
 typedef enum KYCStoryMediaType {
     KYCStoryMediaTypeAudio = 0,       // default
     KYCStoryMediaTypeAudioText,
@@ -29,6 +31,7 @@ typedef enum KYCStoryMediaType {
     KYCStoryMediaTypePhotoAndCaption, // not much text
     KYCStoryMediaTypePhotoAndText,    // 50 - 200 words of text
     KYCStoryMediaTypeBiography,       // a brief profile
+    KYCStoryMediaTypeQuote,
     KYCStoryMediaTypeMapPoints,       // points only
     KYCStoryMediaTypeMapComplex,      // may include poly-lines and polygrams
     KYCStoryMediaTypeMapOverlay,      // geo-rectified image to display on map
