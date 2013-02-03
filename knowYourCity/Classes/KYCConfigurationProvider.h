@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-// this class has utility methods for layout, fonts and data that don't fit elsewhere
+#define KYCSTYLE [KYCConfigurationProvider sharedInstance]
+
+// this class has utility methods for style elments like layout, fonts, images and
+// data that don't fit elsewhere
 
 @interface KYCConfigurationProvider : NSObject
+
+
++ (KYCConfigurationProvider *)sharedInstance;
+
+- (NSString *)imageNameForMediaType:(KYCStoryMediaType)mediaType;
 
 @end
