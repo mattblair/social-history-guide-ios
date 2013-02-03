@@ -12,12 +12,16 @@
 #import "EWWebViewController.h"
 
 // temporary, until data loading to Core Data is implemented and populated
+// then all data access should move to the singleton Core Data
 #import "JSONKit.h"
 
 @interface HomeViewController ()
 
+// temporary -- for access to JSON data
 @property (strong, nonatomic) NSArray *themeList;
-@property (strong, nonatomic) NSDictionary *seedDictionary; // temporary
+@property (strong, nonatomic) NSArray *tidbitList;
+@property (strong, nonatomic) NSDictionary *seedDictionary;
+
 @property (strong, nonatomic) UITableView *themeTableView;
 
 // toolbar buttons
@@ -25,7 +29,7 @@
 @property (strong, nonatomic) UIBarButtonItem *tidbitButton;
 @property (strong, nonatomic) UIBarButtonItem *newsButton;
 @property (strong, nonatomic) UIBarButtonItem *infoButton;
-@property (strong, nonatomic) UIBarButtonItem *timelineButton;
+@property (strong, nonatomic) UIBarButtonItem *timelineButton; // iPad only? 1.x?
 
 @end
 
@@ -40,6 +44,7 @@
         
         [self loadDataFromJSON];
         self.themeList = [self.seedDictionary objectForKey:@"themes"];
+        self.tidbitList = [self.seedDictionary objectForKey:@"tidbits"];
         
         // use this if you are showing standard text in nav bars and back buttons
         //self.title = NSLocalizedString(@"Themes", @"Title for Home View Controller");
@@ -262,7 +267,13 @@
 
 - (void)showTidbits {
     
-    [self showComingSoon:@"Tidbits list is not yet available."];
+    //[self showComingSoon:@"Tidbits list is not yet available."];
+    
+    TidbitListViewController *tidbitVC = [[TidbitListViewController alloc] initWithNibName:nil
+                                                                                    bundle:nil];
+    tidbitVC.tidbitList = self.tidbitList;
+    
+    [self.navigationController pushViewController:tidbitVC animated:YES];
 }
 
 - (void)showAbout {

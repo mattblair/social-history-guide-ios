@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TidbitListViewController : UIViewController
+@interface TidbitListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+// received from HomeVC until Core Data is configured
+// at that point, fetch directly from data manager
+@property (strong, nonatomic) NSArray *tidbitList;
 
 @end
