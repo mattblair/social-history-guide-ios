@@ -675,7 +675,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_SPECIFIC_BUNDLE_ID = com.elsewiseapps.knowYourCity.debug;
-				BUILD_SPECIFIC_DISPLAY_NAME = "KYC∂0.8";
+				BUILD_SPECIFIC_DISPLAY_NAME = "KYC 0.8 ∂";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
