@@ -512,5 +512,156 @@
                            "mainText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
                            }]
         }
+    ],
+	"tidbits": [
+		{
+		    "geometry": {
+		        "coordinates": [
+		            -122.660835, 
+		            45.5590527
+		        ], 
+		        "type": "Point"
+		    }, 
+		    "image": "japantown-model-ph.jpg", 
+		    "imageCaption": "", 
+		    "imageCredit": "", 
+		    "mediaType": 4,
+		    "publicationDate": "2013-03-28T13:31:03-0700",
+			"text" : "Japantown was much larger before interment in 1942. This model, in the window of the Nikkei Legacy Center, gives a sense of its size, and the kind of businesses that served this community.",
+		    "theme": "Japanese-American History", 
+		    "title": "Model of Japantown", 
+		    "twitterTemplate": "", 
+		    "year": 1941
+		},
+        {
+		    "geometry": {
+		        "coordinates": [
+		            -122.660835, 
+		            45.5590527
+		        ], 
+		        "type": "Point"
+		    }, 
+		    "image": "new-market-ph.jpg", 
+		    "imageCaption": "", 
+		    "imageCredit": "", 
+		    "mediaType": 4, 
+		    "publicationDate": "2013-01-28T13:31:03-0700",
+			"text" : "Based on a Renaissance building in Piazza San Marco in Venice, Italy.",
+		    "theme": "Cast Iron District", 
+		    "title": "New Market Building", 
+		    "twitterTemplate": "", 
+		    "year": 1889
+		},
+        {
+		    "geometry": {
+		        "coordinates": [
+		            -122.660835, 
+		            45.5590527
+		        ], 
+		        "type": "Point"
+		    }, 
+		    "image": "", 
+		    "imageCaption": "", 
+		    "imageCredit": "", 
+		    "mediaType": 2, 
+		    "publicationDate": "2013-05-28T13:31:03-0700",
+            "text" : "Chapman and Lownsdale Squares were the site of labor protests long before the parks were occupied in 2011.",
+		    "theme": "Worker's History",
+		    "title": "Before Occupy",
+		    "twitterTemplate": "", 
+		    "year": 1925
+		}, 
+        {
+		    "geometry": {
+		        "coordinates": [
+		            -122.660835, 
+		            45.5590527
+		        ], 
+		        "type": "Point"
+		    }, 
+		    "image": "", 
+		    "imageCaption": "", 
+		    "imageCredit": "", 
+		    "mediaType": 0, 
+		    "publicationDate": "2013-05-28T13:31:03-0700", 
+		    "theme": "Women's History", 
+		    "title": "Walk of the Heroines", 
+		    "twitterTemplate": "", 
+		    "year": 2009
+		},
+        {
+		    "geometry": {
+		        "coordinates": [
+		            -122.660835, 
+		            45.5590527
+		        ], 
+		        "type": "Point"
+		    }, 
+		    "image": "", 
+		    "imageCaption": "", 
+		    "imageCredit": "", 
+		    "mediaType": 5, 
+		    "publicationDate": "2013-05-28T13:31:03-0700",
+		    "theme": "Native History", 
+		    "title": "A profile of Someone", 
+		    "twitterTemplate": "", 
+		    "year": 1782
+		},
+        {
+		    "geometry": {
+		        "coordinates": [
+		            -122.660835, 
+		            45.5590527
+		        ], 
+		        "type": "Point"
+		    }, 
+		    "image": "waterfront1879crop.jpg", 
+		    "imageCaption": "cropped", 
+		    "imageCredit": " crop of http://upload.wikimedia.org/wikipedia/commons/7/78/1879_map_of_Portland,_Oregon_with_Goose_Hollow_boundary_and_geographical_place_names_overlaid.jpg",
+		    "mediaType": 4,
+		    "publicationDate": "2013-05-28T13:31:03-0700", 
+		    "theme": "Cast Iron District", 
+		    "title": "The Waterfront in 1879", 
+		    "twitterTemplate": "", 
+		    "year": 1879
+		},
+		{
+		    "geometry": {
+		        "coordinates": [
+		            -122.660835, 
+		            45.5590527
+		        ],
+		        "type": "Point"
+		    }, 
+		    "image": "54_1974.jpg", 
+		    "imageCaption": "", 
+		    "imageCredit": "http://www.portlandonline.com/auditor/index.cfm?&a=24845&c=27928",
+		    "mediaType": 4,
+		    "publicationDate": "2013-05-28T13:31:03-0700",
+            "text" : "Highway 99W, also known as Harbor Drive, was demolished in 1974 to make way for a riverside park. The park is named Tom McCall Waterfront Park, in honor of Oregon governor Tom McCall.",
+		    "theme": "Dead Freeways or Urban Planning", 
+		    "title": "The Freeway that Became a Park",
+		    "twitterTemplate": "", 
+		    "year": 1974
+		},
+        {
+		    "geometry": {
+		        "coordinates": [
+		            -122.660835, 
+		            45.5590527
+		        ], 
+		        "type": "Point"
+		    }, 
+		    "image": "", 
+		    "imageCaption": "", 
+		    "imageCredit": "", 
+		    "mediaType": 6, 
+		    "publicationDate": "2013-05-28T13:31:03-0700",
+            "text" : "\"A fascinating quote about something interesting...\"\n – Interesting Person",
+		    "theme": "Huber's Restaurant",
+		    "title": "\"...and then Prohibition started...\"",
+		    "twitterTemplate": "", 
+		    "year": 1923
+		}
     ]
 }
