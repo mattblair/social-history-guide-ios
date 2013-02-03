@@ -17,9 +17,10 @@
 #define MAIN_PHOTO_WIDTH 320.0
 #define MAIN_PHOTO_HEIGHT 240.0
 
-// Tag offsets (probably temporary. UIView subclasses could store an identifier.)
+// Tag offsets (probably temporary. UIView subclasses could store an identifier instead.
 #define STORY_TAG_OFFSET 342938
 
+// Media Type will determine layout and/or which view controllers to use to present content
 // tidbits will use this too
 typedef enum KYCStoryMediaType {
     KYCStoryMediaTypeAudio = 0,       // default
@@ -31,7 +32,7 @@ typedef enum KYCStoryMediaType {
     KYCStoryMediaTypeMapPoints,       // points only
     KYCStoryMediaTypeMapComplex,      // may include poly-lines and polygrams
     KYCStoryMediaTypeMapOverlay,      // geo-rectified image to display on map
-    KYCStoryMediaTypeVideo            // not supported in v1.0
+    KYCStoryMediaTypeVideo            // not supported in v1.0, or until we have video
 } KYCStoryMediaType;
 
 // Core Data

@@ -49,7 +49,8 @@
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.scrollView];
     
-    // layout content
+    // layout content -- mediaType will drive this
+    
     self.yForNextView = 0.0;
     
     // image/gallery
