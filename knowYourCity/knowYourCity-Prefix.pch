@@ -15,6 +15,7 @@
     #import "KYCConstants.h"
     #import "UIColor+KYC.h"
     //#import "EWCoreDataManager.h"
+    #import "KYCConfigurationProvider.h"
 
     // testflight
     #import "TestFlight.h"
@@ -24,8 +25,6 @@
 #define ON_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 #define HAS_SOCIAL_FRAMEWORK NSClassFromString(@"SLComposeViewController")
-
-#define HAS_TWITTER_FRAMEWORK [TWTweetComposeViewController class]
 
 #define IN_LANDSCAPE UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
 
