@@ -30,6 +30,8 @@ profile
 
 *~.nib/
 
+*.mobileprovision
+
 # project-related
 
 *.pbxuser
