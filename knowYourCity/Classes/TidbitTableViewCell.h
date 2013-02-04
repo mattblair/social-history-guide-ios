@@ -10,4 +10,7 @@
 
 @interface TidbitTableViewCell : UITableViewCell
 
+// expected keys: title, theme, mediaType
+- (void)updateWithDictionary:(NSDictionary *)tidbitDictionary;
+
 @end

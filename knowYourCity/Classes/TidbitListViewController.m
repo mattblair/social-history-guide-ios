@@ -8,6 +8,7 @@
 
 #import "TidbitListViewController.h"
 #import "TidbitDetailViewController.h"
+#import "TidbitTableViewCell.h"
 
 @interface TidbitListViewController ()
 
@@ -68,6 +69,7 @@
     return [self.tidbitList count];
 }
 
+// standard UIKit cell
 - (UITableViewCell *)updateCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
     // After Core Data: transform a Tidbit NSManagedObject Subclass into the cell config dictionary
@@ -76,28 +78,41 @@
     
     NSDictionary *tidbitDictionary = self.tidbitList[indexPath.row];
     
-    if (indexPath.row >= [self.tidbitList count]) {
-        
-        cell.textLabel.text = NSLocalizedString(@"Not Found.", @"Not found descriptive text.");
-        DLog(@"Couldn't convert section %d and row %d into a theme.", indexPath.section, indexPath.row);
-        
-    } else {
-        cell.textLabel.text = [tidbitDictionary objectForKey:@"title"];
-    }
+     if (indexPath.row >= [self.tidbitList count]) {
+     
+     cell.textLabel.text = NSLocalizedString(@"Not Found.", @"Not found descriptive text.");
+     DLog(@"Couldn't convert section %d and row %d into a theme.", indexPath.section, indexPath.row);
+     
+     } else {
+     cell.textLabel.text = [tidbitDictionary objectForKey:@"title"];
+     }
+     
+     NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
+     KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : 0;
+     
+     cell.imageView.image = [UIImage imageNamed:[KYCSTYLE imageNameForMediaType:mediaType]];
+     
+     cell.textLabel.accessibilityLabel = cell.textLabel.text;
+     cell.textLabel.accessibilityHint = NSLocalizedString(@"Tidbit Title", @"Hint for Tidbit title in tidbit list.");
+     
+     cell.textLabel.font = [UIFont fontWithName:kBodyFontName size:17.0];
+     cell.textLabel.textColor = [UIColor blackColor];
+     
+     cell.selectionStyle = UITableViewCellSelectionStyleGray;
+     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
-    KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : 0;
+    return cell;
+}
+
+// custom cell
+
+- (TidbitTableViewCell *)updateCustomCell:(TidbitTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-    cell.imageView.image = [UIImage imageNamed:[KYCSTYLE imageNameForMediaType:mediaType]];
+    // After Core Data: transform a Tidbit NSManagedObject Subclass into the cell config dictionary
     
-    cell.textLabel.accessibilityLabel = cell.textLabel.text;
-    cell.textLabel.accessibilityHint = NSLocalizedString(@"Tidbit Title", @"Hint for Tidbit title in tidbit list.");
+    // read more: http://inessential.com/2012/12/31/uitableviewcell_is_not_a_controller
     
-    cell.textLabel.font = [UIFont fontWithName:kBodyFontName size:17.0];
-    cell.textLabel.textColor = [UIColor blackColor];
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [cell updateWithDictionary:self.tidbitList[indexPath.row]];
     
     return cell;
 }
@@ -106,13 +121,18 @@
     
     static NSString *CellIdentifier = @"TidbitCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TidbitTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:CellIdentifier];
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+//                                      reuseIdentifier:CellIdentifier];
+        cell = [[TidbitTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                          reuseIdentifier:CellIdentifier];
     }
     
-    return [self updateCell:cell atIndexPath:indexPath];
+    //return [self updateCell:cell atIndexPath:indexPath];
+    return [self updateCustomCell:cell atIndexPath:indexPath];
 }
 
 // if presented chronologically, might use sections for months. See L&V fragments for example.
