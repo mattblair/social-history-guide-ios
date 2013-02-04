@@ -357,17 +357,168 @@
 - (void)sendEmail {
     
     DLog(@"Construct an email.");
+    
+    if ([MFMailComposeViewController canSendMail]) {  //verify that mail is configured on the device
+		
+		MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
+		
+		mailVC.mailComposeDelegate = self;
+		
+		mailVC.navigationBar.tintColor = [UIColor kycGray];
+		
+        NSString *themeText = [self.themeDictionary objectForKey:@"title"];
+        
+        // add Photo?
+        
+		NSString *messageBody = [NSString stringWithFormat:@"I'm learning about %@ in Portland, Oregon with the Know Your City App, and I thought you might be interested. %@", themeText, kEmailFooter];
+        
+		[mailVC setSubject:[NSString stringWithFormat:@"%@ in Portland", themeText]];
+		[mailVC setMessageBody:messageBody isHTML:NO];
+		
+        [self presentViewController:mailVC animated:YES completion:NULL];
+		
+	}
+	else {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Mail Not Available"
+														message:@"Please configure your device to send email and try again."
+													   delegate:self
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+		[alert show];
+	}
+}
+
+// mainly for testing -- do we really need this?
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    // log the results during testing
+    
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Email result: canceled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Email result: saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Email result: sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Email result: failed");
+            break;
+        default:
+            NSLog(@"Email result: not sent");
+            break;
+    }
+	
+	
+	// dismiss the controller
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)sendToTwitter {
     
     DLog(@"Make a tweet from from the short social description of the content.");
+    
+    // this would use a property on the object, not be constructed here from the title
+    
+    NSString *themeText = [self.themeDictionary objectForKey:@"title"];
+    
+    NSString *messageBody = [NSString stringWithFormat:@"I'm learning about %@ in Portland, Oregon with the Know Your City App.", themeText];
+    
+    // this would be a permalink specific to each theme/story/tidbit
+    NSURL *placeholderURL = [NSURL URLWithString:@"http://www.knowyourcity.org"];
+    
+    if (HAS_SOCIAL_FRAMEWORK) { // iOS 6-style
+        
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+            
+            SLComposeViewController *twitterVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            
+            [twitterVC setInitialText:messageBody];
+            
+            UIImage *themeImage = self.themeGraphic.image;
+            
+            if (themeImage) {
+                [twitterVC addImage:themeImage];
+            }
+            
+            [twitterVC addURL:placeholderURL];
+            
+            [self presentViewController:twitterVC animated:YES completion:NULL];
+            
+        } else {
+            
+            DLog(@"No Twitter. Alert user?");
+        }
+        
+        
+    } else if ([TWTweetComposeViewController canSendTweet]) {
+        
+        TWTweetComposeViewController *tweetVC = [[TWTweetComposeViewController alloc] init];
+        
+        [tweetVC setInitialText:messageBody];
+        
+        UIImage *themeImage = self.themeGraphic.image;
+        
+        if (themeImage) {
+            [tweetVC addImage:themeImage];
+        }
+        
+        
+        [tweetVC addURL:placeholderURL];
+        
+        // set completion handler?
+        
+        //typedef void (^TWTweetComposeViewControllerCompletionHandler)(TWTweetComposeViewControllerResult result);
+        // result is either cancelled or done
+        
+	    [self presentViewController:tweetVC animated:YES completion:NULL];
+    }
+    else {
+        
+        DLog(@"Can't send tweet.");
+        // prompt them to set up account? Or does the framework do that?
+    }
 }
 
 
 - (void)sendToFacebook {
     
     DLog(@"Make a facebook post from the full social description of the the content.");
+    
+    // check for login?
+    
+    // this would use a property on the object, not be constructed here from the title
+    
+    NSString *themeText = [self.themeDictionary objectForKey:@"title"];
+    
+    NSString *messageBody = [NSString stringWithFormat:@"I'm learning about %@ in Portland, Oregon with the Know Your City App.", themeText];
+    
+    // this would be a permalink specific to each theme/story/tidbit
+    NSURL *placeholderURL = [NSURL URLWithString:@"http://www.knowyourcity.org"];
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        
+        SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [facebookVC setInitialText:messageBody];
+        
+        UIImage *themeImage = self.themeGraphic.image;
+        
+        if (themeImage) {
+            [facebookVC addImage:themeImage];
+        }
+        
+        [facebookVC addURL:placeholderURL];
+        
+        [self presentViewController:facebookVC animated:YES completion:NULL];
+        
+    } else {
+        
+        DLog(@"No Facebook. Alert user?");
+    }
 }
 
 @end

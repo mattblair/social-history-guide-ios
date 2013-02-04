@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90E5DE616C00C3200FFB1AF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E5DE516C00C3200FFB1AF /* MessageUI.framework */; };
 		C9118C1616BECC48009A890D /* KYCConfigurationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C9118C1516BECC48009A890D /* KYCConfigurationProvider.m */; };
 		C9118C1916BEEFAF009A890D /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1716BEEFAE009A890D /* 111-user.png */; };
 		C9118C1A16BEEFAF009A890D /* 08-chat.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1816BEEFAF009A890D /* 08-chat.png */; };
@@ -101,6 +102,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C90E5DE516C00C3200FFB1AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C9118C1416BECC48009A890D /* KYCConfigurationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCConfigurationProvider.h; path = Classes/KYCConfigurationProvider.h; sourceTree = "<group>"; };
 		C9118C1516BECC48009A890D /* KYCConfigurationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCConfigurationProvider.m; path = Classes/KYCConfigurationProvider.m; sourceTree = "<group>"; };
 		C9118C1716BEEFAE009A890D /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "111-user.png"; path = "Resources/glyphish-placeholders/111-user.png"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90E5DE616C00C3200FFB1AF /* MessageUI.framework in Frameworks */,
 				C990649616B82B1B00421288 /* Accounts.framework in Frameworks */,
 				C990649716B82B1B00421288 /* Social.framework in Frameworks */,
 				C990649816B82B1B00421288 /* Twitter.framework in Frameworks */,
@@ -245,6 +248,7 @@
 		C92666DD169DC6920061F9AD = {
 			isa = PBXGroup;
 			children = (
+				C90E5DE516C00C3200FFB1AF /* MessageUI.framework */,
 				C92666F2169DC6920061F9AD /* knowYourCity */,
 				C92666EB169DC6920061F9AD /* Frameworks */,
 				C92666E9169DC6920061F9AD /* Products */,
