@@ -517,8 +517,8 @@
 		{
 		    "geometry": {
 		        "coordinates": [
-		            -122.660835, 
-		            45.5590527
+		            -122.672499,
+		            45.524182
 		        ], 
 		        "type": "Point"
 		    }, 
@@ -536,8 +536,8 @@
         {
 		    "geometry": {
 		        "coordinates": [
-		            -122.660835, 
-		            45.5590527
+		            -122.671363,
+		            45.521951
 		        ], 
 		        "type": "Point"
 		    }, 
@@ -555,8 +555,8 @@
         {
 		    "geometry": {
 		        "coordinates": [
-		            -122.660835, 
-		            45.5590527
+		            -122.677756,
+		            45.515350
 		        ], 
 		        "type": "Point"
 		    }, 
@@ -574,8 +574,8 @@
         {
 		    "geometry": {
 		        "coordinates": [
-		            -122.660835, 
-		            45.5590527
+		            -122.686928,
+		            45.512101
 		        ], 
 		        "type": "Point"
 		    }, 
@@ -589,29 +589,11 @@
 		    "twitterTemplate": "", 
 		    "year": 2009
 		},
-        {
+		{
 		    "geometry": {
 		        "coordinates": [
-		            -122.660835, 
-		            45.5590527
-		        ], 
-		        "type": "Point"
-		    }, 
-		    "image": "", 
-		    "imageCaption": "", 
-		    "imageCredit": "", 
-		    "mediaType": 5, 
-		    "publicationDate": "2013-05-28T13:31:03-0700",
-		    "theme": "Native History", 
-		    "title": "A profile of Someone", 
-		    "twitterTemplate": "", 
-		    "year": 1782
-		},
-        {
-		    "geometry": {
-		        "coordinates": [
-		            -122.660835, 
-		            45.5590527
+		            -122.669536,
+		            45.524025
 		        ], 
 		        "type": "Point"
 		    }, 
@@ -628,8 +610,8 @@
 		{
 		    "geometry": {
 		        "coordinates": [
-		            -122.660835, 
-		            45.5590527
+		            -122.672689,
+		            45.515901
 		        ],
 		        "type": "Point"
 		    }, 
@@ -639,7 +621,7 @@
 		    "mediaType": 4,
 		    "publicationDate": "2013-05-28T13:31:03-0700",
             "text" : "Highway 99W, also known as Harbor Drive, was demolished in 1974 to make way for a riverside park. The park is named Tom McCall Waterfront Park, in honor of Oregon governor Tom McCall.",
-		    "theme": "Dead Freeways or Urban Planning", 
+		    "theme": "Urban Planning", 
 		    "title": "The Freeway that Became a Park",
 		    "twitterTemplate": "", 
 		    "year": 1974
@@ -647,8 +629,26 @@
         {
 		    "geometry": {
 		        "coordinates": [
-		            -122.660835, 
-		            45.5590527
+		            -122.667300,
+		            45.513579
+		        ], 
+		        "type": "Point"
+		    }, 
+		    "image": "", 
+		    "imageCaption": "", 
+		    "imageCredit": "", 
+		    "mediaType": 5, 
+		    "publicationDate": "2013-05-28T13:31:03-0700",
+		    "theme": "Native History", 
+		    "title": "A profile of Someone You Want to Meet", 
+		    "twitterTemplate": "", 
+		    "year": 1782
+		},
+        {
+		    "geometry": {
+		        "coordinates": [
+		            -122.674699, 
+		            45.519985
 		        ], 
 		        "type": "Point"
 		    }, 
