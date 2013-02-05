@@ -78,17 +78,20 @@ NSString* const kFullScreenCameraRequestedNotification = @"kFullScreenCameraRequ
 // Options to consider:
 // Georgia-Bold, Georgia-Italic, Georgia
 // Palatino-Roman, Palatino-Italic Palatino-Bold Palatino-BoldItalic
+// Baskerville | Baskerville-Bold | Baskerville-Italic | Baskerville-SemiBoldItalic
 // Example usage:
 // <some font property> = [UIFont fontWithName:kLineFontName size:kLineFontSize];
+// AmericanTypewriter | AmericanTypewriter-Bold | AmericanTypewriter-Light
 
-NSString* const kTitleFontName = @"Baskerville-Bold";
+
+NSString* const kTitleFontName = @"AmericanTypewriter-Bold"; //
 CGFloat const kTitleFontSize = 28.0;
 CGFloat const kSectionTitleFontSize = 22.0;
-NSString* const kBodyFontName = @"Baskerville";
+NSString* const kBodyFontName = @"AmericanTypewriter";
 CGFloat const kBodyFontSize = 16.0;
-NSString* const kPhotoCreditFontName = @"Baskerville-Italic";
+NSString* const kPhotoCreditFontName = @"Georgia-ItalicAmericanTypewriter-Light";
 CGFloat const kPhotoCreditFontSize = 12.0;
-NSString* const kItalicFontName = @"Baskerville-SemiBoldItalic"; // should probably match line Font
+NSString* const kItalicFontName = @"Futura-MediumItalic"; // should probably match line Font
 CGFloat const kItalicFontSize = 12.0;
 
 // Placeholder Text (temporary)
