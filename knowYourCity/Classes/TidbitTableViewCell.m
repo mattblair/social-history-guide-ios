@@ -20,6 +20,8 @@
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *themeLabel;
 
+@property (strong, nonatomic) UILabel *yearLabel;
+
 // action button
 @property (strong, nonatomic) UIButton *selectionButton;
 
@@ -32,8 +34,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        CGFloat textX = 42.0;
-        CGFloat textWidth = self.frame.size.width - textX - MEDIA_BUTTON_SIZE - TIDBIT_CELL_MARGIN*3.0;
+        CGFloat textX = 50.0;
+        //CGFloat textWidth = self.frame.size.width - textX - MEDIA_BUTTON_SIZE - TIDBIT_CELL_MARGIN*3.0;
+        CGFloat textWidth = 210.0;
         
         // media
         
@@ -76,13 +79,25 @@
         
         // what else?
         
-        // action button
-        self.selectionButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+        // action button?
+        //self.selectionButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
         
         // this is the reported size before of UIButtonTypeInfoDark
-        self.selectionButton.frame = CGRectMake(280.0, 23.0, 18.0, 19.0);
+        //self.selectionButton.frame = CGRectMake(280.0, 23.0, 18.0, 19.0);
+        //[self addSubview:self.selectionButton];
         
-        [self addSubview:self.selectionButton];
+        // title
+        CGRect yearRect = CGRectMake(260.0, 20.0, 45.0, 20.0);
+        
+        self.yearLabel = [[UILabel alloc] initWithFrame:yearRect];
+        self.yearLabel.text = @"1972";
+        self.yearLabel.font = [UIFont fontWithName:kItalicFontName size:18.0];
+        self.yearLabel.textAlignment = UITextAlignmentCenter;
+        self.yearLabel.textColor = [UIColor whiteColor];
+        self.yearLabel.backgroundColor = [UIColor blackColor];
+        
+        [self addSubview:self.yearLabel];
+        
     }
     return self;
 }
@@ -98,6 +113,13 @@
     
     self.titleLabel.text = [tidbitDictionary objectForKey:@"title"];
     self.themeLabel.text = [tidbitDictionary objectForKey:@"theme"];
+    
+    NSNumber *yearNumber = [tidbitDictionary objectForKey:@"year"];
+    if (yearNumber) {
+        self.yearLabel.text = [yearNumber stringValue];
+    } else {
+        self.yearLabel.hidden = YES;
+    }
     
     NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
     KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : KYCStoryMediaTypeAudio;
