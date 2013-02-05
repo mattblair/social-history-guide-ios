@@ -78,7 +78,7 @@
     NSString *textFromJSON = [self.tidbitData objectForKey:@"text"];
     
     // obviously temporary, until we have data
-    NSString *tidbitText = textFromJSON ? : @"(Tidbits are little \'bites\' of information we'll release over time – maybe 6 to 10 a month. Each one is categorized by theme, like a story, but they are much smaller than stories, and have only a single item of text or sound or an image.)";
+    NSString *tidbitText = textFromJSON ? : @"(Tidbits are little \'bites\' of information we'll release over time – maybe 6 to 10 a month. Each one is categorized by theme, like a story, but they are much smaller than stories, and have only a single item of text or sound or an image. On the screen that lists them, we could show the newest at the top, or sort by the year of the event/photo, or by theme. These will also probably all have a fixed location, so we could show them on a map.)";
     
     self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
     self.textLabel.numberOfLines = 0;
