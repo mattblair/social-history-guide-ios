@@ -10,6 +10,7 @@
 #import "ThemeViewController.h"
 #import "TidbitListViewController.h"
 #import "EWWebViewController.h"
+#import "MapViewController.h"
 
 // temporary, until data loading to Core Data is implemented and populated
 // then all data access should move to the singleton Core Data
@@ -262,7 +263,14 @@
 
 - (void)showMap {
     
-    [self showComingSoon:@"Map View is not yet available."];
+    //[self showComingSoon:@"Map View is not yet available."];
+    
+    MapViewController *mapVC = [[MapViewController alloc] initWithNibName:nil bundle:nil];
+    mapVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    mapVC.delegate = self;
+    mapVC.dataArray = self.tidbitList;
+    [self presentViewController:mapVC animated:YES completion:NULL];
+    
 }
 
 - (void)showTidbits {
@@ -305,6 +313,15 @@
 										  cancelButtonTitle:nil
 										  otherButtonTitles:@"OK", nil];
 	[alert show];
+}
+
+#pragma mark - MapViewControllerDelegate Methods
+
+- (void)mapViewController:(MapViewController *)mapVC didFinishWithSelection:(NSUInteger *)itemIndex {
+    
+    // no selection to handle yet...
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end
