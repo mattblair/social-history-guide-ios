@@ -36,6 +36,10 @@
 		C916B8E416BD99E4002E29BC /* 18-envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = C916B8CC16BD99E4002E29BC /* 18-envelope.png */; };
 		C916B8E516BD99E4002E29BC /* 120-headphones.png in Resources */ = {isa = PBXBuildFile; fileRef = C916B8CD16BD99E4002E29BC /* 120-headphones.png */; };
 		C916B8E616BD99E4002E29BC /* 121-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = C916B8CE16BD99E4002E29BC /* 121-landscape.png */; };
+		C916E15416C0C8DA00423344 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C916E15316C0C8DA00423344 /* MapViewController.m */; };
+		C916E15716C0CAFC00423344 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15516C0CAFC00423344 /* CoreLocation.framework */; };
+		C916E15816C0CAFC00423344 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15616C0CAFC00423344 /* MapKit.framework */; };
+		C916E15B16C0D01F00423344 /* TidbitMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */; };
 		C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C921484C16B58AF8007323D0 /* EWWebViewController.m */; };
 		C921485216B59417007323D0 /* EWMAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C921485116B59417007323D0 /* EWMAudioPlayerView.m */; };
 		C921485416B59529007323D0 /* kycPlaceholder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C921485316B59529007323D0 /* kycPlaceholder.mp3 */; };
@@ -132,6 +136,12 @@
 		C916B8CC16BD99E4002E29BC /* 18-envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "18-envelope.png"; path = "Resources/glyphish-placeholders/18-envelope.png"; sourceTree = "<group>"; };
 		C916B8CD16BD99E4002E29BC /* 120-headphones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "120-headphones.png"; path = "Resources/glyphish-placeholders/120-headphones.png"; sourceTree = "<group>"; };
 		C916B8CE16BD99E4002E29BC /* 121-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "121-landscape.png"; path = "Resources/glyphish-placeholders/121-landscape.png"; sourceTree = "<group>"; };
+		C916E15216C0C8DA00423344 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Classes/MapViewController.h; sourceTree = "<group>"; };
+		C916E15316C0C8DA00423344 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Classes/MapViewController.m; sourceTree = "<group>"; };
+		C916E15516C0CAFC00423344 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C916E15616C0CAFC00423344 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C916E15916C0D01F00423344 /* TidbitMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitMapAnnotation.h; path = Classes/TidbitMapAnnotation.h; sourceTree = "<group>"; };
+		C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitMapAnnotation.m; path = Classes/TidbitMapAnnotation.m; sourceTree = "<group>"; };
 		C921484B16B58AF8007323D0 /* EWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWWebViewController.h; path = EWMShared/EWWebViewController.h; sourceTree = "<group>"; };
 		C921484C16B58AF8007323D0 /* EWWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWWebViewController.m; path = EWMShared/EWWebViewController.m; sourceTree = "<group>"; };
 		C921485016B59417007323D0 /* EWMAudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWMAudioPlayerView.h; path = EWMShared/EWMAudioPlayerView.h; sourceTree = "<group>"; };
@@ -228,6 +238,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C916E15716C0CAFC00423344 /* CoreLocation.framework in Frameworks */,
+				C916E15816C0CAFC00423344 /* MapKit.framework in Frameworks */,
 				C90E5DE616C00C3200FFB1AF /* MessageUI.framework in Frameworks */,
 				C990649616B82B1B00421288 /* Accounts.framework in Frameworks */,
 				C990649716B82B1B00421288 /* Social.framework in Frameworks */,
@@ -248,7 +260,6 @@
 		C92666DD169DC6920061F9AD = {
 			isa = PBXGroup;
 			children = (
-				C90E5DE516C00C3200FFB1AF /* MessageUI.framework */,
 				C92666F2169DC6920061F9AD /* knowYourCity */,
 				C92666EB169DC6920061F9AD /* Frameworks */,
 				C92666E9169DC6920061F9AD /* Products */,
@@ -266,6 +277,9 @@
 		C92666EB169DC6920061F9AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C916E15516C0CAFC00423344 /* CoreLocation.framework */,
+				C916E15616C0CAFC00423344 /* MapKit.framework */,
+				C90E5DE516C00C3200FFB1AF /* MessageUI.framework */,
 				C990649316B82B1B00421288 /* Accounts.framework */,
 				C990649416B82B1B00421288 /* Social.framework */,
 				C990649516B82B1B00421288 /* Twitter.framework */,
@@ -490,6 +504,10 @@
 				C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */,
 				C93030FC16AB33890039D7B8 /* TidbitDetailViewController.h */,
 				C93030FD16AB33890039D7B8 /* TidbitDetailViewController.m */,
+				C916E15216C0C8DA00423344 /* MapViewController.h */,
+				C916E15316C0C8DA00423344 /* MapViewController.m */,
+				C916E15916C0D01F00423344 /* TidbitMapAnnotation.h */,
+				C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -673,6 +691,8 @@
 				C921485916B59B4E007323D0 /* Reachability.m in Sources */,
 				C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */,
 				C9118C1616BECC48009A890D /* KYCConfigurationProvider.m in Sources */,
+				C916E15416C0C8DA00423344 /* MapViewController.m in Sources */,
+				C916E15B16C0D01F00423344 /* TidbitMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
