@@ -23,9 +23,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        
-        
-        
     }
     return self;
 }
@@ -37,6 +34,7 @@
     self.tidbitTableView = [[UITableView alloc] initWithFrame:[self.view bounds]
                                                         style:UITableViewStylePlain];
     
+    self.tidbitTableView.rowHeight = 70.0;
     self.tidbitTableView.dataSource = self;
     self.tidbitTableView.delegate = self;
     

@@ -9,7 +9,7 @@
 #import "TidbitTableViewCell.h"
 
 #define MEDIA_BUTTON_SIZE 22.0
-#define MEDIA_BUTTON_Y 10.0
+#define MEDIA_BUTTON_Y 25.0
 #define TIDBIT_CELL_MARGIN 5.0
 
 @interface TidbitTableViewCell ()
@@ -32,12 +32,12 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        CGFloat textX = 70.0;
-        CGFloat textWidth = self.frame.size.width - textX - MEDIA_BUTTON_SIZE - TIDBIT_CELL_MARGIN*2.0;
+        CGFloat textX = 42.0;
+        CGFloat textWidth = self.frame.size.width - textX - MEDIA_BUTTON_SIZE - TIDBIT_CELL_MARGIN*3.0;
         
         // media
         
-        CGRect mediaRect = CGRectMake(TIDBIT_CELL_MARGIN, MEDIA_BUTTON_Y, MEDIA_BUTTON_SIZE, MEDIA_BUTTON_SIZE);
+        CGRect mediaRect = CGRectMake(10.0, MEDIA_BUTTON_Y, MEDIA_BUTTON_SIZE, MEDIA_BUTTON_SIZE);
         
         self.mediaImageView = [[UIImageView alloc] initWithFrame:mediaRect];
         
@@ -48,11 +48,11 @@
         [self addSubview:self.mediaImageView];
         
         // title
-        CGRect titleRect = CGRectMake(textX, TIDBIT_CELL_MARGIN, textWidth, 20.0);
+        CGRect titleRect = CGRectMake(textX, TIDBIT_CELL_MARGIN, textWidth, 42.0);
         
         self.titleLabel = [[UILabel alloc] initWithFrame:titleRect];
         self.titleLabel.text = @"placeholder";
-        self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:15.0];
+        self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:18.0];
         self.titleLabel.numberOfLines = 0;
         self.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
         self.titleLabel.backgroundColor = [UIColor clearColor];
@@ -62,12 +62,13 @@
         // theme -- should be one line
         
         //CGFloat themeY = CGRectGetMaxY(self.titleLabel.frame) + TIDBIT_CELL_MARGIN;
-        CGFloat themeY = CGRectGetMaxY(self.titleLabel.frame);
-        CGRect themeRect = CGRectMake(textX, themeY, textWidth, 15.0);
+        //CGFloat themeY = CGRectGetMaxY(self.titleLabel.frame);
+        
+        CGRect themeRect = CGRectMake(textX, 50.0, textWidth, 15.0);
         
         self.themeLabel = [[UILabel alloc] initWithFrame:themeRect];
         self.themeLabel.text = @"Theme";
-        self.themeLabel.font = [UIFont fontWithName:kBodyFontName size:12.0];
+        self.themeLabel.font = [UIFont fontWithName:kBodyFontName size:14.0];
         self.themeLabel.textColor = [UIColor kycGray];
         self.themeLabel.backgroundColor = [UIColor clearColor];
         
@@ -76,9 +77,10 @@
         // what else?
         
         // action button
-        self.selectionButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        self.selectionButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
         
-        self.selectionButton.frame = CGRectMake(290.0, 10.0, 25.0, 25.0);
+        // this is the reported size before of UIButtonTypeInfoDark
+        self.selectionButton.frame = CGRectMake(280.0, 23.0, 18.0, 19.0);
         
         [self addSubview:self.selectionButton];
     }
@@ -100,7 +102,6 @@
     NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
     KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : KYCStoryMediaTypeAudio;
     self.mediaImageView.image = [UIImage imageNamed:[KYCSTYLE imageNameForMediaType:mediaType]];
-    
 }
 
 
