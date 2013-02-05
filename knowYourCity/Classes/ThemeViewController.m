@@ -332,7 +332,12 @@
         }
         case 2: {
             
-            [self sendToFacebook];
+            // currently receives cancel on iOS 5, so check again:
+            if (HAS_SOCIAL_FRAMEWORK) {
+            
+                [self sendToFacebook];
+            }
+            
             break;
         }
             
