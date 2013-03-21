@@ -91,6 +91,13 @@
 		C960759616AC6CF5004B2672 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C960759316AC6CF5004B2672 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C960759D16AC6CFF004B2672 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C960759916AC6CFF004B2672 /* libTestFlight.a */; };
 		C96075A116AC6DC8004B2672 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C96075A016AC6DC8004B2672 /* libz.dylib */; };
+		C97164A616FACF7B00EA8B02 /* church-organ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164A316FACF7B00EA8B02 /* church-organ.jpg */; };
+		C97164A716FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164A416FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg */; };
+		C97164A816FACF7B00EA8B02 /* pwc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164A516FACF7B00EA8B02 /* pwc.jpg */; };
+		C97164AC16FACFA200EA8B02 /* pwc-cornerstone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164A916FACFA200EA8B02 /* pwc-cornerstone.mp3 */; };
+		C97164AD16FACFA200EA8B02 /* pwc-main.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AA16FACFA200EA8B02 /* pwc-main.mp3 */; };
+		C97164AE16FACFA200EA8B02 /* why-the-church.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AB16FACFA200EA8B02 /* why-the-church.mp3 */; };
+		C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */; };
 		C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */; };
 		C97B44E4169DCCDA008A2793 /* KYCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E2169DCCDA008A2793 /* KYCViewController.m */; };
 		C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EA169DCF48008A2793 /* Default-568h@2x.png */; };
@@ -217,6 +224,13 @@
 		C960759B16AC6CFF004B2672 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		C960759C16AC6CFF004B2672 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		C96075A016AC6DC8004B2672 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C97164A316FACF7B00EA8B02 /* church-organ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "church-organ.jpg"; path = "Resources/placeholder-photos/church-organ.jpg"; sourceTree = "<group>"; };
+		C97164A416FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "pwc-cornerstone-temp.jpg"; path = "Resources/placeholder-photos/pwc-cornerstone-temp.jpg"; sourceTree = "<group>"; };
+		C97164A516FACF7B00EA8B02 /* pwc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pwc.jpg; path = "Resources/placeholder-photos/pwc.jpg"; sourceTree = "<group>"; };
+		C97164A916FACFA200EA8B02 /* pwc-cornerstone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "pwc-cornerstone.mp3"; path = "Resources/audio/pwc-cornerstone.mp3"; sourceTree = "<group>"; };
+		C97164AA16FACFA200EA8B02 /* pwc-main.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "pwc-main.mp3"; path = "Resources/audio/pwc-main.mp3"; sourceTree = "<group>"; };
+		C97164AB16FACFA200EA8B02 /* why-the-church.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "why-the-church.mp3"; path = "Resources/audio/why-the-church.mp3"; sourceTree = "<group>"; };
+		C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kycPlaceholder.mp3; path = "Resources/placeholder-photos/kycPlaceholder.mp3"; sourceTree = "<group>"; };
 		C97B44DF169DCCDA008A2793 /* KYCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCAppDelegate.h; path = Classes/KYCAppDelegate.h; sourceTree = "<group>"; };
 		C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCAppDelegate.m; path = Classes/KYCAppDelegate.m; sourceTree = "<group>"; };
 		C97B44E1169DCCDA008A2793 /* KYCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCViewController.h; path = Classes/KYCViewController.h; sourceTree = "<group>"; };
@@ -343,6 +357,13 @@
 		C952427616B0350400BD8F74 /* placeholders */ = {
 			isa = PBXGroup;
 			children = (
+				C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */,
+				C97164A916FACFA200EA8B02 /* pwc-cornerstone.mp3 */,
+				C97164AA16FACFA200EA8B02 /* pwc-main.mp3 */,
+				C97164AB16FACFA200EA8B02 /* why-the-church.mp3 */,
+				C97164A316FACF7B00EA8B02 /* church-organ.jpg */,
+				C97164A416FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg */,
+				C97164A516FACF7B00EA8B02 /* pwc.jpg */,
 				C9118C1716BEEFAE009A890D /* 111-user.png */,
 				C9118C1816BEEFAF009A890D /* 08-chat.png */,
 				C916B8B716BD99E3002E29BC /* 05-shuffle.png */,
@@ -661,6 +682,13 @@
 				C9118C1A16BEEFAF009A890D /* 08-chat.png in Resources */,
 				C9118C1C16BF013D009A890D /* 54_1974.jpg in Resources */,
 				C9118C1E16BF07A6009A890D /* waterfront1879crop.jpg in Resources */,
+				C97164A616FACF7B00EA8B02 /* church-organ.jpg in Resources */,
+				C97164A716FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg in Resources */,
+				C97164A816FACF7B00EA8B02 /* pwc.jpg in Resources */,
+				C97164AC16FACFA200EA8B02 /* pwc-cornerstone.mp3 in Resources */,
+				C97164AD16FACFA200EA8B02 /* pwc-main.mp3 in Resources */,
+				C97164AE16FACFA200EA8B02 /* why-the-church.mp3 in Resources */,
+				C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
