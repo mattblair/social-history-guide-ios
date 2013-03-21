@@ -56,7 +56,10 @@
     // image/gallery
     
     self.mainPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, self.yForNextView, MAIN_PHOTO_WIDTH, MAIN_PHOTO_HEIGHT)];
-    self.mainPhoto.image = [UIImage imageNamed:@"golden-west-ph.jpg"];
+    
+    NSString *storyImage = [self.storyData objectForKey:@"image"];
+    NSString *imageName = storyImage ? storyImage : @"golden-west-ph.jpg";
+    self.mainPhoto.image = [UIImage imageNamed:imageName];
     
     [self.scrollView addSubview:self.mainPhoto];
     
@@ -79,7 +82,10 @@
     // audio player
     
     // until Core Data is set up and we have multiple audio files
-    NSString *audioFilename = @"kycPlaceholder.mp3";
+    
+    NSString *storyAudio = [self.storyData objectForKey:@"audioFilename"];
+    
+    NSString *audioFilename = storyAudio ? storyAudio : @"kycPlaceholder.mp3";
     
     if ([audioFilename length] > 0) {
         
@@ -135,7 +141,7 @@
     
     // Guests (allow for multiple)
     
-    NSDictionary *guestDictionary = @{@"name" : @"Guest Name", @"title": @"Title or fact that makes us want to read more."};
+    NSDictionary *guestDictionary = @{@"name" : @"Jan Dilg", @"title": @"Independent Historian"};
     
     self.guestView = [[GuestStubView alloc] initWithDictionary:guestDictionary
                                                       atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
