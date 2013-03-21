@@ -10,7 +10,7 @@
 
 
 #define STORY_STUB_WIDTH_IPHONE 300.0
-#define STORY_STUB_HEIGHT_IPHONE 100.0
+#define STORY_STUB_HEIGHT_IPHONE 120.0
 
 // iPad values TBD
 #define STORY_STUB_WIDTH_IPAD 300.0
@@ -23,6 +23,8 @@
 #define MEDIA_BUTTON_Y 25.0 // or just center it vertically?
 
 #define STORY_STUB_MARGIN 10.0
+
+#define SHOW_MEDIA_TYPE_ICON NO
 
 @interface StoryStubView ()
 
@@ -52,11 +54,17 @@
         self.storyData = storyDictionary;
         
         self.backgroundColor = [UIColor kycOffWhite];
+        self.userInteractionEnabled = YES;
         
         // make Thumbnail optional, and move 
         
         CGFloat textX = STORY_STUB_MARGIN;
-        CGFloat textWidth = stubWidth - textX - MEDIA_BUTTON_SIZE - STORY_STUB_MARGIN;
+        
+        CGFloat textWidth = stubWidth - textX;
+        
+        if (SHOW_MEDIA_TYPE_ICON) {
+            textWidth = stubWidth - textX - MEDIA_BUTTON_SIZE - STORY_STUB_MARGIN;
+        }
         
         NSString *thumbnailName = [self.storyData objectForKey:@"thumbnail"];
         
@@ -72,28 +80,35 @@
             
             // move text to the right of the thumbnail
             textX = STORY_THUMBNAIL_SIZE + STORY_STUB_MARGIN*2.0;
-            textWidth = stubWidth - textX - MEDIA_BUTTON_SIZE - STORY_STUB_MARGIN;
+            
+            if (SHOW_MEDIA_TYPE_ICON) {
+                textWidth = stubWidth - textX - MEDIA_BUTTON_SIZE - STORY_STUB_MARGIN;
+            } else {
+                textWidth = stubWidth - textX - STORY_STUB_MARGIN;
+            }
         }
         
         // title
-        CGRect nameRect = CGRectMake(textX, STORY_STUB_MARGIN, textWidth, 30.0);
+        CGRect nameRect = CGRectMake(textX, STORY_STUB_MARGIN, textWidth, 50.0);
         
         self.titleLabel = [[UILabel alloc] initWithFrame:nameRect];
         self.titleLabel.text = [self.storyData objectForKey:@"title"];
-        self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:18.0];
+        self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:16.0];
         self.titleLabel.backgroundColor = [UIColor clearColor];
+        self.titleLabel.numberOfLines = 0;
         
         [self addSubview:self.titleLabel];
         
         // quote -- needs to be higher if title is 1 line
         
-        CGFloat quoteY = CGRectGetMaxY(self.titleLabel.frame) + STORY_STUB_MARGIN;
-        CGRect quoteRect = CGRectMake(textX, quoteY, textWidth, 50.0);
+        //CGFloat quoteY = CGRectGetMaxY(self.titleLabel.frame) + STORY_STUB_MARGIN;
+        CGFloat quoteY = 60.0;
+        CGRect quoteRect = CGRectMake(textX, quoteY, textWidth, 60.0);
         
         self.quoteLabel = [[UILabel alloc] initWithFrame:quoteRect];
         self.quoteLabel.text = [self.storyData objectForKey:@"quote"];
         self.quoteLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
-        self.quoteLabel.numberOfLines = 2;
+        self.quoteLabel.numberOfLines = 3;
         self.quoteLabel.lineBreakMode = UILineBreakModeWordWrap;
         self.quoteLabel.backgroundColor = [UIColor clearColor];
         
@@ -101,43 +116,40 @@
         
         // media button
         
-        CGFloat mediaX = textX + textWidth;
-        // calculate a vertically centered Y?
+        if (SHOW_MEDIA_TYPE_ICON) {
         
-        CGRect mediaRect = CGRectMake(mediaX, MEDIA_BUTTON_Y, MEDIA_BUTTON_SIZE, MEDIA_BUTTON_SIZE);
+            CGFloat mediaX = textX + textWidth;
+            // calculate a vertically centered Y?
+            
+            CGRect mediaRect = CGRectMake(mediaX, MEDIA_BUTTON_Y, MEDIA_BUTTON_SIZE, MEDIA_BUTTON_SIZE);
+            
+            self.mediaButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            
+            NSNumber *mediaTypeNumber = [self.storyData objectForKey:@"mediaType"];
+            KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : KYCStoryMediaTypeAudio;
+            NSString *mediaImage = [KYCSTYLE imageNameForMediaType:mediaType];
+            
+            [self.mediaButton setImage:[UIImage imageNamed:mediaImage]
+                              forState:UIControlStateNormal];
+            
+            [self.mediaButton addTarget:self
+                                 action:@selector(buttonTapped:)
+                       forControlEvents:UIControlEventTouchUpInside];
+            
+            self.mediaButton.frame = mediaRect;
+            
+            [self addSubview:self.mediaButton];
+            
+        }
         
-        self.mediaButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        UITapGestureRecognizer *storyTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                   action:@selector(buttonTapped:)];
         
-        NSNumber *mediaTypeNumber = [self.storyData objectForKey:@"mediaType"];
-        KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : KYCStoryMediaTypeAudio;
-        NSString *mediaImage = [KYCSTYLE imageNameForMediaType:mediaType];
-        
-        [self.mediaButton setImage:[UIImage imageNamed:mediaImage]
-                          forState:UIControlStateNormal];
-        
-        [self.mediaButton addTarget:self
-                             action:@selector(buttonTapped:)
-                   forControlEvents:UIControlEventTouchUpInside];
-        
-        self.mediaButton.frame = mediaRect;
-        
-        [self addSubview:self.mediaButton];
-        
-        // gesture recognizer
-
+        [self addGestureRecognizer:storyTap];
     }
     
     return self;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 - (void)buttonTapped:(id)sender {
     
