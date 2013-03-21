@@ -465,26 +465,33 @@
         {
            "thumbnail": "theme_tn_ph",
            "title": "Women's History",
-           "introduction": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+           "introduction": "[33] Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                "stories": [{
-                           "thumbnail" : "kycCCBA",
-                           "title" : "Fascinating Story",
-                           "quote" : "It was fascinating to think about.",
+                           "audioFilename" : "pwc-main.mp3",
+                           "thumbnail" : "pwc.jpg",
+                           "image" : "pwc.jpg",
+                           "title" : "Portland Women's Center",
+                           "quote" : "Founded in 1895 by 16 of the city's female movers and shakers!",
                            "mediaType" : 0,
-                           "mainText": "[69]Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                           "mainText": "[70] Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                            },
                            {
-                           "thumbnail" : "theme_tn_ph-b",
-                           "title" : "Thirty Seven Words",
-                           "quote" : "The food smelled like home...",
+                           "audioFilename" : "pwc-cornerstone.mp3",
+                           "thumbnail" : "pwc-cornerstone-temp.jpg",
+                           "image" : "pwc-cornerstone-temp.jpg",
+                           "title" : "The Cornerstone of the PWC",
+                           "quote" : "...this building has had a long life...",
                            "mediaType" : 4,
-                           "mainText": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                           "mainText": "[37] Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                            },
                            {
-                           "title" : "102 Words",
-                           "quote" : "It's so different now.",
+                           "audioFilename" : "why-the-church.mp3",
+                           "image" : "church-organ.jpg",
+                           "title" : "Why the church?",
+                           "quote" : "It was acceptable for women to meet in churches...",
+                           "thumbnail" : "church-organ.jpg",
                            "mediaType" : 2,
-                           "mainText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                           "mainText": "[102] Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
                            }]
         },
         {
