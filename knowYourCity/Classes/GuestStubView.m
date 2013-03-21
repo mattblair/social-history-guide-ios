@@ -53,7 +53,7 @@
         
         self.thumbnailView = [[UIImageView alloc] initWithFrame:thumbnailRect];
         // if you use retina, init this by url with type jpg
-        self.thumbnailView.image = [UIImage imageNamed:@"guest_placeholder.jpg"];
+        self.thumbnailView.image = [UIImage imageNamed:@"jan-dilg-temp.jpg"]; //guest_placeholder.jpg
         
         [self addSubview:self.thumbnailView];
         

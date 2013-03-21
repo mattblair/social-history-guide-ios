@@ -182,7 +182,7 @@
     
     // Guests (allow for multiple)
     
-    NSDictionary *guestDictionary = @{@"name" : @"Guest Name", @"title": @"Title or fact that makes us want to read more."};
+    NSDictionary *guestDictionary = @{@"name" : @"Jan Dilg", @"title": @"Independent Historian"};
     
     self.guestView = [[GuestStubView alloc] initWithDictionary:guestDictionary
                                                       atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
