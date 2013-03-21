@@ -42,7 +42,6 @@
 		C916E15B16C0D01F00423344 /* TidbitMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */; };
 		C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C921484C16B58AF8007323D0 /* EWWebViewController.m */; };
 		C921485216B59417007323D0 /* EWMAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C921485116B59417007323D0 /* EWMAudioPlayerView.m */; };
-		C921485416B59529007323D0 /* kycPlaceholder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C921485316B59529007323D0 /* kycPlaceholder.mp3 */; };
 		C921485616B598A3007323D0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C921485516B598A3007323D0 /* AVFoundation.framework */; };
 		C921485916B59B4E007323D0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C921485816B59B4E007323D0 /* Reachability.m */; };
 		C921485B16B59B70007323D0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C921485A16B59B70007323D0 /* SystemConfiguration.framework */; };
@@ -153,7 +152,6 @@
 		C921484C16B58AF8007323D0 /* EWWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWWebViewController.m; path = EWMShared/EWWebViewController.m; sourceTree = "<group>"; };
 		C921485016B59417007323D0 /* EWMAudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWMAudioPlayerView.h; path = EWMShared/EWMAudioPlayerView.h; sourceTree = "<group>"; };
 		C921485116B59417007323D0 /* EWMAudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWMAudioPlayerView.m; path = EWMShared/EWMAudioPlayerView.m; sourceTree = "<group>"; };
-		C921485316B59529007323D0 /* kycPlaceholder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kycPlaceholder.mp3; path = Resources/audio/kycPlaceholder.mp3; sourceTree = "<group>"; };
 		C921485516B598A3007323D0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C921485716B59B4E007323D0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = 3rdParty/Reachability.h; sourceTree = "<group>"; };
 		C921485816B59B4E007323D0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = 3rdParty/Reachability.m; sourceTree = "<group>"; };
@@ -393,7 +391,6 @@
 				C921486516B59DC8007323D0 /* nav-forward.png */,
 				C921485E16B59D7C007323D0 /* pause-audio.png */,
 				C921485F16B59D7C007323D0 /* play-audio.png */,
-				C921485316B59529007323D0 /* kycPlaceholder.mp3 */,
 				C952427716B0351600BD8F74 /* golden-west-ph.jpg */,
 				C952427816B0351600BD8F74 /* greek-plaque-ph.jpg */,
 				C952427916B0351600BD8F74 /* japantown-model-ph.jpg */,
@@ -650,7 +647,6 @@
 				C952427C16B0351600BD8F74 /* greek-plaque-ph.jpg in Resources */,
 				C952427D16B0351600BD8F74 /* japantown-model-ph.jpg in Resources */,
 				C952427E16B0351600BD8F74 /* new-market-ph.jpg in Resources */,
-				C921485416B59529007323D0 /* kycPlaceholder.mp3 in Resources */,
 				C921486216B59D7C007323D0 /* pause-audio.png in Resources */,
 				C921486316B59D7C007323D0 /* play-audio.png in Resources */,
 				C921486616B59DC8007323D0 /* nav-backward.png in Resources */,
