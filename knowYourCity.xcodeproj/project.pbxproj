@@ -97,6 +97,7 @@
 		C97164AD16FACFA200EA8B02 /* pwc-main.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AA16FACFA200EA8B02 /* pwc-main.mp3 */; };
 		C97164AE16FACFA200EA8B02 /* why-the-church.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AB16FACFA200EA8B02 /* why-the-church.mp3 */; };
 		C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */; };
+		C97164B216FAD49D00EA8B02 /* jan-dilg-temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164B116FAD49D00EA8B02 /* jan-dilg-temp.jpg */; };
 		C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */; };
 		C97B44E4169DCCDA008A2793 /* KYCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E2169DCCDA008A2793 /* KYCViewController.m */; };
 		C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EA169DCF48008A2793 /* Default-568h@2x.png */; };
@@ -229,6 +230,7 @@
 		C97164AA16FACFA200EA8B02 /* pwc-main.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "pwc-main.mp3"; path = "Resources/audio/pwc-main.mp3"; sourceTree = "<group>"; };
 		C97164AB16FACFA200EA8B02 /* why-the-church.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "why-the-church.mp3"; path = "Resources/audio/why-the-church.mp3"; sourceTree = "<group>"; };
 		C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kycPlaceholder.mp3; path = "Resources/placeholder-photos/kycPlaceholder.mp3"; sourceTree = "<group>"; };
+		C97164B116FAD49D00EA8B02 /* jan-dilg-temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "jan-dilg-temp.jpg"; path = "Resources/placeholder-photos/jan-dilg-temp.jpg"; sourceTree = "<group>"; };
 		C97B44DF169DCCDA008A2793 /* KYCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCAppDelegate.h; path = Classes/KYCAppDelegate.h; sourceTree = "<group>"; };
 		C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCAppDelegate.m; path = Classes/KYCAppDelegate.m; sourceTree = "<group>"; };
 		C97B44E1169DCCDA008A2793 /* KYCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCViewController.h; path = Classes/KYCViewController.h; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 		C952427616B0350400BD8F74 /* placeholders */ = {
 			isa = PBXGroup;
 			children = (
+				C97164B116FAD49D00EA8B02 /* jan-dilg-temp.jpg */,
 				C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */,
 				C97164A916FACFA200EA8B02 /* pwc-cornerstone.mp3 */,
 				C97164AA16FACFA200EA8B02 /* pwc-main.mp3 */,
@@ -685,6 +688,7 @@
 				C97164AD16FACFA200EA8B02 /* pwc-main.mp3 in Resources */,
 				C97164AE16FACFA200EA8B02 /* why-the-church.mp3 in Resources */,
 				C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */,
+				C97164B216FAD49D00EA8B02 /* jan-dilg-temp.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
