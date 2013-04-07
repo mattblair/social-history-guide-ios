@@ -20,6 +20,8 @@
     //[TestFlight takeOff:kTestFlightTeamToken];
     [TestFlight takeOff:kTestFlightAppToken];
     
+    [Flurry startSession:kFlurryAPIKey];
+    
     [self configureAppearance];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

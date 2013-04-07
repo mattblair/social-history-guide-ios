@@ -19,6 +19,7 @@
 
     // testflight
     #import "TestFlight.h"
+    #import "Flurry.h"
 
 #endif
 

@@ -78,6 +78,7 @@
 		C95C30BD1710F6FC00E64F0C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C95C30B91710F6FC00E64F0C /* libTestFlight.a */; };
 		C95C30BE1710F6FC00E64F0C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C95C30BA1710F6FC00E64F0C /* README.md */; };
 		C95C30BF1710F6FC00E64F0C /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C95C30BB1710F6FC00E64F0C /* release_notes.md */; };
+		C95C30C31710FCA400E64F0C /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C95C30C21710FCA400E64F0C /* libFlurry.a */; };
 		C960757016AC59B2004B2672 /* logo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756E16AC59B2004B2672 /* logo_header.png */; };
 		C960757116AC59B2004B2672 /* logo_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756F16AC59B2004B2672 /* logo_header@2x.png */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
@@ -208,6 +209,8 @@
 		C95C30BA1710F6FC00E64F0C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		C95C30BB1710F6FC00E64F0C /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		C95C30BC1710F6FC00E64F0C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		C95C30C11710FCA400E64F0C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		C95C30C21710FCA400E64F0C /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		C960756E16AC59B2004B2672 /* logo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header.png; sourceTree = "<group>"; };
 		C960756F16AC59B2004B2672 /* logo_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_header@2x.png"; sourceTree = "<group>"; };
 		C960757416AC59C4004B2672 /* kyc-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kyc-data.json"; sourceTree = "<group>"; };
@@ -267,6 +270,7 @@
 				C92666EF169DC6920061F9AD /* Foundation.framework in Frameworks */,
 				C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */,
 				C95C30BD1710F6FC00E64F0C /* libTestFlight.a in Frameworks */,
+				C95C30C31710FCA400E64F0C /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +428,16 @@
 			path = 3rdParty/TestFlightSDK1.2.4;
 			sourceTree = "<group>";
 		};
+		C95C30C01710FCA400E64F0C /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				C95C30C11710FCA400E64F0C /* Flurry.h */,
+				C95C30C21710FCA400E64F0C /* libFlurry.a */,
+			);
+			name = Flurry;
+			path = 3rdParty/Flurry;
+			sourceTree = "<group>";
+		};
 		C960756D16AC59B2004B2672 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +485,7 @@
 			children = (
 				C921485716B59B4E007323D0 /* Reachability.h */,
 				C921485816B59B4E007323D0 /* Reachability.m */,
+				C95C30C01710FCA400E64F0C /* Flurry */,
 				C960759016AC6CF5004B2672 /* JSONKit */,
 				C95C30B81710F6FC00E64F0C /* TestFlightSDK1.2.4 */,
 			);
@@ -807,6 +822,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.1\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -824,6 +840,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.1\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -871,6 +888,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.1\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -912,6 +930,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.1\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
