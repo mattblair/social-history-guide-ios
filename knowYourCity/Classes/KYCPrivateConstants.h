@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 
 // TestFlight config
-extern NSString * const kTestFlightTeamToken;
 
+extern NSString * const kTestFlightTeamToken; // deprecated as of 1.2
+
+// required for TestFlight SDK 1.2+
+extern NSString* const kTestFlightAppToken;
 
 // =======================================================================
 
 // Add a KYCPrivateConstants.m files that looks like:
 
-// NSString* const kTestFlightTeamToken = @"teamToken";
+// NSString* const kTestFlightAppToken = @"appToken";
 // Or comment out all reference to TestFlight if not using it.

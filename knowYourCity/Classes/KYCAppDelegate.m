@@ -17,7 +17,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [TestFlight takeOff:kTestFlightTeamToken];
+    //[TestFlight takeOff:kTestFlightTeamToken];
+    [TestFlight takeOff:kTestFlightAppToken];
     
     [self configureAppearance];
     

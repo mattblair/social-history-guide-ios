@@ -75,6 +75,9 @@
 		C952427E16B0351600BD8F74 /* new-market-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427A16B0351600BD8F74 /* new-market-ph.jpg */; };
 		C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */ = {isa = PBXBuildFile; fileRef = C952428016B03F4700BD8F74 /* UIColor+KYC.m */; };
 		C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */; };
+		C95C30BD1710F6FC00E64F0C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C95C30B91710F6FC00E64F0C /* libTestFlight.a */; };
+		C95C30BE1710F6FC00E64F0C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C95C30BA1710F6FC00E64F0C /* README.md */; };
+		C95C30BF1710F6FC00E64F0C /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C95C30BB1710F6FC00E64F0C /* release_notes.md */; };
 		C960757016AC59B2004B2672 /* logo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756E16AC59B2004B2672 /* logo_header.png */; };
 		C960757116AC59B2004B2672 /* logo_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756F16AC59B2004B2672 /* logo_header@2x.png */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
@@ -88,7 +91,6 @@
 		C960758816AC5A29004B2672 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C960758616AC5A29004B2672 /* Icon.png */; };
 		C960758916AC5A29004B2672 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960758716AC5A29004B2672 /* Icon@2x.png */; };
 		C960759616AC6CF5004B2672 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C960759316AC6CF5004B2672 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C960759D16AC6CFF004B2672 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C960759916AC6CFF004B2672 /* libTestFlight.a */; };
 		C96075A116AC6DC8004B2672 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C96075A016AC6DC8004B2672 /* libz.dylib */; };
 		C97164A616FACF7B00EA8B02 /* church-organ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164A316FACF7B00EA8B02 /* church-organ.jpg */; };
 		C97164A716FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164A416FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg */; };
@@ -202,6 +204,10 @@
 		C952428016B03F4700BD8F74 /* UIColor+KYC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KYC.m"; path = "Classes/UIColor+KYC.m"; sourceTree = "<group>"; };
 		C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitTableViewCell.h; path = Classes/TidbitTableViewCell.h; sourceTree = "<group>"; };
 		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
+		C95C30B91710F6FC00E64F0C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		C95C30BA1710F6FC00E64F0C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		C95C30BB1710F6FC00E64F0C /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		C95C30BC1710F6FC00E64F0C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		C960756E16AC59B2004B2672 /* logo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header.png; sourceTree = "<group>"; };
 		C960756F16AC59B2004B2672 /* logo_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_header@2x.png"; sourceTree = "<group>"; };
 		C960757416AC59C4004B2672 /* kyc-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kyc-data.json"; sourceTree = "<group>"; };
@@ -218,10 +224,6 @@
 		C960759216AC6CF5004B2672 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		C960759316AC6CF5004B2672 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		C960759416AC6CF5004B2672 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		C960759916AC6CFF004B2672 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		C960759A16AC6CFF004B2672 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		C960759B16AC6CFF004B2672 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		C960759C16AC6CFF004B2672 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		C96075A016AC6DC8004B2672 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C97164A316FACF7B00EA8B02 /* church-organ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "church-organ.jpg"; path = "Resources/placeholder-photos/church-organ.jpg"; sourceTree = "<group>"; };
 		C97164A416FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "pwc-cornerstone-temp.jpg"; path = "Resources/placeholder-photos/pwc-cornerstone-temp.jpg"; sourceTree = "<group>"; };
@@ -264,7 +266,7 @@
 				C92666ED169DC6920061F9AD /* UIKit.framework in Frameworks */,
 				C92666EF169DC6920061F9AD /* Foundation.framework in Frameworks */,
 				C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */,
-				C960759D16AC6CFF004B2672 /* libTestFlight.a in Frameworks */,
+				C95C30BD1710F6FC00E64F0C /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +412,18 @@
 			name = placeholders;
 			sourceTree = "<group>";
 		};
+		C95C30B81710F6FC00E64F0C /* TestFlightSDK1.2.4 */ = {
+			isa = PBXGroup;
+			children = (
+				C95C30B91710F6FC00E64F0C /* libTestFlight.a */,
+				C95C30BA1710F6FC00E64F0C /* README.md */,
+				C95C30BB1710F6FC00E64F0C /* release_notes.md */,
+				C95C30BC1710F6FC00E64F0C /* TestFlight.h */,
+			);
+			name = TestFlightSDK1.2.4;
+			path = 3rdParty/TestFlightSDK1.2.4;
+			sourceTree = "<group>";
+		};
 		C960756D16AC59B2004B2672 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,7 +472,7 @@
 				C921485716B59B4E007323D0 /* Reachability.h */,
 				C921485816B59B4E007323D0 /* Reachability.m */,
 				C960759016AC6CF5004B2672 /* JSONKit */,
-				C960759816AC6CFF004B2672 /* TestFlightSDK1.1 */,
+				C95C30B81710F6FC00E64F0C /* TestFlightSDK1.2.4 */,
 			);
 			name = 3rdParty;
 			sourceTree = "<group>";
@@ -473,18 +487,6 @@
 			);
 			name = JSONKit;
 			path = 3rdParty/JSONKit;
-			sourceTree = "<group>";
-		};
-		C960759816AC6CFF004B2672 /* TestFlightSDK1.1 */ = {
-			isa = PBXGroup;
-			children = (
-				C960759916AC6CFF004B2672 /* libTestFlight.a */,
-				C960759A16AC6CFF004B2672 /* README.md */,
-				C960759B16AC6CFF004B2672 /* release_notes.md */,
-				C960759C16AC6CFF004B2672 /* TestFlight.h */,
-			);
-			name = TestFlightSDK1.1;
-			path = 3rdParty/TestFlightSDK1.1;
 			sourceTree = "<group>";
 		};
 		C97B44E5169DCD20008A2793 /* Resources */ = {
@@ -689,6 +691,8 @@
 				C97164AE16FACFA200EA8B02 /* why-the-church.mp3 in Resources */,
 				C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */,
 				C97164B216FAD49D00EA8B02 /* jan-dilg-temp.jpg in Resources */,
+				C95C30BE1710F6FC00E64F0C /* README.md in Resources */,
+				C95C30BF1710F6FC00E64F0C /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,6 +806,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.1\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -818,6 +823,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.1\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -864,6 +870,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.1\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -904,6 +911,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.1\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
