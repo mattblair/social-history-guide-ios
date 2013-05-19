@@ -44,8 +44,6 @@ profile
 !default.perspectivev3
 
 # Workspace-related
-*.xcworkspace
-!default.xcworkspace
 xcuserdata
 
 # this is in github's recommendation, but I don't think I've seen it in the wild
