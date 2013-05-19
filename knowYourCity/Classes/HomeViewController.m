@@ -163,6 +163,8 @@
     
     NSDictionary *themeDictionary = self.themeList[indexPath.row];
     
+    [Flurry logEvent:@"themeSelected" withParameters:@{@"themeTitle" : [themeDictionary objectForKey:@"title"]}];
+    
     // switch this to a new intializer which accepts a theme object?
     ThemeViewController *themeVC = [[ThemeViewController alloc] initWithNibName:nil bundle:nil];
     // sets title to diplay in the nav bar
