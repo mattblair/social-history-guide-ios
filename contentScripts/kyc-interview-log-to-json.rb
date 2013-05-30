@@ -6,11 +6,11 @@ require_relative 'kyc-filename-cleanup'
 
 # input
 input_path = "/Users/matt/Dropbox/KnowYourCityMedia/interviewLogs"
-input_filename = "kycInterviewLog130521.csv"
+input_filename = "kycInterviewLog130530.csv"
 
 # output
 output_path = "/Users/matt/Dropbox/appWorkingNotes/knowYourCity/seedData"
-output_filename = 'kyc_story_from_log130521.json' 
+output_filename = 'kyc_story_from_log130530.json' 
  
 # lookup table hashes:
 
@@ -22,7 +22,8 @@ theme_hash = {
   "Women's History" => 7,
   "Lesbian History" => 9,
   "Japanese-American History" => 3,
-  "Native History" => 5
+  "Native History" => 5,
+  "Gay History" => 8
 } 
  
 guest_hash = {
@@ -33,7 +34,8 @@ guest_hash = {
   "Women's History" => 4,
   "Lesbian History" => 9,
   "Japanese-American History" => 5,
-  "Native History" => 5
+  "Native History" => 7,
+  "Gay History" => 8
 }
 
 # load the latest csv download
@@ -55,19 +57,24 @@ raw_story_data.each do |story_row|
     
     story_dict['audio_filename'] = clean_audio_filename(story_row[1])
     
+    # to include a placeholder for each, even if it's not logged yet:
+    #story_dict['title'] = story_row[2] ? story_row[2] : story_dict['audio_filename']
+    # to only include those with a title specified:
     story_dict['title'] = story_row[2] ? story_row[2] : ""
     
-    story_dict['summary'] = story_row[5] ? story_row[5] : ""
+    story_dict['subtitle'] = story_row[3] ? story_row[3] : ""
     
-    story_dict['display_order'] = story_row[4].to_i
+    story_dict['summary'] = story_row[6] ? story_row[6] : ""
+    
+    story_dict['display_order'] = story_row[5].to_i
     
     story_dict['theme_id'] = theme_hash[story_row[0]]
     
     story_dict['guest_id'] = guest_hash[story_row[0]]
     
-    story_dict['editing_priority'] = story_row[3] ? story_row[3].to_i*10 : 50
+    story_dict['editing_priority'] = story_row[4] ? story_row[4].to_i*10 : 50
     
-    story_dict['editorial_notes'] = "#{story_row[6]}\n\nPhotos, maps, other:\n#{story_row[7]}\n\nRelated Resources:#{story_row[8]}"
+    story_dict['editorial_notes'] = "#{story_row[7]}\n\nPhotos, maps, other:\n#{story_row[8]}\n\nRelated Resources:#{story_row[9]}"
     
     story_array << story_dict
     
