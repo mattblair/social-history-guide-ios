@@ -2,7 +2,7 @@ require 'FileUtils'
 
 require_relative 'kyc-filename-cleanup'
 
-media_source_directory = "/Users/matt/Dropbox/kycInterviewsOriginal"
+media_source_directory = "/Users/matt/Dropbox/kycInterviewsEdited"
 
 ios_output_directory = "/Users/matt/Documents/codeProjects/knowYourCity/knowYourCity/Resources/audio"
 web_output_directory = "/Users/matt/Dropbox/appWorkingNotes/knowYourCity/mp4"
@@ -14,20 +14,26 @@ web_suffix = "mp4"
 # themes to process:
 
 themes_to_process = [
-=begin
-  { "name" => "African-American History", "prefix" => "aam", "subdirectory" => "africanAmericanHistory" },
-  { "name" => "Chinese History", "prefix" => "chi", "subdirectory" => "chineseHistory" },
-  # need to get original wav or aif for these...
-  { "name" => "Skid Row", "prefix" => "skr", "subdirectory" => "skidRow" },
-  { "name" => "Women's History", "prefix" => "wmn", "subdirectory" => "womensHistory" },
-  { "name" => "Jewish History", "prefix" => "jew", "subdirectory" => "jewishHistory" },
-  { "name" => "Gay History", "prefix" => "gay", "subdirectory" => "gayHistory" },
-=end
-  { "name" => "Japanese-American History", "prefix" => "jpn", "subdirectory" => "japaneseAmericanHistory" },
-  { "name" => "Lesbian History", "prefix" => "lsb", "subdirectory" => "lesbianHistory" }
-  #{ "name" => "Native History", "prefix" => "nat", "subdirectory" => "nativeHistory" }
+
+  #{ "name" => "African-American History", "prefix" => "bh", "subdirectory" => "africanAmericanHistory" },
+  #{ "name" => "Chinese History", "prefix" => "rh", "subdirectory" => "chineseHistory" },
+  #{ "name" => "Jewish History", "prefix" => "po", "subdirectory" => "jewishHistory" },
+  #{ "name" => "Gay History", "prefix" => "gn", "subdirectory" => "gayHistory" },
+
+  
+  # completed as of 130625:
+  { "name" => "Worker History", "prefix" => "mm", "subdirectory" => "michaelMunk" },
+  { "name" => "Native Stories", "prefix" => "ee", "subdirectory" => "edEdmo" }
+
+  # need to get original wav or aif to process these...
+  #{ "name" => "Old Town", "prefix" => "dkc", "subdirectory" => "skidRow" },
+  #{ "name" => "Women's History", "prefix" => "jd", "subdirectory" => "womensHistory" },
+  
+  # yet to be completed:
+  #{ "name" => "Japanese-American History", "prefix" => "hs", "subdirectory" => "japaneseAmericanHistory" },
+  #{ "name" => "Lesbian History", "prefix" => "am", "subdirectory" => "lesbianHistory" },
   #{ "name" => "Public Art", "prefix" => "cb", "subdirectory" => "caryeBye" }
-  #{ "name" => "Pearl District", "prefix" => "prl", "subdirectory" => "pearlDistrictArtists" }
+  #{ "name" => "Pearl District", "prefix" => "ml", "subdirectory" => "pearlDistrictArtists" }
   ]
   
 
@@ -46,7 +52,7 @@ themes_to_process.each do |theme|
   # for now, loop through all the files in the dir
   Dir.glob("*.{wav,aif,mp3}") do |filename|
   
-    # clean up the name, prepend the prefix and add an id number?
+    # clean up the name, prepend the prefix -- and add an id number?
     new_file_name = "#{theme['prefix']}-#{clean_audio_filename(filename)}"
   
     # inject theme-specific prefix, because original filenames are inconsistent
