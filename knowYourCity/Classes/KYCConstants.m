@@ -19,7 +19,7 @@ BOOL const kEWCoreDataReplaceDatabase = YES;
 
 
 // JSON
-NSString* const kSeedJSONFilename = @"kyc-data"; // will usually have a date code appended
+NSString* const kSeedJSONFilename = @"kyc-demo-130527"; // kyc-data will usually have a date code appended
 NSString* const kLiveJSONURI = @"TBD";
 
 // Toolbar
@@ -84,12 +84,12 @@ NSString* const kFullScreenCameraRequestedNotification = @"kFullScreenCameraRequ
 // AmericanTypewriter | AmericanTypewriter-Bold | AmericanTypewriter-Light
 
 
-NSString* const kTitleFontName = @"AmericanTypewriter-Bold"; //
+NSString* const kTitleFontName = @"Baskerville-Bold"; //
 CGFloat const kTitleFontSize = 28.0;
 CGFloat const kSectionTitleFontSize = 22.0;
-NSString* const kBodyFontName = @"AmericanTypewriter";
+NSString* const kBodyFontName = @"Baskerville";
 CGFloat const kBodyFontSize = 14.0;
-NSString* const kPhotoCreditFontName = @"Georgia-ItalicAmericanTypewriter-Light";
+NSString* const kPhotoCreditFontName = @"Georgia-Italic";
 CGFloat const kPhotoCreditFontSize = 12.0;
 NSString* const kItalicFontName = @"Futura-MediumItalic"; // should probably match line Font
 CGFloat const kItalicFontSize = 12.0;
