@@ -125,7 +125,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:CellIdentifier];
     }
     
@@ -133,20 +133,25 @@
     
     // Configure the cell...
     
-    if ([self.themeList count] > indexPath.row) {
+    if (indexPath.row < [self.themeList count]) {
         cell.textLabel.text = [themeDictionary objectForKey:@"title"];
     } else {
         cell.textLabel.text = NSLocalizedString(@"Not Found.", @"Not found descriptive text.");
         DLog(@"Couldn't convert section %d and row %d into a theme.", indexPath.section, indexPath.row);
     }
     
-    cell.imageView.image = [UIImage imageNamed:[themeDictionary objectForKey:@"thumbnail"]];
+    //cell.imageView.image = [UIImage imageNamed:[themeDictionary objectForKey:@"thumbnail"]];
     
     cell.textLabel.accessibilityLabel = cell.textLabel.text;
     cell.textLabel.accessibilityHint = NSLocalizedString(@"The name of a theme.", @"Hint for theme name in theme list.");
     
-    cell.textLabel.font = [UIFont fontWithName:kBodyFontName size:17.0];
+    cell.textLabel.font = [UIFont fontWithName:kBodyFontName size:19.0];
     cell.textLabel.textColor = [UIColor blackColor];
+    
+    cell.detailTextLabel.text = [themeDictionary objectForKey:@"title"];
+    
+    cell.detailTextLabel.font = [UIFont fontWithName:kBodyFontName size:12.0];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
     
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -282,6 +287,8 @@
     TidbitListViewController *tidbitVC = [[TidbitListViewController alloc] initWithNibName:nil
                                                                                     bundle:nil];
     tidbitVC.tidbitList = self.tidbitList;
+    
+    tidbitVC.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:tidbitVC animated:YES];
 }
