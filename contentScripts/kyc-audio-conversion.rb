@@ -19,19 +19,21 @@ themes_to_process = [
   #{ "name" => "Chinese History", "prefix" => "rh", "subdirectory" => "chineseHistory" },
   #{ "name" => "Jewish History", "prefix" => "po", "subdirectory" => "jewishHistory" },
   #{ "name" => "Gay History", "prefix" => "gn", "subdirectory" => "gayHistory" },
-
+  #{ "name" => "Lesbian History", "prefix" => "am", "subdirectory" => "lesbianHistory" },
   
   # completed as of 130625:
-  { "name" => "Worker History", "prefix" => "mm", "subdirectory" => "michaelMunk" },
-  { "name" => "Native Stories", "prefix" => "ee", "subdirectory" => "edEdmo" }
-
+  #{ "name" => "Worker History", "prefix" => "mm", "subdirectory" => "michaelMunk" },
+  #{ "name" => "Native Stories", "prefix" => "ee", "subdirectory" => "edEdmo" }
+  
+  # second batch of Ann Mussey, converted on 130713:
+  { "name" => "Lesbian History", "prefix" => "am", "subdirectory" => "annMussey" }
+  
   # need to get original wav or aif to process these...
   #{ "name" => "Old Town", "prefix" => "dkc", "subdirectory" => "skidRow" },
   #{ "name" => "Women's History", "prefix" => "jd", "subdirectory" => "womensHistory" },
   
-  # yet to be completed:
+  # yet to be completed, probably deferred until after launch:
   #{ "name" => "Japanese-American History", "prefix" => "hs", "subdirectory" => "japaneseAmericanHistory" },
-  #{ "name" => "Lesbian History", "prefix" => "am", "subdirectory" => "lesbianHistory" },
   #{ "name" => "Public Art", "prefix" => "cb", "subdirectory" => "caryeBye" }
   #{ "name" => "Pearl District", "prefix" => "ml", "subdirectory" => "pearlDistrictArtists" }
   ]
