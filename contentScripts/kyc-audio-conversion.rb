@@ -7,6 +7,7 @@ media_source_directory = "/Users/matt/Dropbox/kycInterviewsEdited"
 ios_output_directory = "/Users/matt/Documents/codeProjects/knowYourCity/knowYourCity/Resources/audio"
 web_output_directory = "/Users/matt/Dropbox/appWorkingNotes/knowYourCity/mp4"
 preview_output_directory = "/Users/matt/Dropbox/appWorkingNotes/knowYourCity/mp3"
+ogg_output_directory = "/Users/matt/Dropbox/appWorkingNotes/knowYourCity/ogg"
 
 ios_suffix = "caf"
 web_suffix = "mp4"
@@ -15,18 +16,17 @@ web_suffix = "mp4"
 
 themes_to_process = [
 
-  #{ "name" => "African-American History", "prefix" => "bh", "subdirectory" => "africanAmericanHistory" },
-  #{ "name" => "Chinese History", "prefix" => "rh", "subdirectory" => "chineseHistory" },
-  #{ "name" => "Jewish History", "prefix" => "po", "subdirectory" => "jewishHistory" },
-  #{ "name" => "Gay History", "prefix" => "gn", "subdirectory" => "gayHistory" },
-  #{ "name" => "Lesbian History", "prefix" => "am", "subdirectory" => "lesbianHistory" },
+  { "name" => "African-American History", "prefix" => "bh", "subdirectory" => "africanAmericanHistory" },
+  { "name" => "Chinese History", "prefix" => "rh", "subdirectory" => "chineseHistory" },
+  { "name" => "Jewish History", "prefix" => "po", "subdirectory" => "jewishHistory" },
+  { "name" => "Gay History", "prefix" => "gn", "subdirectory" => "gayHistory" },
   
   # completed as of 130625:
-  #{ "name" => "Worker History", "prefix" => "mm", "subdirectory" => "michaelMunk" },
-  #{ "name" => "Native Stories", "prefix" => "ee", "subdirectory" => "edEdmo" }
+  { "name" => "Worker History", "prefix" => "mm", "subdirectory" => "michaelMunk" },
+  { "name" => "Native Stories", "prefix" => "ee", "subdirectory" => "edEdmo" },
   
   # second batch of Ann Mussey, converted on 130713:
-  { "name" => "Lesbian History", "prefix" => "am", "subdirectory" => "annMussey" }
+  { "name" => "Lesbian History", "prefix" => "am", "subdirectory" => "annMussey" },
   
   # need to get original wav or aif to process these...
   #{ "name" => "Old Town", "prefix" => "dkc", "subdirectory" => "skidRow" },
@@ -61,7 +61,8 @@ themes_to_process.each do |theme|
     preview_output_file = "#{preview_output_directory}/#{new_file_name}.mp3"
     web_output_file = "#{web_output_directory}/#{new_file_name}.#{web_suffix}"
     ios_output_file = "#{ios_output_directory}/#{new_file_name}.#{ios_suffix}"
-  
+    ogg_output_file = "#{ogg_output_directory}/#{new_file_name}.ogg"
+    
     #puts "Will write to #{output_file}..."
   
     # convert the file for web:
@@ -79,11 +80,13 @@ themes_to_process.each do |theme|
     `lame -h \"#{filename}\" #{preview_output_file}`
   
     # mp4 for the web:
-    `afconvert -v -c 1 -f mp4f -d aac -s 3 -b 128000 \"#{filename}\" #{web_output_file}`
+    #{}`afconvert -v -c 1 -f mp4f -d aac -s 3 -b 128000 \"#{filename}\" #{web_output_file}`
   
     # convert the file for the app:
     # `afconvert -v -c 1 -f caff -d aac -s 3 -b 128000 \"#{filename}\" #{ios_output_file}`
-  
+    
+    # ogg for Firefox and Opera
+    
     # add an object to the output list, with id, original name, new filenames?
     $processed_files << new_file_name
   
