@@ -2,9 +2,9 @@ require 'rubygems'
 require 'RMagick'
 require 'FileUtils'
 
-photo_source_directory = "/Users/matt/Dropbox/kycInterviewsEdited/croppedPhotos"
-ios_output_directory = "/Users/matt/Documents/codeProjects/knowYourCity/knowYourCity/Resources/photos"
-web_output_directory = "/Users/matt/Dropbox/appWorkingNotes/knowYourCity/webPhotos"
+photo_source_directory = "#{ENV['HOME']}/Dropbox/kycInterviewsEdited/croppedPhotos"
+ios_output_directory = "#{ENV['HOME']}/Documents/codeProjects/knowYourCity/knowYourCity/Resources/photos"
+web_output_directory = "#{ENV['HOME']}/Dropbox/appWorkingNotes/knowYourCity/webPhotos"
 
 # FUTURE: iterate through a list of required photos, and note missings ones
 
