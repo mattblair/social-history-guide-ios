@@ -1,3 +1,9 @@
+# Easiest on OSX 10.8: install imagemagick via homebrew, then the RMagick gem
+# The steps:
+# brew update
+# brew install imagemagick --disable-openmp --build-from-source
+# gem install rmagick
+
 require 'rubygems'
 require 'RMagick'
 require 'FileUtils'
