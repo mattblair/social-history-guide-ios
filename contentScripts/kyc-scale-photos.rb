@@ -12,6 +12,9 @@ photo_source_directory = "#{ENV['HOME']}/Dropbox/kycInterviewsEdited/croppedPhot
 ios_output_directory = "#{ENV['HOME']}/Documents/codeProjects/knowYourCity/knowYourCity/Resources/photos"
 web_output_directory = "#{ENV['HOME']}/Dropbox/appWorkingNotes/knowYourCity/webPhotos"
 
+# to prevent laptop over-warming in the middle of summer:
+length_of_nap = 1
+
 # FUTURE: iterate through a list of required photos, and note missings ones
 
 # read the slideshow json file, and look for those photos
@@ -55,7 +58,7 @@ Dir.glob("*.jpg") do |filename|
    #<image>.jpg [320 width, same as iOS non-retina]
    
    # throttle, if desired
-   sleep(1)
+   sleep(length_of_nap)
   
   # iOS images
   
@@ -68,7 +71,7 @@ Dir.glob("*.jpg") do |filename|
   web_thumb.write("#{web_output_directory}/#{filename}-tn.jpg")
   
   # throttle, if desired
-   sleep(1)
+   sleep(length_of_nap)
   
 end
 
