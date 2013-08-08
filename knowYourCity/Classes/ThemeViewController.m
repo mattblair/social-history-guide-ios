@@ -417,9 +417,7 @@
             break;
     }
 	
-	
-	// dismiss the controller
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)sendToTwitter {

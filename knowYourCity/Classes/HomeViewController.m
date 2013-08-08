@@ -330,7 +330,7 @@
     
     // no selection to handle yet...
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end
