@@ -38,6 +38,17 @@ typedef NS_ENUM(NSUInteger, KYCStoryMediaType) {
     KYCStoryMediaTypeVideo            // not supported in v1.0, or until we have video
 };
 
+// probably only used for import filtering. Even then, maybe only for testing.
+typedef NS_ENUM(NSUInteger, KYCWorkflowState) {
+    KYCWorkflowStateProposed = 0,
+    KYCWorkflowStateDraft,
+    KYCWorkflowStateDeferred,
+    KYCWorkflowStateIncomplete,
+    KYCWorkflowStateEdited,
+    KYCWorkflowStatePublished,
+    KYCWorkflowStateTesting
+};
+
 // Core Data
 
 // EWCoreDataManager Configuration
