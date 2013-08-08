@@ -63,6 +63,9 @@ extern BOOL const kEWCoreDataReplaceDatabase;
 extern NSString* const kSeedJSONFilename;
 extern NSString* const kLiveJSONURI;
 
+// Off-device images
+extern NSString* const kPhotosURL;
+
 // Toolbar
 extern NSString* const kMapButtonImage;
 extern NSString* const kTidbitButtonImage;
