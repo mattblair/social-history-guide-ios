@@ -42,7 +42,7 @@
 		C916E15816C0CAFC00423344 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15616C0CAFC00423344 /* MapKit.framework */; };
 		C916E15B16C0D01F00423344 /* TidbitMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */; };
 		C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C921484C16B58AF8007323D0 /* EWWebViewController.m */; };
-		C921485216B59417007323D0 /* EWMAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C921485116B59417007323D0 /* EWMAudioPlayerView.m */; };
+		C921485216B59417007323D0 /* EWAAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C921485116B59417007323D0 /* EWAAudioPlayerView.m */; };
 		C921485616B598A3007323D0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C921485516B598A3007323D0 /* AVFoundation.framework */; };
 		C921485B16B59B70007323D0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C921485A16B59B70007323D0 /* SystemConfiguration.framework */; };
 		C921486216B59D7C007323D0 /* pause-audio.png in Resources */ = {isa = PBXBuildFile; fileRef = C921485E16B59D7C007323D0 /* pause-audio.png */; };
@@ -157,8 +157,8 @@
 		C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitMapAnnotation.m; path = Classes/TidbitMapAnnotation.m; sourceTree = "<group>"; };
 		C921484B16B58AF8007323D0 /* EWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWWebViewController.h; path = EWMShared/EWWebViewController.h; sourceTree = "<group>"; };
 		C921484C16B58AF8007323D0 /* EWWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWWebViewController.m; path = EWMShared/EWWebViewController.m; sourceTree = "<group>"; };
-		C921485016B59417007323D0 /* EWMAudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWMAudioPlayerView.h; path = EWMShared/EWMAudioPlayerView.h; sourceTree = "<group>"; };
-		C921485116B59417007323D0 /* EWMAudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWMAudioPlayerView.m; path = EWMShared/EWMAudioPlayerView.m; sourceTree = "<group>"; };
+		C921485016B59417007323D0 /* EWAAudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWAAudioPlayerView.h; path = EWMShared/EWAAudioPlayerView.h; sourceTree = "<group>"; };
+		C921485116B59417007323D0 /* EWAAudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWAAudioPlayerView.m; path = EWMShared/EWAAudioPlayerView.m; sourceTree = "<group>"; };
 		C921485516B598A3007323D0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C921485A16B59B70007323D0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C921485E16B59D7C007323D0 /* pause-audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-audio.png"; path = "Resources/graphics/pause-audio.png"; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 				C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */,
 				C97B44E7169DCD54008A2793 /* Models */,
 				C97B44E6169DCD3C008A2793 /* ViewControllers */,
-				C97B44E8169DCD77008A2793 /* EWMSharedClasses */,
+				C97B44E8169DCD77008A2793 /* EWASharedClasses */,
 				C97B44E5169DCD20008A2793 /* Resources */,
 				C960758E16AC6CDF004B2672 /* 3rdParty */,
 				C92666F3169DC6920061F9AD /* Supporting Files */,
@@ -551,15 +551,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		C97B44E8169DCD77008A2793 /* EWMSharedClasses */ = {
+		C97B44E8169DCD77008A2793 /* EWASharedClasses */ = {
 			isa = PBXGroup;
 			children = (
-				C921485016B59417007323D0 /* EWMAudioPlayerView.h */,
-				C921485116B59417007323D0 /* EWMAudioPlayerView.m */,
+				C921485016B59417007323D0 /* EWAAudioPlayerView.h */,
+				C921485116B59417007323D0 /* EWAAudioPlayerView.m */,
 				C921484B16B58AF8007323D0 /* EWWebViewController.h */,
 				C921484C16B58AF8007323D0 /* EWWebViewController.m */,
 			);
-			name = EWMSharedClasses;
+			name = EWASharedClasses;
 			sourceTree = "<group>";
 		};
 		C97B44E9169DCD95008A2793 /* default */ = {
@@ -753,7 +753,7 @@
 				C952427516B0313A00BD8F74 /* GuestStubView.m in Sources */,
 				C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */,
 				C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */,
-				C921485216B59417007323D0 /* EWMAudioPlayerView.m in Sources */,
+				C921485216B59417007323D0 /* EWAAudioPlayerView.m in Sources */,
 				C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */,
 				C9118C1616BECC48009A890D /* KYCConfigurationProvider.m in Sources */,
 				C916E15416C0C8DA00423344 /* MapViewController.m in Sources */,

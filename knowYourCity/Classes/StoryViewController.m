@@ -7,7 +7,7 @@
 //
 
 #import "StoryViewController.h"
-#import "EWMAudioPlayerView.h"
+#import "EWAAudioPlayerView.h"
 #import "GuestStubView.h"
 
 @interface StoryViewController ()
@@ -17,7 +17,7 @@
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) UIImageView *mainPhoto;
 @property (strong, nonatomic) UILabel *titleLabel;
-@property (strong, nonatomic) EWMAudioPlayerView *theAudioPlayerView;
+@property (strong, nonatomic) EWAAudioPlayerView *theAudioPlayerView;
 @property (strong, nonatomic) UILabel *mainTextLabel;
 
 @property (strong, nonatomic) UILabel *guestLabel;
@@ -93,7 +93,7 @@
         NSURL *bundleAudioURL = [[NSBundle mainBundle] URLForResource:audioFilename
                                                         withExtension:nil];
         
-        self.theAudioPlayerView = [[EWMAudioPlayerView alloc] initWithAudioURL:bundleAudioURL];
+        self.theAudioPlayerView = [[EWAAudioPlayerView alloc] initWithAudioURL:bundleAudioURL];
         
         // get frame and reset y
         CGRect audioRect = self.theAudioPlayerView.frame;
