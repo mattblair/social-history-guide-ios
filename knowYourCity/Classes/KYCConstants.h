@@ -24,7 +24,7 @@
 // tidbits will use this too
 
 // what about letters/ documents?
-typedef enum KYCStoryMediaType {
+typedef NS_ENUM(NSUInteger, KYCStoryMediaType) {
     KYCStoryMediaTypeAudio = 0,       // default
     KYCStoryMediaTypeAudioText,
     KYCStoryMediaTypeText,
@@ -36,7 +36,7 @@ typedef enum KYCStoryMediaType {
     KYCStoryMediaTypeMapComplex,      // may include poly-lines and polygrams
     KYCStoryMediaTypeMapOverlay,      // geo-rectified image to display on map
     KYCStoryMediaTypeVideo            // not supported in v1.0, or until we have video
-} KYCStoryMediaType;
+};
 
 // Core Data
 
