@@ -80,7 +80,7 @@
         self.titleLabel.text = [self.guestData objectForKey:@"title"];
         self.titleLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
         self.titleLabel.numberOfLines = 2;
-        self.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.titleLabel.backgroundColor = [UIColor clearColor];
         
         [self addSubview:self.titleLabel];

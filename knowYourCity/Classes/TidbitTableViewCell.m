@@ -57,7 +57,7 @@
         self.titleLabel.text = @"placeholder";
         self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:18.0];
         self.titleLabel.numberOfLines = 0;
-        self.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.titleLabel.backgroundColor = [UIColor clearColor];
         
         [self addSubview:self.titleLabel];
@@ -92,7 +92,7 @@
         self.yearLabel = [[UILabel alloc] initWithFrame:yearRect];
         self.yearLabel.text = @"1972";
         self.yearLabel.font = [UIFont fontWithName:kItalicFontName size:18.0];
-        self.yearLabel.textAlignment = UITextAlignmentCenter;
+        self.yearLabel.textAlignment = NSTextAlignmentCenter;
         self.yearLabel.textColor = [UIColor whiteColor];
         self.yearLabel.backgroundColor = [UIColor blackColor];
         

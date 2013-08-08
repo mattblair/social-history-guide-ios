@@ -64,7 +64,7 @@
         self.currentTime.text = @"0:00";
         self.currentTime.font = [UIFont systemFontOfSize:AUDIO_TIME_LABEL_FONT_SIZE];
         self.currentTime.backgroundColor = [UIColor clearColor];
-        self.currentTime.textAlignment = UITextAlignmentCenter;
+        self.currentTime.textAlignment = NSTextAlignmentCenter;
         
         [self addSubview:self.currentTime];
         
@@ -86,7 +86,7 @@
         self.totalTime = [[UILabel alloc] initWithFrame:totalFrame];
         self.totalTime.font = [UIFont systemFontOfSize:AUDIO_TIME_LABEL_FONT_SIZE];
         self.totalTime.backgroundColor = [UIColor clearColor];
-        self.totalTime.textAlignment = UITextAlignmentCenter;
+        self.totalTime.textAlignment = NSTextAlignmentCenter;
         
         self.totalTime.text = [NSString stringWithFormat:@"%d:%02d",
                                (int)self.audioPlayer.duration / 60, (int)self.audioPlayer.duration % 60, nil];

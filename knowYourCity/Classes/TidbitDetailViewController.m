@@ -63,7 +63,7 @@
     
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
     self.titleLabel.numberOfLines = 0;
-    self.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.text = [self.tidbitData objectForKey:@"title"];
     self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:kTitleFontSize];
     
@@ -82,7 +82,7 @@
     
     self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
     self.textLabel.numberOfLines = 0;
-    self.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.textLabel.text = tidbitText;
     self.textLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
     

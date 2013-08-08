@@ -69,7 +69,7 @@
     
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
     self.titleLabel.numberOfLines = 0;
-    self.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.text = [self.storyData objectForKey:@"title"];
     self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:kTitleFontSize];
     
@@ -116,7 +116,7 @@
     
     self.mainTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 70.0)];
     self.mainTextLabel.numberOfLines = 0;
-    self.mainTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.mainTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.mainTextLabel.text = [self.storyData objectForKey:@"mainText"];
     self.mainTextLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
     

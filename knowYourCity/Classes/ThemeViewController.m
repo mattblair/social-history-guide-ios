@@ -79,7 +79,7 @@
     // title
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
     self.titleLabel.numberOfLines = 0;
-    self.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.text = [self.themeDictionary objectForKey:@"title"];
     self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:kTitleFontSize];
     
@@ -93,7 +93,7 @@
     
     self.introLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 70.0)];
     self.introLabel.numberOfLines = 0;
-    self.introLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.introLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.introLabel.text = [self.themeDictionary objectForKey:@"introduction"];
     self.introLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
     

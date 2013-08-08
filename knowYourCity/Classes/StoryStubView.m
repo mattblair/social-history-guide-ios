@@ -109,7 +109,7 @@
         self.quoteLabel.text = [self.storyData objectForKey:@"quote"];
         self.quoteLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
         self.quoteLabel.numberOfLines = 3;
-        self.quoteLabel.lineBreakMode = UILineBreakModeWordWrap;
+        self.quoteLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.quoteLabel.backgroundColor = [UIColor clearColor];
         
         [self addSubview:self.quoteLabel];
