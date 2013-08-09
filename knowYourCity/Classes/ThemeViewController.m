@@ -432,57 +432,26 @@
     
     // this would be a permalink specific to each theme/story/tidbit
     NSURL *placeholderURL = [NSURL URLWithString:@"http://www.knowyourcity.org"];
-    
-    if (HAS_SOCIAL_FRAMEWORK) { // iOS 6-style
         
-        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-            
-            SLComposeViewController *twitterVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-            
-            [twitterVC setInitialText:messageBody];
-            
-            UIImage *themeImage = self.themeGraphic.image;
-            
-            if (themeImage) {
-                [twitterVC addImage:themeImage];
-            }
-            
-            [twitterVC addURL:placeholderURL];
-            
-            [self presentViewController:twitterVC animated:YES completion:NULL];
-            
-        } else {
-            
-            DLog(@"No Twitter. Alert user?");
-        }
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         
+        SLComposeViewController *twitterVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
-    } else if ([TWTweetComposeViewController canSendTweet]) {
-        
-        TWTweetComposeViewController *tweetVC = [[TWTweetComposeViewController alloc] init];
-        
-        [tweetVC setInitialText:messageBody];
+        [twitterVC setInitialText:messageBody];
         
         UIImage *themeImage = self.themeGraphic.image;
         
         if (themeImage) {
-            [tweetVC addImage:themeImage];
+            [twitterVC addImage:themeImage];
         }
         
+        [twitterVC addURL:placeholderURL];
         
-        [tweetVC addURL:placeholderURL];
+        [self presentViewController:twitterVC animated:YES completion:NULL];
         
-        // set completion handler?
+    } else {
         
-        //typedef void (^TWTweetComposeViewControllerCompletionHandler)(TWTweetComposeViewControllerResult result);
-        // result is either cancelled or done
-        
-	    [self presentViewController:tweetVC animated:YES completion:NULL];
-    }
-    else {
-        
-        DLog(@"Can't send tweet.");
-        // prompt them to set up account? Or does the framework do that?
+        DLog(@"No Twitter. Alert user?");
     }
 }
 
