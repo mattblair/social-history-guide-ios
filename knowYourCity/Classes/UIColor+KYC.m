@@ -23,6 +23,10 @@
     return [UIColor colorWithRed:77.0/255.0 green:77.0/255.0 blue:77.0/255.0 alpha:1.0];
 }
 
++ (UIColor *)kycRed {
+    return [UIColor colorWithRed:235.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
+}
+
 + (UIColor *)kycOffWhite {
     return [UIColor colorWithRed:210.0/255.0 green:197.0/255.0 blue:197.0/255.0 alpha:1.0];
 }

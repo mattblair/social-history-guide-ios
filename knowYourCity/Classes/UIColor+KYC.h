@@ -13,7 +13,7 @@
 // color scheme TBD
 + (UIColor *)kycBrown;
 + (UIColor *)kycGray;
-
++ (UIColor *)kycRed;
 + (UIColor *)kycOffWhite;
 
 // semantic colors
