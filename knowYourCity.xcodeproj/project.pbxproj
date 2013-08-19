@@ -102,7 +102,7 @@
 		C97B44EE169DCF48008A2793 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EB169DCF48008A2793 /* Default.png */; };
 		C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EC169DCF48008A2793 /* Default@2x.png */; };
 		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
-		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C990649816B82B1B00421288 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649516B82B1B00421288 /* Twitter.framework */; };
 		C9A528FC17C2BFAA00EB0362 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528F717C2BF8100EB0362 /* libTestFlight.a */; };
 		C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */; };
