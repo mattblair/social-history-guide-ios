@@ -17,7 +17,6 @@
     //#import "EWCoreDataManager.h"
     #import "KYCConfigurationProvider.h"
 
-    // testflight
     #import "TestFlight.h"
     #import "Flurry.h"
 

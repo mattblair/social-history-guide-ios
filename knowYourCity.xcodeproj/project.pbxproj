@@ -104,8 +104,8 @@
 		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
 		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C990649816B82B1B00421288 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649516B82B1B00421288 /* Twitter.framework */; };
-		C9A528FC17C2BFAA00EB0362 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528F717C2BF8100EB0362 /* libTestFlight.a */; };
 		C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */; };
+		C9A5290117C2C17500EB0362 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528F717C2BF8100EB0362 /* libTestFlight.a */; };
 		C9DE110116AD95FC00D93566 /* logo_header_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE10FF16AD95FC00D93566 /* logo_header_black.png */; };
 		C9DE110216AD95FC00D93566 /* logo_header_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE110016AD95FC00D93566 /* logo_header_black@2x.png */; };
 		C9DE110616AD98ED00D93566 /* kycNavBarBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE110416AD98ED00D93566 /* kycNavBarBlack.png */; };
@@ -266,9 +266,9 @@
 				C92666ED169DC6920061F9AD /* UIKit.framework in Frameworks */,
 				C92666EF169DC6920061F9AD /* Foundation.framework in Frameworks */,
 				C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */,
-				C9A528FC17C2BFAA00EB0362 /* libTestFlight.a in Frameworks */,
-				F9822EBB2D034D2C87C2D017 /* libPods.a in Frameworks */,
+				C9A5290117C2C17500EB0362 /* libTestFlight.a in Frameworks */,
 				C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */,
+				F9822EBB2D034D2C87C2D017 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,7 +848,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK2.0.0\"",
 				);
@@ -867,7 +866,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK2.0.0\"",
 				);
@@ -916,7 +914,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK2.0.0\"",
 				);
@@ -959,7 +956,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK2.0.0\"",
 				);
