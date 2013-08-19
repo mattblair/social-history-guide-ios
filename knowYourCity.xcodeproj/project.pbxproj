@@ -105,6 +105,7 @@
 		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C990649816B82B1B00421288 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649516B82B1B00421288 /* Twitter.framework */; };
 		C9A528FC17C2BFAA00EB0362 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528F717C2BF8100EB0362 /* libTestFlight.a */; };
+		C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */; };
 		C9DE110116AD95FC00D93566 /* logo_header_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE10FF16AD95FC00D93566 /* logo_header_black.png */; };
 		C9DE110216AD95FC00D93566 /* logo_header_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE110016AD95FC00D93566 /* logo_header_black@2x.png */; };
 		C9DE110616AD98ED00D93566 /* kycNavBarBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE110416AD98ED00D93566 /* kycNavBarBlack.png */; };
@@ -240,6 +241,8 @@
 		C9A528F817C2BF8100EB0362 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		C9A528F917C2BF8100EB0362 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		C9A528FA17C2BF8100EB0362 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		C9A528FE17C2BFFE00EB0362 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.3.a; sourceTree = "<group>"; };
 		C9DE10FF16AD95FC00D93566 /* logo_header_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header_black.png; sourceTree = "<group>"; };
 		C9DE110016AD95FC00D93566 /* logo_header_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_header_black@2x.png"; sourceTree = "<group>"; };
 		C9DE110416AD98ED00D93566 /* kycNavBarBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kycNavBarBlack.png; sourceTree = "<group>"; };
@@ -265,6 +268,7 @@
 				C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */,
 				C9A528FC17C2BFAA00EB0362 /* libTestFlight.a in Frameworks */,
 				F9822EBB2D034D2C87C2D017 /* libPods.a in Frameworks */,
+				C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +472,7 @@
 		C960758E16AC6CDF004B2672 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C9A528FD17C2BFFE00EB0362 /* Flurry */,
 				C9A528F617C2BF8100EB0362 /* TestFlightSDK2.0.0 */,
 				C95C30C01710FCA400E64F0C /* Flurry */,
 			);
@@ -566,6 +571,16 @@
 			);
 			name = TestFlightSDK2.0.0;
 			path = 3rdParty/TestFlightSDK2.0.0;
+			sourceTree = "<group>";
+		};
+		C9A528FD17C2BFFE00EB0362 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				C9A528FE17C2BFFE00EB0362 /* Flurry.h */,
+				C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */,
+			);
+			name = Flurry;
+			path = 3rdParty/Flurry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
