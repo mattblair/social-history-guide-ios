@@ -75,10 +75,6 @@
 		C952427E16B0351600BD8F74 /* new-market-ph.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C952427A16B0351600BD8F74 /* new-market-ph.jpg */; };
 		C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */ = {isa = PBXBuildFile; fileRef = C952428016B03F4700BD8F74 /* UIColor+KYC.m */; };
 		C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */; };
-		C95C30BD1710F6FC00E64F0C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C95C30B91710F6FC00E64F0C /* libTestFlight.a */; };
-		C95C30BE1710F6FC00E64F0C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C95C30BA1710F6FC00E64F0C /* README.md */; };
-		C95C30BF1710F6FC00E64F0C /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C95C30BB1710F6FC00E64F0C /* release_notes.md */; };
-		C95C30C31710FCA400E64F0C /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C95C30C21710FCA400E64F0C /* libFlurry.a */; };
 		C960757016AC59B2004B2672 /* logo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756E16AC59B2004B2672 /* logo_header.png */; };
 		C960757116AC59B2004B2672 /* logo_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756F16AC59B2004B2672 /* logo_header@2x.png */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
@@ -108,6 +104,7 @@
 		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
 		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C990649816B82B1B00421288 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649516B82B1B00421288 /* Twitter.framework */; };
+		C9A528FC17C2BFAA00EB0362 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528F717C2BF8100EB0362 /* libTestFlight.a */; };
 		C9DE110116AD95FC00D93566 /* logo_header_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE10FF16AD95FC00D93566 /* logo_header_black.png */; };
 		C9DE110216AD95FC00D93566 /* logo_header_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE110016AD95FC00D93566 /* logo_header_black@2x.png */; };
 		C9DE110616AD98ED00D93566 /* kycNavBarBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE110416AD98ED00D93566 /* kycNavBarBlack.png */; };
@@ -206,10 +203,6 @@
 		C952428016B03F4700BD8F74 /* UIColor+KYC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KYC.m"; path = "Classes/UIColor+KYC.m"; sourceTree = "<group>"; };
 		C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitTableViewCell.h; path = Classes/TidbitTableViewCell.h; sourceTree = "<group>"; };
 		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
-		C95C30B91710F6FC00E64F0C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		C95C30BA1710F6FC00E64F0C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		C95C30BB1710F6FC00E64F0C /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		C95C30BC1710F6FC00E64F0C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		C95C30C11710FCA400E64F0C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		C95C30C21710FCA400E64F0C /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		C960756E16AC59B2004B2672 /* logo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header.png; sourceTree = "<group>"; };
@@ -243,6 +236,10 @@
 		C990649316B82B1B00421288 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C990649416B82B1B00421288 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C990649516B82B1B00421288 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		C9A528F717C2BF8100EB0362 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		C9A528F817C2BF8100EB0362 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		C9A528F917C2BF8100EB0362 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		C9A528FA17C2BF8100EB0362 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		C9DE10FF16AD95FC00D93566 /* logo_header_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header_black.png; sourceTree = "<group>"; };
 		C9DE110016AD95FC00D93566 /* logo_header_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_header_black@2x.png"; sourceTree = "<group>"; };
 		C9DE110416AD98ED00D93566 /* kycNavBarBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kycNavBarBlack.png; sourceTree = "<group>"; };
@@ -266,8 +263,7 @@
 				C92666ED169DC6920061F9AD /* UIKit.framework in Frameworks */,
 				C92666EF169DC6920061F9AD /* Foundation.framework in Frameworks */,
 				C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */,
-				C95C30BD1710F6FC00E64F0C /* libTestFlight.a in Frameworks */,
-				C95C30C31710FCA400E64F0C /* libFlurry.a in Frameworks */,
+				C9A528FC17C2BFAA00EB0362 /* libTestFlight.a in Frameworks */,
 				F9822EBB2D034D2C87C2D017 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,18 +412,6 @@
 			name = placeholders;
 			sourceTree = "<group>";
 		};
-		C95C30B81710F6FC00E64F0C /* TestFlightSDK1.2.4 */ = {
-			isa = PBXGroup;
-			children = (
-				C95C30B91710F6FC00E64F0C /* libTestFlight.a */,
-				C95C30BA1710F6FC00E64F0C /* README.md */,
-				C95C30BB1710F6FC00E64F0C /* release_notes.md */,
-				C95C30BC1710F6FC00E64F0C /* TestFlight.h */,
-			);
-			name = TestFlightSDK1.2.4;
-			path = 3rdParty/TestFlightSDK1.2.4;
-			sourceTree = "<group>";
-		};
 		C95C30C01710FCA400E64F0C /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,8 +468,8 @@
 		C960758E16AC6CDF004B2672 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C9A528F617C2BF8100EB0362 /* TestFlightSDK2.0.0 */,
 				C95C30C01710FCA400E64F0C /* Flurry */,
-				C95C30B81710F6FC00E64F0C /* TestFlightSDK1.2.4 */,
 			);
 			name = 3rdParty;
 			sourceTree = "<group>";
@@ -570,6 +554,18 @@
 				C97B44EA169DCF48008A2793 /* Default-568h@2x.png */,
 			);
 			name = default;
+			sourceTree = "<group>";
+		};
+		C9A528F617C2BF8100EB0362 /* TestFlightSDK2.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				C9A528F717C2BF8100EB0362 /* libTestFlight.a */,
+				C9A528F817C2BF8100EB0362 /* TestFlight+AsyncLogging.h */,
+				C9A528F917C2BF8100EB0362 /* TestFlight+ManualSessions.h */,
+				C9A528FA17C2BF8100EB0362 /* TestFlight.h */,
+			);
+			name = TestFlightSDK2.0.0;
+			path = 3rdParty/TestFlightSDK2.0.0;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -694,8 +690,6 @@
 				C97164AE16FACFA200EA8B02 /* why-the-church.mp3 in Resources */,
 				C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */,
 				C97164B216FAD49D00EA8B02 /* jan-dilg-temp.jpg in Resources */,
-				C95C30BE1710F6FC00E64F0C /* README.md in Resources */,
-				C95C30BF1710F6FC00E64F0C /* release_notes.md in Resources */,
 				C91406BE1753CB7F00BC142F /* kyc-demo-130527.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -841,6 +835,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -859,6 +854,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -907,6 +903,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -949,6 +946,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK1.2.4\"",
 					"\"$(SRCROOT)/knowYourCity/3rdParty/Flurry\"",
+					"\"$(SRCROOT)/knowYourCity/3rdParty/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
