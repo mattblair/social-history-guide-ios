@@ -8,6 +8,8 @@
 
 #import "KYCAppDelegate.h"
 
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+
 #import "KYCPrivateConstants.h"
 #import "HomeViewController.h"
 
@@ -21,6 +23,8 @@
     [TestFlight takeOff:kTestFlightAppToken];
     
     [Flurry startSession:kFlurryAPIKey];
+    
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     [self configureAppearance];
     
