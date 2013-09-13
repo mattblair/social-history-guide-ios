@@ -76,4 +76,5 @@ Dir.glob("*.jpg") do |filename|
 end
 
 
-# rsync web photos to the static server?
+# rsync web photos to the static server? It's currently done via cap deploy:push_photos
+# %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress "#{ENV['HOME']}/Dropbox/appWorkingNotes/knowYourCity/webPhotos/" ewmedia@web91.webfaction.com:/home/ewmedia/webapps/kycstatic/photos/}
