@@ -25,12 +25,16 @@ themes_to_process = [
   { "name" => "Worker History", "prefix" => "mm", "subdirectory" => "michaelMunk" },
   { "name" => "Native Stories", "prefix" => "ee", "subdirectory" => "edEdmo" },
   
+  # first batch of Ann Mussey"
+  { "name" => "Lesbian History", "prefix" => "am", "subdirectory" => "lesbianHistory" },
+  
   # second batch of Ann Mussey, converted on 130713:
   { "name" => "Lesbian History", "prefix" => "am", "subdirectory" => "annMussey" },
   
   # need to get original wav or aif to process these...
-  #{ "name" => "Old Town", "prefix" => "dkc", "subdirectory" => "skidRow" },
-  #{ "name" => "Women's History", "prefix" => "jd", "subdirectory" => "womensHistory" },
+  # mp3 versions are already prevised
+  { "name" => "Old Town", "prefix" => "dkc", "subdirectory" => "oldTown-mp3" },
+  { "name" => "Women's History", "prefix" => "jd", "subdirectory" => "janDilg-mp3" }
   
   # yet to be completed, probably deferred until after launch:
   #{ "name" => "Japanese-American History", "prefix" => "hs", "subdirectory" => "japaneseAmericanHistory" },
@@ -55,10 +59,12 @@ themes_to_process.each do |theme|
   Dir.glob("*.{wav,aif,mp3}") do |filename|
   
     # clean up the name, prepend the prefix -- and add an id number?
-    new_file_name = "#{theme['prefix']}-#{clean_audio_filename(filename)}"
-  
+    # prevent duplicate prefixing, since those mp3's are already prefixed
+    prefix = filename.start_with?(theme['prefix']) ? "" : "#{theme['prefix']}-"
+    new_file_name = "#{prefix}#{clean_audio_filename(filename)}"
+    
     # inject theme-specific prefix, because original filenames are inconsistent
-    preview_output_file = "#{preview_output_directory}/#{new_file_name}.mp3"
+    mp3_output_file = "#{preview_output_directory}/#{new_file_name}.mp3"
     web_output_file = "#{web_output_directory}/#{new_file_name}.#{web_suffix}"
     ios_output_file = "#{ios_output_directory}/#{new_file_name}.#{ios_suffix}"
     ogg_output_file = "#{ogg_output_directory}/#{new_file_name}.ogg"
@@ -74,18 +80,24 @@ themes_to_process.each do |theme|
     # mp3 conversion not supported without a 3rd party encoder
     # `afconvert -v -c 1 -f MPG3 -d mp3 -s 3 -b 128000 #{filename} #{output_file}`
     
-    # Get LAME encoder via homebrew: brew install lame
-    # lame --help
-    # http://lame.cvs.sourceforge.net/viewvc/lame/lame/USAGE
-    `lame -h \"#{filename}\" #{preview_output_file}`
+    # if it's already an mp3, just copy it to the mp3 folder, without changing the filename
+    if filename.end_with?(".mp3")
+      `cp \"#{filename}\" "#{preview_output_directory}/#{new_file_name}.mp3"`
+    else
+      # Get LAME encoder via homebrew: brew install lame
+      # lame --help
+      # http://lame.cvs.sourceforge.net/viewvc/lame/lame/USAGE
+      `lame -h \"#{filename}\" #{mp3_output_file}`
+    end
   
     # mp4 for the web:
     #{}`afconvert -v -c 1 -f mp4f -d aac -s 3 -b 128000 \"#{filename}\" #{web_output_file}`
   
     # convert the file for the app:
-    # `afconvert -v -c 1 -f caff -d aac -s 3 -b 128000 \"#{filename}\" #{ios_output_file}`
+    `afconvert -v -c 1 -f caff -d aac -s 3 -b 128000 \"#{filename}\" #{ios_output_file}`
     
-    # ogg for Firefox and Opera
+    # ogg for Firefox and Opera -- switch to overwrite what's there?
+    `ffmpeg -i \"#{filename}\" -acodec libvorbis -aq 5 #{ogg_output_file}`
     
     # add an object to the output list, with id, original name, new filenames?
     $processed_files << new_file_name
