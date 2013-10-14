@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C90E5DE616C00C3200FFB1AF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E5DE516C00C3200FFB1AF /* MessageUI.framework */; };
+		C9108017180C5E9D0053870D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9108016180C5E9D0053870D /* libsqlite3.dylib */; };
 		C9118C1616BECC48009A890D /* KYCConfigurationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C9118C1516BECC48009A890D /* KYCConfigurationProvider.m */; };
 		C9118C1916BEEFAF009A890D /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1716BEEFAE009A890D /* 111-user.png */; };
 		C9118C1A16BEEFAF009A890D /* 08-chat.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1816BEEFAF009A890D /* 08-chat.png */; };
@@ -117,6 +118,7 @@
 		1F803456ED3444B483A73DB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7261BF0B03AA4FDAB01A8F4A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		C90E5DE516C00C3200FFB1AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C9108016180C5E9D0053870D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C9118C1416BECC48009A890D /* KYCConfigurationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCConfigurationProvider.h; path = Classes/KYCConfigurationProvider.h; sourceTree = "<group>"; };
 		C9118C1516BECC48009A890D /* KYCConfigurationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCConfigurationProvider.m; path = Classes/KYCConfigurationProvider.m; sourceTree = "<group>"; };
 		C9118C1716BEEFAE009A890D /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "111-user.png"; path = "Resources/glyphish-placeholders/111-user.png"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9108017180C5E9D0053870D /* libsqlite3.dylib in Frameworks */,
 				C916E15716C0CAFC00423344 /* CoreLocation.framework in Frameworks */,
 				C916E15816C0CAFC00423344 /* MapKit.framework in Frameworks */,
 				C90E5DE616C00C3200FFB1AF /* MessageUI.framework in Frameworks */,
@@ -296,6 +299,7 @@
 		C92666EB169DC6920061F9AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9108016180C5E9D0053870D /* libsqlite3.dylib */,
 				C916E15516C0CAFC00423344 /* CoreLocation.framework */,
 				C916E15616C0CAFC00423344 /* MapKit.framework */,
 				C90E5DE516C00C3200FFB1AF /* MessageUI.framework */,
