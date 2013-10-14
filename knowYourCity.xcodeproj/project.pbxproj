@@ -103,6 +103,7 @@
 		C97B44EE169DCF48008A2793 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EB169DCF48008A2793 /* Default.png */; };
 		C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EC169DCF48008A2793 /* Default@2x.png */; };
 		C98345A1180C67A200C120B1 /* SHGDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98345A0180C67A200C120B1 /* SHGDataController.m */; };
+		C98345A4180C71BA00C120B1 /* shg-web.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C98345A3180C71BA00C120B1 /* shg-web.sqlite */; };
 		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
 		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C990649816B82B1B00421288 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649516B82B1B00421288 /* Twitter.framework */; };
@@ -239,6 +240,7 @@
 		C97B44EC169DCF48008A2793 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/default/Default@2x.png"; sourceTree = "<group>"; };
 		C983459F180C67A200C120B1 /* SHGDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGDataController.h; path = Classes/SHGDataController.h; sourceTree = "<group>"; };
 		C98345A0180C67A200C120B1 /* SHGDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGDataController.m; path = Classes/SHGDataController.m; sourceTree = "<group>"; };
+		C98345A3180C71BA00C120B1 /* shg-web.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = "shg-web.sqlite"; path = "Resources/datastores/shg-web.sqlite"; sourceTree = "<group>"; };
 		C990649316B82B1B00421288 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C990649416B82B1B00421288 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C990649516B82B1B00421288 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -489,6 +491,7 @@
 		C97B44E5169DCD20008A2793 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C98345A2180C718B00C120B1 /* data */,
 				C952427616B0350400BD8F74 /* placeholders */,
 				C97B44E9169DCD95008A2793 /* default */,
 				C960756D16AC59B2004B2672 /* graphics */,
@@ -568,6 +571,14 @@
 				C97B44EA169DCF48008A2793 /* Default-568h@2x.png */,
 			);
 			name = default;
+			sourceTree = "<group>";
+		};
+		C98345A2180C718B00C120B1 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				C98345A3180C71BA00C120B1 /* shg-web.sqlite */,
+			);
+			name = data;
 			sourceTree = "<group>";
 		};
 		C9A528F617C2BF8100EB0362 /* TestFlightSDK2.0.0 */ = {
@@ -663,6 +674,7 @@
 				C960758016AC59E7004B2672 /* theme_placeholder@2x.png in Resources */,
 				C960758116AC59E7004B2672 /* theme_tn_ph-b.png in Resources */,
 				C960758216AC59E7004B2672 /* theme_tn_ph-b@2x.png in Resources */,
+				C98345A4180C71BA00C120B1 /* shg-web.sqlite in Resources */,
 				C960758316AC59E7004B2672 /* theme_tn_ph.png in Resources */,
 				C960758416AC59E7004B2672 /* theme_tn_ph@2x.png in Resources */,
 				C960758816AC5A29004B2672 /* Icon.png in Resources */,
