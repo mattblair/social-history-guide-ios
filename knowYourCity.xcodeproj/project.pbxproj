@@ -102,6 +102,7 @@
 		C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EA169DCF48008A2793 /* Default-568h@2x.png */; };
 		C97B44EE169DCF48008A2793 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EB169DCF48008A2793 /* Default.png */; };
 		C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EC169DCF48008A2793 /* Default@2x.png */; };
+		C98345A1180C67A200C120B1 /* SHGDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98345A0180C67A200C120B1 /* SHGDataController.m */; };
 		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
 		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C990649816B82B1B00421288 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649516B82B1B00421288 /* Twitter.framework */; };
@@ -236,6 +237,8 @@
 		C97B44EA169DCF48008A2793 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/default/Default-568h@2x.png"; sourceTree = "<group>"; };
 		C97B44EB169DCF48008A2793 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/default/Default.png; sourceTree = "<group>"; };
 		C97B44EC169DCF48008A2793 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/default/Default@2x.png"; sourceTree = "<group>"; };
+		C983459F180C67A200C120B1 /* SHGDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGDataController.h; path = Classes/SHGDataController.h; sourceTree = "<group>"; };
+		C98345A0180C67A200C120B1 /* SHGDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGDataController.m; path = Classes/SHGDataController.m; sourceTree = "<group>"; };
 		C990649316B82B1B00421288 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C990649416B82B1B00421288 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C990649516B82B1B00421288 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -540,6 +543,8 @@
 				C952428016B03F4700BD8F74 /* UIColor+KYC.m */,
 				C9118C1416BECC48009A890D /* KYCConfigurationProvider.h */,
 				C9118C1516BECC48009A890D /* KYCConfigurationProvider.m */,
+				C983459F180C67A200C120B1 /* SHGDataController.h */,
+				C98345A0180C67A200C120B1 /* SHGDataController.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -755,6 +760,7 @@
 				C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */,
 				C97B44E4169DCCDA008A2793 /* KYCViewController.m in Sources */,
 				C93030EF16AB32E10039D7B8 /* HomeViewController.m in Sources */,
+				C98345A1180C67A200C120B1 /* SHGDataController.m in Sources */,
 				C93030F216AB33050039D7B8 /* ThemeViewController.m in Sources */,
 				C93030F516AB33260039D7B8 /* StoryViewController.m in Sources */,
 				C93030F816AB33570039D7B8 /* GuestViewController.m in Sources */,
