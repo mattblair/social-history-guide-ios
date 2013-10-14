@@ -28,6 +28,8 @@
 
 #define IN_LANDSCAPE UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
 
+#define SHG_DATA [SHGDataController sharedInstance]
+
 // From Marcus Zarra, as defined here:
 // http://www.cimgf.com/2010/05/02/my-current-prefix-pch-file/
 // and
