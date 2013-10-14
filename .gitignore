@@ -53,3 +53,8 @@ DerivedData
 .idea/
 *.hmap
 
+# include Pods.xcproj, but not the actual pods
+# To install dependencies, install Cocoapods (http://cocoapods.org) and then run:
+# pod install
+Pods/
+!Pods/Pods.xcproj
