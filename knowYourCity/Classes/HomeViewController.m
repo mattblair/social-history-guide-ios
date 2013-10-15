@@ -135,7 +135,7 @@
     // Configure the cell...
     
     if (indexPath.row < [self.themeList count]) {
-        cell.textLabel.text = [themeDictionary objectForKey:kThemeTitleKey];
+        cell.textLabel.text = [themeDictionary objectForKey:kContentTitleKey];
     } else {
         cell.textLabel.text = NSLocalizedString(@"Not Found.", @"Not found descriptive text.");
         DLog(@"Couldn't convert section %d and row %d into a theme.", indexPath.section, indexPath.row);
@@ -149,7 +149,7 @@
     cell.textLabel.font = [UIFont fontWithName:kTitleFontName size:22.0];
     cell.textLabel.textColor = [UIColor blackColor];
     
-    cell.detailTextLabel.text = [themeDictionary objectForKey:kThemeSubtitleKey];
+    cell.detailTextLabel.text = [themeDictionary objectForKey:kContentSubtitleKey];
     
     cell.detailTextLabel.font = [UIFont fontWithName:kBodyFontName size:15.0];
     cell.detailTextLabel.textColor = [UIColor blackColor];
@@ -168,7 +168,7 @@
     
     NSDictionary *themeDictionary = self.themeList[indexPath.row];
     
-    [Flurry logEvent:@"themeSelected" withParameters:@{@"themeTitle" : [themeDictionary objectForKey:kThemeTitleKey]}];
+    [Flurry logEvent:@"themeSelected" withParameters:@{@"themeTitle" : [themeDictionary objectForKey:kContentTitleKey]}];
     
     ThemeViewController *themeVC = [[ThemeViewController alloc] initWithNibName:nil bundle:nil];
     // sets title to diplay in the nav bar
