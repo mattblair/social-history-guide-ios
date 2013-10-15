@@ -9,6 +9,7 @@
 #import "SHGDataController.h"
 
 #import <FMDB/FMDatabase.h>
+#import "SHGMapAnnotation.h"
 
 @interface SHGDataController ()
 
@@ -69,7 +70,7 @@
         while ([s next]) {
             
             [themes addObject:[s resultDictionary]];
-            DLog(@"Theme title: %@", [s stringForColumn:kThemeTitleKey]);
+            DLog(@"Theme title: %@", [s stringForColumn:kContentTitleKey]);
         }
         
         _publishedThemes = [NSArray arrayWithArray:themes];
@@ -93,6 +94,35 @@
     }
     
     return [NSArray arrayWithArray:stories];
+}
+
+- (NSArray *)storyMapAnnotationsForThemeID:(NSUInteger)themeID {
+    
+    NSArray *stories = [self storiesForThemeID:themeID];
+    
+    if ([stories count] > 0) {
+    
+        NSMutableArray *annotations = [[NSMutableArray alloc] initWithCapacity:[stories count]];
+        
+        for (NSDictionary *aStory in stories) {
+            
+            // could use projectBoundindBoxContainsCoordinate class method to
+            // avoid object creation,
+            // but for a small dataset, that probably isn't much of a savings.
+            
+            SHGMapAnnotation *storyAnnotation = [[SHGMapAnnotation alloc] initWithDictionary:aStory];
+            
+            if (storyAnnotation.validCoordinate) {
+                [annotations addObject:storyAnnotation];
+            }
+        }
+        
+        return [annotations count] > 0 ? [NSArray arrayWithArray:annotations] : nil;
+        
+    } else { // no stories
+        
+        return nil;
+    }
 }
 
 #pragma mark - Guests

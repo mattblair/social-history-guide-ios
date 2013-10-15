@@ -68,6 +68,7 @@
 
 - (NSArray *)storiesForThemeID:(NSUInteger)themeID;
 
+- (NSArray *)storyMapAnnotationsForThemeID:(NSUInteger)themeID;
 
 // Guests
 
