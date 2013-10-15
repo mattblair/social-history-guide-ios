@@ -191,7 +191,15 @@
     self.yForNextView = CGRectGetMaxY(self.guestView.frame) + VERTICAL_SPACER_STANDARD;
      */
     
-    // map?
+    // map:
+    
+    NSUInteger themeID = [[self.themeDictionary objectForKey:kThemeIDKey] unsignedIntegerValue];
+    
+    NSArray *annotations = [SHG_DATA storyMapAnnotationsForThemeID:themeID];
+    
+    if (annotations) {
+        DLog(@"Would map: %@", annotations);
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
