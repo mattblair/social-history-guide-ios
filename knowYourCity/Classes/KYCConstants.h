@@ -49,7 +49,7 @@ typedef NS_ENUM(NSUInteger, KYCWorkflowState) {
     KYCWorkflowStateTesting
 };
 
-// Core Data
+// Core Data -- DEPRECATED?
 
 // EWCoreDataManager Configuration
 extern NSString* const kEWCoreDataModelName;

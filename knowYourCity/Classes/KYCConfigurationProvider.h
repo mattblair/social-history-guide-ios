@@ -10,7 +10,7 @@
 
 #define KYCSTYLE [KYCConfigurationProvider sharedInstance]
 
-// this class has utility methods for style elments like layout, fonts, images and
+// this class has utility methods for style elements like layout, fonts, images and
 // data that don't fit elsewhere
 
 @interface KYCConfigurationProvider : NSObject
