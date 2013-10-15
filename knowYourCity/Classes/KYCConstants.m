@@ -87,14 +87,14 @@ NSString* const kFullScreenCameraRequestedNotification = @"kFullScreenCameraRequ
 // AmericanTypewriter | AmericanTypewriter-Bold | AmericanTypewriter-Light
 
 
-NSString* const kTitleFontName = @"Baskerville-Bold"; //
+NSString* const kTitleFontName = @"Futura-Medium"; //
 CGFloat const kTitleFontSize = 28.0;
 CGFloat const kSectionTitleFontSize = 22.0;
-NSString* const kBodyFontName = @"Baskerville";
+NSString* const kBodyFontName = @"AvenirNext-Regular";
 CGFloat const kBodyFontSize = 14.0;
-NSString* const kPhotoCreditFontName = @"Georgia-Italic";
+NSString* const kPhotoCreditFontName = @"AvenirNext-UltraLightItalic";
 CGFloat const kPhotoCreditFontSize = 12.0;
-NSString* const kItalicFontName = @"Futura-MediumItalic"; // should probably match line Font
+NSString* const kItalicFontName = @"Futura-Medium"; // should probably match line Font
 CGFloat const kItalicFontSize = 12.0;
 
 // Placeholder Text (temporary)
