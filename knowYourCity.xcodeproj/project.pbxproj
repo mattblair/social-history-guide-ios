@@ -123,6 +123,7 @@
 		C9DE110216AD95FC00D93566 /* logo_header_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE110016AD95FC00D93566 /* logo_header_black@2x.png */; };
 		C9DE110616AD98ED00D93566 /* kycNavBarBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE110416AD98ED00D93566 /* kycNavBarBlack.png */; };
 		C9DE110716AD98ED00D93566 /* kycNavBarBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE110516AD98ED00D93566 /* kycNavBarBlack@2x.png */; };
+		C9EB9754180DB46800932756 /* SHGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB9753180DB46800932756 /* SHGMapAnnotation.m */; };
 		F9822EBB2D034D2C87C2D017 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F803456ED3444B483A73DB8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -274,6 +275,8 @@
 		C9DE110016AD95FC00D93566 /* logo_header_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_header_black@2x.png"; sourceTree = "<group>"; };
 		C9DE110416AD98ED00D93566 /* kycNavBarBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kycNavBarBlack.png; sourceTree = "<group>"; };
 		C9DE110516AD98ED00D93566 /* kycNavBarBlack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kycNavBarBlack@2x.png"; sourceTree = "<group>"; };
+		C9EB9752180DB46800932756 /* SHGMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGMapAnnotation.h; path = Classes/SHGMapAnnotation.h; sourceTree = "<group>"; };
+		C9EB9753180DB46800932756 /* SHGMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGMapAnnotation.m; path = Classes/SHGMapAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,6 +579,8 @@
 				C952428016B03F4700BD8F74 /* UIColor+KYC.m */,
 				C9118C1416BECC48009A890D /* KYCConfigurationProvider.h */,
 				C9118C1516BECC48009A890D /* KYCConfigurationProvider.m */,
+				C9EB9752180DB46800932756 /* SHGMapAnnotation.h */,
+				C9EB9753180DB46800932756 /* SHGMapAnnotation.m */,
 				C983459F180C67A200C120B1 /* SHGDataController.h */,
 				C98345A0180C67A200C120B1 /* SHGDataController.m */,
 			);
@@ -808,6 +813,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9EB9754180DB46800932756 /* SHGMapAnnotation.m in Sources */,
 				C92666F9169DC6920061F9AD /* main.m in Sources */,
 				C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */,
 				C97B44E4169DCCDA008A2793 /* KYCViewController.m in Sources */,
