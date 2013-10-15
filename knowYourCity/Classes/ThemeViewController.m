@@ -80,7 +80,7 @@
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
     self.titleLabel.numberOfLines = 0;
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.titleLabel.text = [self.themeDictionary objectForKey:kThemeTitleKey];
+    self.titleLabel.text = [self.themeDictionary objectForKey:kContentTitleKey];
     self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:kTitleFontSize];
     
     [self.titleLabel sizeToFit];
@@ -374,7 +374,7 @@
 		
 		mailVC.navigationBar.tintColor = [UIColor kycGray];
 		
-        NSString *themeText = [self.themeDictionary objectForKey:kThemeTitleKey];
+        NSString *themeText = [self.themeDictionary objectForKey:kContentTitleKey];
         
         // add Photo?
         
@@ -429,7 +429,7 @@
     
     // this would use a property on the object, not be constructed here from the title
     
-    NSString *themeText = [self.themeDictionary objectForKey:kThemeTitleKey];
+    NSString *themeText = [self.themeDictionary objectForKey:kContentTitleKey];
     
     NSString *messageBody = [NSString stringWithFormat:@"I'm learning about %@ in Portland, Oregon with the Know Your City App.", themeText];
     
@@ -467,7 +467,7 @@
     
     // this would use a property on the object, not be constructed here from the title
     
-    NSString *themeText = [self.themeDictionary objectForKey:kThemeTitleKey];
+    NSString *themeText = [self.themeDictionary objectForKey:kContentTitleKey];
     
     NSString *messageBody = [NSString stringWithFormat:@"I'm learning about %@ in Portland, Oregon with the Know Your City App.", themeText];
     
