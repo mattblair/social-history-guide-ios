@@ -12,14 +12,11 @@
 
 #import "KYCPrivateConstants.h"
 #import "HomeViewController.h"
-#import "SHGDataController.h"
 
 @implementation KYCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    [SHG_DATA themeTitles];
     
     //[TestFlight takeOff:kTestFlightTeamToken];
     [TestFlight takeOff:kTestFlightAppToken];
