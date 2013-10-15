@@ -22,8 +22,7 @@
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *introLabel;
 
-// temporary until we have ordered stories available in Core Data
-@property (strong, nonatomic) NSArray *jsonStories;
+@property (strong, nonatomic) NSArray *relatedStories;
 
 @property (strong, nonatomic) UILabel *guestLabel;
 @property (strong, nonatomic) GuestStubView *guestView;
@@ -70,7 +69,8 @@
     // Theme illustration
     
     self.themeGraphic = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, self.yForNextView, MAIN_PHOTO_WIDTH, MAIN_PHOTO_HEIGHT)];
-    self.themeGraphic.image = [UIImage imageNamed:@"theme_placeholder"];
+    NSString *illustrationName = [NSString stringWithFormat:@"%@.jpg", [self.themeDictionary objectForKey:kThemeImageKey]];
+    self.themeGraphic.image = [UIImage imageNamed:illustrationName];
     
     [self.scrollView addSubview:self.themeGraphic];
     
@@ -80,7 +80,7 @@
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
     self.titleLabel.numberOfLines = 0;
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.titleLabel.text = [self.themeDictionary objectForKey:@"title"];
+    self.titleLabel.text = [self.themeDictionary objectForKey:kThemeTitleKey];
     self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:kTitleFontSize];
     
     [self.titleLabel sizeToFit];
@@ -94,7 +94,7 @@
     self.introLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 70.0)];
     self.introLabel.numberOfLines = 0;
     self.introLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.introLabel.text = [self.themeDictionary objectForKey:@"introduction"];
+    self.introLabel.text = [self.themeDictionary objectForKey:kThemeSummaryKey];
     self.introLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
     
     [self.introLabel sizeToFit];
@@ -126,11 +126,11 @@
     self.yForNextView = CGRectGetMaxY(storyTextStub.frame) + VERTICAL_SPACER_EXTRA;
     */
     
-    self.jsonStories = [self.themeDictionary objectForKey:@"stories"];
+    self.relatedStories = [SHG_DATA storiesForThemeID:[[self.themeDictionary objectForKey:kThemeIDKey] unsignedIntegerValue]];
     
     NSUInteger storyCounter = 0;
     
-    for (NSDictionary *storyData in self.jsonStories) {
+    for (NSDictionary *storyData in self.relatedStories) {
         
         CGPoint storyOrigin = CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView);
         
@@ -169,7 +169,7 @@
     */
     
     // Guest Label
-    
+    /*
     // title
     self.guestLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
     self.guestLabel.numberOfLines = 1;
@@ -189,6 +189,9 @@
     
     [self.scrollView addSubview:self.guestView];
     self.yForNextView = CGRectGetMaxY(self.guestView.frame) + VERTICAL_SPACER_STANDARD;
+     */
+    
+    // map?
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -236,10 +239,10 @@
     
     StoryViewController *storyVC = [[StoryViewController alloc] initWithNibName:nil bundle:nil];
     
-    if (selectedStoryIndex < [self.jsonStories count]) {
+    if (selectedStoryIndex < [self.relatedStories count]) {
         
         // inject intro text here?
-        storyVC.storyData = [self.jsonStories objectAtIndex:selectedStoryIndex];
+        storyVC.storyData = [self.relatedStories objectAtIndex:selectedStoryIndex];
         
     } else {
         
@@ -371,7 +374,7 @@
 		
 		mailVC.navigationBar.tintColor = [UIColor kycGray];
 		
-        NSString *themeText = [self.themeDictionary objectForKey:@"title"];
+        NSString *themeText = [self.themeDictionary objectForKey:kThemeTitleKey];
         
         // add Photo?
         
@@ -426,7 +429,7 @@
     
     // this would use a property on the object, not be constructed here from the title
     
-    NSString *themeText = [self.themeDictionary objectForKey:@"title"];
+    NSString *themeText = [self.themeDictionary objectForKey:kThemeTitleKey];
     
     NSString *messageBody = [NSString stringWithFormat:@"I'm learning about %@ in Portland, Oregon with the Know Your City App.", themeText];
     
@@ -464,7 +467,7 @@
     
     // this would use a property on the object, not be constructed here from the title
     
-    NSString *themeText = [self.themeDictionary objectForKey:@"title"];
+    NSString *themeText = [self.themeDictionary objectForKey:kThemeTitleKey];
     
     NSString *messageBody = [NSString stringWithFormat:@"I'm learning about %@ in Portland, Oregon with the Know Your City App.", themeText];
     
