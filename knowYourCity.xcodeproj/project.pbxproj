@@ -79,7 +79,6 @@
 		C960757016AC59B2004B2672 /* logo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756E16AC59B2004B2672 /* logo_header.png */; };
 		C960757116AC59B2004B2672 /* logo_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960756F16AC59B2004B2672 /* logo_header@2x.png */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
-		C960757E16AC59E7004B2672 /* kycCCBA.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757716AC59E7004B2672 /* kycCCBA.png */; };
 		C960757F16AC59E7004B2672 /* theme_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757816AC59E7004B2672 /* theme_placeholder.png */; };
 		C960758016AC59E7004B2672 /* theme_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757916AC59E7004B2672 /* theme_placeholder@2x.png */; };
 		C960758116AC59E7004B2672 /* theme_tn_ph-b.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757A16AC59E7004B2672 /* theme_tn_ph-b.png */; };
@@ -104,6 +103,17 @@
 		C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EC169DCF48008A2793 /* Default@2x.png */; };
 		C98345A1180C67A200C120B1 /* SHGDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98345A0180C67A200C120B1 /* SHGDataController.m */; };
 		C98345A4180C71BA00C120B1 /* shg-web.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C98345A3180C71BA00C120B1 /* shg-web.sqlite */; };
+		C98345B0180CCBED00C120B1 /* old-town.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345A5180CCBED00C120B1 /* old-town.jpg */; };
+		C98345B1180CCBED00C120B1 /* magic-gardens.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345A6180CCBED00C120B1 /* magic-gardens.jpg */; };
+		C98345B2180CCBED00C120B1 /* suffrage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345A7180CCBED00C120B1 /* suffrage.jpg */; };
+		C98345B3180CCBED00C120B1 /* stark-clubs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345A8180CCBED00C120B1 /* stark-clubs.jpg */; };
+		C98345B4180CCBED00C120B1 /* old-town-text.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345A9180CCBED00C120B1 /* old-town-text.jpg */; };
+		C98345B5180CCBED00C120B1 /* no-on-9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AA180CCBED00C120B1 /* no-on-9.jpg */; };
+		C98345B6180CCBED00C120B1 /* native.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AB180CCBED00C120B1 /* native.jpg */; };
+		C98345B7180CCBED00C120B1 /* iww.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AC180CCBED00C120B1 /* iww.jpg */; };
+		C98345B8180CCBED00C120B1 /* keller.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AD180CCBED00C120B1 /* keller.jpg */; };
+		C98345B9180CCBED00C120B1 /* ccba.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AE180CCBED00C120B1 /* ccba.jpg */; };
+		C98345BA180CCBED00C120B1 /* goldenwest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AF180CCBED00C120B1 /* goldenwest.jpg */; };
 		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
 		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C990649816B82B1B00421288 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649516B82B1B00421288 /* Twitter.framework */; };
@@ -213,7 +223,6 @@
 		C960756E16AC59B2004B2672 /* logo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header.png; sourceTree = "<group>"; };
 		C960756F16AC59B2004B2672 /* logo_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_header@2x.png"; sourceTree = "<group>"; };
 		C960757416AC59C4004B2672 /* kyc-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kyc-data.json"; sourceTree = "<group>"; };
-		C960757716AC59E7004B2672 /* kycCCBA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kycCCBA.png; sourceTree = "<group>"; };
 		C960757816AC59E7004B2672 /* theme_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = theme_placeholder.png; path = "Resources/theme-illustrations/theme_placeholder.png"; sourceTree = "<group>"; };
 		C960757916AC59E7004B2672 /* theme_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "theme_placeholder@2x.png"; path = "Resources/theme-illustrations/theme_placeholder@2x.png"; sourceTree = "<group>"; };
 		C960757A16AC59E7004B2672 /* theme_tn_ph-b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "theme_tn_ph-b.png"; path = "Resources/theme-illustrations/theme_tn_ph-b.png"; sourceTree = "<group>"; };
@@ -241,6 +250,17 @@
 		C983459F180C67A200C120B1 /* SHGDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGDataController.h; path = Classes/SHGDataController.h; sourceTree = "<group>"; };
 		C98345A0180C67A200C120B1 /* SHGDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGDataController.m; path = Classes/SHGDataController.m; sourceTree = "<group>"; };
 		C98345A3180C71BA00C120B1 /* shg-web.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = "shg-web.sqlite"; path = "Resources/datastores/shg-web.sqlite"; sourceTree = "<group>"; };
+		C98345A5180CCBED00C120B1 /* old-town.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "old-town.jpg"; sourceTree = "<group>"; };
+		C98345A6180CCBED00C120B1 /* magic-gardens.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "magic-gardens.jpg"; sourceTree = "<group>"; };
+		C98345A7180CCBED00C120B1 /* suffrage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = suffrage.jpg; sourceTree = "<group>"; };
+		C98345A8180CCBED00C120B1 /* stark-clubs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "stark-clubs.jpg"; sourceTree = "<group>"; };
+		C98345A9180CCBED00C120B1 /* old-town-text.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "old-town-text.jpg"; sourceTree = "<group>"; };
+		C98345AA180CCBED00C120B1 /* no-on-9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "no-on-9.jpg"; sourceTree = "<group>"; };
+		C98345AB180CCBED00C120B1 /* native.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = native.jpg; sourceTree = "<group>"; };
+		C98345AC180CCBED00C120B1 /* iww.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iww.jpg; sourceTree = "<group>"; };
+		C98345AD180CCBED00C120B1 /* keller.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = keller.jpg; sourceTree = "<group>"; };
+		C98345AE180CCBED00C120B1 /* ccba.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ccba.jpg; sourceTree = "<group>"; };
+		C98345AF180CCBED00C120B1 /* goldenwest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goldenwest.jpg; sourceTree = "<group>"; };
 		C990649316B82B1B00421288 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C990649416B82B1B00421288 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C990649516B82B1B00421288 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -462,7 +482,17 @@
 		C960757616AC59E7004B2672 /* theme-illustrations */ = {
 			isa = PBXGroup;
 			children = (
-				C960757716AC59E7004B2672 /* kycCCBA.png */,
+				C98345A5180CCBED00C120B1 /* old-town.jpg */,
+				C98345A6180CCBED00C120B1 /* magic-gardens.jpg */,
+				C98345A7180CCBED00C120B1 /* suffrage.jpg */,
+				C98345A8180CCBED00C120B1 /* stark-clubs.jpg */,
+				C98345A9180CCBED00C120B1 /* old-town-text.jpg */,
+				C98345AA180CCBED00C120B1 /* no-on-9.jpg */,
+				C98345AB180CCBED00C120B1 /* native.jpg */,
+				C98345AC180CCBED00C120B1 /* iww.jpg */,
+				C98345AD180CCBED00C120B1 /* keller.jpg */,
+				C98345AE180CCBED00C120B1 /* ccba.jpg */,
+				C98345AF180CCBED00C120B1 /* goldenwest.jpg */,
 			);
 			name = "theme-illustrations";
 			path = "Resources/theme-illustrations";
@@ -658,6 +688,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C92666F7169DC6920061F9AD /* InfoPlist.strings in Resources */,
+				C98345B7180CCBED00C120B1 /* iww.jpg in Resources */,
 				C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */,
 				C97B44EE169DCF48008A2793 /* Default.png in Resources */,
 				C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */,
@@ -669,17 +700,20 @@
 				C960757016AC59B2004B2672 /* logo_header.png in Resources */,
 				C960757116AC59B2004B2672 /* logo_header@2x.png in Resources */,
 				C960757516AC59C4004B2672 /* kyc-data.json in Resources */,
-				C960757E16AC59E7004B2672 /* kycCCBA.png in Resources */,
+				C98345B4180CCBED00C120B1 /* old-town-text.jpg in Resources */,
 				C960757F16AC59E7004B2672 /* theme_placeholder.png in Resources */,
 				C960758016AC59E7004B2672 /* theme_placeholder@2x.png in Resources */,
 				C960758116AC59E7004B2672 /* theme_tn_ph-b.png in Resources */,
+				C98345B6180CCBED00C120B1 /* native.jpg in Resources */,
 				C960758216AC59E7004B2672 /* theme_tn_ph-b@2x.png in Resources */,
 				C98345A4180C71BA00C120B1 /* shg-web.sqlite in Resources */,
 				C960758316AC59E7004B2672 /* theme_tn_ph.png in Resources */,
 				C960758416AC59E7004B2672 /* theme_tn_ph@2x.png in Resources */,
 				C960758816AC5A29004B2672 /* Icon.png in Resources */,
 				C960758916AC5A29004B2672 /* Icon@2x.png in Resources */,
+				C98345B9180CCBED00C120B1 /* ccba.jpg in Resources */,
 				C9DE110116AD95FC00D93566 /* logo_header_black.png in Resources */,
+				C98345B1180CCBED00C120B1 /* magic-gardens.jpg in Resources */,
 				C9DE110216AD95FC00D93566 /* logo_header_black@2x.png in Resources */,
 				C9DE110616AD98ED00D93566 /* kycNavBarBlack.png in Resources */,
 				C9DE110716AD98ED00D93566 /* kycNavBarBlack@2x.png in Resources */,
@@ -690,6 +724,7 @@
 				C921486216B59D7C007323D0 /* pause-audio.png in Resources */,
 				C921486316B59D7C007323D0 /* play-audio.png in Resources */,
 				C921486616B59DC8007323D0 /* nav-backward.png in Resources */,
+				C98345B8180CCBED00C120B1 /* keller.jpg in Resources */,
 				C921486716B59DC8007323D0 /* nav-forward.png in Resources */,
 				C916B8CF16BD99E4002E29BC /* 05-shuffle.png in Resources */,
 				C916B8D016BD99E4002E29BC /* 07-map-marker.png in Resources */,
@@ -711,16 +746,21 @@
 				C916B8E116BD99E4002E29BC /* 83-calendar.png in Resources */,
 				C916B8E216BD99E4002E29BC /* 53-house.png in Resources */,
 				C916B8E316BD99E4002E29BC /* 41-picture-frame.png in Resources */,
+				C98345B2180CCBED00C120B1 /* suffrage.jpg in Resources */,
 				C916B8E416BD99E4002E29BC /* 18-envelope.png in Resources */,
 				C916B8E516BD99E4002E29BC /* 120-headphones.png in Resources */,
 				C916B8E616BD99E4002E29BC /* 121-landscape.png in Resources */,
 				C9118C1916BEEFAF009A890D /* 111-user.png in Resources */,
+				C98345B0180CCBED00C120B1 /* old-town.jpg in Resources */,
 				C9118C1A16BEEFAF009A890D /* 08-chat.png in Resources */,
 				C9118C1C16BF013D009A890D /* 54_1974.jpg in Resources */,
+				C98345B3180CCBED00C120B1 /* stark-clubs.jpg in Resources */,
 				C9118C1E16BF07A6009A890D /* waterfront1879crop.jpg in Resources */,
+				C98345B5180CCBED00C120B1 /* no-on-9.jpg in Resources */,
 				C97164A616FACF7B00EA8B02 /* church-organ.jpg in Resources */,
 				C97164A716FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg in Resources */,
 				C97164A816FACF7B00EA8B02 /* pwc.jpg in Resources */,
+				C98345BA180CCBED00C120B1 /* goldenwest.jpg in Resources */,
 				C97164AC16FACFA200EA8B02 /* pwc-cornerstone.mp3 in Resources */,
 				C97164AD16FACFA200EA8B02 /* pwc-main.mp3 in Resources */,
 				C97164AE16FACFA200EA8B02 /* why-the-church.mp3 in Resources */,
