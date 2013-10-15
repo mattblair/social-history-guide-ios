@@ -92,7 +92,7 @@
         CGRect nameRect = CGRectMake(textX, STORY_STUB_MARGIN, textWidth, 50.0);
         
         self.titleLabel = [[UILabel alloc] initWithFrame:nameRect];
-        self.titleLabel.text = [self.storyData objectForKey:@"title"];
+        self.titleLabel.text = [self.storyData objectForKey:kStoryTitleKey];
         self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:16.0];
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.numberOfLines = 0;
@@ -106,7 +106,7 @@
         CGRect quoteRect = CGRectMake(textX, quoteY, textWidth, 60.0);
         
         self.quoteLabel = [[UILabel alloc] initWithFrame:quoteRect];
-        self.quoteLabel.text = [self.storyData objectForKey:@"quote"];
+        self.quoteLabel.text = [self.storyData objectForKey:kStorySubtitleKey];
         self.quoteLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
         self.quoteLabel.numberOfLines = 3;
         self.quoteLabel.lineBreakMode = NSLineBreakByWordWrapping;
