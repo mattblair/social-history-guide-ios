@@ -14,8 +14,8 @@
 
     #import "KYCConstants.h"
     #import "UIColor+KYC.h"
-    //#import "EWCoreDataManager.h"
     #import "KYCConfigurationProvider.h"
+    #import "SHGDataController.h"
 
     #import "TestFlight.h"
     #import "Flurry.h"
