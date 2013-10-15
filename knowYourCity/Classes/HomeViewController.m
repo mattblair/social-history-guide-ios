@@ -44,7 +44,8 @@
     if (self) {
         
         [self loadDataFromJSON];
-        self.themeList = [self.seedDictionary objectForKey:@"themes"];
+        //self.themeList = [self.seedDictionary objectForKey:@"themes"];
+        self.themeList = [SHG_DATA publishedThemes];
         self.tidbitList = [self.seedDictionary objectForKey:@"tidbits"];
         
         // use this if you are showing standard text in nav bars and back buttons
@@ -134,7 +135,7 @@
     // Configure the cell...
     
     if (indexPath.row < [self.themeList count]) {
-        cell.textLabel.text = [themeDictionary objectForKey:@"title"];
+        cell.textLabel.text = [themeDictionary objectForKey:kThemeTitleKey];
     } else {
         cell.textLabel.text = NSLocalizedString(@"Not Found.", @"Not found descriptive text.");
         DLog(@"Couldn't convert section %d and row %d into a theme.", indexPath.section, indexPath.row);
@@ -145,12 +146,12 @@
     cell.textLabel.accessibilityLabel = cell.textLabel.text;
     cell.textLabel.accessibilityHint = NSLocalizedString(@"The name of a theme.", @"Hint for theme name in theme list.");
     
-    cell.textLabel.font = [UIFont fontWithName:kBodyFontName size:19.0];
+    cell.textLabel.font = [UIFont fontWithName:kTitleFontName size:22.0];
     cell.textLabel.textColor = [UIColor blackColor];
     
-    cell.detailTextLabel.text = [themeDictionary objectForKey:@"title"];
+    cell.detailTextLabel.text = [themeDictionary objectForKey:kThemeSubtitleKey];
     
-    cell.detailTextLabel.font = [UIFont fontWithName:kBodyFontName size:12.0];
+    cell.detailTextLabel.font = [UIFont fontWithName:kBodyFontName size:15.0];
     cell.detailTextLabel.textColor = [UIColor blackColor];
     
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
@@ -165,12 +166,10 @@
     
     DLog(@"Tapped section %d and row %d", indexPath.section, indexPath.row);
     
-    
     NSDictionary *themeDictionary = self.themeList[indexPath.row];
     
-    [Flurry logEvent:@"themeSelected" withParameters:@{@"themeTitle" : [themeDictionary objectForKey:@"title"]}];
+    [Flurry logEvent:@"themeSelected" withParameters:@{@"themeTitle" : [themeDictionary objectForKey:kThemeTitleKey]}];
     
-    // switch this to a new intializer which accepts a theme object?
     ThemeViewController *themeVC = [[ThemeViewController alloc] initWithNibName:nil bundle:nil];
     // sets title to diplay in the nav bar
     //themeVC.title = [themeDictionary objectForKey:@"title"];
@@ -189,8 +188,8 @@
 	NSError *fileLoadError = nil;
 	
     NSData *seedJSONData = [NSData dataWithContentsOfFile:filepath
-                                                   options:NSDataReadingUncached
-                                                     error:&fileLoadError];
+                                                  options:NSDataReadingUncached
+                                                    error:&fileLoadError];
     
     if (!seedJSONData) {
         NSLog(@"Loading JSON File Failed: %@, %@", fileLoadError, [fileLoadError userInfo]);
