@@ -22,10 +22,18 @@ typedef NS_ENUM(NSUInteger, SHGMapAnnotationType) {
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 
+@property (nonatomic) BOOL validCoordinate;
+
 @property (nonatomic) SHGMapAnnotationType annotationType;
 
-// could be either story or flashback/tidbit
+// project bounding box testing
++ (BOOL)validLatitude:(CLLocationDegrees)latitudeValue;
++ (BOOL)validLongitude:(CLLocationDegrees)longitudeValue;
++ (BOOL)projectBoundindBoxContainsCoordinate:(CLLocationCoordinate2D)coordinate;
+
 - (id)initWithDictionary:(NSDictionary *)contentDictionary;
+
+- (NSString *)description;
 
 // possibly deprecated if photos won't be shown in annotations
 - (BOOL)hasPhoto;

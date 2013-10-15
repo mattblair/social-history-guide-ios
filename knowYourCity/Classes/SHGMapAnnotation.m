@@ -11,11 +11,11 @@
 // Validity tests whether the coordinate is in a project-specific bounding box
 // to test the world, use the commented values
 
-#define BBOX_LATITUDE_MAX 90.0      // 90.0
-#define BBOX_LATITUDE_MIN -90.0     // -90.0
+#define BBOX_LATITUDE_MAX 47.0      // 90.0
+#define BBOX_LATITUDE_MIN 45.0      // -90.0
 
-#define BBOX_LONGITUDE_MAX 180.0    // 180.0
-#define BBOX_LONGITUDE_MIN -180.0   // -180.0
+#define BBOX_LONGITUDE_MAX -122.0   // 180.0
+#define BBOX_LONGITUDE_MIN -123.0   // -180.0
 
 
 // project-specific placeholder values used if data is out of range
@@ -33,8 +33,6 @@
 
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
-
-@property (nonatomic) BOOL validCoordinate;
 
 @end
 
@@ -57,13 +55,19 @@
         _latitude = [contentDictionary objectForKey:kContentLatitudeKey];
         _longitude = [contentDictionary objectForKey:kContentLongitudeKey];
         
-        _validCoordinate = [self validLatitude:[_latitude doubleValue]] &&
-                           [self validLongitude:[_longitude doubleValue]];
+        _validCoordinate = [SHGMapAnnotation validLatitude:[_latitude doubleValue]] &&
+                           [SHGMapAnnotation validLongitude:[_longitude doubleValue]];
         
         // override after init for special cases
         _annotationType = SHGMapAnnotationTypeStory;
     }
     return self;
+}
+
+- (NSString *)description {
+    
+    NSString *superDescription = [super description];
+    return [NSString stringWithFormat:@"(%@) %@ @ %@, %@", superDescription, self.title, self.latitude, self.longitude];
 }
 
 #pragma mark - MKAnnotation protocol
@@ -87,18 +91,26 @@
     return NO;
 }
 
+#pragma mark - Validity Tests
+
+
++ (BOOL)validLatitude:(CLLocationDegrees)latitudeValue {
+    
+    return (latitudeValue <= BBOX_LATITUDE_MAX && latitudeValue >= BBOX_LATITUDE_MIN) ? YES : NO;
+}
+
++ (BOOL)validLongitude:(CLLocationDegrees)longitudeValue {
+    
+    return (longitudeValue <= BBOX_LONGITUDE_MAX && longitudeValue >= BBOX_LONGITUDE_MIN ) ? YES : NO;
+}
+
++ (BOOL)projectBoundindBoxContainsCoordinate:(CLLocationCoordinate2D)coordinate {
+    
+    return [SHGMapAnnotation validLatitude:coordinate.latitude] &&
+           [SHGMapAnnotation validLongitude:coordinate.longitude];
+}
+
 #pragma mark - GeoJSON Utilities
-
-
-- (BOOL)validLatitude:(CLLocationDegrees)latitudeValue {
-    
-    return (latitudeValue <= BBOX_LATITUDE_MAX || latitudeValue >= BBOX_LATITUDE_MIN) ? YES : NO;
-}
-
-- (BOOL)validLongitude:(CLLocationDegrees)longitudeValue {
-    
-    return (longitudeValue <= BBOX_LONGITUDE_MAX || longitudeValue >= BBOX_LONGITUDE_MIN ) ? YES : NO;
-}
 
 - (BOOL)setCoordinateFromGeoJSONFragment:(NSDictionary *)geoJSON {
     
@@ -109,9 +121,9 @@
     CLLocationDegrees latitudeValue = [coordArray[1] doubleValue];
     CLLocationDegrees longitudeValue = [coordArray[0] doubleValue];
     
-    coordinateValid = [self validLatitude:latitudeValue];
+    coordinateValid = [SHGMapAnnotation validLatitude:latitudeValue];
     
-    coordinateValid = [self validLongitude:longitudeValue];
+    coordinateValid = [SHGMapAnnotation validLongitude:longitudeValue];
     
     // if it passed both tests
     if (coordinateValid) {
