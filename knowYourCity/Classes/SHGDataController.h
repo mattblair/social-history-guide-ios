@@ -13,6 +13,8 @@
 // That might be overkill, since this is a relatively static, read-only dataset.
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 // temporary -- will be 6
 #define PUBLISHED_WORKFLOW_STATE 2
@@ -72,5 +74,11 @@
 
 // Guests
 
+
+// Utilities
+
+- (CLLocationCoordinate2D)coordinateFromDictionary:(NSDictionary *)contentDictionary;
+
+- (MKCoordinateRegion)regionFromDictionary:(NSDictionary *)contentDictionary;
 
 @end

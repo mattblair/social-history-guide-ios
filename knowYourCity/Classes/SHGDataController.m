@@ -128,5 +128,34 @@
 #pragma mark - Guests
 
 
+#pragma mark - Helper Methods
+
+- (CLLocationCoordinate2D)coordinateFromDictionary:(NSDictionary *)contentDictionary {
+    
+    // use SHGMapAnnotation's validation?
+    
+    NSNumber *latitude = [contentDictionary objectForKey:kContentLatitudeKey];
+    NSNumber *longitude = [contentDictionary objectForKey:kContentLongitudeKey];
+
+    return CLLocationCoordinate2DMake([latitude doubleValue], [longitude doubleValue]);
+}
+
+- (MKCoordinateRegion)regionFromDictionary:(NSDictionary *)contentDictionary {
+    
+    // in meters
+    CLLocationDistance walkableLatitudeSpan = 500.0;
+    CLLocationDistance walkableLongitudeSpan = 500.0;
+    
+    NSNumber *zoom = [contentDictionary objectForKey:kContentZoomLevelKey];
+    
+    if (zoom) {
+        // use zoom level as multiplier instead of hard-coded values
+        DLog(@"Would adjust for zoom level %d", [zoom integerValue]);
+    }
+		
+    return MKCoordinateRegionMakeWithDistance([self coordinateFromDictionary:contentDictionary],
+                                                  walkableLatitudeSpan, walkableLongitudeSpan);
+        
+}
 
 @end
