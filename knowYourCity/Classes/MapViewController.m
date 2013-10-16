@@ -54,7 +54,15 @@
     [flipButton setImage:[UIImage imageNamed:@"53-house"]
                 forState:UIControlStateNormal];
     [flipButton addTarget:self action:@selector(goHome) forControlEvents:UIControlEventTouchUpInside];
-    flipButton.frame = CGRectMake(276.0, 0.0, 44.0, 44.0);
+    
+    // upper right
+    //flipButton.frame = CGRectMake(276.0, 20.0, 44.0, 44.0);
+    
+    // lower right -- lower left conflicts with legal notice
+    CGFloat buttonSize = 44.0;
+    CGFloat flipX = self.view.bounds.size.width - buttonSize;
+    CGFloat flipY = self.view.bounds.size.height - buttonSize;
+    flipButton.frame = CGRectMake(flipX, flipY, buttonSize, buttonSize);
     
     [self.view addSubview:flipButton];
     
