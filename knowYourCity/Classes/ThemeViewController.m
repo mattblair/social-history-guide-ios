@@ -27,6 +27,8 @@
 @property (strong, nonatomic) UILabel *guestLabel;
 @property (strong, nonatomic) GuestStubView *guestView;
 
+@property (strong, nonatomic) MKMapView *storyMap;
+
 @property (strong, nonatomic) UIActionSheet *sharingMenu;
 
 @end
@@ -193,12 +195,25 @@
     
     // map:
     
+#warning This is kind of ugly. Store this valud on init, or when the dictionary is set? Or add a contentID category to NSDicationary?
     NSUInteger themeID = [[self.themeDictionary objectForKey:kThemeIDKey] unsignedIntegerValue];
     
     NSArray *annotations = [SHG_DATA storyMapAnnotationsForThemeID:themeID];
     
     if (annotations) {
         DLog(@"Would map: %@", annotations);
+        
+        // is that short enough to still be easily navigable on 3.5" screens?
+        self.storyMap = [[MKMapView alloc] initWithFrame:CGRectMake(0.0, self.yForNextView, 320.0, 320.0)];
+        self.storyMap.delegate = self;
+        
+        [self.storyMap setRegion:[SHG_DATA regionFromDictionary:self.themeDictionary]];
+        
+        [self.scrollView addSubview:self.storyMap];
+        
+        [self.storyMap addAnnotations:annotations];
+        
+        self.yForNextView = CGRectGetMaxY(self.storyMap.frame) + VERTICAL_SPACER_STANDARD;
     }
 }
 
@@ -220,6 +235,44 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - MKMapViewDelegate Methods
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation {
+    
+    // If it's the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // Try to dequeue an existing pin view first.
+	MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+	
+	if (!pinView)
+	{
+		// If an existing pin view was not available, create one.
+		pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                  reuseIdentifier:@"CustomPinAnnotationView"];
+        
+        pinView.animatesDrop = NO;
+        pinView.canShowCallout = YES;
+        
+        // Add a detail disclosure button to the callout
+        UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        
+        pinView.rightCalloutAccessoryView = rightButton;
+	}
+    
+    pinView.pinColor = MKPinAnnotationColorRed;
+    //pinView.tag = (SHGMapAnnotation *)[annotation contentID];
+    
+	return pinView;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    
+    // navigate to story
+    DLog(@"Annotation tapped: %d", [view tag]);
 }
 
 #pragma mark - Respond to User Actions

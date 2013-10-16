@@ -11,6 +11,9 @@
 
 #import <MessageUI/MessageUI.h>
 
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+
 // Need to make these conditional on iOS 5+
 // via http://stackoverflow.com/a/8601053
 
@@ -21,7 +24,7 @@
 #import <Accounts/Accounts.h>
 #endif
 
-@interface ThemeViewController : UIViewController <StoryStubDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
+@interface ThemeViewController : UIViewController <StoryStubDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MKMapViewDelegate>
 
 // temporary, for prototyping pending Core Data
 // will be replaced by an NSManagedObject subclass called Theme
