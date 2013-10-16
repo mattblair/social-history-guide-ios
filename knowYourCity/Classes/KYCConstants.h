@@ -21,21 +21,20 @@
 #define STORY_TAG_OFFSET 342938
 
 // Media Type will determine layout and/or which view controllers to use to present content
-// tidbits will use this too
+// flashbacks will use this, too.
 
-// what about letters/ documents?
+// this maps to the media_types table of the Rails site
 typedef NS_ENUM(NSUInteger, KYCStoryMediaType) {
-    KYCStoryMediaTypeAudio = 0,       // default
-    KYCStoryMediaTypeAudioText,
-    KYCStoryMediaTypeText,
-    KYCStoryMediaTypePhotoAndCaption, // not much text
-    KYCStoryMediaTypePhotoAndText,    // 50 - 200 words of text
-    KYCStoryMediaTypeBiography,       // a brief profile
-    KYCStoryMediaTypeQuote,
-    KYCStoryMediaTypeMapPoints,       // points only
-    KYCStoryMediaTypeMapComplex,      // may include poly-lines and polygrams
-    KYCStoryMediaTypeMapOverlay,      // geo-rectified image to display on map
-    KYCStoryMediaTypeVideo            // not supported in v1.0, or until we have video
+    KYCStoryMediaTypeUnused = 0,        // Rails tables are 1-indexed
+    KYCStoryMediaTypePhotoInterview,    // default
+    KYCStoryMediaTypeMapInterview,
+    KYCStoryMediaTypeInterviewOnly,
+    KYCStoryMediaTypeAmbientAudio,
+    KYCStoryMediaTypeTextOnly,
+    KYCStoryMediaTypeTextWithPhoto,
+    KYCStoryMediaTypePhotoGallery,
+    KYCStoryMediaTypeGeoJSONMap,        // only points in 1.0. May include poly-lines and polygrams in future.
+    KYCStoryMediaTypeNoMedia
 };
 
 // probably only used for import filtering. Even then, maybe only for testing.
@@ -65,6 +64,7 @@ extern NSString* const kLiveJSONURI;
 
 // Off-device images
 extern NSString* const kPhotosURL;
+extern NSString* const kAudioURL;
 
 // Toolbar
 extern NSString* const kMapButtonImage;

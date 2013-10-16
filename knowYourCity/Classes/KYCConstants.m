@@ -22,8 +22,9 @@ BOOL const kEWCoreDataReplaceDatabase = YES;
 NSString* const kSeedJSONFilename = @"kyc-demo-130527"; // kyc-data will usually have a date code appended
 NSString* const kLiveJSONURI = @"TBD";
 
-// Off-device images
+// Off-device media
 NSString* const kPhotosURL = @"http://kycstatic.elsewiseapps.com/photos/";
+NSString* const kAudioURL = @"http://kycstatic.elsewiseapps.com/audio/";
 
 // Toolbar
 NSString* const kMapButtonImage = @"59-info-smaller";
