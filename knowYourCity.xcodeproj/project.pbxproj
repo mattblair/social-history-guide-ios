@@ -62,7 +62,6 @@
 		C93030EF16AB32E10039D7B8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030EE16AB32E10039D7B8 /* HomeViewController.m */; };
 		C93030F216AB33050039D7B8 /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030F116AB33050039D7B8 /* ThemeViewController.m */; };
 		C93030F516AB33260039D7B8 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030F416AB33260039D7B8 /* StoryViewController.m */; };
-		C93030F816AB33570039D7B8 /* GuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030F716AB33570039D7B8 /* GuestViewController.m */; };
 		C93030FB16AB33710039D7B8 /* TidbitListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030FA16AB33710039D7B8 /* TidbitListViewController.m */; };
 		C93030FE16AB33890039D7B8 /* TidbitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030FD16AB33890039D7B8 /* TidbitDetailViewController.m */; };
 		C930310116AB34C40039D7B8 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = C930310016AB34C40039D7B8 /* about.html */; };
@@ -97,7 +96,6 @@
 		C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */; };
 		C97164B216FAD49D00EA8B02 /* jan-dilg-temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164B116FAD49D00EA8B02 /* jan-dilg-temp.jpg */; };
 		C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */; };
-		C97B44E4169DCCDA008A2793 /* KYCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E2169DCCDA008A2793 /* KYCViewController.m */; };
 		C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EA169DCF48008A2793 /* Default-568h@2x.png */; };
 		C97B44EE169DCF48008A2793 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EB169DCF48008A2793 /* Default.png */; };
 		C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EC169DCF48008A2793 /* Default@2x.png */; };
@@ -114,6 +112,7 @@
 		C98345B8180CCBED00C120B1 /* keller.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AD180CCBED00C120B1 /* keller.jpg */; };
 		C98345B9180CCBED00C120B1 /* ccba.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AE180CCBED00C120B1 /* ccba.jpg */; };
 		C98345BA180CCBED00C120B1 /* goldenwest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AF180CCBED00C120B1 /* goldenwest.jpg */; };
+		C98C5EBE180EFF77004EE6DC /* SHGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98C5EBD180EFF77004EE6DC /* SHGAboutViewController.m */; };
 		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
 		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C990649816B82B1B00421288 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649516B82B1B00421288 /* Twitter.framework */; };
@@ -196,8 +195,6 @@
 		C93030F116AB33050039D7B8 /* ThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThemeViewController.m; path = Classes/ThemeViewController.m; sourceTree = "<group>"; };
 		C93030F316AB33260039D7B8 /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryViewController.h; path = Classes/StoryViewController.h; sourceTree = "<group>"; };
 		C93030F416AB33260039D7B8 /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryViewController.m; path = Classes/StoryViewController.m; sourceTree = "<group>"; };
-		C93030F616AB33570039D7B8 /* GuestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuestViewController.h; path = Classes/GuestViewController.h; sourceTree = "<group>"; };
-		C93030F716AB33570039D7B8 /* GuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuestViewController.m; path = Classes/GuestViewController.m; sourceTree = "<group>"; };
 		C93030F916AB33710039D7B8 /* TidbitListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitListViewController.h; path = Classes/TidbitListViewController.h; sourceTree = "<group>"; };
 		C93030FA16AB33710039D7B8 /* TidbitListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitListViewController.m; path = Classes/TidbitListViewController.m; sourceTree = "<group>"; };
 		C93030FC16AB33890039D7B8 /* TidbitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitDetailViewController.h; path = Classes/TidbitDetailViewController.h; sourceTree = "<group>"; };
@@ -243,8 +240,6 @@
 		C97164B116FAD49D00EA8B02 /* jan-dilg-temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "jan-dilg-temp.jpg"; path = "Resources/placeholder-photos/jan-dilg-temp.jpg"; sourceTree = "<group>"; };
 		C97B44DF169DCCDA008A2793 /* KYCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCAppDelegate.h; path = Classes/KYCAppDelegate.h; sourceTree = "<group>"; };
 		C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCAppDelegate.m; path = Classes/KYCAppDelegate.m; sourceTree = "<group>"; };
-		C97B44E1169DCCDA008A2793 /* KYCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCViewController.h; path = Classes/KYCViewController.h; sourceTree = "<group>"; };
-		C97B44E2169DCCDA008A2793 /* KYCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCViewController.m; path = Classes/KYCViewController.m; sourceTree = "<group>"; };
 		C97B44EA169DCF48008A2793 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/default/Default-568h@2x.png"; sourceTree = "<group>"; };
 		C97B44EB169DCF48008A2793 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/default/Default.png; sourceTree = "<group>"; };
 		C97B44EC169DCF48008A2793 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/default/Default@2x.png"; sourceTree = "<group>"; };
@@ -262,6 +257,8 @@
 		C98345AD180CCBED00C120B1 /* keller.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = keller.jpg; sourceTree = "<group>"; };
 		C98345AE180CCBED00C120B1 /* ccba.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ccba.jpg; sourceTree = "<group>"; };
 		C98345AF180CCBED00C120B1 /* goldenwest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goldenwest.jpg; sourceTree = "<group>"; };
+		C98C5EBC180EFF77004EE6DC /* SHGAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGAboutViewController.h; path = Classes/SHGAboutViewController.h; sourceTree = "<group>"; };
+		C98C5EBD180EFF77004EE6DC /* SHGAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGAboutViewController.m; path = Classes/SHGAboutViewController.m; sourceTree = "<group>"; };
 		C990649316B82B1B00421288 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C990649416B82B1B00421288 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C990649516B82B1B00421288 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -351,8 +348,10 @@
 				C97B44DF169DCCDA008A2793 /* KYCAppDelegate.h */,
 				C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */,
 				C97B44E7169DCD54008A2793 /* Models */,
-				C97B44E6169DCD3C008A2793 /* ViewControllers */,
+				C97B44E6169DCD3C008A2793 /* ContentViewControllers */,
+				C98C5EBA180EFCF8004EE6DC /* Flashback */,
 				C97B44E8169DCD77008A2793 /* EWASharedClasses */,
+				C98C5EBB180EFD3A004EE6DC /* Deprecated */,
 				C97B44E5169DCD20008A2793 /* Resources */,
 				C960758E16AC6CDF004B2672 /* 3rdParty */,
 				C92666F3169DC6920061F9AD /* Supporting Files */,
@@ -537,11 +536,9 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		C97B44E6169DCD3C008A2793 /* ViewControllers */ = {
+		C97B44E6169DCD3C008A2793 /* ContentViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C97B44E1169DCCDA008A2793 /* KYCViewController.h */,
-				C97B44E2169DCCDA008A2793 /* KYCViewController.m */,
 				C93030ED16AB32E10039D7B8 /* HomeViewController.h */,
 				C93030EE16AB32E10039D7B8 /* HomeViewController.m */,
 				C93030F016AB33050039D7B8 /* ThemeViewController.h */,
@@ -552,20 +549,12 @@
 				C952427416B0313A00BD8F74 /* GuestStubView.m */,
 				C93030F316AB33260039D7B8 /* StoryViewController.h */,
 				C93030F416AB33260039D7B8 /* StoryViewController.m */,
-				C93030F616AB33570039D7B8 /* GuestViewController.h */,
-				C93030F716AB33570039D7B8 /* GuestViewController.m */,
-				C93030F916AB33710039D7B8 /* TidbitListViewController.h */,
-				C93030FA16AB33710039D7B8 /* TidbitListViewController.m */,
-				C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */,
-				C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */,
-				C93030FC16AB33890039D7B8 /* TidbitDetailViewController.h */,
-				C93030FD16AB33890039D7B8 /* TidbitDetailViewController.m */,
+				C98C5EBC180EFF77004EE6DC /* SHGAboutViewController.h */,
+				C98C5EBD180EFF77004EE6DC /* SHGAboutViewController.m */,
 				C916E15216C0C8DA00423344 /* MapViewController.h */,
 				C916E15316C0C8DA00423344 /* MapViewController.m */,
-				C916E15916C0D01F00423344 /* TidbitMapAnnotation.h */,
-				C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */,
 			);
-			name = ViewControllers;
+			name = ContentViewControllers;
 			sourceTree = "<group>";
 		};
 		C97B44E7169DCD54008A2793 /* Models */ = {
@@ -614,6 +603,28 @@
 				C98345A3180C71BA00C120B1 /* shg-web.sqlite */,
 			);
 			name = data;
+			sourceTree = "<group>";
+		};
+		C98C5EBA180EFCF8004EE6DC /* Flashback */ = {
+			isa = PBXGroup;
+			children = (
+				C93030F916AB33710039D7B8 /* TidbitListViewController.h */,
+				C93030FA16AB33710039D7B8 /* TidbitListViewController.m */,
+				C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */,
+				C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */,
+				C93030FC16AB33890039D7B8 /* TidbitDetailViewController.h */,
+				C93030FD16AB33890039D7B8 /* TidbitDetailViewController.m */,
+			);
+			name = Flashback;
+			sourceTree = "<group>";
+		};
+		C98C5EBB180EFD3A004EE6DC /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				C916E15916C0D01F00423344 /* TidbitMapAnnotation.h */,
+				C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */,
+			);
+			name = Deprecated;
 			sourceTree = "<group>";
 		};
 		C9A528F617C2BF8100EB0362 /* TestFlightSDK2.0.0 */ = {
@@ -816,12 +827,10 @@
 				C9EB9754180DB46800932756 /* SHGMapAnnotation.m in Sources */,
 				C92666F9169DC6920061F9AD /* main.m in Sources */,
 				C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */,
-				C97B44E4169DCCDA008A2793 /* KYCViewController.m in Sources */,
 				C93030EF16AB32E10039D7B8 /* HomeViewController.m in Sources */,
 				C98345A1180C67A200C120B1 /* SHGDataController.m in Sources */,
 				C93030F216AB33050039D7B8 /* ThemeViewController.m in Sources */,
 				C93030F516AB33260039D7B8 /* StoryViewController.m in Sources */,
-				C93030F816AB33570039D7B8 /* GuestViewController.m in Sources */,
 				C93030FB16AB33710039D7B8 /* TidbitListViewController.m in Sources */,
 				C93030FE16AB33890039D7B8 /* TidbitDetailViewController.m in Sources */,
 				C930310D16AB43B50039D7B8 /* KYCPrivateConstants.m in Sources */,
@@ -834,6 +843,7 @@
 				C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */,
 				C9118C1616BECC48009A890D /* KYCConfigurationProvider.m in Sources */,
 				C916E15416C0C8DA00423344 /* MapViewController.m in Sources */,
+				C98C5EBE180EFF77004EE6DC /* SHGAboutViewController.m in Sources */,
 				C916E15B16C0D01F00423344 /* TidbitMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

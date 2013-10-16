@@ -1,18 +1,18 @@
 //
-//  GuestViewController.m
+//  SHGAboutViewController.m
 //  knowYourCity
 //
-//  Created by Matt Blair on 1/19/13.
+//  Created by Matt Blair on 10/16/13.
 //  Copyright (c) 2013 Elsewise LLC. All rights reserved.
 //
 
-#import "GuestViewController.h"
+#import "SHGAboutViewController.h"
 
-@interface GuestViewController ()
+@interface SHGAboutViewController ()
 
 @end
 
-@implementation GuestViewController
+@implementation SHGAboutViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,16 +23,10 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void)loadView {
+    
+    [super loadView];
 	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
