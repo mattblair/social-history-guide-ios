@@ -41,6 +41,8 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.title = NSLocalizedString(@"Story", @"Title for Story View Controller");
+    
     // to hide background image on nav bar
     //[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     

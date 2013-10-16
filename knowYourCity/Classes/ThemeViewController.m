@@ -52,6 +52,8 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.title = NSLocalizedString(@"Theme", @"Title of Theme View Controller");
+    
     // to hide background image on nav bar
     //[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     
