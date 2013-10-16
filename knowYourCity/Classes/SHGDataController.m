@@ -70,7 +70,7 @@
         while ([s next]) {
             
             [themes addObject:[s resultDictionary]];
-            DLog(@"Theme title: %@", [s stringForColumn:kContentTitleKey]);
+            //DLog(@"Theme title: %@", [s stringForColumn:kContentTitleKey]);
         }
         
         _publishedThemes = [NSArray arrayWithArray:themes];
