@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "ThemeViewController.h"
 #import "TidbitListViewController.h"
-#import "EWWebViewController.h"
+#import "SHGStaticPageViewController.h"
 #import "MapViewController.h"
 
 // temporary, until data loading to Core Data is implemented and populated
@@ -62,16 +62,14 @@
     [super loadView];
     
     // set background just for this nav bar:
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:kNavBarBackgroundiPhone]
-                                                  forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:kNavBarBackgroundiPhone]
+//                                                  forBarMetrics:UIBarMetricsDefault];
     
     // or configure header logo:
     //UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kNavAppLogoiPhone] ];
     //self.navigationItem.titleView = logoImage;
     
-    self.view.backgroundColor = [UIColor yellowColor];
-    
-    
+    self.title = NSLocalizedString(@"Explore", @"Title of list of themes on home view controller.");
     
     self.themeTableView = [[UITableView alloc] initWithFrame:[self.view bounds]
                                                        style:UITableViewStylePlain];
@@ -161,6 +159,12 @@
 }
 
 #pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // keep them uniform
+    return 66.0;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -256,15 +260,13 @@
             
     self.navigationController.toolbarHidden = NO;
     
-    self.toolbarItems = [NSArray arrayWithObjects:
-                         self.mapButton,
+    self.toolbarItems = @[self.infoButton,
                          flexibleSpace,
-                         self.tidbitButton,
-                         flexibleSpace,
-                         self.infoButton,
-                         flexibleSpace,
-                         self.newsButton,
-                         nil];
+                         //self.tidbitButton,
+                         //flexibleSpace,
+                         // should be on right, so map flip button acts as a toggle
+                         self.mapButton
+                         ];
 }
 
 - (void)showMap {
@@ -294,13 +296,18 @@
 
 - (void)showAbout {
     
-    //[self showComingSoon:@"About Page is not yet available."];
+//    EWWebViewController *webVC = [[EWWebViewController alloc] initWithNibName:nil bundle:nil];
+//    
+//    webVC.displayMode = EWWebViewAboutLocalMode;
     
-    EWWebViewController *webVC = [[EWWebViewController alloc] initWithNibName:nil bundle:nil];
+    SHGStaticPageViewController *pageVC = [[SHGStaticPageViewController alloc] initWithNibName:nil
+                                                                               bundle:nil];
     
-    webVC.displayMode = EWWebViewAboutLocalMode;
+    pageVC.hidesBottomBarWhenPushed = YES;
     
-    [self.navigationController pushViewController:webVC animated:YES];
+    //[self.navigationController pushViewController:aboutVC animated:YES];
+    
+    [self presentViewController:pageVC animated:YES completion:NULL];
 }
 
 - (void)showNews {
