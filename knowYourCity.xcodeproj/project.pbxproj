@@ -113,6 +113,8 @@
 		C98345B9180CCBED00C120B1 /* ccba.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AE180CCBED00C120B1 /* ccba.jpg */; };
 		C98345BA180CCBED00C120B1 /* goldenwest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AF180CCBED00C120B1 /* goldenwest.jpg */; };
 		C98C5EBE180EFF77004EE6DC /* SHGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98C5EBD180EFF77004EE6DC /* SHGAboutViewController.m */; };
+		C98C5EC1180F1A19004EE6DC /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C98C5EBF180F1A19004EE6DC /* credits.html */; };
+		C98C5EC2180F1A19004EE6DC /* donate.html in Resources */ = {isa = PBXBuildFile; fileRef = C98C5EC0180F1A19004EE6DC /* donate.html */; };
 		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
 		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C990649816B82B1B00421288 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649516B82B1B00421288 /* Twitter.framework */; };
@@ -259,6 +261,8 @@
 		C98345AF180CCBED00C120B1 /* goldenwest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goldenwest.jpg; sourceTree = "<group>"; };
 		C98C5EBC180EFF77004EE6DC /* SHGAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGAboutViewController.h; path = Classes/SHGAboutViewController.h; sourceTree = "<group>"; };
 		C98C5EBD180EFF77004EE6DC /* SHGAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGAboutViewController.m; path = Classes/SHGAboutViewController.m; sourceTree = "<group>"; };
+		C98C5EBF180F1A19004EE6DC /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
+		C98C5EC0180F1A19004EE6DC /* donate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = donate.html; sourceTree = "<group>"; };
 		C990649316B82B1B00421288 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C990649416B82B1B00421288 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C990649516B82B1B00421288 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -386,6 +390,8 @@
 			isa = PBXGroup;
 			children = (
 				C930310016AB34C40039D7B8 /* about.html */,
+				C98C5EBF180F1A19004EE6DC /* credits.html */,
+				C98C5EC0180F1A19004EE6DC /* donate.html */,
 			);
 			name = html;
 			path = Resources/html;
@@ -729,6 +735,7 @@
 				C960758916AC5A29004B2672 /* Icon@2x.png in Resources */,
 				C98345B9180CCBED00C120B1 /* ccba.jpg in Resources */,
 				C9DE110116AD95FC00D93566 /* logo_header_black.png in Resources */,
+				C98C5EC1180F1A19004EE6DC /* credits.html in Resources */,
 				C98345B1180CCBED00C120B1 /* magic-gardens.jpg in Resources */,
 				C9DE110216AD95FC00D93566 /* logo_header_black@2x.png in Resources */,
 				C9DE110616AD98ED00D93566 /* kycNavBarBlack.png in Resources */,
@@ -775,6 +782,7 @@
 				C98345B5180CCBED00C120B1 /* no-on-9.jpg in Resources */,
 				C97164A616FACF7B00EA8B02 /* church-organ.jpg in Resources */,
 				C97164A716FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg in Resources */,
+				C98C5EC2180F1A19004EE6DC /* donate.html in Resources */,
 				C97164A816FACF7B00EA8B02 /* pwc.jpg in Resources */,
 				C98345BA180CCBED00C120B1 /* goldenwest.jpg in Resources */,
 				C97164AC16FACFA200EA8B02 /* pwc-cornerstone.mp3 in Resources */,
