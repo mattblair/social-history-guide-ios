@@ -30,6 +30,8 @@
 #define kContentLongitudeKey @"longitude"
 #define kContentZoomLevelKey @"zoom_level"
 
+#define kContentMediaTypeKey @"media_type_id"
+
 // Theme keys
 #define kThemeIDKey @"id"
 #define kThemeSummaryKey @"summary"
@@ -74,6 +76,10 @@
 
 // Guests
 
+// URLs
+
+- (NSURL *)urlForPhotoNamed:(NSString *)photoName;
+- (NSURL *)urlForAudiofileNamed:(NSString *)audiofile;
 
 // Utilities
 

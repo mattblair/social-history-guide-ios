@@ -128,6 +128,22 @@
 #pragma mark - Guests
 
 
+#pragma mark - URL Helpers
+
+- (NSURL *)urlForPhotoNamed:(NSString *)photoName {
+    
+    NSString *urlString =[NSString stringWithFormat:@"%@%@.jpg", kPhotosURL, photoName];
+    
+    return [NSURL URLWithString:urlString];
+}
+
+- (NSURL *)urlForAudiofileNamed:(NSString *)audiofile {
+    
+    NSString *urlString =[NSString stringWithFormat:@"%@%@.caf", kAudioURL, audiofile];
+    
+    return [NSURL URLWithString:urlString];
+}
+
 #pragma mark - Helper Methods
 
 - (CLLocationCoordinate2D)coordinateFromDictionary:(NSDictionary *)contentDictionary {
