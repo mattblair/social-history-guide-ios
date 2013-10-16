@@ -29,6 +29,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    // set default color in iOS 7
+    self.window.tintColor = [UIColor kycRed];
+    
     self.homeViewController = [[HomeViewController alloc] initWithNibName:nil bundle:nil];
     
     self.navVC = [[UINavigationController alloc] initWithRootViewController:self.homeViewController];
