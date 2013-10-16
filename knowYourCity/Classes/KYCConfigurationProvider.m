@@ -24,7 +24,9 @@
     });
 }
 
-
+// DEPRECATED: this uses old media type values
+// No need to update to new values unless you use this.
+/*
 - (NSString *)imageNameForMediaType:(KYCStoryMediaType)mediaType {
     
     NSString *mediaImage;
@@ -81,6 +83,6 @@
     
     return mediaImage;
 }
-
+*/
 
 @end
