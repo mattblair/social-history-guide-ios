@@ -112,7 +112,7 @@
 		C98345B8180CCBED00C120B1 /* keller.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AD180CCBED00C120B1 /* keller.jpg */; };
 		C98345B9180CCBED00C120B1 /* ccba.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AE180CCBED00C120B1 /* ccba.jpg */; };
 		C98345BA180CCBED00C120B1 /* goldenwest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345AF180CCBED00C120B1 /* goldenwest.jpg */; };
-		C98C5EBE180EFF77004EE6DC /* SHGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98C5EBD180EFF77004EE6DC /* SHGAboutViewController.m */; };
+		C98C5EBE180EFF77004EE6DC /* SHGStaticPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98C5EBD180EFF77004EE6DC /* SHGStaticPageViewController.m */; };
 		C98C5EC1180F1A19004EE6DC /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C98C5EBF180F1A19004EE6DC /* credits.html */; };
 		C98C5EC2180F1A19004EE6DC /* donate.html in Resources */ = {isa = PBXBuildFile; fileRef = C98C5EC0180F1A19004EE6DC /* donate.html */; };
 		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
@@ -259,8 +259,8 @@
 		C98345AD180CCBED00C120B1 /* keller.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = keller.jpg; sourceTree = "<group>"; };
 		C98345AE180CCBED00C120B1 /* ccba.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ccba.jpg; sourceTree = "<group>"; };
 		C98345AF180CCBED00C120B1 /* goldenwest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goldenwest.jpg; sourceTree = "<group>"; };
-		C98C5EBC180EFF77004EE6DC /* SHGAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGAboutViewController.h; path = Classes/SHGAboutViewController.h; sourceTree = "<group>"; };
-		C98C5EBD180EFF77004EE6DC /* SHGAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGAboutViewController.m; path = Classes/SHGAboutViewController.m; sourceTree = "<group>"; };
+		C98C5EBC180EFF77004EE6DC /* SHGStaticPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGStaticPageViewController.h; path = Classes/SHGStaticPageViewController.h; sourceTree = "<group>"; };
+		C98C5EBD180EFF77004EE6DC /* SHGStaticPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGStaticPageViewController.m; path = Classes/SHGStaticPageViewController.m; sourceTree = "<group>"; };
 		C98C5EBF180F1A19004EE6DC /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
 		C98C5EC0180F1A19004EE6DC /* donate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = donate.html; sourceTree = "<group>"; };
 		C990649316B82B1B00421288 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -555,8 +555,8 @@
 				C952427416B0313A00BD8F74 /* GuestStubView.m */,
 				C93030F316AB33260039D7B8 /* StoryViewController.h */,
 				C93030F416AB33260039D7B8 /* StoryViewController.m */,
-				C98C5EBC180EFF77004EE6DC /* SHGAboutViewController.h */,
-				C98C5EBD180EFF77004EE6DC /* SHGAboutViewController.m */,
+				C98C5EBC180EFF77004EE6DC /* SHGStaticPageViewController.h */,
+				C98C5EBD180EFF77004EE6DC /* SHGStaticPageViewController.m */,
 				C916E15216C0C8DA00423344 /* MapViewController.h */,
 				C916E15316C0C8DA00423344 /* MapViewController.m */,
 			);
@@ -851,7 +851,7 @@
 				C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */,
 				C9118C1616BECC48009A890D /* KYCConfigurationProvider.m in Sources */,
 				C916E15416C0C8DA00423344 /* MapViewController.m in Sources */,
-				C98C5EBE180EFF77004EE6DC /* SHGAboutViewController.m in Sources */,
+				C98C5EBE180EFF77004EE6DC /* SHGStaticPageViewController.m in Sources */,
 				C916E15B16C0D01F00423344 /* TidbitMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
