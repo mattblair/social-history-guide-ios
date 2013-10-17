@@ -25,24 +25,50 @@
 #define kContentTitleKey @"title"
 #define kContentSubtitleKey @"subtitle"
 #define kContentSlugKey @"slug"
+#define kContentDisplayOrderKey @"display_order"
 
+#define kContentLocationValidKey @"location_valid"
 #define kContentLatitudeKey @"latitude"
 #define kContentLongitudeKey @"longitude"
 #define kContentZoomLevelKey @"zoom_level"
 
 #define kContentMediaTypeKey @"media_type_id"
 
+#define kContentImageUsageClearedKey @"image_usage_cleared"
+#define kContentImageStatusIDKey @"image_status_id"
+
+#define kContentImageCaptionKey @"image_caption"
+
+#define kContentImageCreditKey @"image_credit"
+#define kContentImageCreditURLKey @"image_credit_url"
+#define kContentImageCopyrightNoticeKey @"image_copyright_notice"
+#define kContentImageCopyrightURLKey @"image_copyright_url"
+
+#define kContentMapDataKey @"map_data"
+#define kContentMapDataTypeKey @"map_data_type"
+
+#define kContentMoreInfoURLKey @"more_info_url"
+#define kContentMoreInfoTitleKey @"more_info_title"
+#define kContentMoreInfoDescriptionKey @"more_info_description"
+
 // Theme keys
 #define kThemeIDKey @"id"
 #define kThemeSummaryKey @"summary"
 #define kThemeImageKey @"image_name"
 
-// also: latitude, longitude, zoom_level -- available through helper method?
-
 // Story keys
 #define kStoryIDKey @"id"
 #define kStorySummaryKey @"summary"
 #define kStoryImageKey @"image_name"
+#define kStoryImageKey @"image_caption"
+#define kStoryGuestIDKey @"guest_id"
+
+// future: story keys for which data is currently incomplete:
+
+// audio_transcription
+// keywords
+// thumbnail_name
+// twitter_template
 
 // Guest keys
 #define kGuestIDKey @"id"
@@ -86,6 +112,7 @@
 
 - (CLLocationCoordinate2D)coordinateFromDictionary:(NSDictionary *)contentDictionary;
 
+// this factors in the zoom level, if present, or defaults to a walkable span
 - (MKCoordinateRegion)regionFromDictionary:(NSDictionary *)contentDictionary;
 
 @end
