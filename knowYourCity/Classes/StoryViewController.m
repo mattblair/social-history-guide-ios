@@ -9,6 +9,7 @@
 #import "StoryViewController.h"
 #import "EWAAudioPlayerView.h"
 #import "GuestStubView.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface StoryViewController ()
 
@@ -55,17 +56,41 @@
     
     self.yForNextView = 0.0;
     
-    // image/gallery
+    KYCStoryMediaType mediaType = [[self.storyData objectForKey:kContentMediaTypeKey] unsignedIntegerValue];
     
-    self.mainPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, self.yForNextView, MAIN_PHOTO_WIDTH, MAIN_PHOTO_HEIGHT)];
-    
-    NSString *storyImage = [self.storyData objectForKey:@"image"];
-    NSString *imageName = storyImage ? storyImage : @"golden-west-ph.jpg";
-    self.mainPhoto.image = [UIImage imageNamed:imageName];
-    
-    [self.scrollView addSubview:self.mainPhoto];
-    
-    self.yForNextView = CGRectGetMaxY(self.mainPhoto.frame) + VERTICAL_SPACER_EXTRA;
+    switch (mediaType) {
+            
+        case KYCStoryMediaTypePhotoInterview: {
+            
+            self.mainPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, self.yForNextView, MAIN_PHOTO_WIDTH, MAIN_PHOTO_HEIGHT)];
+            
+            NSString *imageName = [self.storyData objectForKey:kStoryImageKey];
+            
+            [self.mainPhoto setImageWithURL:[SHG_DATA urlForPhotoNamed:imageName]
+                           placeholderImage:[SHG_DATA photoPlaceholder]];
+            
+            [self.scrollView addSubview:self.mainPhoto];
+            
+            self.yForNextView = CGRectGetMaxY(self.mainPhoto.frame) + VERTICAL_SPACER_EXTRA;
+            
+            break;
+        }
+            
+        case KYCStoryMediaTypeNoMedia:
+            DLog(@"No media to display");
+            break;
+        
+        case KYCStoryMediaTypeGeoJSONMap: {
+            
+            DLog(@"Would show points on the map...");
+            
+            break;
+        }
+            
+        default:
+            DLog(@"Unhandled media type: %d", mediaType);
+            break;
+    }
     
     // title
     
