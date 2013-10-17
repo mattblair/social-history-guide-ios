@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Elsewise LLC. All rights reserved.
 //
 
+// Created as a view to avoid the limitations of UITableView and its components.
+// If no special features/behaviors are required, a table view might be simpler.
+
 #import <UIKit/UIKit.h>
 
 @protocol StoryStubDelegate;
