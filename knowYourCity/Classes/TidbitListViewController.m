@@ -86,7 +86,7 @@
      }
      
      NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
-     KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : 0;
+     KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : KYCStoryMediaTypePhotoInterview;
      
      cell.imageView.image = [UIImage imageNamed:[KYCSTYLE imageNameForMediaType:mediaType]];
      

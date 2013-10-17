@@ -44,7 +44,7 @@
         
         self.mediaImageView = [[UIImageView alloc] initWithFrame:mediaRect];
         
-        NSString *mediaImage = [KYCSTYLE imageNameForMediaType:KYCStoryMediaTypeAudio];
+        NSString *mediaImage = [KYCSTYLE imageNameForMediaType:KYCStoryMediaTypePhotoInterview];
         
         self.mediaImageView.image = [UIImage imageNamed:mediaImage];
                 
@@ -122,7 +122,7 @@
     }
     
     NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
-    KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : KYCStoryMediaTypeAudio;
+    KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber unsignedIntegerValue] : KYCStoryMediaTypePhotoInterview;
     self.mediaImageView.image = [UIImage imageNamed:[KYCSTYLE imageNameForMediaType:mediaType]];
 }
 
