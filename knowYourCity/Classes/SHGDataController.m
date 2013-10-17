@@ -137,6 +137,11 @@
     return [NSURL URLWithString:urlString];
 }
 
+- (UIImage *)photoPlaceholder {
+    
+    return [UIImage imageNamed:@"theme_tn_ph"];
+}
+
 - (NSURL *)urlForAudiofileNamed:(NSString *)audiofile {
     
     NSString *urlString =[NSString stringWithFormat:@"%@%@.caf", kAudioURL, audiofile];

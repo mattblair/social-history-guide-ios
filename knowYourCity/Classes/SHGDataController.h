@@ -79,6 +79,7 @@
 // URLs
 
 - (NSURL *)urlForPhotoNamed:(NSString *)photoName;
+- (UIImage *)photoPlaceholder;
 - (NSURL *)urlForAudiofileNamed:(NSString *)audiofile;
 
 // Utilities
