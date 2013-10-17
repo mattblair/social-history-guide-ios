@@ -60,7 +60,6 @@
 #define kStoryIDKey @"id"
 #define kStorySummaryKey @"summary"
 #define kStoryImageKey @"image_name"
-#define kStoryImageKey @"image_caption"
 #define kStoryGuestIDKey @"guest_id"
 
 // future: story keys for which data is currently incomplete:
