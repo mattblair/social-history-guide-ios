@@ -683,7 +683,7 @@
 		C92666DF169DC6920061F9AD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = KYC;
+				CLASSPREFIX = SHG;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Elsewise LLC";
 			};
