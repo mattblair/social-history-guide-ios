@@ -144,7 +144,8 @@
 
 - (NSURL *)urlForAudiofileNamed:(NSString *)audiofile {
     
-    NSString *urlString =[NSString stringWithFormat:@"%@%@.caf", kAudioURL, audiofile];
+    // switch to .caf once uploaded...
+    NSString *urlString =[NSString stringWithFormat:@"%@%@.mp3", kAudioURL, audiofile];
     
     return [NSURL URLWithString:urlString];
 }

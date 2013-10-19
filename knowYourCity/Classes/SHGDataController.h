@@ -34,6 +34,8 @@
 
 #define kContentMediaTypeKey @"media_type_id"
 
+#define kContentAudioFilenameKey @"audio_filename"
+
 #define kContentImageUsageClearedKey @"image_usage_cleared"
 #define kContentImageStatusIDKey @"image_status_id"
 
