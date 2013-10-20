@@ -42,6 +42,7 @@
 		C916E15716C0CAFC00423344 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15516C0CAFC00423344 /* CoreLocation.framework */; };
 		C916E15816C0CAFC00423344 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15616C0CAFC00423344 /* MapKit.framework */; };
 		C916E15B16C0D01F00423344 /* TidbitMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */; };
+		C91E49D4181442FB0074E154 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = C91E49D3181442FB0074E154 /* audio */; };
 		C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C921484C16B58AF8007323D0 /* EWWebViewController.m */; };
 		C921485216B59417007323D0 /* EWAAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C921485116B59417007323D0 /* EWAAudioPlayerView.m */; };
 		C921485616B598A3007323D0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C921485516B598A3007323D0 /* AVFoundation.framework */; };
@@ -90,9 +91,6 @@
 		C97164A616FACF7B00EA8B02 /* church-organ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164A316FACF7B00EA8B02 /* church-organ.jpg */; };
 		C97164A716FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164A416FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg */; };
 		C97164A816FACF7B00EA8B02 /* pwc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164A516FACF7B00EA8B02 /* pwc.jpg */; };
-		C97164AC16FACFA200EA8B02 /* pwc-cornerstone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164A916FACFA200EA8B02 /* pwc-cornerstone.mp3 */; };
-		C97164AD16FACFA200EA8B02 /* pwc-main.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AA16FACFA200EA8B02 /* pwc-main.mp3 */; };
-		C97164AE16FACFA200EA8B02 /* why-the-church.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AB16FACFA200EA8B02 /* why-the-church.mp3 */; };
 		C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */; };
 		C97164B216FAD49D00EA8B02 /* jan-dilg-temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164B116FAD49D00EA8B02 /* jan-dilg-temp.jpg */; };
 		C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */; };
@@ -169,6 +167,7 @@
 		C916E15616C0CAFC00423344 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C916E15916C0D01F00423344 /* TidbitMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitMapAnnotation.h; path = Classes/TidbitMapAnnotation.h; sourceTree = "<group>"; };
 		C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitMapAnnotation.m; path = Classes/TidbitMapAnnotation.m; sourceTree = "<group>"; };
+		C91E49D3181442FB0074E154 /* audio */ = {isa = PBXFileReference; lastKnownFileType = folder; name = audio; path = Resources/audio; sourceTree = "<group>"; };
 		C921484B16B58AF8007323D0 /* EWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWWebViewController.h; path = EWMShared/EWWebViewController.h; sourceTree = "<group>"; };
 		C921484C16B58AF8007323D0 /* EWWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWWebViewController.m; path = EWMShared/EWWebViewController.m; sourceTree = "<group>"; };
 		C921485016B59417007323D0 /* EWAAudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWAAudioPlayerView.h; path = EWMShared/EWAAudioPlayerView.h; sourceTree = "<group>"; };
@@ -235,9 +234,6 @@
 		C97164A316FACF7B00EA8B02 /* church-organ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "church-organ.jpg"; path = "Resources/placeholder-photos/church-organ.jpg"; sourceTree = "<group>"; };
 		C97164A416FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "pwc-cornerstone-temp.jpg"; path = "Resources/placeholder-photos/pwc-cornerstone-temp.jpg"; sourceTree = "<group>"; };
 		C97164A516FACF7B00EA8B02 /* pwc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pwc.jpg; path = "Resources/placeholder-photos/pwc.jpg"; sourceTree = "<group>"; };
-		C97164A916FACFA200EA8B02 /* pwc-cornerstone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "pwc-cornerstone.mp3"; path = "Resources/audio/pwc-cornerstone.mp3"; sourceTree = "<group>"; };
-		C97164AA16FACFA200EA8B02 /* pwc-main.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "pwc-main.mp3"; path = "Resources/audio/pwc-main.mp3"; sourceTree = "<group>"; };
-		C97164AB16FACFA200EA8B02 /* why-the-church.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "why-the-church.mp3"; path = "Resources/audio/why-the-church.mp3"; sourceTree = "<group>"; };
 		C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kycPlaceholder.mp3; path = "Resources/placeholder-photos/kycPlaceholder.mp3"; sourceTree = "<group>"; };
 		C97164B116FAD49D00EA8B02 /* jan-dilg-temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "jan-dilg-temp.jpg"; path = "Resources/placeholder-photos/jan-dilg-temp.jpg"; sourceTree = "<group>"; };
 		C97B44DF169DCCDA008A2793 /* KYCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCAppDelegate.h; path = Classes/KYCAppDelegate.h; sourceTree = "<group>"; };
@@ -402,9 +398,6 @@
 			children = (
 				C97164B116FAD49D00EA8B02 /* jan-dilg-temp.jpg */,
 				C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */,
-				C97164A916FACFA200EA8B02 /* pwc-cornerstone.mp3 */,
-				C97164AA16FACFA200EA8B02 /* pwc-main.mp3 */,
-				C97164AB16FACFA200EA8B02 /* why-the-church.mp3 */,
 				C97164A316FACF7B00EA8B02 /* church-organ.jpg */,
 				C97164A416FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg */,
 				C97164A516FACF7B00EA8B02 /* pwc.jpg */,
@@ -530,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				C98345A2180C718B00C120B1 /* data */,
+				C91E49D3181442FB0074E154 /* audio */,
 				C952427616B0350400BD8F74 /* placeholders */,
 				C97B44E9169DCD95008A2793 /* default */,
 				C960756D16AC59B2004B2672 /* graphics */,
@@ -716,6 +710,7 @@
 				C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */,
 				C93030E816AB320E0039D7B8 /* bill_hart.jpg in Resources */,
 				C93030E916AB320E0039D7B8 /* bill_hart@2x.jpg in Resources */,
+				C91E49D4181442FB0074E154 /* audio in Resources */,
 				C93030EA16AB320E0039D7B8 /* guest_placeholder.jpg in Resources */,
 				C93030EB16AB320E0039D7B8 /* guest_placeholder@2x.jpg in Resources */,
 				C930310116AB34C40039D7B8 /* about.html in Resources */,
@@ -785,9 +780,6 @@
 				C98C5EC2180F1A19004EE6DC /* donate.html in Resources */,
 				C97164A816FACF7B00EA8B02 /* pwc.jpg in Resources */,
 				C98345BA180CCBED00C120B1 /* goldenwest.jpg in Resources */,
-				C97164AC16FACFA200EA8B02 /* pwc-cornerstone.mp3 in Resources */,
-				C97164AD16FACFA200EA8B02 /* pwc-main.mp3 in Resources */,
-				C97164AE16FACFA200EA8B02 /* why-the-church.mp3 in Resources */,
 				C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */,
 				C97164B216FAD49D00EA8B02 /* jan-dilg-temp.jpg in Resources */,
 				C91406BE1753CB7F00BC142F /* kyc-demo-130527.json in Resources */,
