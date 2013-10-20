@@ -1,4 +1,5 @@
 require 'FileUtils'
+require 'csv'
 
 require_relative 'kyc-filename-cleanup'
 
@@ -11,6 +12,12 @@ ogg_output_directory = "/Users/matt/Dropbox/appWorkingNotes/knowYourCity/ogg"
 
 ios_suffix = "caf"
 web_suffix = "mp4"
+
+# generate this list from the database, save as CSV, using the current 'published' id:
+# select audio_filename from stories where workflow_state_id = 2
+audio_file_list = "/Users/matt/Documents/codeProjects/knowYourCity/contentScripts/included-audio-files.txt"
+
+audio_files_for_ios = CSV.read(audio_file_list)
 
 # themes to process:
 
@@ -79,7 +86,7 @@ themes_to_process.each do |theme|
   
     # mp3 conversion not supported without a 3rd party encoder
     # `afconvert -v -c 1 -f MPG3 -d mp3 -s 3 -b 128000 #{filename} #{output_file}`
-    
+=begin    
     # if it's already an mp3, just copy it to the mp3 folder, without changing the filename
     if filename.end_with?(".mp3")
       `cp \"#{filename}\" "#{preview_output_directory}/#{new_file_name}.mp3"`
@@ -91,13 +98,17 @@ themes_to_process.each do |theme|
     end
   
     # mp4 for the web:
-    #{}`afconvert -v -c 1 -f mp4f -d aac -s 3 -b 128000 \"#{filename}\" #{web_output_file}`
-  
+    #`afconvert -v -c 1 -f mp4f -d aac -s 3 -b 128000 \"#{filename}\" #{web_output_file}`
+=end
     # convert the file for the app:
-    `afconvert -v -c 1 -f caff -d aac -s 3 -b 128000 \"#{filename}\" #{ios_output_file}`
+    if audio_files_for_ios.include?(["#{new_file_name}"])
+      `afconvert -v -c 1 -f caff -d aac -s 3 -b 128000 \"#{filename}\" #{ios_output_file}`
+    else
+      puts "Will not add #{new_file_name} to iOS project because it's not published."
+    end
     
     # ogg for Firefox and Opera -- switch to overwrite what's there?
-    `ffmpeg -i \"#{filename}\" -acodec libvorbis -aq 5 #{ogg_output_file}`
+    #`ffmpeg -i \"#{filename}\" -acodec libvorbis -aq 5 #{ogg_output_file}`
     
     # add an object to the output list, with id, original name, new filenames?
     $processed_files << new_file_name
