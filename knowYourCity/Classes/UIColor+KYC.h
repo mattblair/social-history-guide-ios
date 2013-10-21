@@ -12,7 +12,12 @@
 
 // color scheme TBD
 + (UIColor *)kycBrown;
+
++ (UIColor *)kycLightGray;
++ (UIColor *)kycMediumGray;
++ (UIColor *)kycDarkGray;
 + (UIColor *)kycGray;
+
 + (UIColor *)kycRed;
 + (UIColor *)kycOffWhite;
 
