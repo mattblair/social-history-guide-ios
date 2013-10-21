@@ -18,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    DLog(@"iOS Version is: %@", ON_IOS7 ? @"7+" : @"< 7");
+    
     //[TestFlight takeOff:kTestFlightTeamToken];
     [TestFlight takeOff:kTestFlightAppToken];
     
@@ -30,7 +32,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // set default color in iOS 7
-    self.window.tintColor = [UIColor kycRed];
+    if (ON_IOS7) {
+        self.window.tintColor = [UIColor kycRed];
+    }
     
     self.homeViewController = [[HomeViewController alloc] initWithNibName:nil bundle:nil];
     
