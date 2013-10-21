@@ -50,6 +50,11 @@
         
         NSError *audioError = nil;
         
+        // test audioURL to see if it's a file URL:
+        // https://developer.apple.com/library/ios/qa/qa1634/_index.html
+        
+        // if it's not, try AVPLayer instead, or assign a delegate to download and re-init on completion
+        
         self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL
                                                                   error:&audioError];
         
