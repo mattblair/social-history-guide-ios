@@ -17,9 +17,16 @@
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) UIImageView *mainPhoto;
+@property (strong, nonatomic) UILabel *captionLabel;
+
+// image credit needed here
+
 @property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) UILabel *subtitleLabel;
+
 @property (strong, nonatomic) EWAAudioPlayerView *theAudioPlayerView;
-@property (strong, nonatomic) UILabel *mainTextLabel;
+
+@property (strong, nonatomic) UILabel *summaryLabel;
 
 @property (strong, nonatomic) UILabel *guestLabel;
 @property (strong, nonatomic) GuestStubView *guestView;
@@ -73,7 +80,19 @@
             
             self.yForNextView = CGRectGetMaxY(self.mainPhoto.frame) + VERTICAL_SPACER_EXTRA;
             
-            // add caption here
+            self.captionLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
+            self.captionLabel.numberOfLines = 0;
+            self.captionLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            self.captionLabel.text = [self.storyData objectForKey:kContentImageCaptionKey];
+            self.captionLabel.font = [UIFont fontWithName:kBodyFontName size:14.0];
+            
+            [self.captionLabel sizeToFit];
+            
+            [self.scrollView addSubview:self.captionLabel];
+            
+            self.yForNextView = CGRectGetMaxY(self.mainPhoto.frame) + VERTICAL_SPACER_EXTRA;
+            
+            // image credit here
             
             break;
         }
@@ -94,12 +113,12 @@
             break;
     }
     
-    // title
+    // title and subtitle
     
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
     self.titleLabel.numberOfLines = 0;
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.titleLabel.text = [self.storyData objectForKey:@"title"];
+    self.titleLabel.text = [self.storyData objectForKey:kContentTitleKey];
     self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:kTitleFontSize];
     
     [self.titleLabel sizeToFit];
@@ -107,6 +126,19 @@
     [self.scrollView addSubview:self.titleLabel];
     
     self.yForNextView = CGRectGetMaxY(self.titleLabel.frame) + VERTICAL_SPACER_STANDARD;
+    
+    self.subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
+    self.subtitleLabel.numberOfLines = 0;
+    self.subtitleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.subtitleLabel.text = [self.storyData objectForKey:kContentSubtitleKey];
+    self.subtitleLabel.textColor = [UIColor kycMediumGray];
+    self.subtitleLabel.font = [UIFont fontWithName:kTitleFontName size:kBodyFontSize];
+    
+    [self.subtitleLabel sizeToFit];
+    
+    [self.scrollView addSubview:self.subtitleLabel];
+    
+    self.yForNextView = CGRectGetMaxY(self.subtitleLabel.frame) + VERTICAL_SPACER_STANDARD;
     
     // audio player
     
@@ -141,19 +173,19 @@
         DLog(@"Failed to locate audio file named %@.caf in bundle", storyAudio);
     }
     
-    // main text
+    // summary text
     
-    self.mainTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 70.0)];
-    self.mainTextLabel.numberOfLines = 0;
-    self.mainTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.mainTextLabel.text = [self.storyData objectForKey:@"mainText"];
-    self.mainTextLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
+    self.summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 70.0)];
+    self.summaryLabel.numberOfLines = 0;
+    self.summaryLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.summaryLabel.text = [self.storyData objectForKey:kStorySummaryKey];
+    self.summaryLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
     
-    [self.mainTextLabel sizeToFit];
+    [self.summaryLabel sizeToFit];
     
-    [self.scrollView addSubview:self.mainTextLabel];
+    [self.scrollView addSubview:self.summaryLabel];
     
-    self.yForNextView = CGRectGetMaxY(self.mainTextLabel.frame) + VERTICAL_SPACER_EXTRA;
+    self.yForNextView = CGRectGetMaxY(self.summaryLabel.frame) + VERTICAL_SPACER_EXTRA;
     
     
     // guest list -- allow for multiple
