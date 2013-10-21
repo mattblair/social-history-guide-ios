@@ -30,6 +30,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        _showCalloutAccessories = YES;
+        _showCallouts = YES;
+        
         self.backgroundColor = [UIColor whiteColor]; // or some kind of transparency?
         
         CGFloat buttonSize = 44.0;
@@ -125,19 +128,20 @@
             
             // pin drop looks terrible in a full screen map on iPad 3
             pinView.animatesDrop = NO;
-            pinView.canShowCallout = NO;
         } else {
             
             pinView.animatesDrop = YES;
-            pinView.canShowCallout = YES;
             
             // Add a detail disclosure button to the callout
-            UIButton* rightButton = [UIButton buttonWithType:
-                                     UIButtonTypeDetailDisclosure];
-            
-            pinView.rightCalloutAccessoryView = rightButton;
+            if (self.showCalloutAccessories) {
+                UIButton* rightButton = [UIButton buttonWithType:
+                                         UIButtonTypeDetailDisclosure];
+                
+                pinView.rightCalloutAccessoryView = rightButton;
+            }
         }
         
+        pinView.canShowCallout = self.showCallouts;
         pinView.pinColor = MKPinAnnotationColorGreen;
 	}
     
@@ -187,9 +191,11 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     
+    // hide map
+    
     // cast annotation to pull relevant data
     
-    SHGMapAnnotation *tappedAnnotation = (SHGMapAnnotation *)view;
+    SHGMapAnnotation *tappedAnnotation = (SHGMapAnnotation *)view.annotation;
     
     DLog(@"Would handle tap on %@", [tappedAnnotation description]);
     

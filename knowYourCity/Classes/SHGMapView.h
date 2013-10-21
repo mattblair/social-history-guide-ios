@@ -20,6 +20,9 @@
 
 @property (weak, nonatomic) id <SHGMapViewDelegate> delegate;
 
+@property (nonatomic) BOOL showCallouts;
+@property (nonatomic) BOOL showCalloutAccessories;
+
 - (id)initWithFrame:(CGRect)frame title:(NSString *)title region:(MKCoordinateRegion)region footer:(NSString *)footer;
 
 // expose button image properties?
