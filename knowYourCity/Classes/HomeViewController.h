@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MapViewController.h"
+//#import "MapViewController.h"
 
-@interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MapViewControllerDelegate>
+#import "SHGMapView.h"
+
+// was MapViewControllerDelegate too
+@interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SHGMapViewDelegate>
+
+- (void)mapView:(SHGMapView *)mapView didFinishWithSelectedID:(NSUInteger)itemID ofType:(SHGMapAnnotationType)pinType;
 
 @end
 

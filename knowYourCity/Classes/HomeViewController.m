@@ -32,6 +32,8 @@
 @property (strong, nonatomic) UIBarButtonItem *infoButton;
 @property (strong, nonatomic) UIBarButtonItem *timelineButton; // iPad only? 1.x?
 
+@property (strong, nonatomic) SHGMapView *nearbyMapView;
+
 @end
 
 @implementation HomeViewController
@@ -269,16 +271,50 @@
                          ];
 }
 
+- (SHGMapView *)nearbyMapView {
+    
+    if (!_nearbyMapView) {
+        
+        // temporary -- this should try to use user location, and only fallback to a default
+        CLLocationCoordinate2D defaultCenter = CLLocationCoordinate2DMake(45.505796, -122.678586);
+        
+        _nearbyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
+                                                     title:NSLocalizedString(@"Nearby", @"Title of nearby map")
+                                                    region:MKCoordinateRegionMakeWithDistance(defaultCenter, 4000.0, 3000.0)
+                                                    footer:nil];
+        _nearbyMapView.delegate = self;
+    }
+    
+    return _nearbyMapView;
+}
+
 - (void)showMap {
     
     //[self showComingSoon:@"Map View is not yet available."];
     
+    /*
     MapViewController *mapVC = [[MapViewController alloc] initWithNibName:nil bundle:nil];
     mapVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     mapVC.delegate = self;
     mapVC.dataArray = self.tidbitList;
     [self presentViewController:mapVC animated:YES completion:NULL];
+     
+    */
     
+    [self.view addSubview:self.nearbyMapView];
+    
+    // temporary -- this should try to use user location, and only fallback to a default
+    CLLocationCoordinate2D defaultCenter = CLLocationCoordinate2DMake(45.505796, -122.678586);
+    
+    MKCoordinateRegion nearbyRegion = MKCoordinateRegionMakeWithDistance(defaultCenter, 4000.0, 3000.0);
+    
+    [self.nearbyMapView addAnnotations:[SHG_DATA mapAnnotationsOfType:SHGMapAnnotationTypeStory
+                                                             inRegion:nearbyRegion
+                                                             maxCount:20]];
+    
+    [UIView animateWithDuration:0.5
+                     animations:^{self.nearbyMapView.alpha = 1.0;}
+                     completion:NULL];
 }
 
 - (void)showTidbits {
@@ -330,13 +366,19 @@
 	[alert show];
 }
 
-#pragma mark - MapViewControllerDelegate Methods
+#pragma mark - SHGMapViewDelegate Methods
 
-- (void)mapViewController:(MapViewController *)mapVC didFinishWithSelection:(NSUInteger *)itemIndex {
-    
-    // no selection to handle yet...
-    
-    [self dismissViewControllerAnimated:YES completion:NULL];
+- (void)mapView:(SHGMapView *)mapView didFinishWithSelectedID:(NSUInteger)itemID ofType:(SHGMapAnnotationType)pinType {
+
+    [UIView animateWithDuration:0.5
+                     animations:^{self.nearbyMapView.alpha = 0.0;}
+                     completion:^(BOOL finished){
+                         
+                         // push if needed
+                         if (itemID != NSNotFound) {
+                             DLog(@"Would show story with id %d", itemID);
+                         }
+                     }];
 }
 
 @end
