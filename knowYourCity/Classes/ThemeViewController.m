@@ -9,11 +9,14 @@
 #import "ThemeViewController.h"
 #import "StoryStubView.h"
 #import "StoryViewController.h"
+#import "SHGMapAnnotation.h"
 #import "GuestStubView.h"
 
 @interface ThemeViewController ()
 
 @property (nonatomic) CGFloat yForNextView;
+
+@property (nonatomic) NSUInteger themeID;
 
 // could use a UITableView here, but it would be more header/footer than cells, so that seems kind of restricting
 @property (strong, nonatomic) UIScrollView *scrollView;
@@ -27,7 +30,9 @@
 @property (strong, nonatomic) UILabel *guestLabel;
 @property (strong, nonatomic) GuestStubView *guestView;
 
-@property (strong, nonatomic) MKMapView *storyMap;
+@property (strong, nonatomic) SHGMapView *storyMapView;
+
+@property (strong, nonatomic) UIButton *mapButton;
 
 @property (strong, nonatomic) UIActionSheet *sharingMenu;
 
@@ -53,6 +58,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.title = NSLocalizedString(@"Theme", @"Title of Theme View Controller");
+    
+    self.themeID = [[self.themeDictionary objectForKey:kThemeIDKey] unsignedIntegerValue];
     
     // to hide background image on nav bar
     //[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
@@ -130,7 +137,7 @@
     self.yForNextView = CGRectGetMaxY(storyTextStub.frame) + VERTICAL_SPACER_EXTRA;
     */
     
-    self.relatedStories = [SHG_DATA storiesForThemeID:[[self.themeDictionary objectForKey:kThemeIDKey] unsignedIntegerValue]];
+    self.relatedStories = [SHG_DATA storiesForThemeID:self.themeID];
     
     NSUInteger storyCounter = 0;
     
@@ -195,28 +202,27 @@
     self.yForNextView = CGRectGetMaxY(self.guestView.frame) + VERTICAL_SPACER_STANDARD;
      */
     
-    // map:
+    // map button
+    // Do we need to test for the existence of annotations at this point?
+    // or can we defer that? Do they all have mappable stories?
     
-#warning This is kind of ugly. Store this valud on init, or when the dictionary is set? Or add a contentID category to NSDicationary?
-    NSUInteger themeID = [[self.themeDictionary objectForKey:kThemeIDKey] unsignedIntegerValue];
+    self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    NSArray *annotations = [SHG_DATA storyMapAnnotationsForThemeID:themeID];
+    self.mapButton.backgroundColor = [UIColor brownColor];
     
-    if (annotations) {
-        DLog(@"Would map: %@", annotations);
-        
-        // is that short enough to still be easily navigable on 3.5" screens?
-        self.storyMap = [[MKMapView alloc] initWithFrame:CGRectMake(0.0, self.yForNextView, 320.0, 320.0)];
-        self.storyMap.delegate = self;
-        
-        [self.storyMap setRegion:[SHG_DATA regionFromDictionary:self.themeDictionary]];
-        
-        [self.scrollView addSubview:self.storyMap];
-        
-        [self.storyMap addAnnotations:annotations];
-        
-        self.yForNextView = CGRectGetMaxY(self.storyMap.frame) + VERTICAL_SPACER_STANDARD;
-    }
+    // will be a graphic of some kind?
+    [self.mapButton setTitle:@"Map" forState:UIControlStateNormal];
+    
+    [self.mapButton addTarget:self
+                       action:@selector(showMap)
+             forControlEvents:UIControlEventTouchUpInside];
+    
+    self.mapButton.frame = CGRectMake(0.0, self.yForNextView, 100.0, 44.0);
+    
+    [self.scrollView addSubview:self.mapButton];
+    
+    self.yForNextView = CGRectGetMaxY(self.mapButton.frame) + VERTICAL_SPACER_STANDARD;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -239,7 +245,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - MKMapViewDelegate Methods
+#pragma mark - MKMapViewDelegate Methods -- DEPRECATED
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation {
     
@@ -275,6 +281,48 @@
     
     // navigate to story
     DLog(@"Annotation tapped: %d", [view tag]);
+}
+
+#pragma mark - SHGMapView Delegate Methods
+
+- (SHGMapView *)storyMapView {
+    
+    if (!_storyMapView) {
+        
+        _storyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
+                                                    title:NSLocalizedString(@"Story Map", @"Title of stories map")
+                                                   region:[SHG_DATA regionFromDictionary:self.themeDictionary]
+                                                   footer:nil];
+        _storyMapView.delegate = self;
+    }
+    
+    return _storyMapView;
+}
+
+- (void)showMap {
+    
+    [self.storyMapView setAlpha:0.0];
+    
+    [self.view addSubview:self.storyMapView];
+    
+    [UIView animateWithDuration:0.5
+                     animations:^{self.storyMapView.alpha = 1.0;}
+                     completion:NULL];
+    
+    [self.storyMapView addAnnotations:[SHG_DATA storyMapAnnotationsForThemeID:self.themeID]];
+}
+
+- (void)mapView:(SHGMapView *)mapView didFinishWithSelectedID:(NSUInteger)itemID ofType:(SHGMapAnnotationType)pinType {
+    
+    [UIView animateWithDuration:0.5
+                     animations:^{self.storyMapView.alpha = 0.0;}
+                     completion:^(BOOL finished){
+                         
+                         // push if needed
+                         if (itemID != NSNotFound) {
+                             DLog(@"Would show story with id %d", itemID);
+                         }
+                     }];
 }
 
 #pragma mark - Respond to User Actions
