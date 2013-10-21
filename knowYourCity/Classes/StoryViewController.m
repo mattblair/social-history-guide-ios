@@ -73,6 +73,8 @@
             
             self.yForNextView = CGRectGetMaxY(self.mainPhoto.frame) + VERTICAL_SPACER_EXTRA;
             
+            // add caption here
+            
             break;
         }
             
@@ -108,17 +110,13 @@
     
     // audio player
     
-    // until Core Data is set up and we have multiple audio files
+    NSString *storyAudio = [self.storyData objectForKey:kContentAudioFilenameKey];
     
-    NSString *storyAudio = [self.storyData objectForKey:@"audioFilename"];
+    // file extension is *not* stored in data
+    NSURL *bundleAudioURL = [[NSBundle mainBundle] URLForResource:storyAudio
+                                                    withExtension:@"caf"];
     
-    NSString *audioFilename = storyAudio ? storyAudio : @"kycPlaceholder.mp3";
-    
-    if ([audioFilename length] > 0) {
-        
-        // file extension stored in data?
-        NSURL *bundleAudioURL = [[NSBundle mainBundle] URLForResource:audioFilename
-                                                        withExtension:nil];
+    if (bundleAudioURL) {
         
         self.theAudioPlayerView = [[EWAAudioPlayerView alloc] initWithAudioURL:bundleAudioURL];
         
@@ -137,6 +135,10 @@
         
         // increment y
         self.yForNextView += audioRect.size.height + 10.0;
+        
+    } else {
+        
+        DLog(@"Failed to locate audio file named %@.caf in bundle", storyAudio);
     }
     
     // main text
