@@ -19,6 +19,13 @@
 // temporary -- will be 6
 #define PUBLISHED_WORKFLOW_STATE 2
 
+typedef NS_ENUM(NSUInteger, SHGSearchResultType) {
+    SHGSearchResultTypeTheme = 0,
+    SHGSearchResultTypeStory,
+    SHGSearchResultTypeFlashback,
+    SHGSearchResultTypeStoryFlashback
+};
+
 // Cross-table keys
 
 #define kContentIDKey @"id"
@@ -101,12 +108,16 @@
 
 - (NSArray *)storyMapAnnotationsForThemeID:(NSUInteger)themeID;
 
+- (NSArray *)mapAnnotationsOfType:(SHGSearchResultType)resultType inRegion:(MKCoordinateRegion)region maxCount:(NSUInteger)maxCount;
+
 // Guests
 
 // URLs
 
 - (NSURL *)urlForPhotoNamed:(NSString *)photoName;
 - (UIImage *)photoPlaceholder;
+
+// probably won't be used in v1.0
 - (NSURL *)urlForAudiofileNamed:(NSString *)audiofile;
 
 // Utilities

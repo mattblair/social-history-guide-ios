@@ -125,6 +125,89 @@
     }
 }
 
+- (NSArray *)mapAnnotationsOfType:(SHGSearchResultType)resultType inRegion:(MKCoordinateRegion)region maxCount:(NSUInteger)maxCount {
+    
+    NSArray *results = nil;
+    
+    // calculate bounding box: -- add a buffer to this?
+    CLLocationDegrees southernEdge = region.center.latitude - region.span.latitudeDelta/2.0;
+    CLLocationDegrees northernEdge = region.center.latitude + region.span.latitudeDelta/2.0;
+    CLLocationDegrees westernEdge = region.center.longitude - region.span.longitudeDelta/2.0;
+    CLLocationDegrees easternEdge = region.center.longitude + region.span.longitudeDelta/2.0;
+    
+    NSUInteger rowLimit = MAX(10, maxCount); // at least 10, but the argument can override?
+    
+    // set maxCount in query, or in annotation-creating loop?
+    NSString *queryTemplate = @"select id, title, subtitle, latitude, longitude "
+                               "from %@ where "
+                               "latitude>%.6lf AND latitude<%.6lf AND longitude>%.6lf AND longitude<%.6lf "
+                               "and workflow_state_id = %d "
+//                               "and location_valid = \"t" " // test this. not sure if database is consistently flagged yet.
+                               "order by latitude desc, longitude " // should be from top left
+                               "LIMIT %d;";
+    
+    NSString *queryStatement = [NSString stringWithFormat:queryTemplate,
+                                @"stories",
+                                southernEdge, northernEdge, westernEdge, easternEdge,
+                                PUBLISHED_WORKFLOW_STATE,
+                                rowLimit];
+    
+    DLog(@"Query statement: %@", queryStatement);
+    
+    switch (resultType) {
+        case SHGSearchResultTypeStory: {
+            
+            NSMutableArray *annotations = [[NSMutableArray alloc] initWithCapacity:maxCount];
+            
+            FMResultSet *resultSet = [self.shgDatabase executeQuery:queryStatement];
+            
+            DLog(@"Query was: %@", resultSet.query);
+            
+            while ([resultSet next]) {
+                
+                // add annotation, not the dictionary, and only if it inits successfully
+                SHGMapAnnotation *anAnnotation = [[SHGMapAnnotation alloc] initWithDictionary:[resultSet resultDictionary]];
+                
+                if (anAnnotation) {
+                    [annotations addObject:anAnnotation];
+                } else {
+                    DLog(@"Unable to create an annotation with dictionary: %@", [resultSet resultDictionary]);
+                }
+                
+                if ([annotations count] >= maxCount) {
+                    break;
+                }
+            }
+            
+            results = [NSArray arrayWithArray:annotations];
+            break;
+        }
+            
+        case SHGSearchResultTypeFlashback: {
+            
+            DLog(@"Flashback map results deferred until 1.1");
+            break;
+        }
+            
+        case SHGSearchResultTypeStoryFlashback: {
+            
+            // run separate searches for story and flash back, combine the arrays up to maxCount
+            
+            DLog(@"Combined search results deferred until 1.1");
+            break;
+        }
+            
+            
+            
+        default:
+            DLog(@"Unhandled search request of type %d", resultType);
+            break;
+    }
+    
+    return results;
+}
+
+
 #pragma mark - Guests
 
 
