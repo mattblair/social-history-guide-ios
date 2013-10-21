@@ -42,7 +42,64 @@
 		C916E15716C0CAFC00423344 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15516C0CAFC00423344 /* CoreLocation.framework */; };
 		C916E15816C0CAFC00423344 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15616C0CAFC00423344 /* MapKit.framework */; };
 		C916E15B16C0D01F00423344 /* TidbitMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */; };
-		C91E49D4181442FB0074E154 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = C91E49D3181442FB0074E154 /* audio */; };
+		C91E4A851815A9420074E154 /* jd-pwc-cornerstone.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A4B1815A9420074E154 /* jd-pwc-cornerstone.caf */; };
+		C91E4A861815A9420074E154 /* jd-first-cong-suffrage-oregon.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A4C1815A9420074E154 /* jd-first-cong-suffrage-oregon.caf */; };
+		C91E4A871815A9420074E154 /* jd-pwc-clubhouse.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A4D1815A9420074E154 /* jd-pwc-clubhouse.caf */; };
+		C91E4A881815A9420074E154 /* jd-duniway.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A4E1815A9420074E154 /* jd-duniway.caf */; };
+		C91E4A891815A9420074E154 /* jd-fcc-west-church.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A4F1815A9420074E154 /* jd-fcc-west-church.caf */; };
+		C91E4A8A1815A9420074E154 /* dkc-transient-services.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A501815A9420074E154 /* dkc-transient-services.caf */; };
+		C91E4A8B1815A9420074E154 /* jd-daily-life-sharing-long.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A511815A9420074E154 /* jd-daily-life-sharing-long.caf */; };
+		C91E4A8C1815A9420074E154 /* dkc-flood-waterfront-park.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A521815A9420074E154 /* dkc-flood-waterfront-park.caf */; };
+		C91E4A8D1815A9420074E154 /* dkc-shanghai-tunnels.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A531815A9420074E154 /* dkc-shanghai-tunnels.caf */; };
+		C91E4A8E1815A9420074E154 /* dkc-ericksons-saloon.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A541815A9420074E154 /* dkc-ericksons-saloon.caf */; };
+		C91E4A8F1815A9420074E154 /* dkc-erickson-flood.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A551815A9420074E154 /* dkc-erickson-flood.caf */; };
+		C91E4A901815A9420074E154 /* dkc-ericksons-now-then-short.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A561815A9420074E154 /* dkc-ericksons-now-then-short.caf */; };
+		C91E4A911815A9420074E154 /* dkc-crimping.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A571815A9420074E154 /* dkc-crimping.caf */; };
+		C91E4A921815A9420074E154 /* am-7-the-bars.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A581815A9420074E154 /* am-7-the-bars.caf */; };
+		C91E4A931815A9420074E154 /* am-6-the-bars.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A591815A9420074E154 /* am-6-the-bars.caf */; };
+		C91E4A941815A9420074E154 /* am-3-collective-living.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A5A1815A9420074E154 /* am-3-collective-living.caf */; };
+		C91E4A951815A9420074E154 /* am-2-other-houses.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A5B1815A9420074E154 /* am-2-other-houses.caf */; };
+		C91E4A961815A9420074E154 /* am-1-intro.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A5C1815A9420074E154 /* am-1-intro.caf */; };
+		C91E4A971815A9420074E154 /* ee-celilo-falls.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A5D1815A9420074E154 /* ee-celilo-falls.caf */; };
+		C91E4A981815A9420074E154 /* ee-she-who-watches.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A5E1815A9420074E154 /* ee-she-who-watches.caf */; };
+		C91E4A991815A9420074E154 /* ee-personal-story.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A5F1815A9420074E154 /* ee-personal-story.caf */; };
+		C91E4A9A1815A9420074E154 /* ee-politics.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A601815A9420074E154 /* ee-politics.caf */; };
+		C91E4A9B1815A9420074E154 /* ee-bear-and-coyote.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A611815A9420074E154 /* ee-bear-and-coyote.caf */; };
+		C91E4A9C1815A9420074E154 /* mm-south-of-burnside-bridge.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A621815A9420074E154 /* mm-south-of-burnside-bridge.caf */; };
+		C91E4A9D1815A9420074E154 /* mm-lonsdale-chapman-squares.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A631815A9420074E154 /* mm-lonsdale-chapman-squares.caf */; };
+		C91E4A9E1815A9420074E154 /* mm-john-reed.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A641815A9420074E154 /* mm-john-reed.caf */; };
+		C91E4A9F1815A9420074E154 /* mm-2nd-w-burnside.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A651815A9420074E154 /* mm-2nd-w-burnside.caf */; };
+		C91E4AA01815A9420074E154 /* mm-introduction.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A661815A9420074E154 /* mm-introduction.caf */; };
+		C91E4AA11815A9420074E154 /* gn-q-center.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A671815A9420074E154 /* gn-q-center.caf */; };
+		C91E4AA21815A9420074E154 /* gn-glf-beginnings.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A681815A9420074E154 /* gn-glf-beginnings.caf */; };
+		C91E4AA31815A9420074E154 /* gn-oregon-gay-mvmt.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A691815A9420074E154 /* gn-oregon-gay-mvmt.caf */; };
+		C91E4AA41815A9420074E154 /* gn-complacency.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A6A1815A9420074E154 /* gn-complacency.caf */; };
+		C91E4AA51815A9420074E154 /* gn-gay-history-brief.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A6B1815A9420074E154 /* gn-gay-history-brief.caf */; };
+		C91E4AA61815A9420074E154 /* gn-accomplishments.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A6C1815A9420074E154 /* gn-accomplishments.caf */; };
+		C91E4AA71815A9420074E154 /* gn-bank-corp-intro.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A6D1815A9420074E154 /* gn-bank-corp-intro.caf */; };
+		C91E4AA81815A9420074E154 /* gn-1973-gay-civil-rights-bill.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A6E1815A9420074E154 /* gn-1973-gay-civil-rights-bill.caf */; };
+		C91E4AA91815A9420074E154 /* po-urban-renewal-and-hippies.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A6F1815A9420074E154 /* po-urban-renewal-and-hippies.caf */; };
+		C91E4AAA1815A9420074E154 /* po-lair-hill-park.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A701815A9420074E154 /* po-lair-hill-park.caf */; };
+		C91E4AAB1815A9420074E154 /* po-psychadelic-supermarket.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A711815A9420074E154 /* po-psychadelic-supermarket.caf */; };
+		C91E4AAC1815A9420074E154 /* po-waldorf-location.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A721815A9420074E154 /* po-waldorf-location.caf */; };
+		C91E4AAD1815A9420074E154 /* po-jewish-beginnings.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A731815A9420074E154 /* po-jewish-beginnings.caf */; };
+		C91E4AAE1815A9420074E154 /* po-jewish-geography.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A741815A9420074E154 /* po-jewish-geography.caf */; };
+		C91E4AAF1815A9420074E154 /* po-apartments.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A751815A9420074E154 /* po-apartments.caf */; };
+		C91E4AB01815A9420074E154 /* po-apartments-intro.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A761815A9420074E154 /* po-apartments-intro.caf */; };
+		C91E4AB11815A9420074E154 /* rh-sentiment-and-ccba.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A771815A9420074E154 /* rh-sentiment-and-ccba.caf */; };
+		C91E4AB21815A9420074E154 /* rh-exclusion-intro.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A781815A9420074E154 /* rh-exclusion-intro.caf */; };
+		C91E4AB31815A9420074E154 /* rh-parking-lot-ping.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A791815A9420074E154 /* rh-parking-lot-ping.caf */; };
+		C91E4AB41815A9420074E154 /* rh-ccba.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A7A1815A9420074E154 /* rh-ccba.caf */; };
+		C91E4AB51815A9420074E154 /* rh-chinatown-gate.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A7B1815A9420074E154 /* rh-chinatown-gate.caf */; };
+		C91E4AB61815A9420074E154 /* bh-restoring-gw-2.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A7C1815A9420074E154 /* bh-restoring-gw-2.caf */; };
+		C91E4AB71815A9420074E154 /* bh-restoring-gw.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A7D1815A9420074E154 /* bh-restoring-gw.caf */; };
+		C91E4AB81815A9420074E154 /* bh-pdx-and-gw.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A7E1815A9420074E154 /* bh-pdx-and-gw.caf */; };
+		C91E4AB91815A9420074E154 /* bh-gw-intro.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A7F1815A9420074E154 /* bh-gw-intro.caf */; };
+		C91E4ABA1815A9430074E154 /* bh-gw-walk-by.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A801815A9420074E154 /* bh-gw-walk-by.caf */; };
+		C91E4ABB1815A9430074E154 /* bh-gw-history-2.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A811815A9420074E154 /* bh-gw-history-2.caf */; };
+		C91E4ABC1815A9430074E154 /* bh-gw-history-3-pov.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A821815A9420074E154 /* bh-gw-history-3-pov.caf */; };
+		C91E4ABD1815A9430074E154 /* bh-cc-and-gw-1.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A831815A9420074E154 /* bh-cc-and-gw-1.caf */; };
+		C91E4ABE1815A9430074E154 /* bh-gw-history-1.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A841815A9420074E154 /* bh-gw-history-1.caf */; };
 		C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C921484C16B58AF8007323D0 /* EWWebViewController.m */; };
 		C921485216B59417007323D0 /* EWAAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C921485116B59417007323D0 /* EWAAudioPlayerView.m */; };
 		C921485616B598A3007323D0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C921485516B598A3007323D0 /* AVFoundation.framework */; };
@@ -167,7 +224,64 @@
 		C916E15616C0CAFC00423344 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C916E15916C0D01F00423344 /* TidbitMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitMapAnnotation.h; path = Classes/TidbitMapAnnotation.h; sourceTree = "<group>"; };
 		C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitMapAnnotation.m; path = Classes/TidbitMapAnnotation.m; sourceTree = "<group>"; };
-		C91E49D3181442FB0074E154 /* audio */ = {isa = PBXFileReference; lastKnownFileType = folder; name = audio; path = Resources/audio; sourceTree = "<group>"; };
+		C91E4A4B1815A9420074E154 /* jd-pwc-cornerstone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jd-pwc-cornerstone.caf"; path = "Resources/audio/jd-pwc-cornerstone.caf"; sourceTree = "<group>"; };
+		C91E4A4C1815A9420074E154 /* jd-first-cong-suffrage-oregon.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jd-first-cong-suffrage-oregon.caf"; path = "Resources/audio/jd-first-cong-suffrage-oregon.caf"; sourceTree = "<group>"; };
+		C91E4A4D1815A9420074E154 /* jd-pwc-clubhouse.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jd-pwc-clubhouse.caf"; path = "Resources/audio/jd-pwc-clubhouse.caf"; sourceTree = "<group>"; };
+		C91E4A4E1815A9420074E154 /* jd-duniway.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jd-duniway.caf"; path = "Resources/audio/jd-duniway.caf"; sourceTree = "<group>"; };
+		C91E4A4F1815A9420074E154 /* jd-fcc-west-church.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jd-fcc-west-church.caf"; path = "Resources/audio/jd-fcc-west-church.caf"; sourceTree = "<group>"; };
+		C91E4A501815A9420074E154 /* dkc-transient-services.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "dkc-transient-services.caf"; path = "Resources/audio/dkc-transient-services.caf"; sourceTree = "<group>"; };
+		C91E4A511815A9420074E154 /* jd-daily-life-sharing-long.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jd-daily-life-sharing-long.caf"; path = "Resources/audio/jd-daily-life-sharing-long.caf"; sourceTree = "<group>"; };
+		C91E4A521815A9420074E154 /* dkc-flood-waterfront-park.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "dkc-flood-waterfront-park.caf"; path = "Resources/audio/dkc-flood-waterfront-park.caf"; sourceTree = "<group>"; };
+		C91E4A531815A9420074E154 /* dkc-shanghai-tunnels.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "dkc-shanghai-tunnels.caf"; path = "Resources/audio/dkc-shanghai-tunnels.caf"; sourceTree = "<group>"; };
+		C91E4A541815A9420074E154 /* dkc-ericksons-saloon.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "dkc-ericksons-saloon.caf"; path = "Resources/audio/dkc-ericksons-saloon.caf"; sourceTree = "<group>"; };
+		C91E4A551815A9420074E154 /* dkc-erickson-flood.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "dkc-erickson-flood.caf"; path = "Resources/audio/dkc-erickson-flood.caf"; sourceTree = "<group>"; };
+		C91E4A561815A9420074E154 /* dkc-ericksons-now-then-short.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "dkc-ericksons-now-then-short.caf"; path = "Resources/audio/dkc-ericksons-now-then-short.caf"; sourceTree = "<group>"; };
+		C91E4A571815A9420074E154 /* dkc-crimping.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "dkc-crimping.caf"; path = "Resources/audio/dkc-crimping.caf"; sourceTree = "<group>"; };
+		C91E4A581815A9420074E154 /* am-7-the-bars.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "am-7-the-bars.caf"; path = "Resources/audio/am-7-the-bars.caf"; sourceTree = "<group>"; };
+		C91E4A591815A9420074E154 /* am-6-the-bars.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "am-6-the-bars.caf"; path = "Resources/audio/am-6-the-bars.caf"; sourceTree = "<group>"; };
+		C91E4A5A1815A9420074E154 /* am-3-collective-living.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "am-3-collective-living.caf"; path = "Resources/audio/am-3-collective-living.caf"; sourceTree = "<group>"; };
+		C91E4A5B1815A9420074E154 /* am-2-other-houses.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "am-2-other-houses.caf"; path = "Resources/audio/am-2-other-houses.caf"; sourceTree = "<group>"; };
+		C91E4A5C1815A9420074E154 /* am-1-intro.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "am-1-intro.caf"; path = "Resources/audio/am-1-intro.caf"; sourceTree = "<group>"; };
+		C91E4A5D1815A9420074E154 /* ee-celilo-falls.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ee-celilo-falls.caf"; path = "Resources/audio/ee-celilo-falls.caf"; sourceTree = "<group>"; };
+		C91E4A5E1815A9420074E154 /* ee-she-who-watches.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ee-she-who-watches.caf"; path = "Resources/audio/ee-she-who-watches.caf"; sourceTree = "<group>"; };
+		C91E4A5F1815A9420074E154 /* ee-personal-story.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ee-personal-story.caf"; path = "Resources/audio/ee-personal-story.caf"; sourceTree = "<group>"; };
+		C91E4A601815A9420074E154 /* ee-politics.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ee-politics.caf"; path = "Resources/audio/ee-politics.caf"; sourceTree = "<group>"; };
+		C91E4A611815A9420074E154 /* ee-bear-and-coyote.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ee-bear-and-coyote.caf"; path = "Resources/audio/ee-bear-and-coyote.caf"; sourceTree = "<group>"; };
+		C91E4A621815A9420074E154 /* mm-south-of-burnside-bridge.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "mm-south-of-burnside-bridge.caf"; path = "Resources/audio/mm-south-of-burnside-bridge.caf"; sourceTree = "<group>"; };
+		C91E4A631815A9420074E154 /* mm-lonsdale-chapman-squares.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "mm-lonsdale-chapman-squares.caf"; path = "Resources/audio/mm-lonsdale-chapman-squares.caf"; sourceTree = "<group>"; };
+		C91E4A641815A9420074E154 /* mm-john-reed.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "mm-john-reed.caf"; path = "Resources/audio/mm-john-reed.caf"; sourceTree = "<group>"; };
+		C91E4A651815A9420074E154 /* mm-2nd-w-burnside.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "mm-2nd-w-burnside.caf"; path = "Resources/audio/mm-2nd-w-burnside.caf"; sourceTree = "<group>"; };
+		C91E4A661815A9420074E154 /* mm-introduction.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "mm-introduction.caf"; path = "Resources/audio/mm-introduction.caf"; sourceTree = "<group>"; };
+		C91E4A671815A9420074E154 /* gn-q-center.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gn-q-center.caf"; path = "Resources/audio/gn-q-center.caf"; sourceTree = "<group>"; };
+		C91E4A681815A9420074E154 /* gn-glf-beginnings.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gn-glf-beginnings.caf"; path = "Resources/audio/gn-glf-beginnings.caf"; sourceTree = "<group>"; };
+		C91E4A691815A9420074E154 /* gn-oregon-gay-mvmt.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gn-oregon-gay-mvmt.caf"; path = "Resources/audio/gn-oregon-gay-mvmt.caf"; sourceTree = "<group>"; };
+		C91E4A6A1815A9420074E154 /* gn-complacency.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gn-complacency.caf"; path = "Resources/audio/gn-complacency.caf"; sourceTree = "<group>"; };
+		C91E4A6B1815A9420074E154 /* gn-gay-history-brief.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gn-gay-history-brief.caf"; path = "Resources/audio/gn-gay-history-brief.caf"; sourceTree = "<group>"; };
+		C91E4A6C1815A9420074E154 /* gn-accomplishments.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gn-accomplishments.caf"; path = "Resources/audio/gn-accomplishments.caf"; sourceTree = "<group>"; };
+		C91E4A6D1815A9420074E154 /* gn-bank-corp-intro.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gn-bank-corp-intro.caf"; path = "Resources/audio/gn-bank-corp-intro.caf"; sourceTree = "<group>"; };
+		C91E4A6E1815A9420074E154 /* gn-1973-gay-civil-rights-bill.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gn-1973-gay-civil-rights-bill.caf"; path = "Resources/audio/gn-1973-gay-civil-rights-bill.caf"; sourceTree = "<group>"; };
+		C91E4A6F1815A9420074E154 /* po-urban-renewal-and-hippies.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "po-urban-renewal-and-hippies.caf"; path = "Resources/audio/po-urban-renewal-and-hippies.caf"; sourceTree = "<group>"; };
+		C91E4A701815A9420074E154 /* po-lair-hill-park.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "po-lair-hill-park.caf"; path = "Resources/audio/po-lair-hill-park.caf"; sourceTree = "<group>"; };
+		C91E4A711815A9420074E154 /* po-psychadelic-supermarket.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "po-psychadelic-supermarket.caf"; path = "Resources/audio/po-psychadelic-supermarket.caf"; sourceTree = "<group>"; };
+		C91E4A721815A9420074E154 /* po-waldorf-location.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "po-waldorf-location.caf"; path = "Resources/audio/po-waldorf-location.caf"; sourceTree = "<group>"; };
+		C91E4A731815A9420074E154 /* po-jewish-beginnings.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "po-jewish-beginnings.caf"; path = "Resources/audio/po-jewish-beginnings.caf"; sourceTree = "<group>"; };
+		C91E4A741815A9420074E154 /* po-jewish-geography.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "po-jewish-geography.caf"; path = "Resources/audio/po-jewish-geography.caf"; sourceTree = "<group>"; };
+		C91E4A751815A9420074E154 /* po-apartments.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "po-apartments.caf"; path = "Resources/audio/po-apartments.caf"; sourceTree = "<group>"; };
+		C91E4A761815A9420074E154 /* po-apartments-intro.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "po-apartments-intro.caf"; path = "Resources/audio/po-apartments-intro.caf"; sourceTree = "<group>"; };
+		C91E4A771815A9420074E154 /* rh-sentiment-and-ccba.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "rh-sentiment-and-ccba.caf"; path = "Resources/audio/rh-sentiment-and-ccba.caf"; sourceTree = "<group>"; };
+		C91E4A781815A9420074E154 /* rh-exclusion-intro.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "rh-exclusion-intro.caf"; path = "Resources/audio/rh-exclusion-intro.caf"; sourceTree = "<group>"; };
+		C91E4A791815A9420074E154 /* rh-parking-lot-ping.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "rh-parking-lot-ping.caf"; path = "Resources/audio/rh-parking-lot-ping.caf"; sourceTree = "<group>"; };
+		C91E4A7A1815A9420074E154 /* rh-ccba.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "rh-ccba.caf"; path = "Resources/audio/rh-ccba.caf"; sourceTree = "<group>"; };
+		C91E4A7B1815A9420074E154 /* rh-chinatown-gate.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "rh-chinatown-gate.caf"; path = "Resources/audio/rh-chinatown-gate.caf"; sourceTree = "<group>"; };
+		C91E4A7C1815A9420074E154 /* bh-restoring-gw-2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-restoring-gw-2.caf"; path = "Resources/audio/bh-restoring-gw-2.caf"; sourceTree = "<group>"; };
+		C91E4A7D1815A9420074E154 /* bh-restoring-gw.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-restoring-gw.caf"; path = "Resources/audio/bh-restoring-gw.caf"; sourceTree = "<group>"; };
+		C91E4A7E1815A9420074E154 /* bh-pdx-and-gw.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-pdx-and-gw.caf"; path = "Resources/audio/bh-pdx-and-gw.caf"; sourceTree = "<group>"; };
+		C91E4A7F1815A9420074E154 /* bh-gw-intro.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-gw-intro.caf"; path = "Resources/audio/bh-gw-intro.caf"; sourceTree = "<group>"; };
+		C91E4A801815A9420074E154 /* bh-gw-walk-by.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-gw-walk-by.caf"; path = "Resources/audio/bh-gw-walk-by.caf"; sourceTree = "<group>"; };
+		C91E4A811815A9420074E154 /* bh-gw-history-2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-gw-history-2.caf"; path = "Resources/audio/bh-gw-history-2.caf"; sourceTree = "<group>"; };
+		C91E4A821815A9420074E154 /* bh-gw-history-3-pov.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-gw-history-3-pov.caf"; path = "Resources/audio/bh-gw-history-3-pov.caf"; sourceTree = "<group>"; };
+		C91E4A831815A9420074E154 /* bh-cc-and-gw-1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-cc-and-gw-1.caf"; path = "Resources/audio/bh-cc-and-gw-1.caf"; sourceTree = "<group>"; };
+		C91E4A841815A9420074E154 /* bh-gw-history-1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-gw-history-1.caf"; path = "Resources/audio/bh-gw-history-1.caf"; sourceTree = "<group>"; };
 		C921484B16B58AF8007323D0 /* EWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWWebViewController.h; path = EWMShared/EWWebViewController.h; sourceTree = "<group>"; };
 		C921484C16B58AF8007323D0 /* EWWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWWebViewController.m; path = EWMShared/EWWebViewController.m; sourceTree = "<group>"; };
 		C921485016B59417007323D0 /* EWAAudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWAAudioPlayerView.h; path = EWMShared/EWAAudioPlayerView.h; sourceTree = "<group>"; };
@@ -303,6 +417,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C91E4A4A1815A9260074E154 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				C91E4A4B1815A9420074E154 /* jd-pwc-cornerstone.caf */,
+				C91E4A4C1815A9420074E154 /* jd-first-cong-suffrage-oregon.caf */,
+				C91E4A4D1815A9420074E154 /* jd-pwc-clubhouse.caf */,
+				C91E4A4E1815A9420074E154 /* jd-duniway.caf */,
+				C91E4A4F1815A9420074E154 /* jd-fcc-west-church.caf */,
+				C91E4A501815A9420074E154 /* dkc-transient-services.caf */,
+				C91E4A511815A9420074E154 /* jd-daily-life-sharing-long.caf */,
+				C91E4A521815A9420074E154 /* dkc-flood-waterfront-park.caf */,
+				C91E4A531815A9420074E154 /* dkc-shanghai-tunnels.caf */,
+				C91E4A541815A9420074E154 /* dkc-ericksons-saloon.caf */,
+				C91E4A551815A9420074E154 /* dkc-erickson-flood.caf */,
+				C91E4A561815A9420074E154 /* dkc-ericksons-now-then-short.caf */,
+				C91E4A571815A9420074E154 /* dkc-crimping.caf */,
+				C91E4A581815A9420074E154 /* am-7-the-bars.caf */,
+				C91E4A591815A9420074E154 /* am-6-the-bars.caf */,
+				C91E4A5A1815A9420074E154 /* am-3-collective-living.caf */,
+				C91E4A5B1815A9420074E154 /* am-2-other-houses.caf */,
+				C91E4A5C1815A9420074E154 /* am-1-intro.caf */,
+				C91E4A5D1815A9420074E154 /* ee-celilo-falls.caf */,
+				C91E4A5E1815A9420074E154 /* ee-she-who-watches.caf */,
+				C91E4A5F1815A9420074E154 /* ee-personal-story.caf */,
+				C91E4A601815A9420074E154 /* ee-politics.caf */,
+				C91E4A611815A9420074E154 /* ee-bear-and-coyote.caf */,
+				C91E4A621815A9420074E154 /* mm-south-of-burnside-bridge.caf */,
+				C91E4A631815A9420074E154 /* mm-lonsdale-chapman-squares.caf */,
+				C91E4A641815A9420074E154 /* mm-john-reed.caf */,
+				C91E4A651815A9420074E154 /* mm-2nd-w-burnside.caf */,
+				C91E4A661815A9420074E154 /* mm-introduction.caf */,
+				C91E4A671815A9420074E154 /* gn-q-center.caf */,
+				C91E4A681815A9420074E154 /* gn-glf-beginnings.caf */,
+				C91E4A691815A9420074E154 /* gn-oregon-gay-mvmt.caf */,
+				C91E4A6A1815A9420074E154 /* gn-complacency.caf */,
+				C91E4A6B1815A9420074E154 /* gn-gay-history-brief.caf */,
+				C91E4A6C1815A9420074E154 /* gn-accomplishments.caf */,
+				C91E4A6D1815A9420074E154 /* gn-bank-corp-intro.caf */,
+				C91E4A6E1815A9420074E154 /* gn-1973-gay-civil-rights-bill.caf */,
+				C91E4A6F1815A9420074E154 /* po-urban-renewal-and-hippies.caf */,
+				C91E4A701815A9420074E154 /* po-lair-hill-park.caf */,
+				C91E4A711815A9420074E154 /* po-psychadelic-supermarket.caf */,
+				C91E4A721815A9420074E154 /* po-waldorf-location.caf */,
+				C91E4A731815A9420074E154 /* po-jewish-beginnings.caf */,
+				C91E4A741815A9420074E154 /* po-jewish-geography.caf */,
+				C91E4A751815A9420074E154 /* po-apartments.caf */,
+				C91E4A761815A9420074E154 /* po-apartments-intro.caf */,
+				C91E4A771815A9420074E154 /* rh-sentiment-and-ccba.caf */,
+				C91E4A781815A9420074E154 /* rh-exclusion-intro.caf */,
+				C91E4A791815A9420074E154 /* rh-parking-lot-ping.caf */,
+				C91E4A7A1815A9420074E154 /* rh-ccba.caf */,
+				C91E4A7B1815A9420074E154 /* rh-chinatown-gate.caf */,
+				C91E4A7C1815A9420074E154 /* bh-restoring-gw-2.caf */,
+				C91E4A7D1815A9420074E154 /* bh-restoring-gw.caf */,
+				C91E4A7E1815A9420074E154 /* bh-pdx-and-gw.caf */,
+				C91E4A7F1815A9420074E154 /* bh-gw-intro.caf */,
+				C91E4A801815A9420074E154 /* bh-gw-walk-by.caf */,
+				C91E4A811815A9420074E154 /* bh-gw-history-2.caf */,
+				C91E4A821815A9420074E154 /* bh-gw-history-3-pov.caf */,
+				C91E4A831815A9420074E154 /* bh-cc-and-gw-1.caf */,
+				C91E4A841815A9420074E154 /* bh-gw-history-1.caf */,
+			);
+			name = audio;
+			sourceTree = "<group>";
+		};
 		C92666DD169DC6920061F9AD = {
 			isa = PBXGroup;
 			children = (
@@ -522,8 +701,8 @@
 		C97B44E5169DCD20008A2793 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C91E4A4A1815A9260074E154 /* audio */,
 				C98345A2180C718B00C120B1 /* data */,
-				C91E49D3181442FB0074E154 /* audio */,
 				C952427616B0350400BD8F74 /* placeholders */,
 				C97B44E9169DCD95008A2793 /* default */,
 				C960756D16AC59B2004B2672 /* graphics */,
@@ -703,41 +882,73 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91E4AA21815A9420074E154 /* gn-glf-beginnings.caf in Resources */,
+				C91E4A8D1815A9420074E154 /* dkc-shanghai-tunnels.caf in Resources */,
 				C92666F7169DC6920061F9AD /* InfoPlist.strings in Resources */,
+				C91E4AA81815A9420074E154 /* gn-1973-gay-civil-rights-bill.caf in Resources */,
 				C98345B7180CCBED00C120B1 /* iww.jpg in Resources */,
+				C91E4A851815A9420074E154 /* jd-pwc-cornerstone.caf in Resources */,
+				C91E4A891815A9420074E154 /* jd-fcc-west-church.caf in Resources */,
 				C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */,
+				C91E4AA51815A9420074E154 /* gn-gay-history-brief.caf in Resources */,
 				C97B44EE169DCF48008A2793 /* Default.png in Resources */,
 				C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */,
+				C91E4AA01815A9420074E154 /* mm-introduction.caf in Resources */,
 				C93030E816AB320E0039D7B8 /* bill_hart.jpg in Resources */,
+				C91E4AB51815A9420074E154 /* rh-chinatown-gate.caf in Resources */,
 				C93030E916AB320E0039D7B8 /* bill_hart@2x.jpg in Resources */,
-				C91E49D4181442FB0074E154 /* audio in Resources */,
+				C91E4A941815A9420074E154 /* am-3-collective-living.caf in Resources */,
 				C93030EA16AB320E0039D7B8 /* guest_placeholder.jpg in Resources */,
+				C91E4ABC1815A9430074E154 /* bh-gw-history-3-pov.caf in Resources */,
 				C93030EB16AB320E0039D7B8 /* guest_placeholder@2x.jpg in Resources */,
+				C91E4A951815A9420074E154 /* am-2-other-houses.caf in Resources */,
+				C91E4A8F1815A9420074E154 /* dkc-erickson-flood.caf in Resources */,
 				C930310116AB34C40039D7B8 /* about.html in Resources */,
 				C960757016AC59B2004B2672 /* logo_header.png in Resources */,
+				C91E4AB61815A9420074E154 /* bh-restoring-gw-2.caf in Resources */,
 				C960757116AC59B2004B2672 /* logo_header@2x.png in Resources */,
+				C91E4A8A1815A9420074E154 /* dkc-transient-services.caf in Resources */,
 				C960757516AC59C4004B2672 /* kyc-data.json in Resources */,
 				C98345B4180CCBED00C120B1 /* old-town-text.jpg in Resources */,
 				C960757F16AC59E7004B2672 /* theme_placeholder.png in Resources */,
 				C960758016AC59E7004B2672 /* theme_placeholder@2x.png in Resources */,
 				C960758116AC59E7004B2672 /* theme_tn_ph-b.png in Resources */,
+				C91E4AA91815A9420074E154 /* po-urban-renewal-and-hippies.caf in Resources */,
 				C98345B6180CCBED00C120B1 /* native.jpg in Resources */,
+				C91E4A9E1815A9420074E154 /* mm-john-reed.caf in Resources */,
 				C960758216AC59E7004B2672 /* theme_tn_ph-b@2x.png in Resources */,
+				C91E4ABB1815A9430074E154 /* bh-gw-history-2.caf in Resources */,
+				C91E4AAA1815A9420074E154 /* po-lair-hill-park.caf in Resources */,
+				C91E4AA71815A9420074E154 /* gn-bank-corp-intro.caf in Resources */,
 				C98345A4180C71BA00C120B1 /* shg-web.sqlite in Resources */,
 				C960758316AC59E7004B2672 /* theme_tn_ph.png in Resources */,
+				C91E4A981815A9420074E154 /* ee-she-who-watches.caf in Resources */,
+				C91E4A8E1815A9420074E154 /* dkc-ericksons-saloon.caf in Resources */,
+				C91E4AA31815A9420074E154 /* gn-oregon-gay-mvmt.caf in Resources */,
+				C91E4AB01815A9420074E154 /* po-apartments-intro.caf in Resources */,
+				C91E4AA11815A9420074E154 /* gn-q-center.caf in Resources */,
 				C960758416AC59E7004B2672 /* theme_tn_ph@2x.png in Resources */,
+				C91E4AA61815A9420074E154 /* gn-accomplishments.caf in Resources */,
+				C91E4AB91815A9420074E154 /* bh-gw-intro.caf in Resources */,
 				C960758816AC5A29004B2672 /* Icon.png in Resources */,
+				C91E4A8C1815A9420074E154 /* dkc-flood-waterfront-park.caf in Resources */,
 				C960758916AC5A29004B2672 /* Icon@2x.png in Resources */,
+				C91E4AA41815A9420074E154 /* gn-complacency.caf in Resources */,
+				C91E4AB21815A9420074E154 /* rh-exclusion-intro.caf in Resources */,
 				C98345B9180CCBED00C120B1 /* ccba.jpg in Resources */,
 				C9DE110116AD95FC00D93566 /* logo_header_black.png in Resources */,
 				C98C5EC1180F1A19004EE6DC /* credits.html in Resources */,
 				C98345B1180CCBED00C120B1 /* magic-gardens.jpg in Resources */,
+				C91E4A8B1815A9420074E154 /* jd-daily-life-sharing-long.caf in Resources */,
 				C9DE110216AD95FC00D93566 /* logo_header_black@2x.png in Resources */,
 				C9DE110616AD98ED00D93566 /* kycNavBarBlack.png in Resources */,
 				C9DE110716AD98ED00D93566 /* kycNavBarBlack@2x.png in Resources */,
+				C91E4AAC1815A9420074E154 /* po-waldorf-location.caf in Resources */,
+				C91E4A991815A9420074E154 /* ee-personal-story.caf in Resources */,
 				C952427B16B0351600BD8F74 /* golden-west-ph.jpg in Resources */,
 				C952427C16B0351600BD8F74 /* greek-plaque-ph.jpg in Resources */,
 				C952427D16B0351600BD8F74 /* japantown-model-ph.jpg in Resources */,
+				C91E4A9D1815A9420074E154 /* mm-lonsdale-chapman-squares.caf in Resources */,
 				C952427E16B0351600BD8F74 /* new-market-ph.jpg in Resources */,
 				C921486216B59D7C007323D0 /* pause-audio.png in Resources */,
 				C921486316B59D7C007323D0 /* play-audio.png in Resources */,
@@ -748,18 +959,36 @@
 				C916B8D016BD99E4002E29BC /* 07-map-marker.png in Resources */,
 				C916B8D116BD99E4002E29BC /* 09-chat2.png in Resources */,
 				C916B8D216BD99E4002E29BC /* 33-cabinet.png in Resources */,
+				C91E4A961815A9420074E154 /* am-1-intro.caf in Resources */,
+				C91E4A901815A9420074E154 /* dkc-ericksons-now-then-short.caf in Resources */,
+				C91E4AAE1815A9420074E154 /* po-jewish-geography.caf in Resources */,
 				C916B8D316BD99E4002E29BC /* 44-shoebox.png in Resources */,
 				C916B8D416BD99E4002E29BC /* 60-signpost.png in Resources */,
+				C91E4A9C1815A9420074E154 /* mm-south-of-burnside-bridge.caf in Resources */,
+				C91E4AAF1815A9420074E154 /* po-apartments.caf in Resources */,
+				C91E4ABE1815A9430074E154 /* bh-gw-history-1.caf in Resources */,
+				C91E4AB81815A9420074E154 /* bh-pdx-and-gw.caf in Resources */,
+				C91E4A9F1815A9420074E154 /* mm-2nd-w-burnside.caf in Resources */,
+				C91E4AB41815A9420074E154 /* rh-ccba.caf in Resources */,
 				C916B8D516BD99E4002E29BC /* 68-paperclip.png in Resources */,
 				C916B8D616BD99E4002E29BC /* 96-book.png in Resources */,
 				C916B8D716BD99E4002E29BC /* 97-puzzle.png in Resources */,
+				C91E4A971815A9420074E154 /* ee-celilo-falls.caf in Resources */,
 				C916B8D816BD99E4002E29BC /* 103-map.png in Resources */,
 				C916B8D916BD99E4002E29BC /* 104-index-cards.png in Resources */,
+				C91E4A9A1815A9420074E154 /* ee-politics.caf in Resources */,
+				C91E4AB71815A9420074E154 /* bh-restoring-gw.caf in Resources */,
+				C91E4A911815A9420074E154 /* dkc-crimping.caf in Resources */,
+				C91E4ABD1815A9430074E154 /* bh-cc-and-gw-1.caf in Resources */,
 				C916B8DA16BD99E4002E29BC /* 123-id-card.png in Resources */,
+				C91E4AB31815A9420074E154 /* rh-parking-lot-ping.caf in Resources */,
 				C916B8DC16BD99E4002E29BC /* 145-persondot.png in Resources */,
+				C91E4AAB1815A9420074E154 /* po-psychadelic-supermarket.caf in Resources */,
+				C91E4AAD1815A9420074E154 /* po-jewish-beginnings.caf in Resources */,
 				C916B8DD16BD99E4002E29BC /* 179-notepad.png in Resources */,
 				C916B8DE16BD99E4002E29BC /* 180-stickynote.png in Resources */,
 				C916B8DF16BD99E4002E29BC /* 190-bank.png in Resources */,
+				C91E4A861815A9420074E154 /* jd-first-cong-suffrage-oregon.caf in Resources */,
 				C916B8E016BD99E4002E29BC /* 193-location-arrow.png in Resources */,
 				C916B8E116BD99E4002E29BC /* 83-calendar.png in Resources */,
 				C916B8E216BD99E4002E29BC /* 53-house.png in Resources */,
@@ -772,8 +1001,11 @@
 				C98345B0180CCBED00C120B1 /* old-town.jpg in Resources */,
 				C9118C1A16BEEFAF009A890D /* 08-chat.png in Resources */,
 				C9118C1C16BF013D009A890D /* 54_1974.jpg in Resources */,
+				C91E4A881815A9420074E154 /* jd-duniway.caf in Resources */,
 				C98345B3180CCBED00C120B1 /* stark-clubs.jpg in Resources */,
 				C9118C1E16BF07A6009A890D /* waterfront1879crop.jpg in Resources */,
+				C91E4ABA1815A9430074E154 /* bh-gw-walk-by.caf in Resources */,
+				C91E4A871815A9420074E154 /* jd-pwc-clubhouse.caf in Resources */,
 				C98345B5180CCBED00C120B1 /* no-on-9.jpg in Resources */,
 				C97164A616FACF7B00EA8B02 /* church-organ.jpg in Resources */,
 				C97164A716FACF7B00EA8B02 /* pwc-cornerstone-temp.jpg in Resources */,
@@ -781,7 +1013,11 @@
 				C97164A816FACF7B00EA8B02 /* pwc.jpg in Resources */,
 				C98345BA180CCBED00C120B1 /* goldenwest.jpg in Resources */,
 				C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */,
+				C91E4A9B1815A9420074E154 /* ee-bear-and-coyote.caf in Resources */,
 				C97164B216FAD49D00EA8B02 /* jan-dilg-temp.jpg in Resources */,
+				C91E4A931815A9420074E154 /* am-6-the-bars.caf in Resources */,
+				C91E4AB11815A9420074E154 /* rh-sentiment-and-ccba.caf in Resources */,
+				C91E4A921815A9420074E154 /* am-7-the-bars.caf in Resources */,
 				C91406BE1753CB7F00BC142F /* kyc-demo-130527.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
