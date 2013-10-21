@@ -100,6 +100,7 @@
 		C91E4ABC1815A9430074E154 /* bh-gw-history-3-pov.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A821815A9420074E154 /* bh-gw-history-3-pov.caf */; };
 		C91E4ABD1815A9430074E154 /* bh-cc-and-gw-1.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A831815A9420074E154 /* bh-cc-and-gw-1.caf */; };
 		C91E4ABE1815A9430074E154 /* bh-gw-history-1.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A841815A9420074E154 /* bh-gw-history-1.caf */; };
+		C91E4AC11815B8590074E154 /* SHGMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = C91E4AC01815B8590074E154 /* SHGMapView.m */; };
 		C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C921484C16B58AF8007323D0 /* EWWebViewController.m */; };
 		C921485216B59417007323D0 /* EWAAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C921485116B59417007323D0 /* EWAAudioPlayerView.m */; };
 		C921485616B598A3007323D0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C921485516B598A3007323D0 /* AVFoundation.framework */; };
@@ -282,6 +283,8 @@
 		C91E4A821815A9420074E154 /* bh-gw-history-3-pov.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-gw-history-3-pov.caf"; path = "Resources/audio/bh-gw-history-3-pov.caf"; sourceTree = "<group>"; };
 		C91E4A831815A9420074E154 /* bh-cc-and-gw-1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-cc-and-gw-1.caf"; path = "Resources/audio/bh-cc-and-gw-1.caf"; sourceTree = "<group>"; };
 		C91E4A841815A9420074E154 /* bh-gw-history-1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "bh-gw-history-1.caf"; path = "Resources/audio/bh-gw-history-1.caf"; sourceTree = "<group>"; };
+		C91E4ABF1815B8590074E154 /* SHGMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGMapView.h; path = Classes/SHGMapView.h; sourceTree = "<group>"; };
+		C91E4AC01815B8590074E154 /* SHGMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGMapView.m; path = Classes/SHGMapView.m; sourceTree = "<group>"; };
 		C921484B16B58AF8007323D0 /* EWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWWebViewController.h; path = EWMShared/EWWebViewController.h; sourceTree = "<group>"; };
 		C921484C16B58AF8007323D0 /* EWWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWWebViewController.m; path = EWMShared/EWWebViewController.m; sourceTree = "<group>"; };
 		C921485016B59417007323D0 /* EWAAudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWAAudioPlayerView.h; path = EWMShared/EWAAudioPlayerView.h; sourceTree = "<group>"; };
@@ -732,6 +735,8 @@
 				C98C5EBD180EFF77004EE6DC /* SHGStaticPageViewController.m */,
 				C916E15216C0C8DA00423344 /* MapViewController.h */,
 				C916E15316C0C8DA00423344 /* MapViewController.m */,
+				C91E4ABF1815B8590074E154 /* SHGMapView.h */,
+				C91E4AC01815B8590074E154 /* SHGMapView.m */,
 			);
 			name = ContentViewControllers;
 			sourceTree = "<group>";
@@ -1064,6 +1069,7 @@
 				C92666F9169DC6920061F9AD /* main.m in Sources */,
 				C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */,
 				C93030EF16AB32E10039D7B8 /* HomeViewController.m in Sources */,
+				C91E4AC11815B8590074E154 /* SHGMapView.m in Sources */,
 				C98345A1180C67A200C120B1 /* SHGDataController.m in Sources */,
 				C93030F216AB33050039D7B8 /* ThemeViewController.m in Sources */,
 				C93030F516AB33260039D7B8 /* StoryViewController.m in Sources */,
