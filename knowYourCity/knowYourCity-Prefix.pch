@@ -24,6 +24,14 @@
 
 #define ON_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
+// based on steipete's approach in this gist:
+// https://gist.github.com/steipete/6526860
+#ifndef kCFCoreFoundationVersionNumber_iOS_7_0
+#define kCFCoreFoundationVersionNumber_iOS_7_0 847.2
+#endif
+
+#define ON_IOS7 kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_7_0
+
 #define HAS_SOCIAL_FRAMEWORK NSClassFromString(@"SLComposeViewController")
 
 #define IN_LANDSCAPE UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
