@@ -248,19 +248,74 @@
 - (MKCoordinateRegion)regionFromDictionary:(NSDictionary *)contentDictionary {
     
     // in meters
-    CLLocationDistance walkableLatitudeSpan = 500.0;
-    CLLocationDistance walkableLongitudeSpan = 500.0;
+    CLLocationDistance latitudeSpan;
+    CLLocationDistance longitudeSpan;
     
     NSNumber *zoom = [contentDictionary objectForKey:kContentZoomLevelKey];
     
-    if (zoom) {
-        // use zoom level as multiplier instead of hard-coded values
-        DLog(@"Would adjust for zoom level %d", [zoom integerValue]);
+    NSUInteger zoomFactor = zoom ? [zoom unsignedIntegerValue] : NSNotFound;
+    
+    // valued used for themes in 1.0 are: 8 (native stories) and 12-16 for more local themes
+    // Are these values standardized? Are they hard-coded values or is it a relative scale?
+    // according to this: https://developers.google.com/maps/documentation/staticmaps/#Zoomlevels
+    // the values range from 0 (whole world) to ~21 (individual buildings), and
+    // each increment doubles the zoom
+    switch (zoomFactor) {
+        case 8: {
+            
+            latitudeSpan = 76800.0;
+            longitudeSpan = 102400.0;
+            break;
+        }
+            
+        case 12: {
+            
+            latitudeSpan = 4800.0;
+            longitudeSpan = 6400.0;
+            break;
+        }
+            
+        case 13: {
+            
+            latitudeSpan = 2400.0;
+            longitudeSpan = 3200.0;
+            break;
+        }
+            
+        case 14: {
+            
+            latitudeSpan = 1200.0;
+            longitudeSpan = 1600.0;
+            break;
+        }
+            
+        case 15: {
+            
+            latitudeSpan = 600.0;
+            longitudeSpan = 800.0;
+            break;
+        }
+            
+        case 16: {
+            
+            latitudeSpan = 300.0;
+            longitudeSpan = 400.0;
+            break;
+        }
+            
+        default: { // will handle NSNotFound i.e. undefined
+            
+            DLog(@"Zoom level not defined in dictionary.");
+            
+            // default to a walkable span
+            latitudeSpan = 400.0;
+            longitudeSpan = 500.0;
+            break;
+        }
     }
 		
     return MKCoordinateRegionMakeWithDistance([self coordinateFromDictionary:contentDictionary],
-                                                  walkableLatitudeSpan, walkableLongitudeSpan);
-        
+                                                  latitudeSpan, longitudeSpan);
 }
 
 @end
