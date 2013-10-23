@@ -114,8 +114,6 @@
 		C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92666F0169DC6920061F9AD /* CoreGraphics.framework */; };
 		C92666F7169DC6920061F9AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C92666F5169DC6920061F9AD /* InfoPlist.strings */; };
 		C92666F9169DC6920061F9AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92666F8169DC6920061F9AD /* main.m */; };
-		C93030E816AB320E0039D7B8 /* bill_hart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C93030E416AB320E0039D7B8 /* bill_hart.jpg */; };
-		C93030E916AB320E0039D7B8 /* bill_hart@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C93030E516AB320E0039D7B8 /* bill_hart@2x.jpg */; };
 		C93030EF16AB32E10039D7B8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030EE16AB32E10039D7B8 /* HomeViewController.m */; };
 		C93030F216AB33050039D7B8 /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030F116AB33050039D7B8 /* ThemeViewController.m */; };
 		C93030F516AB33260039D7B8 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030F416AB33260039D7B8 /* StoryViewController.m */; };
@@ -306,8 +304,6 @@
 		C92666F6169DC6920061F9AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C92666F8169DC6920061F9AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C92666FA169DC6920061F9AD /* knowYourCity-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "knowYourCity-Prefix.pch"; sourceTree = "<group>"; };
-		C93030E416AB320E0039D7B8 /* bill_hart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bill_hart.jpg; sourceTree = "<group>"; };
-		C93030E516AB320E0039D7B8 /* bill_hart@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bill_hart@2x.jpg"; sourceTree = "<group>"; };
 		C93030ED16AB32E10039D7B8 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Classes/HomeViewController.h; sourceTree = "<group>"; };
 		C93030EE16AB32E10039D7B8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Classes/HomeViewController.m; sourceTree = "<group>"; };
 		C93030F016AB33050039D7B8 /* ThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThemeViewController.h; path = Classes/ThemeViewController.h; sourceTree = "<group>"; };
@@ -563,8 +559,6 @@
 			children = (
 				C9118C1D16BF07A6009A890D /* waterfront1879crop.jpg */,
 				C9118C1B16BF013D009A890D /* 54_1974.jpg */,
-				C93030E416AB320E0039D7B8 /* bill_hart.jpg */,
-				C93030E516AB320E0039D7B8 /* bill_hart@2x.jpg */,
 			);
 			name = photos;
 			path = Resources/photos;
@@ -917,9 +911,7 @@
 				C97B44EE169DCF48008A2793 /* Default.png in Resources */,
 				C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */,
 				C91E4AA01815A9420074E154 /* mm-introduction.caf in Resources */,
-				C93030E816AB320E0039D7B8 /* bill_hart.jpg in Resources */,
 				C91E4AB51815A9420074E154 /* rh-chinatown-gate.caf in Resources */,
-				C93030E916AB320E0039D7B8 /* bill_hart@2x.jpg in Resources */,
 				C91E4A941815A9420074E154 /* am-3-collective-living.caf in Resources */,
 				C91E4ABC1815A9430074E154 /* bh-gw-history-3-pov.caf in Resources */,
 				C91E4A951815A9420074E154 /* am-2-other-houses.caf in Resources */,
