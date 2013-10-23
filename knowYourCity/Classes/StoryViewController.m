@@ -32,6 +32,9 @@
 
 @property (strong, nonatomic) UILabel *guestLabel;
 @property (strong, nonatomic) GuestStubView *guestView;
+
+@property (strong, nonatomic) UIView *moreInfoView;
+
 @end
 
 @implementation StoryViewController
@@ -54,7 +57,7 @@
     
     self.title = NSLocalizedString(@"Story", @"Title for Story View Controller");
     
-    // to hide background image on nav bar
+    // to hide background image on nav bar on iOS 6?
     //[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     
     // add share button
@@ -206,6 +209,9 @@
     
     [self.summaryLabel sizeToFit];
     
+    // for layout testing
+    self.summaryLabel.backgroundColor = [UIColor yellowColor];
+    
     [self.scrollView addSubview:self.summaryLabel];
     
     self.yForNextView = CGRectGetMaxY(self.summaryLabel.frame) + VERTICAL_SPACER_EXTRA;
@@ -228,6 +234,23 @@
     
     // additional media, etc.
     
+    // if this is reusable for tidbits or anywhere else,
+    // add an initializing method like that for GuestStubView
+    // also -- have the view check the dictionary and return nil if there is no data?
+    
+    NSString *moreInfoTitle = [self.storyData objectForKey:kContentMoreInfoTitleKey];
+    
+    if (moreInfoTitle) {
+        
+        [self.scrollView addSubview:[self moreInfoView]];
+        
+        CGFloat moreInfoHeight = self.moreInfoView.frame.size.height;
+        self.moreInfoView.frame = CGRectMake(0.0, self.yForNextView, 320.0, moreInfoHeight);
+        
+        self.yForNextView = CGRectGetMaxY(self.moreInfoView.frame); // no additional spacer
+    }
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -235,7 +258,9 @@
     [super viewWillAppear:animated];
     
     self.scrollView.frame = self.view.bounds;
-    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.yForNextView + 20.0);
+    
+    // pre-iOS 7, was adding 20 to the bottom
+    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.yForNextView);
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -326,6 +351,87 @@
     return _mediaMetadataView;
 }
 
+- (UIView *)moreInfoView {
+    
+    if (!_moreInfoView) {
+        
+        _moreInfoView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 100.0)];
+        
+        _moreInfoView.backgroundColor = [UIColor kycLightGray];
+        UIColor *captionTextColor = [UIColor kycDarkGray];
+        
+        CGFloat nextLabelY = 0.0;
+        
+        UILabel *moreInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, nextLabelY,
+                                                                           320.0, 22.0)];
+        moreInfoLabel.backgroundColor = [UIColor kycDarkGray];
+        moreInfoLabel.text = NSLocalizedString(@"More Information", @"Title label of the more information section");
+        moreInfoLabel.font = [UIFont fontWithName:kTitleFontName size:15.0];
+        moreInfoLabel.textColor = [UIColor kycLightGray];
+        
+        [_moreInfoView addSubview:moreInfoLabel];
+        
+        nextLabelY = CGRectGetMaxY(moreInfoLabel.frame) + 5.0;
+        
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, nextLabelY,
+                                                                          DEFAULT_CONTENT_WIDTH, 31.0)];
+        titleLabel.numberOfLines = 0;
+        titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        titleLabel.text = [self.storyData objectForKey:kContentMoreInfoTitleKey];
+        titleLabel.font = [UIFont fontWithName:kBodyFontName size:kSectionTitleFontSize];
+        titleLabel.textColor = captionTextColor;
+        
+        [titleLabel sizeToFit];
+        
+        [_moreInfoView addSubview:titleLabel];
+        
+        nextLabelY = CGRectGetMaxY(titleLabel.frame) + 5.0;
+        
+        UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, nextLabelY,
+                                                                         DEFAULT_CONTENT_WIDTH, 31.0)];
+        descriptionLabel.numberOfLines = 0;
+        descriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        descriptionLabel.text = [self.storyData objectForKey:kContentMoreInfoDescriptionKey];
+        descriptionLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
+        descriptionLabel.textColor = captionTextColor;
+        
+        [descriptionLabel sizeToFit];
+        
+        [_moreInfoView addSubview:descriptionLabel];
+        
+        nextLabelY = CGRectGetMaxY(descriptionLabel.frame) + 5.0;
+        
+        UIButton *urlButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        [urlButton setTitle:NSLocalizedString(@"website", @"Title for website button")
+                   forState:UIControlStateNormal];
+        
+        [urlButton setTitleColor:[UIColor kycRed]
+                        forState:UIControlStateNormal];
+        
+        urlButton.titleLabel.font = [UIFont fontWithName:kBodyFontName
+                                                    size:kBodyFontSize];
+        
+        [urlButton setTitleEdgeInsets:UIEdgeInsetsMake(10.0, 0.0, 10.0, 10.0)];
+        
+        [urlButton addTarget:self
+                      action:@selector(launchMoreInfoURL)
+            forControlEvents:UIControlEventTouchUpInside];
+        
+        urlButton.frame = CGRectMake(10.0, nextLabelY - 10.0, 60.0, 44.0);
+        
+        [_moreInfoView addSubview:urlButton];
+        
+        nextLabelY = CGRectGetMaxY(urlButton.frame);
+        
+        // reset height
+        _moreInfoView.frame = CGRectMake(0.0, 0.0, 320.0, nextLabelY);
+    }
+    
+    return _moreInfoView;
+}
+
 #pragma mark - Responding to user gestures
 
 - (void)toggleMetadataDisplay {
@@ -342,6 +448,18 @@
     [UIView animateWithDuration:0.35
                      animations:^{self.mediaMetadataView.alpha = self.metadataVisible ? 1.0 : 0.0;}
                      completion:NULL];
+}
+
+- (void)launchMoreInfoURL {
+    
+    NSString *moreInfoURLString = [self.storyData objectForKey:kContentMoreInfoURLKey];
+    
+    if (moreInfoURLString) {
+        DLog(@"Handing URL off to Safari: %@", moreInfoURLString);
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:moreInfoURLString]];
+    } else {
+        DLog(@"No More Info URL in data...");
+    }
 }
 
 @end
