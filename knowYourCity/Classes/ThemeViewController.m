@@ -10,7 +10,6 @@
 #import "StoryStubView.h"
 #import "StoryViewController.h"
 #import "SHGMapAnnotation.h"
-#import "GuestStubView.h"
 
 @interface ThemeViewController ()
 
@@ -26,9 +25,6 @@
 @property (strong, nonatomic) UILabel *introLabel;
 
 @property (strong, nonatomic) NSArray *relatedStories;
-
-@property (strong, nonatomic) UILabel *guestLabel;
-@property (strong, nonatomic) GuestStubView *guestView;
 
 @property (strong, nonatomic) SHGMapView *storyMapView;
 
@@ -178,30 +174,7 @@
         storyCounter++;
     }
     */
-    
-    // Guest Label
-    /*
-    // title
-    self.guestLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
-    self.guestLabel.numberOfLines = 1;
-    self.guestLabel.text = NSLocalizedString(@"Guest", @"Heading label for the Guest section of Theme View Controller");
-    self.guestLabel.font = [UIFont fontWithName:kTitleFontName size:kSectionTitleFontSize];
-    
-    [self.scrollView addSubview:self.guestLabel];
-    
-    self.yForNextView = CGRectGetMaxY(self.guestLabel.frame) + VERTICAL_SPACER_STANDARD;
-    
-    // Guests (allow for multiple)
-    
-    NSDictionary *guestDictionary = @{@"name" : @"Jan Dilg", @"title": @"Independent Historian"};
-    
-    self.guestView = [[GuestStubView alloc] initWithDictionary:guestDictionary
-                                                      atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
-    
-    [self.scrollView addSubview:self.guestView];
-    self.yForNextView = CGRectGetMaxY(self.guestView.frame) + VERTICAL_SPACER_STANDARD;
-     */
-    
+        
     // map button
     // Do we need to test for the existence of annotations at this point?
     // or can we defer that? Do they all have mappable stories?
