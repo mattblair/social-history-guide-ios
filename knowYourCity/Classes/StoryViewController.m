@@ -192,20 +192,11 @@
     
     if (guestNumber) {
         
-        // Guest Label
-        self.guestLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
-        self.guestLabel.numberOfLines = 1;
-        self.guestLabel.text = NSLocalizedString(@"As Told By", @"Heading label for the Guest section of Story View Controller");
-        self.guestLabel.font = [UIFont fontWithName:kTitleFontName size:kSectionTitleFontSize];
-        
-        [self.scrollView addSubview:self.guestLabel];
-        
-        self.yForNextView = CGRectGetMaxY(self.guestLabel.frame) + VERTICAL_SPACER_STANDARD;
-        
         NSUInteger guestID = [guestNumber unsignedIntegerValue];
         
+        // x was DEFAULT_LEFT_MARGIN before iOS 7 re-design
         self.guestView = [[GuestStubView alloc] initWithDictionary:[SHG_DATA dictionaryForGuestID:guestID]
-                                                          atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
+                                                          atOrigin:CGPointMake(0.0, self.yForNextView)];
         
         [self.scrollView addSubview:self.guestView];
         
