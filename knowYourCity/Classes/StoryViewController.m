@@ -187,29 +187,30 @@
     
     self.yForNextView = CGRectGetMaxY(self.summaryLabel.frame) + VERTICAL_SPACER_EXTRA;
     
+    // Guest
+    NSNumber *guestNumber = [self.storyData objectForKey:kStoryGuestIDKey];
     
-    // guest list -- allow for multiple
-    
-    // Guest Label
-    self.guestLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
-    self.guestLabel.numberOfLines = 1;
-    self.guestLabel.text = NSLocalizedString(@"As Told By", @"Heading label for the Guest section of Story View Controller");
-    self.guestLabel.font = [UIFont fontWithName:kTitleFontName size:kSectionTitleFontSize];
-    
-    [self.scrollView addSubview:self.guestLabel];
-    
-    self.yForNextView = CGRectGetMaxY(self.guestLabel.frame) + VERTICAL_SPACER_STANDARD;
-    
-    // Guests (allow for multiple)
-    
-    NSDictionary *guestDictionary = @{@"name" : @"Jan Dilg", @"title": @"Independent Historian"};
-    
-    self.guestView = [[GuestStubView alloc] initWithDictionary:guestDictionary
-                                                      atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
-    
-    [self.scrollView addSubview:self.guestView];
-    
-    self.yForNextView = CGRectGetMaxY(self.guestView.frame) + VERTICAL_SPACER_STANDARD;
+    if (guestNumber) {
+        
+        // Guest Label
+        self.guestLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
+        self.guestLabel.numberOfLines = 1;
+        self.guestLabel.text = NSLocalizedString(@"As Told By", @"Heading label for the Guest section of Story View Controller");
+        self.guestLabel.font = [UIFont fontWithName:kTitleFontName size:kSectionTitleFontSize];
+        
+        [self.scrollView addSubview:self.guestLabel];
+        
+        self.yForNextView = CGRectGetMaxY(self.guestLabel.frame) + VERTICAL_SPACER_STANDARD;
+        
+        NSUInteger guestID = [guestNumber unsignedIntegerValue];
+        
+        self.guestView = [[GuestStubView alloc] initWithDictionary:[SHG_DATA dictionaryForGuestID:guestID]
+                                                          atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
+        
+        [self.scrollView addSubview:self.guestView];
+        
+        self.yForNextView = CGRectGetMaxY(self.guestView.frame) + VERTICAL_SPACER_STANDARD;
+    }
     
     // additional media, etc.
     
