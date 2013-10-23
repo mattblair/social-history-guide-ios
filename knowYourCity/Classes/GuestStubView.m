@@ -8,17 +8,17 @@
 
 #import "GuestStubView.h"
 
-#define GUEST_STUB_WIDTH_IPHONE 300.0
-#define GUEST_STUB_HEIGHT_IPHONE 100.0
+#define GUEST_STUB_WIDTH_IPHONE 320.0
+#define GUEST_STUB_HEIGHT_IPHONE 90.0
 
 // iPad values TBD
 #define GUEST_STUB_WIDTH_IPAD 300.0
 #define GUEST_STUB_HEIGHT_IPAD 150.0
 
-// square?
-#define GUEST_THUMBNAIL_SIZE 80.0
+#define GUEST_THUMBNAIL_WIDTH 120.0
+#define GUEST_THUMBNAIL_HEIGHT 90.0
 
-#define GUEST_STUB_MARGIN 10.0
+#define GUEST_STUB_MARGIN 5.0 // was 10.0
 
 @interface GuestStubView ()
 
@@ -26,6 +26,7 @@
 @property (strong, nonatomic) NSDictionary *guestData;
 
 @property (strong, nonatomic) UIImageView *thumbnailView;
+@property (strong, nonatomic) UILabel *toldLabel;
 @property (strong, nonatomic) UILabel *nameLabel;
 @property (strong, nonatomic) UILabel *titleLabel; // or tagline or ?
 
@@ -45,47 +46,71 @@
         
         self.guestData = guestDictionary;
         
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor kycOffWhite];
         
-        // thumbnail
-        
-        CGRect thumbnailRect = CGRectMake(GUEST_STUB_MARGIN, GUEST_STUB_MARGIN, GUEST_THUMBNAIL_SIZE, GUEST_THUMBNAIL_SIZE);
-        
-        self.thumbnailView = [[UIImageView alloc] initWithFrame:thumbnailRect];
-        // if you use retina, init this by url with type jpg
-        self.thumbnailView.image = [UIImage imageNamed:@"jan-dilg-temp.jpg"]; //guest_placeholder.jpg
-        
-        [self addSubview:self.thumbnailView];
-        
-        // name
-        
-        CGFloat textX = GUEST_THUMBNAIL_SIZE + GUEST_STUB_MARGIN*2.0;
+        CGFloat textX = GUEST_STUB_MARGIN;
         CGFloat textWidth = stubWidth - textX - GUEST_STUB_MARGIN;
         
-        CGRect nameRect = CGRectMake(textX, GUEST_STUB_MARGIN, textWidth, 30.0);
+        // thumbnail -- nil check, because some are missing
+        
+        NSString *imageName = [NSString stringWithFormat:@"%@.jpg", [self.guestData objectForKey:kGuestImageKey]];
+        
+        // we don't have high-res for most of these, do don't worry about Retina
+        UIImage *guestImage = [UIImage imageNamed:imageName];
+        
+        if (guestImage) {
+            
+            CGRect thumbnailRect = CGRectMake(0.0, 0.0, GUEST_THUMBNAIL_WIDTH, GUEST_THUMBNAIL_HEIGHT);
+            
+            self.thumbnailView = [[UIImageView alloc] initWithFrame:thumbnailRect];
+            
+            self.thumbnailView.image = guestImage;
+            
+            [self addSubview:self.thumbnailView];
+            
+            // move text over to make space for the image
+            textX = GUEST_THUMBNAIL_WIDTH + GUEST_STUB_MARGIN;
+            textWidth = stubWidth - textX - GUEST_STUB_MARGIN;
+        }
+        
+        // Guest Label
+        self.toldLabel = [[UILabel alloc] initWithFrame:CGRectMake(textX, 0.0,
+                                                                   DEFAULT_CONTENT_WIDTH, 25.0)];
+        self.toldLabel.numberOfLines = 1;
+        self.toldLabel.text = NSLocalizedString(@"As Told By", @"Heading label for the Guest section of Story View Controller");
+        self.toldLabel.font = [UIFont fontWithName:kTitleFontName size:kSectionTitleFontSize];
+        
+        [self addSubview:self.toldLabel];
+        
+        CGFloat toldY = CGRectGetMaxY(self.toldLabel.frame) + VERTICAL_SPACER_STANDARD;
+        
+        CGRect nameRect = CGRectMake(textX, toldY, textWidth, 30.0);
         
         self.nameLabel = [[UILabel alloc] initWithFrame:nameRect];
-        self.nameLabel.text = [self.guestData objectForKey:@"name"];
-        self.nameLabel.font = [UIFont fontWithName:kTitleFontName size:18.0];
+        self.nameLabel.text = [self.guestData objectForKey:kGuestNameKey];
+        self.nameLabel.font = [UIFont fontWithName:kTitleFontName size:15.0];
         self.nameLabel.backgroundColor = [UIColor clearColor];
+        
+        [self.nameLabel sizeToFit];
         
         [self addSubview:self.nameLabel];
         
-        // title
         
         CGFloat titleY = CGRectGetMaxY(self.nameLabel.frame) + GUEST_STUB_MARGIN;
         CGRect titleRect = CGRectMake(textX, titleY, textWidth, 50.0);
         
         self.titleLabel = [[UILabel alloc] initWithFrame:titleRect];
-        self.titleLabel.text = [self.guestData objectForKey:@"title"];
+        self.titleLabel.text = [self.guestData objectForKey:kGuestTitleKey];
         self.titleLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
-        self.titleLabel.numberOfLines = 2;
+        self.titleLabel.numberOfLines = 0;
         self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.titleLabel.backgroundColor = [UIColor clearColor];
         
+        [self.titleLabel sizeToFit];
+        
         [self addSubview:self.titleLabel];
         
-        // gesture recognizer
+        // gesture recognizer to expand to full view
         
     }
     return self;
