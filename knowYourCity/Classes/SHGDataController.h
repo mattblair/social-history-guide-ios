@@ -112,6 +112,8 @@ typedef NS_ENUM(NSUInteger, SHGSearchResultType) {
 
 // Guests
 
+- (NSDictionary *)dictionaryForGuestID:(NSUInteger)guestID;
+
 // URLs
 
 - (NSURL *)urlForPhotoNamed:(NSString *)photoName;

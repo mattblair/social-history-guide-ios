@@ -147,7 +147,7 @@
                                "LIMIT %d;";
     
     NSString *queryStatement = [NSString stringWithFormat:queryTemplate,
-                                @"stories",
+                                @"stories", //  in future versions, this will need to happen within each case
                                 southernEdge, northernEdge, westernEdge, easternEdge,
                                 PUBLISHED_WORKFLOW_STATE,
                                 rowLimit];
@@ -209,6 +209,20 @@
 
 
 #pragma mark - Guests
+
+- (NSDictionary *)dictionaryForGuestID:(NSUInteger)guestID {
+    
+    NSDictionary *guestDictionary = nil;
+    
+    FMResultSet *resultSet = [self.shgDatabase executeQueryWithFormat:@"SELECT * FROM guests where id = %d;", guestID];
+    
+    while ([resultSet next]) {
+        
+        guestDictionary = [resultSet resultDictionary];
+    }
+    
+    return guestDictionary;
+}
 
 
 #pragma mark - URL Helpers
