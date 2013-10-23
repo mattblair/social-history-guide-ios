@@ -95,7 +95,7 @@
                 
                 [self.scrollView addSubview:self.mainPhoto];
                 
-                self.yForNextView = CGRectGetMaxY(self.mainPhoto.frame) + VERTICAL_SPACER_EXTRA;
+                self.yForNextView = CGRectGetMaxY(self.mainPhoto.frame) + VERTICAL_SPACER_STANDARD; // was VERTICAL_SPACER_EXTRA;
                 
                 // setup caption trigger button ? Or gesture only?
                 
@@ -199,22 +199,23 @@
         DLog(@"Failed to locate audio file named %@.caf in bundle", storyAudio);
     }
     
-    // summary text
+    // data from the web can be noisy...
+    NSString *summaryText = [[self.storyData objectForKey:kStorySummaryKey] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     self.summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 70.0)];
     self.summaryLabel.numberOfLines = 0;
     self.summaryLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.summaryLabel.text = [self.storyData objectForKey:kStorySummaryKey];
+    self.summaryLabel.text = summaryText;
     self.summaryLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
     
     [self.summaryLabel sizeToFit];
     
-    // for layout testing
-    self.summaryLabel.backgroundColor = [UIColor yellowColor];
+    // for layout testing, especially because of extra whitespace
+    //self.summaryLabel.backgroundColor = [UIColor yellowColor];
     
     [self.scrollView addSubview:self.summaryLabel];
     
-    self.yForNextView = CGRectGetMaxY(self.summaryLabel.frame) + VERTICAL_SPACER_EXTRA;
+    self.yForNextView = CGRectGetMaxY(self.summaryLabel.frame) + VERTICAL_SPACER_STANDARD; // was VERTICAL_SPACER_EXTRA
     
     // Guest
     NSNumber *guestNumber = [self.storyData objectForKey:kStoryGuestIDKey];
