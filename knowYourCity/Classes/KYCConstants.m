@@ -26,42 +26,41 @@ NSString* const kLiveJSONURI = @"TBD";
 NSString* const kPhotosURL = @"http://kycstatic.elsewiseapps.com/photos/";
 NSString* const kAudioURL = @"http://kycstatic.elsewiseapps.com/audio/";
 
-// Toolbar
-NSString* const kMapButtonImage = @"59-info-smaller";
-NSString* const kTidbitButtonImage = @"59-info-smaller";
-NSString* const kInfoButtonImage = @"59-info-smaller"; // @"42-info";
-NSString* const kTimelineButtonImage = @"59-info-smaller";
+// Home
+NSString* const kMapButtonImage = @"kbb-map";
+NSString* const kInfoButtonImage = @"kbb-info-light"; // or kbb-info-dark
 
-// Map Toolbar
-NSString* const kLocationButtonImage = @"74-location";
-NSString* const kRegionSelectButtonImage = @"103-map";
-NSString* const kRefreshButtonImage = @"01-refresh";
+// Map View
+NSString* const kThemeListButtonImage = @"kbb-list";
+NSString* const kLocationButtonImage = @"kbb-location-filled";
 
-// Nav Toolbar
+// Map-related
+NSString* const kMapPinButtonImage = @"kbb-map-pin";
+NSString* const kRefreshButtonImage = @""; // not used?
+
+
+NSString* const kCloseButton = @"kbb-x-2";
+NSString* const kActionButton = @"kbb-action-2";
+NSString* const kBackButtonImage = @"";
+
+NSString* const kAppNameImage = @"pshg-title";
+
+
+// Nav Toolbar -- deprecated?
 NSString* const kNavAppLogoiPad = @"";
-
 
 #warning These graphics have been removed
 NSString* const kNavAppLogoiPhone = @"logo_header_black";
 NSString* const kNavBarBackgroundiPhone = @"kycNavBarBlack";
 
-NSString* const kBackButtonImage = @"";
 
 // Audio Player Images
-NSString* const kPlayButtonImage = @"";
-NSString* const kPauseButtonImage = @"";
-NSString* const kThumbButtonImage = @""; // UISlider
-NSString* const kMinimumTrackImage = @""; // UISlider
-NSString* const kMaximumTrackImage = @""; // UISlider
+NSString* const kPlayButtonImage = @"kbb-play";
+NSString* const kPauseButtonImage = @"kbb-pause";
+NSString* const kThumbButtonImage = @"kbb-audio-thumb";
+NSString* const kMinimumTrackImage = @"kbb-slider-2-filled"; // i.e. played
+NSString* const kMaximumTrackImage = @"kbb-slider-2-empty"; // i.e. yet to be played
 
-
-// Other Buttons
-NSString* const kEmailButtonImage = @"18-envelope"; // or standard email/compose
-NSString* const kTweetButtonImage = @"210-twitterbird";
-NSString* const kFacebookButtonImage = @"208-facebook";
-NSString* const kFeedbackButtonImage = @"09-chat-2";
-NSString* const kCameraButtonImage = @"168-upload-photo-2";
-NSString* const kCloseButtonImage = @"298-circlex"; // or 37-circle-x
 
 // Image Defaults
 
@@ -69,11 +68,11 @@ NSString* const kDetailBackgroundImageiPad = @"";
 NSString* const kDetailBackgroundImageiPhone = @"";
 
 // Contact Information
-NSString* const kAppWebsiteURL = @"http://knowyourcity.org";
-NSString* const kWebMapURL = @"http://knowyourcity.org";
-NSString* const kEmailFooter = @"\n\n\n-----\nSent via the Know Your City app\nFor more info, visit: http://knowyourcity.org";
-NSString* const kFeedbackEmailAddress = @"feedback@knowyourcity.org";
-NSString* const kSubmissionEmailAddress = @"submit@knowyourcity.org";
+NSString* const kAppWebsiteURL = @"http://pdxsocialhistory.org/app";
+NSString* const kWebMapURL = @"http://pdxsocialhistory.org";
+NSString* const kEmailFooter = @"\n\n\n-----\nSent via the Portland Social History Guide app\nFor more info, visit: http://pdxsocialhistory.org";
+NSString* const kFeedbackEmailAddress = @"feedback@pdxsocialhistory.org";
+NSString* const kSubmissionEmailAddress = @"support@pdxsocialhistory.org";
 
 // Notifications
 NSString* const kCurrentLocationAvailableNotification = @"kCurrentLocationAvailableNotification";

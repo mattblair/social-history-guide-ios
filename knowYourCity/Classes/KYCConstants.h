@@ -66,22 +66,29 @@ extern NSString* const kLiveJSONURI;
 extern NSString* const kPhotosURL;
 extern NSString* const kAudioURL;
 
-// Toolbar
+// Home
 extern NSString* const kMapButtonImage;
-extern NSString* const kTidbitButtonImage;
 extern NSString* const kInfoButtonImage;
-extern NSString* const kTimelineButtonImage;
 
-// Map Toolbar
+// Map View
+extern NSString* const kThemeListButtonImage;
 extern NSString* const kLocationButtonImage;
-extern NSString* const kRegionSelectButtonImage;
-extern NSString* const kRefreshButtonImage;
+
+// Map-related
+extern NSString* const kMapPinButtonImage;
+extern NSString* const kRefreshButtonImage; // not used?
+
+extern NSString* const kCloseButton;
+extern NSString* const kActionButton;
+extern NSString* const kBackButtonImage;
+
+extern NSString* const kAppNameImage;
 
 // Nav Buttons
 extern NSString* const kNavAppLogoiPad;
 extern NSString* const kNavAppLogoiPhone;
 extern NSString* const kNavBarBackgroundiPhone;
-extern NSString* const kBackButtonImage;
+
 
 // Audio Player Images
 extern NSString* const kPlayButtonImage;
@@ -89,15 +96,6 @@ extern NSString* const kPauseButtonImage;
 extern NSString* const kThumbButtonImage; // UISlider
 extern NSString* const kMinimumTrackImage; // UISlider
 extern NSString* const kMaximumTrackImage; // UISlider
-
-// Sharing Buttons
-extern NSString* const kEmailButtonImage;
-extern NSString* const kTweetButtonImage;
-extern NSString* const kFacebookButtonImage;
-extern NSString* const kFeedbackButtonImage;
-
-extern NSString* const kCameraButtonImage;
-extern NSString* const kCloseButtonImage;
 
 // Image Defaults
 
