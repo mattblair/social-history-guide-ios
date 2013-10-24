@@ -9,6 +9,7 @@
 // As of 130127: primary development will happen in KYC, then share elsewher
 
 // current layout expects a @1x image of 7 x 14
+#warning These graphics have been removed
 #define PLAY_BUTTON_IMAGE @"play-audio"
 #define PAUSE_BUTTON_IMAGE @"pause-audio"
 

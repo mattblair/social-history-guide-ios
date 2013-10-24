@@ -39,8 +39,12 @@ NSString* const kRefreshButtonImage = @"01-refresh";
 
 // Nav Toolbar
 NSString* const kNavAppLogoiPad = @"";
+
+
+#warning These graphics have been removed
 NSString* const kNavAppLogoiPhone = @"logo_header_black";
 NSString* const kNavBarBackgroundiPhone = @"kycNavBarBlack";
+
 NSString* const kBackButtonImage = @"";
 
 // Audio Player Images
@@ -89,8 +93,8 @@ NSString* const kFullScreenCameraRequestedNotification = @"kFullScreenCameraRequ
 
 
 NSString* const kTitleFontName = @"Futura-Medium"; //
-CGFloat const kTitleFontSize = 28.0;
-CGFloat const kSectionTitleFontSize = 22.0;
+CGFloat const kTitleFontSize = 24.0;
+CGFloat const kSectionTitleFontSize = 18.0;
 NSString* const kBodyFontName = @"AvenirNext-Regular";
 CGFloat const kBodyFontSize = 14.0;
 NSString* const kPhotoCreditFontName = @"AvenirNext-UltraLightItalic";

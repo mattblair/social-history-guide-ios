@@ -13,6 +13,8 @@
 // for cancelling web requests gracefully...
 #import "Reachability.h"
 
+#warning These graphics have been removed
+
 #define WEB_NAVIGATION_BACK @"nav-backward" // navBack
 #define WEB_NAVIGATION_FORWARD @"nav-forward" // navForward
 
