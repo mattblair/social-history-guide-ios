@@ -84,7 +84,11 @@
     
     [self.view addSubview:self.themeTableView];
     
-    [self configureToolbar];
+    //[self configureToolbar];
+    
+    // add buttons to the nav bar instead
+    
+    
     
 }
 
@@ -211,65 +215,7 @@
     }
 }
 
-
-#pragma mark - Toolbar
-
-- (void)configureToolbar {
-    
-    // first, create all the buttons you need:
-    self.navigationController.toolbar.tintColor = [UIColor kycNavBarColor];
-    
-    // MapView
-    self.mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"103-map"]
-                                                           style:UIBarButtonItemStylePlain
-                                                          target:self
-                                                          action:@selector(showMap)];
-    
-    self.mapButton.accessibilityLabel = @"Show themes on a map.";
-    
-    // Tidbits
-    
-    // 97-puzzle, 
-    self.tidbitButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"179-notepad"]
-                                                         style:UIBarButtonItemStylePlain
-                                                        target:self
-                                                        action:@selector(showTidbits)];
-    
-    self.tidbitButton.accessibilityLabel = @"Show a list of tidbits";
-    
-    // Info
-    self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"123-id-card"]
-                                                       style:UIBarButtonItemStylePlain
-                                                      target:self
-                                                      action:@selector(showAbout)];
-    
-    self.infoButton.accessibilityLabel = @"Show About Page";
-    
-    
-    // might make more sense to fold this into about section
-    // 44-shoebox
-    self.newsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"104-index-cards"]
-                                                          style:UIBarButtonItemStylePlain
-                                                         target:self
-                                                         action:@selector(showNews)];
-    
-    self.newsButton.accessibilityLabel = @"Show project news";
-    
-	// re-usable flex space (system)
-	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-																				   target:nil
-																				   action:nil];    
-            
-    self.navigationController.toolbarHidden = NO;
-    
-    self.toolbarItems = @[self.infoButton,
-                         flexibleSpace,
-                         //self.tidbitButton,
-                         //flexibleSpace,
-                         // should be on right, so map flip button acts as a toggle
-                         self.mapButton
-                         ];
-}
+#pragma mark - Navigation
 
 - (SHGMapView *)nearbyMapView {
     
@@ -317,54 +263,18 @@
                      completion:NULL];
 }
 
-- (void)showTidbits {
-    
-    //[self showComingSoon:@"Tidbits list is not yet available."];
-    
-    TidbitListViewController *tidbitVC = [[TidbitListViewController alloc] initWithNibName:nil
-                                                                                    bundle:nil];
-    tidbitVC.tidbitList = self.tidbitList;
-    
-    tidbitVC.hidesBottomBarWhenPushed = YES;
-    
-    [self.navigationController pushViewController:tidbitVC animated:YES];
-}
-
 - (void)showAbout {
-    
-//    EWWebViewController *webVC = [[EWWebViewController alloc] initWithNibName:nil bundle:nil];
-//    
-//    webVC.displayMode = EWWebViewAboutLocalMode;
     
     SHGStaticPageViewController *pageVC = [[SHGStaticPageViewController alloc] initWithNibName:nil
                                                                                bundle:nil];
     
-    pageVC.hidesBottomBarWhenPushed = YES;
+    pageVC.hidesBottomBarWhenPushed = YES; // probably won't be needed
     
     //[self.navigationController pushViewController:aboutVC animated:YES];
     
     [self presentViewController:pageVC animated:YES completion:NULL];
 }
 
-- (void)showNews {
-    
-    [self showComingSoon:@"Project News is not yet available."];
-}
-
-// probably a 1.5 feature?
-- (void)showTimeline {
-    DLog(@"Not implemented in v1.0?");
-}
-
-- (void)showComingSoon:(NSString *)thePromise {
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Coming Soon"
-													message:thePromise
-												   delegate:nil
-										  cancelButtonTitle:nil
-										  otherButtonTitles:@"OK", nil];
-	[alert show];
-}
 
 #pragma mark - SHGMapViewDelegate Methods
 
@@ -379,6 +289,101 @@
                              DLog(@"Would show story with id %d", itemID);
                          }
                      }];
+}
+
+
+#pragma mark - Toolbar (Deprecated?)
+
+- (void)configureToolbar {
+    
+    // first, create all the buttons you need:
+    self.navigationController.toolbar.tintColor = [UIColor kycNavBarColor];
+    
+    // MapView
+    self.mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"103-map"]
+                                                      style:UIBarButtonItemStylePlain
+                                                     target:self
+                                                     action:@selector(showMap)];
+    
+    self.mapButton.accessibilityLabel = @"Show themes on a map.";
+    
+    // Tidbits
+    
+    // 97-puzzle,
+    self.tidbitButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"179-notepad"]
+                                                         style:UIBarButtonItemStylePlain
+                                                        target:self
+                                                        action:@selector(showTidbits)];
+    
+    self.tidbitButton.accessibilityLabel = @"Show a list of tidbits";
+    
+    // Info
+    self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"123-id-card"]
+                                                       style:UIBarButtonItemStylePlain
+                                                      target:self
+                                                      action:@selector(showAbout)];
+    
+    self.infoButton.accessibilityLabel = @"Show About Page";
+    
+    
+    // might make more sense to fold this into about section
+    // 44-shoebox
+    self.newsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"104-index-cards"]
+                                                       style:UIBarButtonItemStylePlain
+                                                      target:self
+                                                      action:@selector(showNews)];
+    
+    self.newsButton.accessibilityLabel = @"Show project news";
+    
+	// re-usable flex space (system)
+	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+																				   target:nil
+																				   action:nil];
+    
+    self.navigationController.toolbarHidden = NO;
+    
+    self.toolbarItems = @[self.infoButton,
+                          flexibleSpace,
+                          //self.tidbitButton,
+                          //flexibleSpace,
+                          // should be on right, so map flip button acts as a toggle
+                          self.mapButton
+                          ];
+}
+
+// delayed until 1.1+
+- (void)showTidbits {
+    
+    //[self showComingSoon:@"Tidbits list is not yet available."];
+    
+    TidbitListViewController *tidbitVC = [[TidbitListViewController alloc] initWithNibName:nil
+                                                                                    bundle:nil];
+    tidbitVC.tidbitList = self.tidbitList;
+    
+    tidbitVC.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:tidbitVC animated:YES];
+}
+
+// probably cancelled, unless there will be some type of blog feed for the project
+- (void)showNews {
+    
+    [self showComingSoon:@"Project News is not yet available."];
+}
+
+// probably a 1.5 feature?
+- (void)showTimeline {
+    DLog(@"Not implemented in v1.0");
+}
+
+- (void)showComingSoon:(NSString *)thePromise {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Coming Soon"
+													message:thePromise
+												   delegate:nil
+										  cancelButtonTitle:nil
+										  otherButtonTitles:@"OK", nil];
+	[alert show];
 }
 
 @end
