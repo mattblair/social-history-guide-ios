@@ -86,9 +86,26 @@
     
     //[self configureToolbar];
     
-    // add buttons to the nav bar instead
+    // add buttons to the nav bar instead of toolbar
+    
+    self.mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kMapButtonImage]
+                                                      style:UIBarButtonItemStylePlain
+                                                     target:self
+                                                     action:@selector(showMap)];
+    
+    self.mapButton.accessibilityLabel = @"Show themes on a map.";
+    
+    self.navigationItem.leftBarButtonItem = self.mapButton;
     
     
+    self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kInfoButtonImage]
+                                                       style:UIBarButtonItemStylePlain
+                                                      target:self
+                                                      action:@selector(showStaticPages)];
+    
+    self.infoButton.accessibilityLabel = @"Show About Page";
+    
+    self.navigationItem.rightBarButtonItem = self.infoButton;
     
 }
 
@@ -96,7 +113,7 @@
     
     [super viewWillAppear:animated];
     
-    [self.navigationController setToolbarHidden:NO];
+    //[self.navigationController setToolbarHidden:NO];
     self.themeTableView.frame = [self.view bounds];
 }
 
@@ -215,7 +232,23 @@
     }
 }
 
-#pragma mark - Navigation
+
+#pragma mark - Show Static Pages
+
+- (void)showStaticPages {
+    
+    SHGStaticPageViewController *pageVC = [[SHGStaticPageViewController alloc] initWithNibName:nil
+                                                                                        bundle:nil];
+    
+    pageVC.hidesBottomBarWhenPushed = YES; // probably won't be needed
+    
+    //[self.navigationController pushViewController:aboutVC animated:YES];
+    
+    [self presentViewController:pageVC animated:YES completion:NULL];
+}
+
+
+#pragma mark - Map View
 
 - (SHGMapView *)nearbyMapView {
     
@@ -261,18 +294,6 @@
     [UIView animateWithDuration:0.5
                      animations:^{self.nearbyMapView.alpha = 1.0;}
                      completion:NULL];
-}
-
-- (void)showAbout {
-    
-    SHGStaticPageViewController *pageVC = [[SHGStaticPageViewController alloc] initWithNibName:nil
-                                                                               bundle:nil];
-    
-    pageVC.hidesBottomBarWhenPushed = YES; // probably won't be needed
-    
-    //[self.navigationController pushViewController:aboutVC animated:YES];
-    
-    [self presentViewController:pageVC animated:YES completion:NULL];
 }
 
 
@@ -321,7 +342,7 @@
     self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"123-id-card"]
                                                        style:UIBarButtonItemStylePlain
                                                       target:self
-                                                      action:@selector(showAbout)];
+                                                      action:@selector(showStaticPages)];
     
     self.infoButton.accessibilityLabel = @"Show About Page";
     
