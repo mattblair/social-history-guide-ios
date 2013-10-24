@@ -167,6 +167,7 @@
 		C9914949181749B100201598 /* guest-reiko-hillyer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9914940181749B100201598 /* guest-reiko-hillyer.jpg */; };
 		C991494A181749B100201598 /* guest-george-nicola.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9914941181749B100201598 /* guest-george-nicola.jpg */; };
 		C991494B181749B100201598 /* guest-bill-hart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9914942181749B100201598 /* guest-bill-hart.jpg */; };
+		C991494D181986DB00201598 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C991494C181986DB00201598 /* Images.xcassets */; };
 		C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */; };
 		C9A5290117C2C17500EB0362 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528F717C2BF8100EB0362 /* libTestFlight.a */; };
 		C9EB9754180DB46800932756 /* SHGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB9753180DB46800932756 /* SHGMapAnnotation.m */; };
@@ -361,6 +362,7 @@
 		C9914940181749B100201598 /* guest-reiko-hillyer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "guest-reiko-hillyer.jpg"; path = "Resources/photos/guest-reiko-hillyer.jpg"; sourceTree = "<group>"; };
 		C9914941181749B100201598 /* guest-george-nicola.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "guest-george-nicola.jpg"; path = "Resources/photos/guest-george-nicola.jpg"; sourceTree = "<group>"; };
 		C9914942181749B100201598 /* guest-bill-hart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "guest-bill-hart.jpg"; path = "Resources/photos/guest-bill-hart.jpg"; sourceTree = "<group>"; };
+		C991494C181986DB00201598 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9A528F717C2BF8100EB0362 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		C9A528F817C2BF8100EB0362 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		C9A528F917C2BF8100EB0362 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				C91E4A4A1815A9260074E154 /* audio */,
 				C98345A2180C718B00C120B1 /* data */,
 				C99149391817499B00201598 /* guests */,
+				C991494C181986DB00201598 /* Images.xcassets */,
 				C952427616B0350400BD8F74 /* placeholders */,
 				C97B44E9169DCD95008A2793 /* default */,
 				C960756D16AC59B2004B2672 /* graphics */,
@@ -867,6 +870,7 @@
 				C91E4A8D1815A9420074E154 /* dkc-shanghai-tunnels.caf in Resources */,
 				C92666F7169DC6920061F9AD /* InfoPlist.strings in Resources */,
 				C91E4AA81815A9420074E154 /* gn-1973-gay-civil-rights-bill.caf in Resources */,
+				C991494D181986DB00201598 /* Images.xcassets in Resources */,
 				C98345B7180CCBED00C120B1 /* iww.jpg in Resources */,
 				C91E4A851815A9420074E154 /* jd-pwc-cornerstone.caf in Resources */,
 				C91E4A891815A9420074E154 /* jd-fcc-west-church.caf in Resources */,
@@ -1126,6 +1130,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7261BF0B03AA4FDAB01A8F4A /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "knowYourCity/knowYourCity-Prefix.pch";
 				INFOPLIST_FILE = "knowYourCity/knowYourCity-Info.plist";
@@ -1144,6 +1150,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7261BF0B03AA4FDAB01A8F4A /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "knowYourCity/knowYourCity-Prefix.pch";
 				INFOPLIST_FILE = "knowYourCity/knowYourCity-Info.plist";
@@ -1192,6 +1200,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7261BF0B03AA4FDAB01A8F4A /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "knowYourCity/knowYourCity-Prefix.pch";
 				INFOPLIST_FILE = "knowYourCity/knowYourCity-Info.plist";
@@ -1234,6 +1244,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7261BF0B03AA4FDAB01A8F4A /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "knowYourCity/knowYourCity-Prefix.pch";
 				INFOPLIST_FILE = "knowYourCity/knowYourCity-Info.plist";
