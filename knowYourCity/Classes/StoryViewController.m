@@ -17,6 +17,8 @@
 
 @property (nonatomic) BOOL metadataVisible;
 
+@property (strong, nonatomic) UIBarButtonItem *shareButton;
+
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) UIImageView *mainPhoto;
 
@@ -61,6 +63,16 @@
     //[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     
     // add share button
+    
+    self.shareButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kActionButton]
+                                                       style:UIBarButtonItemStylePlain
+                                                      target:self
+                                                      action:@selector(showShareSheet)];
+    
+    self.shareButton.accessibilityLabel = NSLocalizedString(@"Share this story", @"Accessibility label for story sharing button");
+    
+    self.navigationItem.rightBarButtonItem = self.shareButton;
+    
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.scrollView];
@@ -461,6 +473,11 @@
     } else {
         DLog(@"No More Info URL in data...");
     }
+}
+
+- (void)showShareSheet {
+    
+    DLog(@"Would show share sheet...");
 }
 
 @end
