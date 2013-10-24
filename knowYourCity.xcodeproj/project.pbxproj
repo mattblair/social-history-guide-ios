@@ -168,6 +168,7 @@
 		C991494A181749B100201598 /* guest-george-nicola.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9914941181749B100201598 /* guest-george-nicola.jpg */; };
 		C991494B181749B100201598 /* guest-bill-hart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9914942181749B100201598 /* guest-bill-hart.jpg */; };
 		C991494D181986DB00201598 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C991494C181986DB00201598 /* Images.xcassets */; };
+		C991494F181989D800201598 /* pshg-photo-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C991494E181989D800201598 /* pshg-photo-placeholder.png */; };
 		C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */; };
 		C9A5290117C2C17500EB0362 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528F717C2BF8100EB0362 /* libTestFlight.a */; };
 		C9EB9754180DB46800932756 /* SHGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB9753180DB46800932756 /* SHGMapAnnotation.m */; };
@@ -363,6 +364,7 @@
 		C9914941181749B100201598 /* guest-george-nicola.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "guest-george-nicola.jpg"; path = "Resources/photos/guest-george-nicola.jpg"; sourceTree = "<group>"; };
 		C9914942181749B100201598 /* guest-bill-hart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "guest-bill-hart.jpg"; path = "Resources/photos/guest-bill-hart.jpg"; sourceTree = "<group>"; };
 		C991494C181986DB00201598 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C991494E181989D800201598 /* pshg-photo-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-photo-placeholder.png"; sourceTree = "<group>"; };
 		C9A528F717C2BF8100EB0362 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		C9A528F817C2BF8100EB0362 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		C9A528F917C2BF8100EB0362 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 		C93030E316AB320E0039D7B8 /* photos */ = {
 			isa = PBXGroup;
 			children = (
+				C991494E181989D800201598 /* pshg-photo-placeholder.png */,
 				C9118C1D16BF07A6009A890D /* waterfront1879crop.jpg */,
 				C9118C1B16BF013D009A890D /* 54_1974.jpg */,
 			);
@@ -935,6 +938,7 @@
 				C916B8D416BD99E4002E29BC /* 60-signpost.png in Resources */,
 				C91E4A9C1815A9420074E154 /* mm-south-of-burnside-bridge.caf in Resources */,
 				C91E4AAF1815A9420074E154 /* po-apartments.caf in Resources */,
+				C991494F181989D800201598 /* pshg-photo-placeholder.png in Resources */,
 				C91E4ABE1815A9430074E154 /* bh-gw-history-1.caf in Resources */,
 				C9914946181749B100201598 /* guest-jan-dilg.jpg in Resources */,
 				C91E4AB81815A9420074E154 /* bh-pdx-and-gw.caf in Resources */,

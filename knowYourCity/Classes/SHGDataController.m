@@ -236,7 +236,7 @@
 
 - (UIImage *)photoPlaceholder {
     
-    return [UIImage imageNamed:@"theme_tn_ph"];
+    return [UIImage imageNamed:@"pshg-photo-placeholder"];
 }
 
 - (NSURL *)urlForAudiofileNamed:(NSString *)audiofile {
