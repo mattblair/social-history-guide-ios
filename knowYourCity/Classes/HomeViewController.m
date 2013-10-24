@@ -25,11 +25,16 @@
 
 @property (strong, nonatomic) UITableView *themeTableView;
 
-// toolbar buttons
+// navbar buttons
 @property (strong, nonatomic) UIBarButtonItem *mapButton;
+@property (strong, nonatomic) UIBarButtonItem *infoButton;
+
+@property (strong, nonatomic) UIBarButtonItem *listButton;
+@property (strong, nonatomic) UIBarButtonItem *locationButton;
+
+// possibly deprecated
 @property (strong, nonatomic) UIBarButtonItem *tidbitButton;
 @property (strong, nonatomic) UIBarButtonItem *newsButton;
-@property (strong, nonatomic) UIBarButtonItem *infoButton;
 @property (strong, nonatomic) UIBarButtonItem *timelineButton; // iPad only? 1.x?
 
 @property (strong, nonatomic) SHGMapView *nearbyMapView;
@@ -71,7 +76,7 @@
     //UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kNavAppLogoiPhone] ];
     //self.navigationItem.titleView = logoImage;
     
-    self.title = NSLocalizedString(@"Explore", @"Title of list of themes on home view controller.");
+    self.title = NSLocalizedString(@"Themes", @"Title of list of themes on home view controller.");
     
     self.themeTableView = [[UITableView alloc] initWithFrame:[self.view bounds]
                                                        style:UITableViewStylePlain];
@@ -93,19 +98,36 @@
                                                      target:self
                                                      action:@selector(showMap)];
     
-    self.mapButton.accessibilityLabel = @"Show themes on a map.";
+    self.mapButton.accessibilityLabel = @"Show stories on a map.";
     
     self.navigationItem.leftBarButtonItem = self.mapButton;
     
     
-    self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kInfoButtonImage]
+    self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kInfoButtonDarkImage]
                                                        style:UIBarButtonItemStylePlain
                                                       target:self
                                                       action:@selector(showStaticPages)];
     
-    self.infoButton.accessibilityLabel = @"Show About Page";
+    self.infoButton.accessibilityLabel = @"Show the about, contact and donate pages.";
     
     self.navigationItem.rightBarButtonItem = self.infoButton;
+    
+    
+    // could lazy-load these, but the savings probably isn't that much
+    
+    self.listButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kThemeListButtonImage]
+                                                       style:UIBarButtonItemStylePlain
+                                                      target:self
+                                                      action:@selector(hideMap)];
+    
+    self.listButton.accessibilityLabel = @"Show the list of themes.";
+    
+    self.locationButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kLocationButtonImage]
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self
+                                                          action:@selector(zoomMapToUser)];
+    
+    self.locationButton.accessibilityLabel = @"Center the map on your current location, or the middle of the stories.";
     
 }
 
@@ -280,6 +302,10 @@
      
     */
     
+    self.navigationItem.title = NSLocalizedString(@"Nearby", @"Nav title when viewing map of nearby stories");
+    self.navigationItem.leftBarButtonItem = self.listButton;
+    self.navigationItem.rightBarButtonItem = self.locationButton;
+    
     [self.view addSubview:self.nearbyMapView];
     
     // temporary -- this should try to use user location, and only fallback to a default
@@ -296,11 +322,26 @@
                      completion:NULL];
 }
 
+// to close without a selection
+- (void)hideMap {
+    
+    [self mapView:nil didFinishWithSelectedID:NSNotFound ofType:NSNotFound];
+}
+
+- (void)zoomMapToUser {
+    
+    DLog(@"Would tell the map view to zoom.");
+}
+
 
 #pragma mark - SHGMapViewDelegate Methods
 
 - (void)mapView:(SHGMapView *)mapView didFinishWithSelectedID:(NSUInteger)itemID ofType:(SHGMapAnnotationType)pinType {
 
+    self.navigationItem.title = NSLocalizedString(@"Themes", @"Nav title when viewing theme list");
+    self.navigationItem.leftBarButtonItem = self.mapButton;
+    self.navigationItem.rightBarButtonItem = self.infoButton;
+    
     [UIView animateWithDuration:0.5
                      animations:^{self.nearbyMapView.alpha = 0.0;}
                      completion:^(BOOL finished){
