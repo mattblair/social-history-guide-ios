@@ -169,6 +169,8 @@
 		C991494B181749B100201598 /* guest-bill-hart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9914942181749B100201598 /* guest-bill-hart.jpg */; };
 		C991494D181986DB00201598 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C991494C181986DB00201598 /* Images.xcassets */; };
 		C991494F181989D800201598 /* pshg-photo-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C991494E181989D800201598 /* pshg-photo-placeholder.png */; };
+		C99149521819921000201598 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = C99149501819921000201598 /* iTunesArtwork */; };
+		C99149531819921000201598 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = C99149511819921000201598 /* iTunesArtwork@2x */; };
 		C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */; };
 		C9A5290117C2C17500EB0362 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528F717C2BF8100EB0362 /* libTestFlight.a */; };
 		C9EB9754180DB46800932756 /* SHGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB9753180DB46800932756 /* SHGMapAnnotation.m */; };
@@ -365,6 +367,8 @@
 		C9914942181749B100201598 /* guest-bill-hart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "guest-bill-hart.jpg"; path = "Resources/photos/guest-bill-hart.jpg"; sourceTree = "<group>"; };
 		C991494C181986DB00201598 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C991494E181989D800201598 /* pshg-photo-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-photo-placeholder.png"; sourceTree = "<group>"; };
+		C99149501819921000201598 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		C99149511819921000201598 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		C9A528F717C2BF8100EB0362 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		C9A528F817C2BF8100EB0362 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		C9A528F917C2BF8100EB0362 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
@@ -649,6 +653,8 @@
 		C960758516AC5A29004B2672 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				C99149501819921000201598 /* iTunesArtwork */,
+				C99149511819921000201598 /* iTunesArtwork@2x */,
 			);
 			name = icons;
 			path = Resources/icons;
@@ -948,6 +954,7 @@
 				C916B8D616BD99E4002E29BC /* 96-book.png in Resources */,
 				C9914945181749B100201598 /* guest-ann-mussey.jpg in Resources */,
 				C916B8D716BD99E4002E29BC /* 97-puzzle.png in Resources */,
+				C99149531819921000201598 /* iTunesArtwork@2x in Resources */,
 				C91E4A971815A9420074E154 /* ee-celilo-falls.caf in Resources */,
 				C916B8D816BD99E4002E29BC /* 103-map.png in Resources */,
 				C916B8D916BD99E4002E29BC /* 104-index-cards.png in Resources */,
@@ -971,6 +978,7 @@
 				C98345B2180CCBED00C120B1 /* suffrage.jpg in Resources */,
 				C916B8E416BD99E4002E29BC /* 18-envelope.png in Resources */,
 				C916B8E516BD99E4002E29BC /* 120-headphones.png in Resources */,
+				C99149521819921000201598 /* iTunesArtwork in Resources */,
 				C916B8E616BD99E4002E29BC /* 121-landscape.png in Resources */,
 				C9118C1916BEEFAF009A890D /* 111-user.png in Resources */,
 				C98345B0180CCBED00C120B1 /* old-town.jpg in Resources */,
