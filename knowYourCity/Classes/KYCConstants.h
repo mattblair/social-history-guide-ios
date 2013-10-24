@@ -68,7 +68,8 @@ extern NSString* const kAudioURL;
 
 // Home
 extern NSString* const kMapButtonImage;
-extern NSString* const kInfoButtonImage;
+extern NSString* const kInfoButtonLightImage;
+extern NSString* const kInfoButtonDarkImage;
 
 // Map View
 extern NSString* const kThemeListButtonImage;

@@ -28,7 +28,8 @@ NSString* const kAudioURL = @"http://kycstatic.elsewiseapps.com/audio/";
 
 // Home
 NSString* const kMapButtonImage = @"kbb-map";
-NSString* const kInfoButtonImage = @"kbb-info-light"; // or kbb-info-dark
+NSString* const kInfoButtonLightImage = @"kbb-info-light";
+NSString* const kInfoButtonDarkImage = @"kbb-info-dark";
 
 // Map View
 NSString* const kThemeListButtonImage = @"kbb-list";
