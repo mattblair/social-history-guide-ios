@@ -10,7 +10,9 @@
 
 @interface SHGStaticPageViewController ()
 
-@property (strong, nonatomic) UILabel *appNameLabel;
+@property (strong, nonatomic) UILabel *appNameLabel; // deprecated
+
+@property (strong, nonatomic) UIImageView *appNameImageView;
 @property (strong, nonatomic) UILabel *appCreditLabel;
 @property (strong, nonatomic) UISegmentedControl *selectionView;
 @property (strong, nonatomic) UIButton *closeButton;
@@ -41,26 +43,12 @@
     
     CGFloat yForNextView = 25.0; // 70.0 if pushed on nav stack
     
-    // app name -- probably a graphic
-    self.appNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, yForNextView, 300.0, 40.0)];
-    self.appNameLabel.text = @"PDX Social History Guide";
-    self.appNameLabel.font = [UIFont fontWithName:kTitleFontName size:22.0];
-    self.appNameLabel.textColor = [UIColor kycRed];
-    
-    [self.view addSubview:self.appNameLabel];
-    
-    // close button
-    
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    self.closeButton.frame = CGRectMake(280.0, yForNextView, 44.0, 44.0);
+    self.closeButton.frame = CGRectMake(295.0, yForNextView, 22.0, 22.0);
     
-    // should be an image instead
-    [self.closeButton setTitle:@"X"
+    [self.closeButton setImage:[UIImage imageNamed:kCloseButton]
                       forState:UIControlStateNormal];
-    
-    [self.closeButton setTitleColor:[UIColor kycRed]
-                           forState:UIControlStateNormal];
     
     [self.closeButton addTarget:self
                          action:@selector(close:)
@@ -68,12 +56,18 @@
     
     [self.view addSubview:self.closeButton];
     
-    // presuming that appName is taller than close Button
-    yForNextView += self.appNameLabel.frame.size.height + 10.0;
+    yForNextView = 50.0; // enough to clear the close button completely
     
-    self.appCreditLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, yForNextView, 300.0, 40.0)];
+    self.appNameImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10.0, yForNextView, 300.0, 28.0)];
+    self.appNameImageView.image = [UIImage imageNamed:kAppNameImage];
+    
+    [self.view addSubview:self.appNameImageView];
+    
+    yForNextView += self.appNameImageView.frame.size.height + 5.0;
+    
+    self.appCreditLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, yForNextView, 300.0, 21.0)];
     self.appCreditLabel.text = @"Brought to you by Know Your City";
-    self.appCreditLabel.font = [UIFont fontWithName:kBodyFontName size:16.0];
+    self.appCreditLabel.font = [UIFont fontWithName:kBodyFontName size:15.0];
     self.appCreditLabel.textColor = [UIColor kycGray];
     self.appCreditLabel.textAlignment = NSTextAlignmentRight;
     
