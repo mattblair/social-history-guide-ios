@@ -27,10 +27,6 @@
 // deprecated if you don't use the GeoJSON method
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 
-// keep a copy of the initial dictionary?
-
-@property (strong, nonatomic) NSNumber *contentID;
-
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
 

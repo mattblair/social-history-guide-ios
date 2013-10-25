@@ -19,6 +19,8 @@ typedef NS_ENUM(NSUInteger, SHGMapAnnotationType) {
 @interface SHGMapAnnotation : NSObject <MKAnnotation>
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+
+@property (strong, nonatomic) NSNumber *contentID;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 
