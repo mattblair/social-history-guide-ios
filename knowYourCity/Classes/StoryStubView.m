@@ -185,7 +185,11 @@
     
     DLog(@"Story tapped.");
     
-    [self.delegate handleSelectionOfStoryStub:self];
+    NSNumber *storyIDNumber = [self.storyData objectForKey:kStoryIDKey];
+    
+    NSUInteger storyID = storyIDNumber ? [storyIDNumber unsignedIntegerValue] : NSNotFound;
+    
+    [self.delegate handleSelectionOfStoryStub:self withID:storyID];
 }
 
 @end

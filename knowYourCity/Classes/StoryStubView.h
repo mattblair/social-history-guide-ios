@@ -27,6 +27,6 @@
 
 @protocol StoryStubDelegate <NSObject>
 
-- (void)handleSelectionOfStoryStub:(StoryStubView *)storyStub;
+- (void)handleSelectionOfStoryStub:(StoryStubView *)storyStub withID:(NSUInteger)storyID;
 
 @end
