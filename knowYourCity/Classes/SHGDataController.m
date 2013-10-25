@@ -207,6 +207,20 @@
     return results;
 }
 
+- (NSDictionary *)dictionaryForStoryID:(NSUInteger)storyID {
+    
+    NSDictionary *guestDictionary = nil;
+    
+    FMResultSet *resultSet = [self.shgDatabase executeQueryWithFormat:@"SELECT * FROM stories where id = %d;", storyID];
+    
+    while ([resultSet next]) {
+        
+        guestDictionary = [resultSet resultDictionary];
+    }
+    
+    return guestDictionary;
+}
+
 
 #pragma mark - Guests
 
