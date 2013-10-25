@@ -139,6 +139,8 @@
 		C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EA169DCF48008A2793 /* Default-568h@2x.png */; };
 		C97B44EE169DCF48008A2793 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EB169DCF48008A2793 /* Default.png */; };
 		C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EC169DCF48008A2793 /* Default@2x.png */; };
+		C97F49B7181AF728007F7164 /* kbb-x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C97F49B5181AF728007F7164 /* kbb-x-1.png */; };
+		C97F49B8181AF728007F7164 /* kbb-x-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97F49B6181AF728007F7164 /* kbb-x-1@2x.png */; };
 		C98345A1180C67A200C120B1 /* SHGDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98345A0180C67A200C120B1 /* SHGDataController.m */; };
 		C98345A4180C71BA00C120B1 /* shg-web.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C98345A3180C71BA00C120B1 /* shg-web.sqlite */; };
 		C98345B0180CCBED00C120B1 /* old-town.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98345A5180CCBED00C120B1 /* old-town.jpg */; };
@@ -363,6 +365,8 @@
 		C97B44EA169DCF48008A2793 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/default/Default-568h@2x.png"; sourceTree = "<group>"; };
 		C97B44EB169DCF48008A2793 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/default/Default.png; sourceTree = "<group>"; };
 		C97B44EC169DCF48008A2793 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/default/Default@2x.png"; sourceTree = "<group>"; };
+		C97F49B5181AF728007F7164 /* kbb-x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kbb-x-1.png"; sourceTree = "<group>"; };
+		C97F49B6181AF728007F7164 /* kbb-x-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kbb-x-1@2x.png"; sourceTree = "<group>"; };
 		C983459F180C67A200C120B1 /* SHGDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGDataController.h; path = Classes/SHGDataController.h; sourceTree = "<group>"; };
 		C98345A0180C67A200C120B1 /* SHGDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGDataController.m; path = Classes/SHGDataController.m; sourceTree = "<group>"; };
 		C98345A3180C71BA00C120B1 /* shg-web.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = "shg-web.sqlite"; path = "Resources/datastores/shg-web.sqlite"; sourceTree = "<group>"; };
@@ -672,6 +676,8 @@
 		C960756D16AC59B2004B2672 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C97F49B5181AF728007F7164 /* kbb-x-1.png */,
+				C97F49B6181AF728007F7164 /* kbb-x-1@2x.png */,
 				C9FDFD551819C224000BFE14 /* pshg-title.png */,
 				C9FDFD561819C224000BFE14 /* pshg-title@2x.png */,
 				C9FDFD571819C224000BFE14 /* kbb-list.png */,
@@ -982,10 +988,12 @@
 				C9FDFD801819C224000BFE14 /* kbb-map-pin@2x.png in Resources */,
 				C91E4A8F1815A9420074E154 /* dkc-erickson-flood.caf in Resources */,
 				C930310116AB34C40039D7B8 /* about.html in Resources */,
+				C97F49B7181AF728007F7164 /* kbb-x-1.png in Resources */,
 				C9FDFD7D1819C224000BFE14 /* kbb-map.png in Resources */,
 				C91E4AB61815A9420074E154 /* bh-restoring-gw-2.caf in Resources */,
 				C9FDFD711819C224000BFE14 /* pshg-title.png in Resources */,
 				C9914944181749B100201598 /* guest-michael-munk.jpg in Resources */,
+				C97F49B8181AF728007F7164 /* kbb-x-1@2x.png in Resources */,
 				C91E4A8A1815A9420074E154 /* dkc-transient-services.caf in Resources */,
 				C9914943181749B100201598 /* guest-ed-edmo.jpg in Resources */,
 				C960757516AC59C4004B2672 /* kyc-data.json in Resources */,
