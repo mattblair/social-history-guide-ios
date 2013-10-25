@@ -22,6 +22,7 @@
 @property (strong, nonatomic) UIBarButtonItem *sharingButton;
 @property (strong, nonatomic) UIImageView *themeGraphic;
 @property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) UILabel *subtitleLabel;
 @property (strong, nonatomic) UILabel *introLabel;
 
 @property (strong, nonatomic) NSArray *relatedStories;
@@ -82,9 +83,11 @@
     [self.scrollView addSubview:self.themeGraphic];
     
     self.yForNextView = CGRectGetMaxY(self.themeGraphic.frame) + VERTICAL_SPACER_EXTRA;
+    CGFloat mapButtonSize = 44.0;
     
-    // title
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
+    // title and map button should have the same top y
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView,
+                                                                DEFAULT_CONTENT_WIDTH - mapButtonSize, 31.0)];
     self.titleLabel.numberOfLines = 0;
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.text = [self.themeDictionary objectForKey:kContentTitleKey];
@@ -94,7 +97,46 @@
     
     [self.scrollView addSubview:self.titleLabel];
     
+    // map button
+    // Do we need to test for the existence of annotations at this point?
+    // or can we defer that? Do they all have at least one mappable story?
+    
+    self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    // use only image?
+    //[self.mapButton setTitle:@"Map" forState:UIControlStateNormal];
+    
+    [self.mapButton setImage:[UIImage imageNamed:kMapPinButtonImage]
+                    forState:UIControlStateNormal];
+    
+    [self.mapButton addTarget:self
+                       action:@selector(showMap)
+             forControlEvents:UIControlEventTouchUpInside];
+    
+    self.mapButton.frame = CGRectMake(self.view.bounds.size.width - mapButtonSize, self.yForNextView + 4.0,
+                                      mapButtonSize, mapButtonSize);
+    
+    [self.scrollView addSubview:self.mapButton];
+    
+    // after using the y value for the map button, we want the subtitle to be
+    // just under  the title and not pushed down by the map button
     self.yForNextView = CGRectGetMaxY(self.titleLabel.frame) + VERTICAL_SPACER_STANDARD;
+    
+    
+    self.subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView,
+                                                                   DEFAULT_CONTENT_WIDTH - mapButtonSize, 31.0)];
+    self.subtitleLabel.numberOfLines = 0;
+    self.subtitleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.subtitleLabel.text = [self.themeDictionary objectForKey:kContentSubtitleKey];
+    self.subtitleLabel.font = [UIFont fontWithName:kTitleFontName size:kBodyFontSize];
+    self.subtitleLabel.textColor = [UIColor kycMediumGray];
+    
+    [self.subtitleLabel sizeToFit];
+    
+    [self.scrollView addSubview:self.subtitleLabel];
+    
+    CGFloat nextY = MAX(CGRectGetMaxY(self.subtitleLabel.frame), CGRectGetMaxY(self.mapButton.frame));
+    self.yForNextView = nextY + VERTICAL_SPACER_STANDARD;
     
     // introduction
     
@@ -174,28 +216,6 @@
         storyCounter++;
     }
     */
-        
-    // map button
-    // Do we need to test for the existence of annotations at this point?
-    // or can we defer that? Do they all have mappable stories?
-    
-    self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    self.mapButton.backgroundColor = [UIColor brownColor];
-    
-    // will be a graphic of some kind?
-    [self.mapButton setTitle:@"Map" forState:UIControlStateNormal];
-    
-    [self.mapButton addTarget:self
-                       action:@selector(showMap)
-             forControlEvents:UIControlEventTouchUpInside];
-    
-    self.mapButton.frame = CGRectMake(0.0, self.yForNextView, 100.0, 44.0);
-    
-    [self.scrollView addSubview:self.mapButton];
-    
-    self.yForNextView = CGRectGetMaxY(self.mapButton.frame) + VERTICAL_SPACER_STANDARD;
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
