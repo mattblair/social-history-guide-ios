@@ -257,18 +257,41 @@
                          // push if needed
                          if (itemID != NSNotFound) {
                              DLog(@"Would show story with id %d", itemID);
+                             
+                             [self showStoryWithID:itemID];
                          }
                      }];
 }
 
-#pragma mark - Respond to User Actions
+#pragma mark - Show a Story
 
-// new way
-- (void)handleSelectionOfStoryStub:(StoryStubView *)storyStub {
+- (void)showStoryWithID:(NSUInteger)storyID {
     
-    // just borrow the old functionality, until you have Core Data and store arrays set up
-    [self handleStorySelection:storyStub];
+    NSDictionary *storyDictionary = [SHG_DATA dictionaryForStoryID:storyID];
+    
+    if (storyDictionary) {
+        
+        StoryViewController *storyVC = [[StoryViewController alloc] initWithNibName:nil bundle:nil];
+        
+        storyVC.storyData = storyDictionary;
+        
+        [self.navigationController pushViewController:storyVC animated:YES];
+    } else {
+        
+        DLog(@"No story found for id %d", storyID);
+    }
 }
+
+- (void)handleSelectionOfStoryStub:(StoryStubView *)storyStub withID:(NSUInteger)storyID {
+    
+    if (storyID != NSNotFound) {
+        [self showStoryWithID:storyID];
+    } else {
+        DLog(@"Story ID unknown");
+    }
+}
+
+#pragma mark - DEPRECATED JSONish STORY DISPLAY METHODS
 
 // old button way
 - (void)handleStorySelection:(id)sender {
