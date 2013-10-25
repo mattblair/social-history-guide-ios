@@ -188,18 +188,21 @@
     
     if (bundleAudioURL) {
         
-        self.theAudioPlayerView = [[EWAAudioPlayerView alloc] initWithAudioURL:bundleAudioURL];
+        NSDictionary *imageNames = @{
+                                     kEWAAudioPlayerPlayImageKey : kPlayButtonImage,
+                                     kEWAAudioPlayerPauseImageKey : kPauseButtonImage,
+                                     kEWAAudioPlayerThumbImageKey : kThumbButtonImage,
+                                     kEWAAudioPlayerUnplayedTrackImageKey : kMaximumTrackImage,
+                                     kEWAAudioPlayerPlayedTrackImageKey : kMinimumTrackImage };
+        
+        self.theAudioPlayerView = [[EWAAudioPlayerView alloc] initWithAudioURL:bundleAudioURL
+                                                                        images:imageNames];
         
         // get frame and reset y
         CGRect audioRect = self.theAudioPlayerView.frame;
         audioRect.origin.y = self.yForNextView;
         self.theAudioPlayerView.frame = audioRect;
         self.theAudioPlayerView.backgroundColor = [UIColor whiteColor];
-        
-        // we'll probably use images for these instead
-        self.theAudioPlayerView.thumbColor = [UIColor grayColor];
-        self.theAudioPlayerView.minimumTrackColor = [UIColor darkGrayColor];
-        self.theAudioPlayerView.maximumTrackColor = [UIColor lightGrayColor];
         
         [self.scrollView addSubview:self.theAudioPlayerView];
         
