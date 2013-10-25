@@ -21,6 +21,8 @@
 // then all data access should move to the singleton Core Data
 #import "JSONKit.h"
 
+#define THEME_THUMBNAIL_CELLS NO
+
 @interface HomeViewController ()
 
 // temporary -- for access to JSON data
@@ -174,7 +176,12 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+        
+        // Do we need subtitles on the first screen?
+        // Or use a custom cell design with all three?
+        UITableViewCellStyle cellStyle = THEME_THUMBNAIL_CELLS ? UITableViewCellStyleDefault : UITableViewCellStyleSubtitle;
+        
+        cell = [[UITableViewCell alloc] initWithStyle:cellStyle
                                       reuseIdentifier:CellIdentifier];
     }
     
@@ -189,18 +196,25 @@
         DLog(@"Couldn't convert section %d and row %d into a theme.", indexPath.section, indexPath.row);
     }
     
-    //cell.imageView.image = [UIImage imageNamed:[themeDictionary objectForKey:@"thumbnail"]];
-    
     cell.textLabel.accessibilityLabel = cell.textLabel.text;
     cell.textLabel.accessibilityHint = NSLocalizedString(@"The name of a theme.", @"Hint for theme name in theme list.");
     
-    cell.textLabel.font = [UIFont fontWithName:kTitleFontName size:22.0];
+    // was 22.0 when using subtitle instead of image
+    cell.textLabel.font = [UIFont fontWithName:kTitleFontName size:18.0];
     cell.textLabel.textColor = [UIColor blackColor];
     
-    cell.detailTextLabel.text = [themeDictionary objectForKey:kContentSubtitleKey];
-    
-    cell.detailTextLabel.font = [UIFont fontWithName:kBodyFontName size:15.0];
-    cell.detailTextLabel.textColor = [UIColor blackColor];
+    if (THEME_THUMBNAIL_CELLS) { // these drawings are too detailed to appear as thumbnails
+        
+        // Use pre-rendered thumbnails that are PNGs, not jpegs?
+        NSString *illustrationName = [NSString stringWithFormat:@"%@.jpg", [themeDictionary objectForKey:kThemeImageKey]];
+        cell.imageView.image = [UIImage imageNamed:illustrationName];
+    } else {
+        
+        // larger than 13 would need to be multi-line, even without image
+        cell.detailTextLabel.text = [themeDictionary objectForKey:kContentSubtitleKey];
+        cell.detailTextLabel.font = [UIFont fontWithName:kBodyFontName size:13.0];
+        cell.detailTextLabel.textColor = [UIColor blackColor];
+    }
     
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -212,7 +226,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // keep them uniform
+    // keep them uniform for now
     return 66.0;
 }
 
