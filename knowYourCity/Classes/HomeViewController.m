@@ -110,7 +110,8 @@
     self.navigationItem.leftBarButtonItem = self.mapButton;
     
     
-    self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kInfoButtonDarkImage]
+    // kInfoButtonDarkImage feels to heavy
+    self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kInfoButtonLightImage]
                                                        style:UIBarButtonItemStylePlain
                                                       target:self
                                                       action:@selector(showStaticPages)];
@@ -120,7 +121,7 @@
     self.navigationItem.rightBarButtonItem = self.infoButton;
     
     
-    // could lazy-load these, but the savings probably isn't that much
+    // could lazy-load these, but the memory savings probably isn't that much
     
     self.listButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kThemeListButtonImage  ]
                                                        style:UIBarButtonItemStylePlain
