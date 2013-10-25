@@ -14,7 +14,7 @@
 
 #define AUDIO_TIME_DEFAULT_Y 6.0
 #define AUDIO_TIME_LABEL_WIDTH 28.0
-#define AUDIO_TIME_LABEL_FONT_SIZE 10.0
+#define AUDIO_TIME_LABEL_FONT_SIZE 12.0 // was 10.0, but that's too small
 
 // Based on the assumption that a clip is several minutes long, and the thumb
 // might not even move every second.
@@ -29,7 +29,6 @@
 @property (strong, nonatomic) UISlider *audioScrubber;
 
 @property (strong, nonatomic) UIButton *playButton;
-//@property (strong, nonatomic) UIButton *pauseButton;
 
 @property (strong, nonatomic) NSTimer *thumbTimer;
 
@@ -39,7 +38,7 @@
 
 #pragma mark - View lifecycle
 
-- (id)initWithAudioURL:(NSURL *)audioURL {
+- (id)initWithAudioURL:(NSURL *)audioURL images:(NSDictionary *)imageNames {
     
     CGRect defaultFrame = CGRectMake(0.0, 0.0, 320.0, 44.0); // height was 52
     
@@ -73,7 +72,8 @@
         
         [self addSubview:self.currentTime];
         
-        CGRect sliderFrame = CGRectMake(42.0, 11.0, 192.0, 23.0); // y was 15
+        // this might need to be adjusted for custom images...
+        CGRect sliderFrame = CGRectMake(42.0, 4.0, 192.0, 14.0);
         
         self.audioScrubber = [[UISlider alloc] initWithFrame:sliderFrame];
         
@@ -83,6 +83,25 @@
         [self.audioScrubber addTarget:self
                                action:@selector(handleScrubbing)
                      forControlEvents:UIControlEventValueChanged];
+        
+        if (imageNames) {
+            
+            UIImage *minTrackImage = [UIImage imageNamed:[imageNames objectForKey:kEWAAudioPlayerPlayedTrackImageKey]];
+            UIImage *maxTrackImage = [UIImage imageNamed:[imageNames objectForKey:kEWAAudioPlayerUnplayedTrackImageKey]];
+            UIImage *thumbImage = [UIImage imageNamed:[imageNames objectForKey:kEWAAudioPlayerThumbImageKey]];
+            
+            if (minTrackImage && maxTrackImage && thumbImage) {
+                
+                [self.audioScrubber setMinimumTrackImage:minTrackImage
+                                                forState:UIControlStateNormal];
+                
+                [self.audioScrubber setMaximumTrackImage:maxTrackImage
+                                                forState:UIControlStateNormal];
+                
+                [self.audioScrubber setThumbImage:thumbImage
+                                         forState:UIControlStateNormal];
+            }
+        }
         
         [self addSubview:self.audioScrubber];
         
@@ -103,10 +122,21 @@
         
         self.playButton = [[UIButton alloc] initWithFrame:buttonFrame];
         
-        [self.playButton setImage:[UIImage imageNamed:PLAY_BUTTON_IMAGE]
+        NSString *playImage = nil;
+        NSString *pauseImage = nil;
+        
+        if (imageNames) {
+            playImage = [imageNames objectForKey:kEWAAudioPlayerPlayImageKey];
+            pauseImage = [imageNames objectForKey:kEWAAudioPlayerPauseImageKey];
+        } else {
+            playImage = PLAY_BUTTON_IMAGE;
+            pauseImage = PAUSE_BUTTON_IMAGE;
+        }
+        
+        [self.playButton setImage:[UIImage imageNamed:playImage]
                          forState:UIControlStateNormal];
         
-        [self.playButton setImage:[UIImage imageNamed:PAUSE_BUTTON_IMAGE]
+        [self.playButton setImage:[UIImage imageNamed:pauseImage]
                          forState:UIControlStateSelected];
         
         [self.playButton addTarget:self
@@ -155,14 +185,14 @@
 
 #pragma mark - UISlider Styling
 
-- (void)setMinimumTrackColor:(UIColor *)minimumTrackColor {
+- (void)setPlayedTrackColor:(UIColor *)playedTrackColor {
     
-    self.audioScrubber.minimumTrackTintColor = minimumTrackColor;
+    self.audioScrubber.minimumTrackTintColor = playedTrackColor;
 }
 
-- (void)setMaximumTrackColor:(UIColor *)maximumTrackColor {
+- (void)setUnplayedTrackColor:(UIColor *)unplayedTrackColor {
     
-    self.audioScrubber.maximumTrackTintColor = maximumTrackColor;
+    self.audioScrubber.maximumTrackTintColor = unplayedTrackColor;
 }
 
 - (void)setThumbColor:(UIColor *)thumbColor {
