@@ -23,6 +23,7 @@
 @property (nonatomic) BOOL showCallouts;
 @property (nonatomic) BOOL showCalloutAccessories;
 
+// pass a nil title to omit the header
 - (id)initWithFrame:(CGRect)frame title:(NSString *)title region:(MKCoordinateRegion)region footer:(NSString *)footer;
 
 // expose button image properties?

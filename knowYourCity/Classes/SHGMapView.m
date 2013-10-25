@@ -35,48 +35,54 @@
         
         self.backgroundColor = [UIColor whiteColor]; // or some kind of transparency?
         
-        CGFloat buttonSize = 44.0;
+        CGFloat buttonSize = 0.0;
         
-        self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        // only create the header if the title is defined
+        if (title) {
+            
+            buttonSize = 44.0;
+            
+            self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            
+            [self.closeButton setImage:[UIImage imageNamed:@"53-house"]
+                              forState:UIControlStateNormal];
+            
+            [self.closeButton addTarget:self
+                                 action:@selector(closeMapView:)
+                       forControlEvents:UIControlEventTouchUpInside];
+            
+            self.closeButton.frame = CGRectMake(0.0, 64.0, buttonSize, buttonSize);
+            
+            [self addSubview:self.closeButton];
+            
+            
+            CGFloat titleWidth = self.bounds.size.width - buttonSize*2.0;
+            
+            self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(buttonSize, 64.0,
+                                                                        titleWidth, buttonSize)];
+            // should be one line, preferably one word
+            self.titleLabel.text = title;
+            self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:kTitleFontSize];
+            self.titleLabel.textAlignment = NSTextAlignmentCenter;
+            
+            [self addSubview:self.titleLabel];
+            
+            self.locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            
+            [self.locationButton setImage:[UIImage imageNamed:kLocationButtonImage]
+                                 forState:UIControlStateNormal];
+            
+            [self.locationButton addTarget:self
+                                    action:@selector(centerMapOnUser:)
+                          forControlEvents:UIControlEventTouchUpInside];
+            
+            CGFloat locationX = self.bounds.size.width - buttonSize;
+            self.locationButton.frame = CGRectMake(locationX, 64.0, buttonSize, buttonSize);
+            
+            [self addSubview:self.locationButton];
+        }
         
-        [self.closeButton setImage:[UIImage imageNamed:@"53-house"]
-                          forState:UIControlStateNormal];
-        
-        [self.closeButton addTarget:self
-                             action:@selector(closeMapView:)
-                   forControlEvents:UIControlEventTouchUpInside];
-        
-        self.closeButton.frame = CGRectMake(0.0, 64.0, buttonSize, buttonSize);
-        
-        [self addSubview:self.closeButton];
-        
-        
-        CGFloat titleWidth = self.bounds.size.width - buttonSize*2.0;
-        
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(buttonSize, 64.0,
-                                                                    titleWidth, buttonSize)];
-        // should be one line, preferably one word
-        self.titleLabel.text = title;
-        self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:kTitleFontSize];
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        
-        [self addSubview:self.titleLabel];
-        
-        self.locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        
-        [self.locationButton setImage:[UIImage imageNamed:@"193-location-arrow"]
-                             forState:UIControlStateNormal];
-        
-        [self.locationButton addTarget:self
-                                action:@selector(centerMapOnUser:)
-                      forControlEvents:UIControlEventTouchUpInside];
-        
-        CGFloat locationX = self.bounds.size.width - buttonSize;
-        self.locationButton.frame = CGRectMake(locationX, 64.0, buttonSize, buttonSize);
-        
-        [self addSubview:self.locationButton];
-        
-        // mapview should take up the whole screen, except maybe a footer at the bottom
+        // mapview should take up the whole screen, except header/footer
         CGRect mapRect = CGRectMake(0.0, buttonSize+64.0, self.bounds.size.width, self.bounds.size.height - buttonSize);
         
         self.mapView = [[MKMapView alloc] initWithFrame:mapRect];
@@ -87,6 +93,10 @@
         self.initialRegion = region;
         
         self.mapView.region = self.initialRegion;
+        
+        if (ON_IOS7) {
+            self.mapView.showsPointsOfInterest = NO;
+        }
         
         [self addSubview:self.mapView];
         
@@ -130,9 +140,10 @@
             pinView.animatesDrop = NO;
         } else {
             
-            pinView.animatesDrop = YES;
+            // I decided it annoys me on iPhones, too, but I might change my mind.
+            pinView.animatesDrop = NO;
             
-            // Add a detail disclosure button to the callout
+            // This appears as an info button in iOS 7.x
             if (self.showCalloutAccessories) {
                 UIButton* rightButton = [UIButton buttonWithType:
                                          UIButtonTypeDetailDisclosure];
@@ -155,11 +166,16 @@
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     
+    DLog(@"");
 }
+
+#pragma mark - Managing Location
 
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
     
     DLog(@"Will locate user");
+    
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error {
@@ -169,9 +185,17 @@
     // show an alert?
 }
 
+- (void)stopTrackingUser {
+    
+    self.mapView.showsUserLocation = NO;
+}
+
+
 #pragma mark - Responding to User Actions
 
 - (void)closeMapView:(id)sender {
+    
+    [self stopTrackingUser];
     
     [self.delegate mapView:self didFinishWithSelectedID:NSNotFound ofType:SHGSearchResultTypeStory];
 }
@@ -182,7 +206,13 @@
     
     if (NO) {
         
-        //
+        if (!self.mapView.userLocationVisible) {
+            // move map to center on user
+            DLog(@"User not visible. Will re-center on user.");
+            
+            // user the user location from the map view? Or from CL directly?
+        }
+        
     } else {
         
         [self.mapView setRegion:self.initialRegion animated:YES];
@@ -191,16 +221,16 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     
-    // hide map
+    [self stopTrackingUser];
     
     // cast annotation to pull relevant data
-    
     SHGMapAnnotation *tappedAnnotation = (SHGMapAnnotation *)view.annotation;
     
     DLog(@"Would handle tap on %@", [tappedAnnotation description]);
     
-    // pin tap should call
-    // - (void)mapView:(SHGMapView *)mapView didFinishWithSelectedID:(NSUInteger *)itemID ofType:(SHGMapAnnotationType)pinType;
+    NSUInteger tappedID = [tappedAnnotation.contentID unsignedIntegerValue];
+    
+    [self.delegate mapView:self didFinishWithSelectedID:tappedID ofType:tappedAnnotation.annotationType];
 }
 
 @end
