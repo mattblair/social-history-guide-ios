@@ -28,6 +28,9 @@
 
 // expose button image properties?
 
+// returns default view if map is not initialized yet
+- (MKCoordinateRegion)currentRegion;
+
 // expects an array of SHGMapAnnotation objects
 - (void)addAnnotations:(NSArray *)annotations;
 

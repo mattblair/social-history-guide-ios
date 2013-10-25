@@ -106,6 +106,17 @@
     return self;
 }
 
+- (MKCoordinateRegion)currentRegion {
+    
+    if (self.mapView) {
+        
+        return self.mapView.region;
+    } else {
+        
+        return [SHG_DATA defaultMapRegion];
+    }
+}
+
 - (void)addAnnotations:(NSArray *)annotations {
     
     // store these annotations anywhere?
@@ -166,7 +177,10 @@
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     
-    DLog(@"");
+    DLog(@"Map's center latitude is: %f", mapView.region.center.latitude);
+    DLog(@"Map's center longitude is: %f", mapView.region.center.longitude);
+    DLog(@"Map's latitude delta is: %f", mapView.region.span.latitudeDelta);
+    DLog(@"Map's longitude delta is: %f", mapView.region.span.longitudeDelta);
 }
 
 #pragma mark - Managing Location
