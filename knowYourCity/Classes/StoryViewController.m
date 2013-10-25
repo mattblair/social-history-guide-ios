@@ -302,7 +302,7 @@
         
         _mediaMetadataView = [[UIView alloc] initWithFrame:self.mainPhoto.frame];
         
-        _mediaMetadataView.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.85];
+        _mediaMetadataView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.85];
         UIColor *captionTextColor = [UIColor kycDarkGray];
         
         CGFloat nextLabelY = 5.0;
