@@ -218,43 +218,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - MKMapViewDelegate Methods -- DEPRECATED
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation {
-    
-    // If it's the user location, just return nil.
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
-    
-    // Try to dequeue an existing pin view first.
-	MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
-	
-	if (!pinView)
-	{
-		// If an existing pin view was not available, create one.
-		pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-                                                  reuseIdentifier:@"CustomPinAnnotationView"];
-        
-        pinView.animatesDrop = NO;
-        pinView.canShowCallout = YES;
-        
-        // Add a detail disclosure button to the callout
-        UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        
-        pinView.rightCalloutAccessoryView = rightButton;
-	}
-    
-    pinView.pinColor = MKPinAnnotationColorRed;
-    //pinView.tag = (SHGMapAnnotation *)[annotation contentID];
-    
-	return pinView;
-}
-
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    
-    // navigate to story
-    DLog(@"Annotation tapped: %d", [view tag]);
-}
 
 #pragma mark - SHGMapView Delegate Methods
 
