@@ -42,18 +42,18 @@
             
             buttonSize = 44.0;
             
-            self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            self.locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
             
-            [self.closeButton setImage:[UIImage imageNamed:@"53-house"]
-                              forState:UIControlStateNormal];
+            [self.locationButton setImage:[UIImage imageNamed:kLocationButtonImage]
+                                 forState:UIControlStateNormal];
             
-            [self.closeButton addTarget:self
-                                 action:@selector(closeMapView:)
-                       forControlEvents:UIControlEventTouchUpInside];
+            [self.locationButton addTarget:self
+                                    action:@selector(centerMapOnUser:)
+                          forControlEvents:UIControlEventTouchUpInside];
             
-            self.closeButton.frame = CGRectMake(0.0, 64.0, buttonSize, buttonSize);
+            self.locationButton.frame = CGRectMake(0.0, 64.0, buttonSize, buttonSize);
             
-            [self addSubview:self.closeButton];
+            [self addSubview:self.locationButton];
             
             
             CGFloat titleWidth = self.bounds.size.width - buttonSize*2.0;
@@ -67,19 +67,20 @@
             
             [self addSubview:self.titleLabel];
             
-            self.locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            CGFloat rightButtonX = self.bounds.size.width - buttonSize;
             
-            [self.locationButton setImage:[UIImage imageNamed:kLocationButtonImage]
-                                 forState:UIControlStateNormal];
+            self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
             
-            [self.locationButton addTarget:self
-                                    action:@selector(centerMapOnUser:)
-                          forControlEvents:UIControlEventTouchUpInside];
+            [self.closeButton setImage:[UIImage imageNamed:kCloseButton]
+                              forState:UIControlStateNormal];
             
-            CGFloat locationX = self.bounds.size.width - buttonSize;
-            self.locationButton.frame = CGRectMake(locationX, 64.0, buttonSize, buttonSize);
+            [self.closeButton addTarget:self
+                                 action:@selector(closeMapView:)
+                       forControlEvents:UIControlEventTouchUpInside];
             
-            [self addSubview:self.locationButton];
+            self.closeButton.frame = CGRectMake(rightButtonX, 64.0, buttonSize, buttonSize);
+            
+            [self addSubview:self.closeButton];
         }
         
         // mapview should take up the whole screen, except header/footer
