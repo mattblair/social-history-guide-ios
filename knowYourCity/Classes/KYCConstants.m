@@ -40,7 +40,7 @@ NSString* const kMapPinButtonImage = @"kbb-map-pin";
 NSString* const kRefreshButtonImage = @""; // not used?
 
 
-NSString* const kCloseButton = @"kbb-x-2";
+NSString* const kCloseButton = @"kbb-x-1"; // kbb-x-2
 NSString* const kActionButton = @"kbb-action-2";
 NSString* const kBackButtonImage = @"";
 
