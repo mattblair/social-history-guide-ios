@@ -296,11 +296,12 @@
     if (!_nearbyMapView) {
         
         // temporary -- this should try to use user location, and only fallback to a default
-        CLLocationCoordinate2D defaultCenter = CLLocationCoordinate2DMake(45.505796, -122.678586);
+        
+        // MKCoordinateRegionMakeWithDistance([SHG_DATA defaultMapCenter], 4000.0, 3000.0)
         
         _nearbyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
                                                      title:nil // title and buttons moved to nav bar
-                                                    region:MKCoordinateRegionMakeWithDistance(defaultCenter, 4000.0, 3000.0)
+                                                    region:[SHG_DATA defaultMapRegion]
                                                     footer:nil];
         _nearbyMapView.delegate = self;
     }
@@ -321,20 +322,19 @@
      
     */
     
-    self.navigationItem.title = NSLocalizedString(@"Nearby", @"Nav title when viewing map of nearby stories");
+    // or call it Nearby
+    self.navigationItem.title = NSLocalizedString(@"Explore", @"Nav title when viewing map of nearby stories");
     self.navigationItem.leftBarButtonItem = self.listButton;
     self.navigationItem.rightBarButtonItem = self.locationButton;
     
     [self.view addSubview:self.nearbyMapView];
     
     // temporary -- this should try to use user location, and only fallback to a default
-    CLLocationCoordinate2D defaultCenter = CLLocationCoordinate2DMake(45.505796, -122.678586);
-    
-    MKCoordinateRegion nearbyRegion = MKCoordinateRegionMakeWithDistance(defaultCenter, 4000.0, 3000.0);
+    //MKCoordinateRegion nearbyRegion = MKCoordinateRegionMakeWithDistance([SHG_DATA defaultMapCenter], 4000.0, 3000.0);
     
     [self.nearbyMapView addAnnotations:[SHG_DATA mapAnnotationsOfType:SHGMapAnnotationTypeStory
-                                                             inRegion:nearbyRegion
-                                                             maxCount:20]];
+                                                             inRegion:self.nearbyMapView.currentRegion
+                                                             maxCount:45]];
     
     [UIView animateWithDuration:0.5
                      animations:^{self.nearbyMapView.alpha = 1.0;}
