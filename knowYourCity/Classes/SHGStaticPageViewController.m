@@ -35,17 +35,17 @@
 - (void)loadView {
     
     [super loadView];
-	// Do any additional setup after loading the view.
     
     // Do we want to use title for anything?
     //self.title = NSLocalizedString(@"About", @"Name of About View Controller");
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     CGFloat yForNextView = 25.0; // 70.0 if pushed on nav stack
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    self.closeButton.frame = CGRectMake(295.0, yForNextView, 22.0, 22.0);
+    self.closeButton.frame = CGRectMake(278.0, yForNextView, 22.0, 22.0);
     
     [self.closeButton setImage:[UIImage imageNamed:kCloseButton]
                       forState:UIControlStateNormal];
@@ -56,7 +56,7 @@
     
     [self.view addSubview:self.closeButton];
     
-    yForNextView = 50.0; // enough to clear the close button completely
+    yForNextView = 60.0; // enough to clear the close button completely
     
     self.appNameImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10.0, yForNextView, 300.0, 28.0)];
     self.appNameImageView.image = [UIImage imageNamed:kAppNameImage];
