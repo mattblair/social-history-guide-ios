@@ -261,7 +261,20 @@
     return [NSURL URLWithString:urlString];
 }
 
-#pragma mark - Helper Methods
+#pragma mark - Map Helper Methods
+
+- (CLLocationCoordinate2D)defaultMapCenter {
+    
+    // originally 45.505796, -122.678586
+    return CLLocationCoordinate2DMake(45.516249, -122.678706);
+}
+
+- (MKCoordinateRegion)defaultMapRegion {
+    
+    MKCoordinateSpan defaultSpan = MKCoordinateSpanMake(0.042366, 0.038389);
+    
+    return MKCoordinateRegionMake([self defaultMapCenter], defaultSpan);
+}
 
 - (CLLocationCoordinate2D)coordinateFromDictionary:(NSDictionary *)contentDictionary {
     

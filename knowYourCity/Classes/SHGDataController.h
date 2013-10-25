@@ -126,6 +126,9 @@ typedef NS_ENUM(NSUInteger, SHGSearchResultType) {
 
 // Utilities
 
+- (CLLocationCoordinate2D)defaultMapCenter;
+- (MKCoordinateRegion)defaultMapRegion;
+
 - (CLLocationCoordinate2D)coordinateFromDictionary:(NSDictionary *)contentDictionary;
 
 // this factors in the zoom level, if present, or defaults to a walkable span
