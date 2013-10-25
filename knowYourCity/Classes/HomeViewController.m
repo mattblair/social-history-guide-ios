@@ -8,8 +8,13 @@
 
 #import "HomeViewController.h"
 #import "ThemeViewController.h"
-#import "TidbitListViewController.h"
 #import "SHGStaticPageViewController.h"
+#import "StoryViewController.h"
+
+// deferred
+#import "TidbitListViewController.h"
+
+// probably deprecated
 #import "MapViewController.h"
 
 // temporary, until data loading to Core Data is implemented and populated
@@ -115,7 +120,7 @@
     
     // could lazy-load these, but the savings probably isn't that much
     
-    self.listButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kThemeListButtonImage]
+    self.listButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kThemeListButtonImage  ]
                                                        style:UIBarButtonItemStylePlain
                                                       target:self
                                                       action:@selector(hideMap)];
@@ -280,7 +285,7 @@
         CLLocationCoordinate2D defaultCenter = CLLocationCoordinate2DMake(45.505796, -122.678586);
         
         _nearbyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
-                                                     title:NSLocalizedString(@"Nearby", @"Title of nearby map")
+                                                     title:nil // title and buttons moved to nav bar
                                                     region:MKCoordinateRegionMakeWithDistance(defaultCenter, 4000.0, 3000.0)
                                                     footer:nil];
         _nearbyMapView.delegate = self;
@@ -334,6 +339,27 @@
 }
 
 
+#pragma mark - Show a Story
+
+- (void)showStoryWithID:(NSUInteger)storyID {
+    
+    NSDictionary *storyDictionary = [SHG_DATA dictionaryForStoryID:storyID];
+    
+    if (storyDictionary) {
+        
+        StoryViewController *storyVC = [[StoryViewController alloc] initWithNibName:nil bundle:nil];
+        
+        storyVC.storyData = storyDictionary;
+        
+        [self.navigationController pushViewController:storyVC animated:YES];
+        
+    } else {
+        
+        DLog(@"No story found for id %d", storyID);
+    }
+}
+
+
 #pragma mark - SHGMapViewDelegate Methods
 
 - (void)mapView:(SHGMapView *)mapView didFinishWithSelectedID:(NSUInteger)itemID ofType:(SHGMapAnnotationType)pinType {
@@ -349,6 +375,8 @@
                          // push if needed
                          if (itemID != NSNotFound) {
                              DLog(@"Would show story with id %d", itemID);
+                             
+                             [self showStoryWithID:itemID];
                          }
                      }];
 }
