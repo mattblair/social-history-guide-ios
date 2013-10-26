@@ -8,6 +8,7 @@
 
 #import "KYCAppDelegate.h"
 
+#import <AVFoundation/AVFoundation.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 
 #import "KYCPrivateConstants.h"
@@ -20,16 +21,28 @@
     
     DLog(@"iOS Version is: %@", ON_IOS7 ? @"7+" : @"< 7");
     
-    //[TestFlight takeOff:kTestFlightTeamToken];
+    // Configure audio session
+    NSError *audioSessionError = nil;
+    
+    // this configuration overrides the mute switch, and allows playback along with other sources, like music
+    BOOL audioSessionSuccess = [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback
+                                                                withOptions:AVAudioSessionCategoryOptionMixWithOthers
+                                                                      error:&audioSessionError];
+    
+    if (!audioSessionSuccess) {
+        
+        DLog(@"Error setting audio session: %@ with info: %@", audioSessionError, [audioSessionError userInfo]);
+    }
+    
     [TestFlight takeOff:kTestFlightAppToken];
     
     [Flurry startSession:kFlurryAPIKey];
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
-    [self configureAppearance];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [self configureAppearance];
     
     self.homeViewController = [[HomeViewController alloc] initWithNibName:nil bundle:nil];
     
