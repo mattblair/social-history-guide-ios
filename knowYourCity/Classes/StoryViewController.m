@@ -256,7 +256,8 @@
     
     NSString *moreInfoTitle = [self.storyData objectForKey:kContentMoreInfoTitleKey];
     
-    if (moreInfoTitle) {
+    // some of these titles are noisy, too
+    if ([moreInfoTitle length] > 4) {
         
         [self.scrollView addSubview:[self moreInfoView]];
         
@@ -264,9 +265,11 @@
         self.moreInfoView.frame = CGRectMake(0.0, self.yForNextView, 320.0, moreInfoHeight);
         
         self.yForNextView = CGRectGetMaxY(self.moreInfoView.frame); // no additional spacer
+        
+    } else { // get rid of that bottom margin that's leftover
+        
+        self.yForNextView -= VERTICAL_SPACER_STANDARD;
     }
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -371,19 +374,27 @@
     
     if (!_moreInfoView) {
         
-        _moreInfoView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 100.0)];
+        CGFloat moreInfoWidth = 320.0;
         
-        _moreInfoView.backgroundColor = [UIColor kycLightGray];
-        UIColor *captionTextColor = [UIColor kycDarkGray];
+        _moreInfoView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, moreInfoWidth, 100.0)];
+        
+        //_moreInfoView.backgroundColor = [UIColor kycLightGray];
+        UIColor *infoTextColor = [UIColor kycDarkGray];
         
         CGFloat nextLabelY = 0.0;
         
-        UILabel *moreInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, nextLabelY,
-                                                                           320.0, 22.0)];
-        moreInfoLabel.backgroundColor = [UIColor kycDarkGray];
+        UIView *grayView = [[UIView alloc] initWithFrame:CGRectMake(0.0, nextLabelY,
+                                                                   moreInfoWidth, 22.0)];
+        grayView.backgroundColor = infoTextColor;
+        [_moreInfoView addSubview:grayView];
+        
+        UILabel *moreInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, nextLabelY,
+                                                                           DEFAULT_CONTENT_WIDTH, 22.0)];
+        //moreInfoLabel.backgroundColor = [UIColor kycDarkGray];
         moreInfoLabel.text = NSLocalizedString(@"More Information", @"Title label of the more information section");
-        moreInfoLabel.font = [UIFont fontWithName:kTitleFontName size:15.0];
+        moreInfoLabel.font = [UIFont fontWithName:kTitleFontName size:kBodyFontSize];
         moreInfoLabel.textColor = [UIColor kycLightGray];
+        moreInfoLabel.backgroundColor = [UIColor clearColor];
         
         [_moreInfoView addSubview:moreInfoLabel];
         
@@ -396,7 +407,7 @@
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         titleLabel.text = [self.storyData objectForKey:kContentMoreInfoTitleKey];
         titleLabel.font = [UIFont fontWithName:kBodyFontName size:kSectionTitleFontSize];
-        titleLabel.textColor = captionTextColor;
+        titleLabel.textColor = infoTextColor;
         
         [titleLabel sizeToFit];
         
@@ -410,7 +421,7 @@
         descriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
         descriptionLabel.text = [self.storyData objectForKey:kContentMoreInfoDescriptionKey];
         descriptionLabel.font = [UIFont fontWithName:kBodyFontName size:kBodyFontSize];
-        descriptionLabel.textColor = captionTextColor;
+        descriptionLabel.textColor = infoTextColor;
         
         [descriptionLabel sizeToFit];
         
@@ -418,28 +429,35 @@
         
         nextLabelY = CGRectGetMaxY(descriptionLabel.frame) + 5.0;
         
-        UIButton *urlButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        [urlButton setTitle:NSLocalizedString(@"website", @"Title for website button")
-                   forState:UIControlStateNormal];
+        NSString *moreInfoURLString = [self.storyData objectForKey:kContentMoreInfoURLKey];
         
-        [urlButton setTitleColor:[UIColor kycRed]
-                        forState:UIControlStateNormal];
-        
-        urlButton.titleLabel.font = [UIFont fontWithName:kBodyFontName
-                                                    size:kBodyFontSize];
-        
-        [urlButton setTitleEdgeInsets:UIEdgeInsetsMake(10.0, 0.0, 10.0, 10.0)];
-        
-        [urlButton addTarget:self
-                      action:@selector(launchMoreInfoURL)
-            forControlEvents:UIControlEventTouchUpInside];
-        
-        urlButton.frame = CGRectMake(10.0, nextLabelY - 10.0, 60.0, 44.0);
-        
-        [_moreInfoView addSubview:urlButton];
-        
-        nextLabelY = CGRectGetMaxY(urlButton.frame);
+        // this field is noisy, so test it.
+        if ([moreInfoURLString length] > 8) {
+            
+            UIButton *urlButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            
+            [urlButton setTitle:NSLocalizedString(@"website", @"Title for website button")
+                       forState:UIControlStateNormal];
+            
+            [urlButton setTitleColor:[UIColor kycRed]
+                            forState:UIControlStateNormal];
+            
+            urlButton.titleLabel.font = [UIFont fontWithName:kBodyFontName
+                                                        size:kBodyFontSize];
+            
+            [urlButton setTitleEdgeInsets:UIEdgeInsetsMake(10.0, 0.0, 10.0, 10.0)];
+            
+            [urlButton addTarget:self
+                          action:@selector(launchMoreInfoURL)
+                forControlEvents:UIControlEventTouchUpInside];
+            
+            urlButton.frame = CGRectMake(10.0, nextLabelY - 10.0, 60.0, 44.0);
+            
+            [_moreInfoView addSubview:urlButton];
+            
+            nextLabelY = CGRectGetMaxY(urlButton.frame);
+        }
         
         // reset height
         _moreInfoView.frame = CGRectMake(0.0, 0.0, 320.0, nextLabelY);
