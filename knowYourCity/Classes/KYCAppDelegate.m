@@ -73,7 +73,9 @@
 
 - (void)configureAppearance {
     
-    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    // use this for iOS 6 only?
+    
+    //[[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     
     // to use the same nav background for all view controllers
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:kNavBarBackgroundiPhone]
