@@ -202,7 +202,7 @@
     
     // was 22.0 when using subtitle instead of image
     cell.textLabel.font = [UIFont fontWithName:kTitleFontName size:18.0];
-    cell.textLabel.textColor = [UIColor blackColor];
+    cell.textLabel.textColor = [UIColor kycRed]; //[UIColor blackColor];
     
     if (THEME_THUMBNAIL_CELLS) { // these drawings are too detailed to appear as thumbnails
         
