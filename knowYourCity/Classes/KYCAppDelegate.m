@@ -31,11 +31,6 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    // set default color in iOS 7
-    if (ON_IOS7) {
-        self.window.tintColor = [UIColor kycRed];
-    }
-    
     self.homeViewController = [[HomeViewController alloc] initWithNibName:nil bundle:nil];
     
     self.navVC = [[UINavigationController alloc] initWithRootViewController:self.homeViewController];
@@ -73,13 +68,19 @@
 
 - (void)configureAppearance {
     
-    // use this for iOS 6 only?
-    
-    //[[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
-    
-    // to use the same nav background for all view controllers
-    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:kNavBarBackgroundiPhone]
-    //                                   forBarMetrics:UIBarMetricsDefault];
+    if (ON_IOS7) {
+        
+        // set default color for all active controls
+        self.window.tintColor = [UIColor kycRed];
+        
+    } else { // iOS 6.x
+        
+        //[[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+        
+        // to use the same nav background for all view controllers
+        //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:kNavBarBackgroundiPhone]
+        //                                   forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 @end
