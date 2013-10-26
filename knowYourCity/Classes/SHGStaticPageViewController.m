@@ -41,13 +41,27 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CGFloat yForNextView = 25.0; // 70.0 if pushed on nav stack
+    CGFloat yForNextView = 20.0; // 70.0 if pushed on nav stack
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    self.closeButton.frame = CGRectMake(278.0, yForNextView, 22.0, 22.0);
+    // when the button was 22 wide, x was 278
+    self.closeButton.frame = CGRectMake(267.0, yForNextView, 44.0, 44.0);
     
-    [self.closeButton setImage:[UIImage imageNamed:kCloseButton]
+    UIImage *closeImage;
+    
+    if (ON_IOS7) {
+        
+        // display it using our tint color
+        closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    } else {
+        
+        closeImage = [UIImage imageNamed:kCloseButton];
+    }
+    
+    [self.closeButton setImageEdgeInsets:UIEdgeInsetsMake(11.0, 11.0, 11.0, 11.0)];
+    
+    [self.closeButton setImage:closeImage
                       forState:UIControlStateNormal];
     
     [self.closeButton addTarget:self
@@ -74,6 +88,9 @@
     [self.view addSubview:self.appCreditLabel];
     
     yForNextView += self.appCreditLabel.frame.size.height + 5.0;
+    
+    // makse sure close button is on top:
+    [self.view bringSubviewToFront:self.closeButton];
     
     // segmented control
     
