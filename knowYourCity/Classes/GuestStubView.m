@@ -75,20 +75,21 @@
         
         // Guest Label
         self.toldLabel = [[UILabel alloc] initWithFrame:CGRectMake(textX, 0.0,
-                                                                   DEFAULT_CONTENT_WIDTH, 25.0)];
+                                                                   DEFAULT_CONTENT_WIDTH, 20.0)];
         self.toldLabel.numberOfLines = 1;
         self.toldLabel.text = NSLocalizedString(@"As Told By", @"Heading label for the Guest section of Story View Controller");
-        self.toldLabel.font = [UIFont fontWithName:kTitleFontName size:kSectionTitleFontSize];
+        self.toldLabel.font = [UIFont fontWithName:kTitleFontName size:kBodyFontSize];
         
         [self addSubview:self.toldLabel];
         
-        CGFloat toldY = CGRectGetMaxY(self.toldLabel.frame) + VERTICAL_SPACER_STANDARD;
+        CGFloat nameY = CGRectGetMaxY(self.toldLabel.frame) + 2.0; // GUEST_STUB_MARGIN seems to big?
         
-        CGRect nameRect = CGRectMake(textX, toldY, textWidth, 30.0);
+        CGRect nameRect = CGRectMake(textX, nameY, textWidth, 25.0);
         
         self.nameLabel = [[UILabel alloc] initWithFrame:nameRect];
         self.nameLabel.text = [self.guestData objectForKey:kGuestNameKey];
-        self.nameLabel.font = [UIFont fontWithName:kTitleFontName size:15.0];
+        self.nameLabel.textColor = [UIColor kycRed];
+        self.nameLabel.font = [UIFont fontWithName:kTitleFontName size:kSectionTitleFontSize];
         self.nameLabel.backgroundColor = [UIColor clearColor];
         
         [self.nameLabel sizeToFit];
