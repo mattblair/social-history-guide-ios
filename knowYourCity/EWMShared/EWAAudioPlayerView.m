@@ -117,8 +117,8 @@
         
         [self addSubview:self.totalTime];
         
-        //CGRect buttonFrame = CGRectMake(280.0, AUDIO_TIME_DEFAULT_Y, 30.0, 30.0);
-        CGRect buttonFrame = CGRectMake(274.0, 7.0, 28.0, 28.0);
+        //CGRect buttonFrame = CGRectMake(274.0, 7.0, 28.0, 28.0);
+        CGRect buttonFrame = CGRectMake(266.0, -1.0, 44.0, 44.0);
         
         self.playButton = [[UIButton alloc] initWithFrame:buttonFrame];
         
@@ -132,6 +132,8 @@
             playImage = PLAY_BUTTON_IMAGE;
             pauseImage = PAUSE_BUTTON_IMAGE;
         }
+        
+        self.playButton.imageEdgeInsets = UIEdgeInsetsMake(8.0, 8.0, 8.0, 8.0);
         
         [self.playButton setImage:[UIImage imageNamed:playImage]
                          forState:UIControlStateNormal];
