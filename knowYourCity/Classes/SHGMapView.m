@@ -165,7 +165,7 @@
         }
         
         pinView.canShowCallout = self.showCallouts;
-        pinView.pinColor = MKPinAnnotationColorGreen;
+        pinView.pinColor = MKPinAnnotationColorRed;
 	}
     
 	return pinView;
