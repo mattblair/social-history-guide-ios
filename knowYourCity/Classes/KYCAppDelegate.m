@@ -86,9 +86,10 @@
         // set default color for all active controls
         self.window.tintColor = [UIColor kycRed];
         
-    } else { // iOS 6.x
+    } else { // iOS 6.x -- keep using UIAppearance?
         
-        //[[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+        // was black -- or make this gray?
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
         
         // to use the same nav background for all view controllers
         //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:kNavBarBackgroundiPhone]
