@@ -87,7 +87,7 @@
     
     [self.view addSubview:self.appCreditLabel];
     
-    yForNextView += self.appCreditLabel.frame.size.height + 5.0;
+    yForNextView += self.appCreditLabel.frame.size.height + 10.0; // 5 seemed too close
     
     // makse sure close button is on top:
     [self.view bringSubviewToFront:self.closeButton];
