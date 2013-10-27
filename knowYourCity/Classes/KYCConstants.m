@@ -68,9 +68,12 @@ NSString* const kMaximumTrackImage = @"kbb-slider-2-empty"; // i.e. yet to be pl
 NSString* const kDetailBackgroundImageiPad = @"";
 NSString* const kDetailBackgroundImageiPhone = @"";
 
-// Contact Information
+// URLs, social sharing & contact information
+NSString* const kProjectName = @"PDX Social History Guide";
+NSString* const kProjectURL = @"http://pdxsocialhistory.org";
+NSString* const kThemeURL = @"http://pdxsocialhistory.org/themes";
+NSString* const kStoryURL = @"http://pdxsocialhistory.org/stories";
 NSString* const kAppWebsiteURL = @"http://pdxsocialhistory.org/app";
-NSString* const kWebMapURL = @"http://pdxsocialhistory.org";
 NSString* const kEmailFooter = @"\n\n\n-----\nSent via the Portland Social History Guide app\nFor more info, visit: http://pdxsocialhistory.org";
 NSString* const kFeedbackEmailAddress = @"feedback@pdxsocialhistory.org";
 NSString* const kSubmissionEmailAddress = @"support@pdxsocialhistory.org";

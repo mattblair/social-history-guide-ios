@@ -103,9 +103,12 @@ extern NSString* const kMaximumTrackImage; // UISlider
 extern NSString* const kDetailBackgroundImageiPad;
 extern NSString* const kDetailBackgroundImageiPhone;
 
-// Contact Information
+// URLs, social sharing & contact information
+extern NSString* const kProjectName;
+extern NSString* const kProjectURL;
+extern NSString* const kThemeURL;
+extern NSString* const kStoryURL;
 extern NSString* const kAppWebsiteURL;
-extern NSString* const kWebMapURL;
 extern NSString* const kEmailFooter;
 extern NSString* const kFeedbackEmailAddress;
 extern NSString* const kSubmissionEmailAddress;
