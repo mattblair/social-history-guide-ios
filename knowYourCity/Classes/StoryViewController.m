@@ -498,7 +498,37 @@
 
 - (void)showShareSheet {
     
-    DLog(@"Would show share sheet...");
+    NSString *themeString = [NSString stringWithFormat:@"I'm learning about \"%@\" in the %@",
+                             [self.storyData objectForKey:kContentTitleKey],
+                             kProjectName];
+    
+    NSString *themeURLString = [NSString stringWithFormat:@"%@/%@",
+                                kStoryURL,
+                                [self.storyData objectForKey:kContentSlugKey]];
+    
+    NSArray *activityItems = @[themeString, [NSURL URLWithString:themeURLString]];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems
+                                                                             applicationActivities:nil];
+    
+    // omit UIActivityTypeAddToReadingList ?
+    activityVC.excludedActivityTypes = @[UIActivityTypePrint,
+                                         UIActivityTypeCopyToPasteboard,
+                                         UIActivityTypeAssignToContact,
+                                         UIActivityTypeSaveToCameraRoll];
+    
+    activityVC.completionHandler = ^(NSString *activityType, BOOL completed) {
+        if (completed) {
+            DLog(@"User chose %@", activityType);
+        }
+    };
+    
+    // is this necessary for iOS 6?
+    //activityVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    [self presentViewController:activityVC
+                       animated:YES
+                     completion:nil];
 }
 
 @end
