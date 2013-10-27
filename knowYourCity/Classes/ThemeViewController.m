@@ -19,7 +19,7 @@
 
 // could use a UITableView here, but it would be more header/footer than cells, so that seems kind of restricting
 @property (strong, nonatomic) UIScrollView *scrollView;
-@property (strong, nonatomic) UIBarButtonItem *sharingButton;
+@property (strong, nonatomic) UIBarButtonItem *shareButton;
 @property (strong, nonatomic) UIImageView *themeGraphic;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *subtitleLabel;
@@ -61,11 +61,20 @@
     // to hide background image on nav bar
     //[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     
-    self.sharingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                                                       target:self
-                                                                       action:@selector(showSharingMenu:)];
+    // keep this around to show difference between sytem and kbb buttons
+//    self.sharingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+//                                                                       target:self
+//                                                                       action:@selector(showSharingMenu:)];
     
-    self.navigationItem.rightBarButtonItem = self.sharingButton;
+    
+    self.shareButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kActionButton]
+                                                        style:UIBarButtonItemStylePlain
+                                                       target:self
+                                                       action:@selector(showActivityViewController)];
+    
+    self.shareButton.accessibilityLabel = NSLocalizedString(@"Share this story", @"Accessibility label for story sharing button");
+    
+    self.navigationItem.rightBarButtonItem = self.shareButton;
     
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
@@ -106,14 +115,26 @@
     // use only image?
     //[self.mapButton setTitle:@"Map" forState:UIControlStateNormal];
     
-    [self.mapButton setImage:[UIImage imageNamed:kMapPinButtonImage]
+    UIImage *pinImage;
+    
+    if (ON_IOS7) {
+        
+        // display it using our tint color
+        pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    } else {
+        
+        pinImage = [UIImage imageNamed:kMapPinButtonImage];
+    }
+    
+    [self.mapButton setImage:pinImage
                     forState:UIControlStateNormal];
     
     [self.mapButton addTarget:self
                        action:@selector(showMap)
              forControlEvents:UIControlEventTouchUpInside];
     
-    self.mapButton.frame = CGRectMake(self.view.bounds.size.width - mapButtonSize, self.yForNextView + 4.0,
+    // was y + 4. y + 15 aligns with the baseline of the subtitle, if title is one line.
+    self.mapButton.frame = CGRectMake(self.view.bounds.size.width - mapButtonSize, self.yForNextView + 12.0,
                                       mapButtonSize, mapButtonSize);
     
     [self.scrollView addSubview:self.mapButton];
@@ -367,6 +388,45 @@
 #pragma mark - Show sharing menu
 // might go in a category...
 
+- (void)showActivityViewController {
+    
+    NSString *themeString = [NSString stringWithFormat:@"I'm exploring %@ in the %@",
+                             [self.themeDictionary objectForKey:kContentTitleKey],
+                             kProjectName];
+    
+    NSString *themeURLString = [NSString stringWithFormat:@"%@/%@",
+                                kThemeURL,
+                                [self.themeDictionary objectForKey:kContentSlugKey]];
+    
+    NSArray *activityItems = @[themeString, [NSURL URLWithString:themeURLString]];
+
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems
+                                                                             applicationActivities:nil];
+
+    activityVC.excludedActivityTypes = @[UIActivityTypePrint,
+                                         UIActivityTypeCopyToPasteboard,
+                                         UIActivityTypeAssignToContact,
+                                         UIActivityTypeSaveToCameraRoll];
+
+    activityVC.completionHandler = ^(NSString *activityType, BOOL completed) {
+        if (completed) {
+            DLog(@"User chose %@", activityType);
+        }
+    };
+
+    // is this necessary for iOS 6?
+    //activityVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+
+    [self presentViewController:activityVC
+                       animated:YES
+                     completion:nil];
+}
+
+
+#pragma mark - Original Sharing methods (DEPRECATED?)
+
+// hang on to all this stuff until you finalize this functionality on iOS 6
+
 - (void)showSharingMenu:(id)sender {
     
     if (!self.sharingMenu) {
@@ -462,7 +522,7 @@
 		
 		mailVC.mailComposeDelegate = self;
 		
-		mailVC.navigationBar.tintColor = [UIColor kycGray];
+		//mailVC.navigationBar.tintColor = [UIColor kycGray];
 		
         NSString *themeText = [self.themeDictionary objectForKey:kContentTitleKey];
         
