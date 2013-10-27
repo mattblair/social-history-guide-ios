@@ -201,8 +201,8 @@
     cell.textLabel.accessibilityHint = NSLocalizedString(@"The name of a theme.", @"Hint for theme name in theme list.");
     
     // was 22.0 when using subtitle instead of image
-    cell.textLabel.font = [UIFont fontWithName:kTitleFontName size:18.0];
-    cell.textLabel.textColor = [UIColor kycRed]; //[UIColor blackColor];
+    cell.textLabel.font = [UIFont fontWithName:kTitleFontName size:20.0]; // 18.0 seems too small
+    cell.textLabel.textColor = [UIColor kycRed]; // or blackColor
     
     if (THEME_THUMBNAIL_CELLS) { // these drawings are too detailed to appear as thumbnails
         
@@ -213,7 +213,7 @@
         
         // larger than 13 would need to be multi-line, even without image
         cell.detailTextLabel.text = [themeDictionary objectForKey:kContentSubtitleKey];
-        cell.detailTextLabel.font = [UIFont fontWithName:kBodyFontName size:13.0];
+        cell.detailTextLabel.font = [UIFont fontWithName:kBodyFontName size:14.0];
         cell.detailTextLabel.textColor = [UIColor blackColor];
     }
     
@@ -402,7 +402,7 @@
 - (void)configureToolbar {
     
     // first, create all the buttons you need:
-    self.navigationController.toolbar.tintColor = [UIColor kycNavBarColor];
+    //self.navigationController.toolbar.tintColor = [UIColor kycNavBarColor];
     
     // MapView
     self.mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"103-map"]
