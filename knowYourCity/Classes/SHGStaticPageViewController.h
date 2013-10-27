@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, SHGStaticPage) {
     SHGStaticPageDonate
 };
 
-@interface SHGStaticPageViewController : UIViewController
+@interface SHGStaticPageViewController : UIViewController <UIWebViewDelegate>
 
 // expose so presenting VC may link directly to any section
 @property (nonatomic) SHGStaticPage selectedSection;

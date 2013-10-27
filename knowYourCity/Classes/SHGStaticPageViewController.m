@@ -118,6 +118,7 @@
     
     self.webView = [[UIWebView alloc] initWithFrame:webFrame];
     self.webView.backgroundColor = [UIColor whiteColor];
+    self.webView.delegate = self;
     [self.view addSubview:self.webView];
     
     [self loadTextForCurrentSection];
@@ -177,5 +178,21 @@
     }
 }
 
+
+#pragma mark - UIWebViewDelegate Methods
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+		
+    if ([[request URL] isFileURL]) {
+        
+        return YES;
+    } else {
+        
+        // let Safari deal with it...
+        [[UIApplication sharedApplication] openURL:[request URL]];
+        
+        return NO;
+    }
+}
 
 @end
