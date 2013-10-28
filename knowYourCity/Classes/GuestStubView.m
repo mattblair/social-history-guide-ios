@@ -22,7 +22,6 @@
 
 @interface GuestStubView ()
 
-// temporary. Will be replaced by an NSManagedObject subclass.
 @property (strong, nonatomic) NSDictionary *guestData;
 
 @property (strong, nonatomic) UIImageView *thumbnailView;
@@ -51,11 +50,10 @@
         CGFloat textX = GUEST_STUB_MARGIN;
         CGFloat textWidth = stubWidth - textX - GUEST_STUB_MARGIN;
         
-        // thumbnail -- nil check, because some are missing
-        
+        // thumbnail -- nil check, because some maybe be missing
         NSString *imageName = [NSString stringWithFormat:@"%@.jpg", [self.guestData objectForKey:kGuestImageKey]];
         
-        // we don't have high-res for most of these, do don't worry about Retina
+        // Most of these are low-res, so don't worry about Retina
         UIImage *guestImage = [UIImage imageNamed:imageName];
         
         if (guestImage) {
@@ -73,7 +71,6 @@
             textWidth = stubWidth - textX - GUEST_STUB_MARGIN;
         }
         
-        // Guest Label
         self.toldLabel = [[UILabel alloc] initWithFrame:CGRectMake(textX, 0.0,
                                                                    DEFAULT_CONTENT_WIDTH, 20.0)];
         self.toldLabel.numberOfLines = 1;
@@ -97,7 +94,6 @@
         
         [self addSubview:self.nameLabel];
         
-        
         CGFloat titleY = CGRectGetMaxY(self.nameLabel.frame) + GUEST_STUB_MARGIN;
         CGRect titleRect = CGRectMake(textX, titleY, textWidth, 50.0);
         
@@ -111,8 +107,6 @@
         [self.titleLabel sizeToFit];
         
         [self addSubview:self.titleLabel];
-        
-        // gesture recognizer to expand to full view
         
         // Some guests have long titles which require three lines
         if (CGRectGetMaxY(self.titleLabel.frame) > self.bounds.size.height) {

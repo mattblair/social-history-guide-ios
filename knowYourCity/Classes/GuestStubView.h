@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-// may expand to show guest detail as modal overlay instead of pushing a vc on the nav stack
-// depends on how much information we have for each guest
-// If this view shows all details, it should be initialized with a Guest NSManagedObject
-// Else: implement a delegate, and tell the presenting VC to push a Guest Detail VC
+// presenting view or vc should manage transition to full guest view
 
 @interface GuestStubView : UIView
 
