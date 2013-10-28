@@ -114,6 +114,14 @@
         
         // gesture recognizer to expand to full view
         
+        // Some guests have long titles which require three lines
+        if (CGRectGetMaxY(self.titleLabel.frame) > self.bounds.size.height) {
+            
+            CGFloat stubHeight = CGRectGetMaxY(self.titleLabel.frame) + 5.0;
+            CGRect defaultFrame = self.frame;
+            self.frame = CGRectMake(defaultFrame.origin.x, defaultFrame.origin.y,
+                                    defaultFrame.size.width, stubHeight);
+        }
     }
     return self;
 }
