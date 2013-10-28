@@ -79,6 +79,7 @@
         self.toldLabel.numberOfLines = 1;
         self.toldLabel.text = NSLocalizedString(@"As Told By", @"Heading label for the Guest section of Story View Controller");
         self.toldLabel.font = [UIFont fontWithName:kTitleFontName size:kBodyFontSize];
+        self.toldLabel.backgroundColor = [UIColor clearColor];
         
         [self addSubview:self.toldLabel];
         

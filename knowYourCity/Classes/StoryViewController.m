@@ -319,6 +319,7 @@
         captionLabel.text = [self.storyData objectForKey:kContentImageCaptionKey];
         captionLabel.font = [UIFont fontWithName:kBodyFontName size:14.0];
         captionLabel.textColor = captionTextColor;
+        captionLabel.backgroundColor = [UIColor clearColor];
         
         [captionLabel sizeToFit];
         
@@ -346,6 +347,7 @@
         creditLabel.text = [NSString stringWithFormat:@"%@: %@ %@", creditPrefix, creditString, copyrightString];
         creditLabel.font = [UIFont fontWithName:kBodyFontName size:12.0];
         creditLabel.textColor = captionTextColor;
+        creditLabel.backgroundColor = [UIColor clearColor];
         
         [creditLabel sizeToFit];
         
