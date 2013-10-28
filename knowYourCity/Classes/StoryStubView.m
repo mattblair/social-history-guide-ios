@@ -100,6 +100,7 @@
         self.titleLabel = [[UILabel alloc] initWithFrame:nameRect];
         self.titleLabel.text = [self.storyData objectForKey:kContentTitleKey];
         self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:16.0];
+        self.titleLabel.textColor = [UIColor kycRed];
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.numberOfLines = 0;
         
