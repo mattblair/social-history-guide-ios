@@ -72,8 +72,10 @@
         
         [self addSubview:self.currentTime];
         
-        // this might need to be adjusted for custom images...
-        CGRect sliderFrame = CGRectMake(42.0, 4.0, 192.0, 14.0);
+        // adjust for different UIKit metrics
+        // would also need to be adjusted for custom images with different metrics
+        CGFloat sliderY = ON_IOS7 ? 4.0 : 9.0;
+        CGRect sliderFrame = CGRectMake(42.0, sliderY, 192.0, 14.0);
         
         self.audioScrubber = [[UISlider alloc] initWithFrame:sliderFrame];
         
@@ -86,6 +88,7 @@
         
         if (imageNames) {
             
+            // track images are 192 x 14
             UIImage *minTrackImage = [UIImage imageNamed:[imageNames objectForKey:kEWAAudioPlayerPlayedTrackImageKey]];
             UIImage *maxTrackImage = [UIImage imageNamed:[imageNames objectForKey:kEWAAudioPlayerUnplayedTrackImageKey]];
             UIImage *thumbImage = [UIImage imageNamed:[imageNames objectForKey:kEWAAudioPlayerThumbImageKey]];
