@@ -109,6 +109,7 @@ extern NSString* const kProjectURL;
 extern NSString* const kThemeURL;
 extern NSString* const kStoryURL;
 extern NSString* const kAppWebsiteURL;
+extern NSString* const kAppHashTag;
 extern NSString* const kEmailFooter;
 extern NSString* const kFeedbackEmailAddress;
 extern NSString* const kSubmissionEmailAddress;
