@@ -11,6 +11,8 @@
 #import "GuestStubView.h"
 #import "GuestViewController.h"
 
+#import "SHGMapViewController.h"
+
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface StoryViewController ()
@@ -26,6 +28,8 @@
 
 @property (strong, nonatomic) UIButton *metadataButton;
 @property (strong, nonatomic) UIView *mediaMetadataView;
+
+@property (strong, nonatomic) UIButton *mapButton;
 
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *subtitleLabel;
@@ -152,9 +156,10 @@
             break;
     }
     
-    // title and subtitle
+    CGFloat mapButtonSize = 44.0; // make conditional on presence of location
     
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView,
+                                                                DEFAULT_CONTENT_WIDTH - mapButtonSize, 31.0)];
     self.titleLabel.numberOfLines = 0;
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.text = [self.storyData objectForKey:kContentTitleKey];
@@ -164,9 +169,44 @@
     
     [self.scrollView addSubview:self.titleLabel];
     
+    
+    // map button
+    
+#warning Need to nil test this, because not all locaitons are mapped
+    
+    self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    // use only image?
+    //[self.mapButton setTitle:@"Map" forState:UIControlStateNormal];
+    
+    UIImage *pinImage;
+    
+    if (ON_IOS7) {
+        
+        // display it using our tint color
+        pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    } else {
+        
+        pinImage = [UIImage imageNamed:kMapPinButtonImage];
+    }
+    
+    [self.mapButton setImage:pinImage
+                    forState:UIControlStateNormal];
+    
+    [self.mapButton addTarget:self
+                       action:@selector(showStoryLocation)
+             forControlEvents:UIControlEventTouchUpInside];
+    
+    // was y + 4. y + 15 aligns with the baseline of the subtitle, if title is one line.
+    self.mapButton.frame = CGRectMake(self.view.bounds.size.width - mapButtonSize, self.yForNextView + 12.0,
+                                      mapButtonSize, mapButtonSize);
+    
+    [self.scrollView addSubview:self.mapButton];
+    
     self.yForNextView = CGRectGetMaxY(self.titleLabel.frame) + VERTICAL_SPACER_STANDARD;
     
-    self.subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 31.0)];
+    self.subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView,
+                                                                   DEFAULT_CONTENT_WIDTH - mapButtonSize, 31.0)];
     self.subtitleLabel.numberOfLines = 0;
     self.subtitleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.subtitleLabel.text = [self.storyData objectForKey:kContentSubtitleKey];
@@ -526,6 +566,28 @@
     } else {
         DLog(@"No More Info URL in data...");
     }
+}
+
+- (void)showStoryLocation {
+    
+    CLLocationCoordinate2D storyCoordinate = [SHG_DATA coordinateFromDictionary:self.storyData];
+    MKCoordinateRegion storyRegion = [SHG_DATA walkableRegionAroundCoordinate:storyCoordinate];
+    
+    SHGMapViewController *mapVC = [[SHGMapViewController alloc] initWithTitle:NSLocalizedString(@"Location", @"Title of story location map")
+                                                                       region:storyRegion
+                                                                       footer:nil];
+    mapVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    // add annotations in completion block, after the map view has been initialized
+    SHGMapAnnotation *storyAnnotation = [[SHGMapAnnotation alloc] initWithDictionary:self.storyData];
+    
+    [self presentViewController:mapVC
+                       animated:YES
+                     completion:^{
+                         
+                         mapVC.showCallouts = NO;
+                         [mapVC addAnnotations:@[storyAnnotation]];
+                     }];
 }
 
 - (void)showShareSheet {

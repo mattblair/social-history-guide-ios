@@ -122,6 +122,7 @@
 		C952427516B0313A00BD8F74 /* GuestStubView.m in Sources */ = {isa = PBXBuildFile; fileRef = C952427416B0313A00BD8F74 /* GuestStubView.m */; };
 		C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */ = {isa = PBXBuildFile; fileRef = C952428016B03F4700BD8F74 /* UIColor+KYC.m */; };
 		C95397F91820163D00D8A4B3 /* GuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95397F81820163D00D8A4B3 /* GuestViewController.m */; };
+		C95397FD1820295400D8A4B3 /* SHGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95397FC1820295400D8A4B3 /* SHGMapViewController.m */; };
 		C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
 		C960757F16AC59E7004B2672 /* theme_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757816AC59E7004B2672 /* theme_placeholder.png */; };
@@ -346,6 +347,8 @@
 		C952428016B03F4700BD8F74 /* UIColor+KYC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KYC.m"; path = "Classes/UIColor+KYC.m"; sourceTree = "<group>"; };
 		C95397F71820163D00D8A4B3 /* GuestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuestViewController.h; path = Classes/GuestViewController.h; sourceTree = "<group>"; };
 		C95397F81820163D00D8A4B3 /* GuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuestViewController.m; path = Classes/GuestViewController.m; sourceTree = "<group>"; };
+		C95397FB1820295400D8A4B3 /* SHGMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGMapViewController.h; path = Classes/SHGMapViewController.h; sourceTree = "<group>"; };
+		C95397FC1820295400D8A4B3 /* SHGMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGMapViewController.m; path = Classes/SHGMapViewController.m; sourceTree = "<group>"; };
 		C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitTableViewCell.h; path = Classes/TidbitTableViewCell.h; sourceTree = "<group>"; };
 		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
 		C95C30C11710FCA400E64F0C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -580,6 +583,8 @@
 				C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */,
 				C97B44E7169DCD54008A2793 /* Models */,
 				C97B44E6169DCD3C008A2793 /* ContentViewControllers */,
+				C95397FE18202A8F00D8A4B3 /* Maps */,
+				C95397FA1820293500D8A4B3 /* Deprecated */,
 				C98C5EBA180EFCF8004EE6DC /* Flashback */,
 				C97B44E8169DCD77008A2793 /* EWASharedClasses */,
 				C98C5EBB180EFD3A004EE6DC /* Deprecated */,
@@ -664,6 +669,26 @@
 				C960757D16AC59E7004B2672 /* theme_tn_ph@2x.png */,
 			);
 			name = placeholders;
+			sourceTree = "<group>";
+		};
+		C95397FA1820293500D8A4B3 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				C916E15216C0C8DA00423344 /* MapViewController.h */,
+				C916E15316C0C8DA00423344 /* MapViewController.m */,
+			);
+			name = Deprecated;
+			sourceTree = "<group>";
+		};
+		C95397FE18202A8F00D8A4B3 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				C91E4ABF1815B8590074E154 /* SHGMapView.h */,
+				C91E4AC01815B8590074E154 /* SHGMapView.m */,
+				C95397FB1820295400D8A4B3 /* SHGMapViewController.h */,
+				C95397FC1820295400D8A4B3 /* SHGMapViewController.m */,
+			);
+			name = Maps;
 			sourceTree = "<group>";
 		};
 		C95C30C01710FCA400E64F0C /* Flurry */ = {
@@ -799,10 +824,6 @@
 				C95397F81820163D00D8A4B3 /* GuestViewController.m */,
 				C98C5EBC180EFF77004EE6DC /* SHGStaticPageViewController.h */,
 				C98C5EBD180EFF77004EE6DC /* SHGStaticPageViewController.m */,
-				C916E15216C0C8DA00423344 /* MapViewController.h */,
-				C916E15316C0C8DA00423344 /* MapViewController.m */,
-				C91E4ABF1815B8590074E154 /* SHGMapView.h */,
-				C91E4AC01815B8590074E154 /* SHGMapView.m */,
 			);
 			name = ContentViewControllers;
 			sourceTree = "<group>";
@@ -1183,6 +1204,7 @@
 				C98345A1180C67A200C120B1 /* SHGDataController.m in Sources */,
 				C93030F216AB33050039D7B8 /* ThemeViewController.m in Sources */,
 				C93030F516AB33260039D7B8 /* StoryViewController.m in Sources */,
+				C95397FD1820295400D8A4B3 /* SHGMapViewController.m in Sources */,
 				C93030FB16AB33710039D7B8 /* TidbitListViewController.m in Sources */,
 				C93030FE16AB33890039D7B8 /* TidbitDetailViewController.m in Sources */,
 				C930310D16AB43B50039D7B8 /* KYCPrivateConstants.m in Sources */,
