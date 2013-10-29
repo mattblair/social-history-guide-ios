@@ -530,9 +530,9 @@
 
 - (void)showShareSheet {
     
-    NSString *themeString = [NSString stringWithFormat:@"I'm learning about \"%@\" in the %@",
+    NSString *themeString = [NSString stringWithFormat:@"I'm learning about \"%@\" in the #%@ app",
                              [self.storyData objectForKey:kContentTitleKey],
-                             kProjectName];
+                             kAppHashTag]; // or kProjectName
     
     NSString *themeURLString = [NSString stringWithFormat:@"%@/%@",
                                 kStoryURL,

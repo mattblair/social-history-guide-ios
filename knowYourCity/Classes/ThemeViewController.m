@@ -390,9 +390,9 @@
 
 - (void)showActivityViewController {
     
-    NSString *themeString = [NSString stringWithFormat:@"I'm exploring %@ in the %@",
+    NSString *themeString = [NSString stringWithFormat:@"I'm exploring %@ in the #%@ app",
                              [self.themeDictionary objectForKey:kContentTitleKey],
-                             kProjectName];
+                             kAppHashTag]; // or kProjectName
     
     NSString *themeURLString = [NSString stringWithFormat:@"%@/%@",
                                 kThemeURL,
