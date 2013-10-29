@@ -44,7 +44,18 @@
             
             self.locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
             
-            [self.locationButton setImage:[UIImage imageNamed:kLocationButtonImage]
+            UIImage *locationImage;
+            
+            if (ON_IOS7) {
+                
+                // display it using our tint color
+                locationImage = [[UIImage imageNamed:kLocationButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            } else {
+                
+                locationImage = [UIImage imageNamed:kLocationButtonImage];
+            }
+            
+            [self.locationButton setImage:locationImage
                                  forState:UIControlStateNormal];
             
             [self.locationButton addTarget:self
@@ -69,9 +80,21 @@
             
             CGFloat rightButtonX = self.bounds.size.width - buttonSize;
             
+            
             self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
             
-            [self.closeButton setImage:[UIImage imageNamed:kCloseButton]
+            UIImage *closeImage;
+            
+            if (ON_IOS7) {
+                
+                // display it using our tint color
+                closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            } else {
+                
+                closeImage = [UIImage imageNamed:kCloseButton];
+            }
+            
+            [self.closeButton setImage:closeImage
                               forState:UIControlStateNormal];
             
             [self.closeButton addTarget:self
