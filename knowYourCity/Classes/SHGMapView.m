@@ -18,14 +18,11 @@
 
 @property (strong, nonatomic) MKMapView *mapView;
 
-// footer display -- more complex than a label?
-@property (strong, nonatomic) UILabel *footerLabel;
-
 @end
 
 @implementation SHGMapView
 
-- (id)initWithFrame:(CGRect)frame title:(NSString *)title region:(MKCoordinateRegion)region footer:(NSString *)footer {
+- (id)initWithFrame:(CGRect)frame title:(NSString *)title region:(MKCoordinateRegion)region navBarMargin:(BOOL)navBar {
     
     self = [super initWithFrame:frame];
     if (self) {
@@ -36,6 +33,7 @@
         self.backgroundColor = [UIColor whiteColor]; // or some kind of transparency?
         
         CGFloat buttonSize = 0.0;
+        CGFloat initialY = navBar ? 64.0 : 20.0; // keep out of the way of a status bar
         
         // only create the header if the title is defined
         if (title) {
@@ -62,14 +60,14 @@
                                     action:@selector(centerMapOnUser:)
                           forControlEvents:UIControlEventTouchUpInside];
             
-            self.locationButton.frame = CGRectMake(0.0, 64.0, buttonSize, buttonSize);
+            self.locationButton.frame = CGRectMake(0.0, initialY, buttonSize, buttonSize);
             
             [self addSubview:self.locationButton];
             
             
             CGFloat titleWidth = self.bounds.size.width - buttonSize*2.0;
             
-            self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(buttonSize, 64.0,
+            self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(buttonSize, initialY,
                                                                         titleWidth, buttonSize)];
             // should be one line, preferably one word
             self.titleLabel.text = title;
@@ -101,13 +99,13 @@
                                  action:@selector(closeMapView:)
                        forControlEvents:UIControlEventTouchUpInside];
             
-            self.closeButton.frame = CGRectMake(rightButtonX, 64.0, buttonSize, buttonSize);
+            self.closeButton.frame = CGRectMake(rightButtonX, initialY, buttonSize, buttonSize);
             
             [self addSubview:self.closeButton];
         }
         
         // mapview should take up the whole screen, except header/footer
-        CGRect mapRect = CGRectMake(0.0, buttonSize+64.0, self.bounds.size.width, self.bounds.size.height - buttonSize);
+        CGRect mapRect = CGRectMake(0.0, initialY+buttonSize, self.bounds.size.width, self.bounds.size.height - buttonSize);
         
         self.mapView = [[MKMapView alloc] initWithFrame:mapRect];
         

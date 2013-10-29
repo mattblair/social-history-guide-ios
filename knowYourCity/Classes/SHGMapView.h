@@ -12,7 +12,7 @@
 
 #import "SHGMapAnnotation.h"
 
-// meant to be presnted as full-screen, and NOT in a scrollview
+// meant to be presented as full-screen, and NOT in a scrollview
 
 @protocol SHGMapViewDelegate;
 
@@ -24,7 +24,8 @@
 @property (nonatomic) BOOL showCalloutAccessories;
 
 // pass a nil title to omit the header
-- (id)initWithFrame:(CGRect)frame title:(NSString *)title region:(MKCoordinateRegion)region footer:(NSString *)footer;
+// could add  footer:(NSString *)footer for explanatory text
+- (id)initWithFrame:(CGRect)frame title:(NSString *)title region:(MKCoordinateRegion)region navBarMargin:(BOOL)navBar;
 
 // expose button image properties?
 
