@@ -9,6 +9,8 @@
 #import "StoryViewController.h"
 #import "EWAAudioPlayerView.h"
 #import "GuestStubView.h"
+#import "GuestViewController.h"
+
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface StoryViewController ()
@@ -32,7 +34,6 @@
 
 @property (strong, nonatomic) UILabel *summaryLabel;
 
-@property (strong, nonatomic) UILabel *guestLabel;
 @property (strong, nonatomic) GuestStubView *guestView;
 
 @property (strong, nonatomic) UIView *moreInfoView;
@@ -242,6 +243,11 @@
         // x was DEFAULT_LEFT_MARGIN before iOS 7 re-design
         self.guestView = [[GuestStubView alloc] initWithDictionary:[SHG_DATA dictionaryForGuestID:guestID]
                                                           atOrigin:CGPointMake(0.0, self.yForNextView)];
+        
+        UITapGestureRecognizer *guestTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                   action:@selector(toggleGuestView)];
+        
+        [self.guestView addGestureRecognizer:guestTap];
         
         [self.scrollView addSubview:self.guestView];
         
@@ -483,6 +489,30 @@
     
     [UIView animateWithDuration:0.35
                      animations:^{self.mediaMetadataView.alpha = self.metadataVisible ? 1.0 : 0.0;}
+                     completion:NULL];
+}
+
+- (void)toggleGuestView {
+    
+    // store state?
+    
+    // lazy loader for full guest view, or just use a modal vc?
+    
+    DLog(@"Would show guest view");
+    
+    GuestViewController *guestVC = [[GuestViewController alloc] initWithNibName:nil
+                                                                         bundle:nil];
+    
+    // shouldn't need to nil-check, because this gesture is only accesssible
+    // from guest stub, which is only created after a nil-check
+    NSNumber *guestNumber = [self.storyData objectForKey:kStoryGuestIDKey];
+    
+    guestVC.guestData = [SHG_DATA dictionaryForGuestID:[guestNumber unsignedIntegerValue]];
+    
+    guestVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    [self presentViewController:guestVC
+                       animated:YES
                      completion:NULL];
 }
 

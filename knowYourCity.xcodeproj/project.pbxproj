@@ -121,6 +121,7 @@
 		C952427116B0311F00BD8F74 /* StoryStubView.m in Sources */ = {isa = PBXBuildFile; fileRef = C952427016B0311F00BD8F74 /* StoryStubView.m */; };
 		C952427516B0313A00BD8F74 /* GuestStubView.m in Sources */ = {isa = PBXBuildFile; fileRef = C952427416B0313A00BD8F74 /* GuestStubView.m */; };
 		C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */ = {isa = PBXBuildFile; fileRef = C952428016B03F4700BD8F74 /* UIColor+KYC.m */; };
+		C95397F91820163D00D8A4B3 /* GuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95397F81820163D00D8A4B3 /* GuestViewController.m */; };
 		C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
 		C960757F16AC59E7004B2672 /* theme_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757816AC59E7004B2672 /* theme_placeholder.png */; };
@@ -343,6 +344,8 @@
 		C952427416B0313A00BD8F74 /* GuestStubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuestStubView.m; path = Classes/GuestStubView.m; sourceTree = "<group>"; };
 		C952427F16B03F4700BD8F74 /* UIColor+KYC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+KYC.h"; path = "Classes/UIColor+KYC.h"; sourceTree = "<group>"; };
 		C952428016B03F4700BD8F74 /* UIColor+KYC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+KYC.m"; path = "Classes/UIColor+KYC.m"; sourceTree = "<group>"; };
+		C95397F71820163D00D8A4B3 /* GuestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuestViewController.h; path = Classes/GuestViewController.h; sourceTree = "<group>"; };
+		C95397F81820163D00D8A4B3 /* GuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuestViewController.m; path = Classes/GuestViewController.m; sourceTree = "<group>"; };
 		C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitTableViewCell.h; path = Classes/TidbitTableViewCell.h; sourceTree = "<group>"; };
 		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
 		C95C30C11710FCA400E64F0C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -792,6 +795,8 @@
 				C952427416B0313A00BD8F74 /* GuestStubView.m */,
 				C93030F316AB33260039D7B8 /* StoryViewController.h */,
 				C93030F416AB33260039D7B8 /* StoryViewController.m */,
+				C95397F71820163D00D8A4B3 /* GuestViewController.h */,
+				C95397F81820163D00D8A4B3 /* GuestViewController.m */,
 				C98C5EBC180EFF77004EE6DC /* SHGStaticPageViewController.h */,
 				C98C5EBD180EFF77004EE6DC /* SHGStaticPageViewController.m */,
 				C916E15216C0C8DA00423344 /* MapViewController.h */,
@@ -1184,6 +1189,7 @@
 				C930311016AB44D60039D7B8 /* KYCConstants.m in Sources */,
 				C952427116B0311F00BD8F74 /* StoryStubView.m in Sources */,
 				C952427516B0313A00BD8F74 /* GuestStubView.m in Sources */,
+				C95397F91820163D00D8A4B3 /* GuestViewController.m in Sources */,
 				C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */,
 				C921484E16B58AF8007323D0 /* EWWebViewController.m in Sources */,
 				C921485216B59417007323D0 /* EWAAudioPlayerView.m in Sources */,
