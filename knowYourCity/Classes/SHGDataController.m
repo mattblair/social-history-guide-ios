@@ -11,6 +11,9 @@
 #import <FMDB/FMDatabase.h>
 #import "SHGMapAnnotation.h"
 
+#define WALKABLE_LATITUDE_SPAN 375.0
+#define WALKABLE_LONGITUDE_SPAN 500.0
+
 @interface SHGDataController ()
 
 @property (strong, nonatomic) FMDatabase *shgDatabase;
@@ -221,7 +224,6 @@
     return guestDictionary;
 }
 
-
 #pragma mark - Guests
 
 - (NSDictionary *)dictionaryForGuestID:(NSUInteger)guestID {
@@ -349,14 +351,23 @@
             DLog(@"Zoom level not defined in dictionary.");
             
             // default to a walkable span
-            latitudeSpan = 400.0;
-            longitudeSpan = 500.0;
+            latitudeSpan = WALKABLE_LATITUDE_SPAN;
+            longitudeSpan = WALKABLE_LONGITUDE_SPAN;
             break;
         }
     }
 		
     return MKCoordinateRegionMakeWithDistance([self coordinateFromDictionary:contentDictionary],
                                                   latitudeSpan, longitudeSpan);
+}
+
+- (MKCoordinateRegion)walkableRegionAroundCoordinate:(CLLocationCoordinate2D)coordinate {
+    
+    CLLocationDistance latitudeSpan = WALKABLE_LATITUDE_SPAN;
+    CLLocationDistance longitudeSpan = WALKABLE_LONGITUDE_SPAN;
+    
+    return MKCoordinateRegionMakeWithDistance(coordinate,
+                                              latitudeSpan, longitudeSpan);
 }
 
 @end
