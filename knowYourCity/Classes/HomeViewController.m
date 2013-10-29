@@ -303,7 +303,7 @@
         _nearbyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
                                                      title:nil // title and buttons moved to nav bar
                                                     region:[SHG_DATA defaultMapRegion]
-                                                    footer:nil];
+                                              navBarMargin:YES];
         _nearbyMapView.delegate = self;
     }
     

@@ -267,9 +267,9 @@
     if (!_storyMapView) {
         
         _storyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
-                                                    title:NSLocalizedString(@"Story Map", @"Title of stories map")
+                                                    title:NSLocalizedString(@"Stories", @"Title of stories map")
                                                    region:[SHG_DATA regionFromDictionary:self.themeDictionary]
-                                                   footer:nil];
+                                             navBarMargin:YES];
         _storyMapView.delegate = self;
     }
     

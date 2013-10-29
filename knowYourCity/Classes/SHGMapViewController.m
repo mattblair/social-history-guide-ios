@@ -41,7 +41,7 @@
     self.mapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
                                                title:self.title
                                               region:self.defaultRegion
-                                              footer:self.footer];
+                                        navBarMargin:NO];
     
     self.mapView.delegate = self;
     self.mapView.showCalloutAccessories = NO;
