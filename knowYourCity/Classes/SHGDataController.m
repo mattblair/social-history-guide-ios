@@ -10,9 +10,7 @@
 
 #import <FMDB/FMDatabase.h>
 #import "SHGMapAnnotation.h"
-
-#define WALKABLE_LATITUDE_SPAN 375.0
-#define WALKABLE_LONGITUDE_SPAN 500.0
+#import "EWAMapManager.h"
 
 @interface SHGDataController ()
 
@@ -265,19 +263,6 @@
 
 #pragma mark - Map Helper Methods
 
-- (CLLocationCoordinate2D)defaultMapCenter {
-    
-    // originally 45.505796, -122.678586
-    return CLLocationCoordinate2DMake(45.516249, -122.678706);
-}
-
-- (MKCoordinateRegion)defaultMapRegion {
-    
-    MKCoordinateSpan defaultSpan = MKCoordinateSpanMake(0.042366, 0.038389);
-    
-    return MKCoordinateRegionMake([self defaultMapCenter], defaultSpan);
-}
-
 - (CLLocationCoordinate2D)coordinateFromDictionary:(NSDictionary *)contentDictionary {
     
     // use SHGMapAnnotation's validation?
@@ -358,15 +343,6 @@
     }
 		
     return MKCoordinateRegionMakeWithDistance([self coordinateFromDictionary:contentDictionary],
-                                                  latitudeSpan, longitudeSpan);
-}
-
-- (MKCoordinateRegion)walkableRegionAroundCoordinate:(CLLocationCoordinate2D)coordinate {
-    
-    CLLocationDistance latitudeSpan = WALKABLE_LATITUDE_SPAN;
-    CLLocationDistance longitudeSpan = WALKABLE_LONGITUDE_SPAN;
-    
-    return MKCoordinateRegionMakeWithDistance(coordinate,
                                               latitudeSpan, longitudeSpan);
 }
 
