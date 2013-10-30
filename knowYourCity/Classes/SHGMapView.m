@@ -71,7 +71,7 @@
                                                                         titleWidth, buttonSize)];
             // should be one line, preferably one word
             self.titleLabel.text = title;
-            self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:kTitleFontSize];
+            self.titleLabel.font = [UIFont fontWithName:kTitleFontName size:kSectionTitleFontSize];
             self.titleLabel.textAlignment = NSTextAlignmentCenter;
             
             [self addSubview:self.titleLabel];
