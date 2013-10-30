@@ -41,7 +41,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CGFloat yForNextView = 30.0; // 70.0 if pushed on nav stack
+    CGFloat yForNextView = 25.0; // 70.0 if pushed on nav stack
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -81,7 +81,7 @@
     
     yForNextView += self.appNameImageView.frame.size.height; // was adding 5
     
-    self.appCreditLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, yForNextView, 290.0, 21.0)];
+    self.appCreditLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, yForNextView, 298.0, 21.0)];
     self.appCreditLabel.text = @"Brought to you by Know Your City";
     self.appCreditLabel.font = [UIFont fontWithName:kBodyFontName size:18.0];
     self.appCreditLabel.textColor = [UIColor kycGray];
@@ -89,7 +89,7 @@
     
     [self.view addSubview:self.appCreditLabel];
     
-    yForNextView += self.appCreditLabel.frame.size.height + 10.0; // 5 seemed too close
+    yForNextView += self.appCreditLabel.frame.size.height + 15.0; // 10 seemed too close
     
     // makse sure close button is on top:
     [self.view bringSubviewToFront:self.closeButton];
