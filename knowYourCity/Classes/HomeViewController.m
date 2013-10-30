@@ -237,7 +237,8 @@
     
     NSDictionary *themeDictionary = self.themeList[indexPath.row];
     
-    [Flurry logEvent:@"themeSelected" withParameters:@{@"themeTitle" : [themeDictionary objectForKey:kContentTitleKey]}];
+    [Flurry logEvent:kFlurryEventThemeView
+      withParameters:@{ kFlurryParamSlug : [themeDictionary objectForKey:kContentSlugKey] }];
     
     ThemeViewController *themeVC = [[ThemeViewController alloc] initWithNibName:nil bundle:nil];
     // sets title to diplay in the nav bar
@@ -361,6 +362,9 @@
     NSDictionary *storyDictionary = [SHG_DATA dictionaryForStoryID:storyID];
     
     if (storyDictionary) {
+        
+        [Flurry logEvent:kFlurryEventStoryViewFromMap
+          withParameters:@{ kFlurryParamSlug : [storyDictionary objectForKey:kContentSlugKey] }];
         
         StoryViewController *storyVC = [[StoryViewController alloc] initWithNibName:nil bundle:nil];
         

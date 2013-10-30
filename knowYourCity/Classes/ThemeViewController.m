@@ -299,18 +299,23 @@
                          if (itemID != NSNotFound) {
                              DLog(@"Would show story with id %d", itemID);
                              
-                             [self showStoryWithID:itemID];
+                             [self showStoryWithID:itemID fromMap:YES];
                          }
                      }];
 }
 
 #pragma mark - Show a Story
 
-- (void)showStoryWithID:(NSUInteger)storyID {
+- (void)showStoryWithID:(NSUInteger)storyID fromMap:(BOOL)fromMap {
     
     NSDictionary *storyDictionary = [SHG_DATA dictionaryForStoryID:storyID];
     
     if (storyDictionary) {
+        
+        NSString *flurryEvent = fromMap ? kFlurryEventStoryViewFromMap : kFlurryEventStoryView;
+        
+        [Flurry logEvent:flurryEvent
+          withParameters:@{ kFlurryParamSlug : [storyDictionary objectForKey:kContentSlugKey] }];
         
         StoryViewController *storyVC = [[StoryViewController alloc] initWithNibName:nil bundle:nil];
         
@@ -326,7 +331,7 @@
 - (void)handleSelectionOfStoryStub:(StoryStubView *)storyStub withID:(NSUInteger)storyID {
     
     if (storyID != NSNotFound) {
-        [self showStoryWithID:storyID];
+        [self showStoryWithID:storyID fromMap:NO];
     } else {
         DLog(@"Story ID unknown");
     }
@@ -408,9 +413,15 @@
                                          UIActivityTypeAssignToContact,
                                          UIActivityTypeSaveToCameraRoll];
 
+    __weak NSString *themeSlug = [self.themeDictionary objectForKey:kContentSlugKey];
+    
     activityVC.completionHandler = ^(NSString *activityType, BOOL completed) {
         if (completed) {
             DLog(@"User chose %@", activityType);
+            
+            [Flurry logEvent:kFlurryEventThemeShare
+              withParameters:@{ kFlurryParamSlug : themeSlug,
+                                kFlurryParamActivity : activityType }];
         }
     };
 

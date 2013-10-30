@@ -554,6 +554,9 @@
     
     guestVC.guestData = [SHG_DATA dictionaryForGuestID:[guestNumber unsignedIntegerValue]];
     
+    [Flurry logEvent:kFlurryEventGuestView
+      withParameters:@{ kFlurryParamSlug : [guestVC.guestData objectForKey:kGuestNameKey] }];
+    
     guestVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     [self presentViewController:guestVC
@@ -610,15 +613,20 @@
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems
                                                                              applicationActivities:nil];
     
-    // omit UIActivityTypeAddToReadingList ?
     activityVC.excludedActivityTypes = @[UIActivityTypePrint,
                                          UIActivityTypeCopyToPasteboard,
                                          UIActivityTypeAssignToContact,
                                          UIActivityTypeSaveToCameraRoll];
     
+    __weak NSString *storySlug = [self.storyData objectForKey:kContentSlugKey];
+    
     activityVC.completionHandler = ^(NSString *activityType, BOOL completed) {
         if (completed) {
             DLog(@"User chose %@", activityType);
+            
+            [Flurry logEvent:kFlurryEventThemeShare
+              withParameters:@{ kFlurryParamSlug : storySlug,
+                                kFlurryParamActivity : activityType }];
         }
     };
     
