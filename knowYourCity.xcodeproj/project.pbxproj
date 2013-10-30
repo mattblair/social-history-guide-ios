@@ -125,6 +125,10 @@
 		C95397FD1820295400D8A4B3 /* SHGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95397FC1820295400D8A4B3 /* SHGMapViewController.m */; };
 		C95B4D0D1820AAEE00712DDA /* pshg-two-line-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D0B1820AAEE00712DDA /* pshg-two-line-banner.png */; };
 		C95B4D0E1820AAEE00712DDA /* pshg-two-line-banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D0C1820AAEE00712DDA /* pshg-two-line-banner@2x.png */; };
+		C95B4D101821688B00712DDA /* app.css in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D0F1821688B00712DDA /* app.css */; };
+		C95B4D14182169D800712DDA /* kyc-logo-text.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D11182169D800712DDA /* kyc-logo-text.jpg */; };
+		C95B4D15182169D800712DDA /* oacc-logo-300.png in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D12182169D800712DDA /* oacc-logo-300.png */; };
+		C95B4D16182169D800712DDA /* travel-portland-300.png in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D13182169D800712DDA /* travel-portland-300.png */; };
 		C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
 		C960757F16AC59E7004B2672 /* theme_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757816AC59E7004B2672 /* theme_placeholder.png */; };
@@ -353,6 +357,10 @@
 		C95397FC1820295400D8A4B3 /* SHGMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGMapViewController.m; path = Classes/SHGMapViewController.m; sourceTree = "<group>"; };
 		C95B4D0B1820AAEE00712DDA /* pshg-two-line-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-two-line-banner.png"; sourceTree = "<group>"; };
 		C95B4D0C1820AAEE00712DDA /* pshg-two-line-banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-two-line-banner@2x.png"; sourceTree = "<group>"; };
+		C95B4D0F1821688B00712DDA /* app.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = app.css; sourceTree = "<group>"; };
+		C95B4D11182169D800712DDA /* kyc-logo-text.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kyc-logo-text.jpg"; sourceTree = "<group>"; };
+		C95B4D12182169D800712DDA /* oacc-logo-300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oacc-logo-300.png"; sourceTree = "<group>"; };
+		C95B4D13182169D800712DDA /* travel-portland-300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "travel-portland-300.png"; sourceTree = "<group>"; };
 		C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitTableViewCell.h; path = Classes/TidbitTableViewCell.h; sourceTree = "<group>"; };
 		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
 		C95C30C11710FCA400E64F0C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -624,6 +632,10 @@
 		C93030FF16AB34C40039D7B8 /* html */ = {
 			isa = PBXGroup;
 			children = (
+				C95B4D11182169D800712DDA /* kyc-logo-text.jpg */,
+				C95B4D12182169D800712DDA /* oacc-logo-300.png */,
+				C95B4D13182169D800712DDA /* travel-portland-300.png */,
+				C95B4D0F1821688B00712DDA /* app.css */,
 				C930310016AB34C40039D7B8 /* about.html */,
 				C98C5EBF180F1A19004EE6DC /* credits.html */,
 				C98C5EC0180F1A19004EE6DC /* donate.html */,
@@ -1008,6 +1020,7 @@
 				C92666F7169DC6920061F9AD /* InfoPlist.strings in Resources */,
 				C91E4AA81815A9420074E154 /* gn-1973-gay-civil-rights-bill.caf in Resources */,
 				C991494D181986DB00201598 /* Images.xcassets in Resources */,
+				C95B4D14182169D800712DDA /* kyc-logo-text.jpg in Resources */,
 				C98345B7180CCBED00C120B1 /* iww.jpg in Resources */,
 				C9FDFD761819C224000BFE14 /* kbb-info-dark@2x.png in Resources */,
 				C91E4A851815A9420074E154 /* jd-pwc-cornerstone.caf in Resources */,
@@ -1024,6 +1037,7 @@
 				C91E4A951815A9420074E154 /* am-2-other-houses.caf in Resources */,
 				C95B4D0D1820AAEE00712DDA /* pshg-two-line-banner.png in Resources */,
 				C9FDFD801819C224000BFE14 /* kbb-map-pin@2x.png in Resources */,
+				C95B4D15182169D800712DDA /* oacc-logo-300.png in Resources */,
 				C91E4A8F1815A9420074E154 /* dkc-erickson-flood.caf in Resources */,
 				C930310116AB34C40039D7B8 /* about.html in Resources */,
 				C97F49B7181AF728007F7164 /* kbb-x-1.png in Resources */,
@@ -1063,6 +1077,7 @@
 				C9FDFD831819C224000BFE14 /* kbb-slider-2-empty.png in Resources */,
 				C9FDFD851819C224000BFE14 /* kbb-slider-2-filled.png in Resources */,
 				C960758416AC59E7004B2672 /* theme_tn_ph@2x.png in Resources */,
+				C95B4D101821688B00712DDA /* app.css in Resources */,
 				C91E4AA61815A9420074E154 /* gn-accomplishments.caf in Resources */,
 				C91E4AB91815A9420074E154 /* bh-gw-intro.caf in Resources */,
 				C91E4A8C1815A9420074E154 /* dkc-flood-waterfront-park.caf in Resources */,
@@ -1109,6 +1124,7 @@
 				C916B8D916BD99E4002E29BC /* 104-index-cards.png in Resources */,
 				C91E4A9A1815A9420074E154 /* ee-politics.caf in Resources */,
 				C91E4AB71815A9420074E154 /* bh-restoring-gw.caf in Resources */,
+				C95B4D16182169D800712DDA /* travel-portland-300.png in Resources */,
 				C9FDFD721819C224000BFE14 /* pshg-title@2x.png in Resources */,
 				C91E4A911815A9420074E154 /* dkc-crimping.caf in Resources */,
 				C91E4ABD1815A9430074E154 /* bh-cc-and-gw-1.caf in Resources */,
