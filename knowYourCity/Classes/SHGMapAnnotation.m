@@ -78,6 +78,7 @@
     return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
 }
 
+
 #pragma mark - Styling and Display Utilities
 
 // might be deprecated
@@ -87,8 +88,8 @@
     return NO;
 }
 
-#pragma mark - Validity Tests
 
+#pragma mark - Validity Tests
 
 + (BOOL)validLatitude:(CLLocationDegrees)latitudeValue {
     
