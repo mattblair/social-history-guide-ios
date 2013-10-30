@@ -41,7 +41,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CGFloat yForNextView = 20.0; // 70.0 if pushed on nav stack
+    CGFloat yForNextView = 30.0; // 70.0 if pushed on nav stack
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -70,18 +70,20 @@
     
     [self.view addSubview:self.closeButton];
     
-    yForNextView = 60.0; // enough to clear the close button completely
+    // was 60.0 to clear the close button completely
+    yForNextView = 25.0;
     
-    self.appNameImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10.0, yForNextView, 300.0, 28.0)];
-    self.appNameImageView.image = [UIImage imageNamed:kAppNameImage];
+    self.appNameImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10.0, yForNextView, 300.0, 100.0)];
+    //self.appNameImageView.image = [UIImage imageNamed:kAppNameImage];
+    self.appNameImageView.image = [UIImage imageNamed:@"pshg-two-line-banner"];
     
     [self.view addSubview:self.appNameImageView];
     
-    yForNextView += self.appNameImageView.frame.size.height + 5.0;
+    yForNextView += self.appNameImageView.frame.size.height; // was adding 5
     
-    self.appCreditLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, yForNextView, 300.0, 21.0)];
+    self.appCreditLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, yForNextView, 290.0, 21.0)];
     self.appCreditLabel.text = @"Brought to you by Know Your City";
-    self.appCreditLabel.font = [UIFont fontWithName:kBodyFontName size:15.0];
+    self.appCreditLabel.font = [UIFont fontWithName:kBodyFontName size:18.0];
     self.appCreditLabel.textColor = [UIColor kycGray];
     self.appCreditLabel.textAlignment = NSTextAlignmentRight;
     

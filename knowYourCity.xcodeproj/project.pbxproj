@@ -123,6 +123,8 @@
 		C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */ = {isa = PBXBuildFile; fileRef = C952428016B03F4700BD8F74 /* UIColor+KYC.m */; };
 		C95397F91820163D00D8A4B3 /* GuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95397F81820163D00D8A4B3 /* GuestViewController.m */; };
 		C95397FD1820295400D8A4B3 /* SHGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95397FC1820295400D8A4B3 /* SHGMapViewController.m */; };
+		C95B4D0D1820AAEE00712DDA /* pshg-two-line-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D0B1820AAEE00712DDA /* pshg-two-line-banner.png */; };
+		C95B4D0E1820AAEE00712DDA /* pshg-two-line-banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D0C1820AAEE00712DDA /* pshg-two-line-banner@2x.png */; };
 		C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
 		C960757F16AC59E7004B2672 /* theme_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757816AC59E7004B2672 /* theme_placeholder.png */; };
@@ -349,6 +351,8 @@
 		C95397F81820163D00D8A4B3 /* GuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuestViewController.m; path = Classes/GuestViewController.m; sourceTree = "<group>"; };
 		C95397FB1820295400D8A4B3 /* SHGMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGMapViewController.h; path = Classes/SHGMapViewController.h; sourceTree = "<group>"; };
 		C95397FC1820295400D8A4B3 /* SHGMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGMapViewController.m; path = Classes/SHGMapViewController.m; sourceTree = "<group>"; };
+		C95B4D0B1820AAEE00712DDA /* pshg-two-line-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-two-line-banner.png"; sourceTree = "<group>"; };
+		C95B4D0C1820AAEE00712DDA /* pshg-two-line-banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-two-line-banner@2x.png"; sourceTree = "<group>"; };
 		C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitTableViewCell.h; path = Classes/TidbitTableViewCell.h; sourceTree = "<group>"; };
 		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
 		C95C30C11710FCA400E64F0C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -704,6 +708,8 @@
 		C960756D16AC59B2004B2672 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C95B4D0B1820AAEE00712DDA /* pshg-two-line-banner.png */,
+				C95B4D0C1820AAEE00712DDA /* pshg-two-line-banner@2x.png */,
 				C97F49B5181AF728007F7164 /* kbb-x-1.png */,
 				C97F49B6181AF728007F7164 /* kbb-x-1@2x.png */,
 				C9FDFD551819C224000BFE14 /* pshg-title.png */,
@@ -1016,6 +1022,7 @@
 				C91E4A941815A9420074E154 /* am-3-collective-living.caf in Resources */,
 				C91E4ABC1815A9430074E154 /* bh-gw-history-3-pov.caf in Resources */,
 				C91E4A951815A9420074E154 /* am-2-other-houses.caf in Resources */,
+				C95B4D0D1820AAEE00712DDA /* pshg-two-line-banner.png in Resources */,
 				C9FDFD801819C224000BFE14 /* kbb-map-pin@2x.png in Resources */,
 				C91E4A8F1815A9420074E154 /* dkc-erickson-flood.caf in Resources */,
 				C930310116AB34C40039D7B8 /* about.html in Resources */,
@@ -1091,6 +1098,7 @@
 				C91E4AB81815A9420074E154 /* bh-pdx-and-gw.caf in Resources */,
 				C91E4A9F1815A9420074E154 /* mm-2nd-w-burnside.caf in Resources */,
 				C91E4AB41815A9420074E154 /* rh-ccba.caf in Resources */,
+				C95B4D0E1820AAEE00712DDA /* pshg-two-line-banner@2x.png in Resources */,
 				C916B8D516BD99E4002E29BC /* 68-paperclip.png in Resources */,
 				C916B8D616BD99E4002E29BC /* 96-book.png in Resources */,
 				C9914945181749B100201598 /* guest-ann-mussey.jpg in Resources */,
