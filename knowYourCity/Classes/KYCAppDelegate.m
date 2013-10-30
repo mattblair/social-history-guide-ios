@@ -11,8 +11,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 
+#import "EWAMapManager.h"
+
 #import "KYCPrivateConstants.h"
 #import "HomeViewController.h"
+
 
 @implementation KYCAppDelegate
 
@@ -39,6 +42,9 @@
     [Flurry startSession:kFlurryAPIKey];
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+    // make sure location starts so we ahve location when we need it
+    [EWA_MM startup];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
