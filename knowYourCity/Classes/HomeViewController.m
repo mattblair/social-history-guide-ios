@@ -10,6 +10,7 @@
 #import "ThemeViewController.h"
 #import "SHGStaticPageViewController.h"
 #import "StoryViewController.h"
+#import "EWAMapManager.h"
 
 // deferred
 #import "TidbitListViewController.h"
@@ -297,13 +298,9 @@
     
     if (!_nearbyMapView) {
         
-        // temporary -- this should try to use user location, and only fallback to a default
-        
-        // MKCoordinateRegionMakeWithDistance([SHG_DATA defaultMapCenter], 4000.0, 3000.0)
-        
         _nearbyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
                                                      title:nil // title and buttons moved to nav bar
-                                                    region:[SHG_DATA defaultMapRegion]
+                                                    region:[EWA_MM currentOrLaunchRegion]
                                               navBarMargin:YES];
         _nearbyMapView.delegate = self;
     }
