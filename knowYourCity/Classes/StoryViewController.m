@@ -156,7 +156,12 @@
             break;
     }
     
-    CGFloat mapButtonSize = 44.0; // make conditional on presence of location
+    // Need to nil test this, because not all locaitons are mapped
+    SHGMapAnnotation *testPin = [[SHGMapAnnotation alloc] initWithDictionary:self.storyData];
+    
+    BOOL showMapPinIcon = [testPin validCoordinate];
+    
+    CGFloat mapButtonSize = showMapPinIcon ? 44.0 : 0.0;
     
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView,
                                                                 DEFAULT_CONTENT_WIDTH - mapButtonSize, 31.0)];
@@ -171,37 +176,37 @@
     
     
     // map button
-    
-#warning Need to nil test this, because not all locaitons are mapped
-    
-    self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    // use only image?
-    //[self.mapButton setTitle:@"Map" forState:UIControlStateNormal];
-    
-    UIImage *pinImage;
-    
-    if (ON_IOS7) {
+    if (showMapPinIcon) {
         
-        // display it using our tint color
-        pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    } else {
+        self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        pinImage = [UIImage imageNamed:kMapPinButtonImage];
+        // use only image?
+        //[self.mapButton setTitle:@"Map" forState:UIControlStateNormal];
+        
+        UIImage *pinImage;
+        
+        if (ON_IOS7) {
+            
+            // display it using our tint color
+            pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        } else {
+            
+            pinImage = [UIImage imageNamed:kMapPinButtonImage];
+        }
+        
+        [self.mapButton setImage:pinImage
+                        forState:UIControlStateNormal];
+        
+        [self.mapButton addTarget:self
+                           action:@selector(showStoryLocation)
+                 forControlEvents:UIControlEventTouchUpInside];
+        
+        // was y + 4. y + 15 aligns with the baseline of the subtitle, if title is one line.
+        self.mapButton.frame = CGRectMake(self.view.bounds.size.width - mapButtonSize, self.yForNextView + 12.0,
+                                          mapButtonSize, mapButtonSize);
+        
+        [self.scrollView addSubview:self.mapButton];
     }
-    
-    [self.mapButton setImage:pinImage
-                    forState:UIControlStateNormal];
-    
-    [self.mapButton addTarget:self
-                       action:@selector(showStoryLocation)
-             forControlEvents:UIControlEventTouchUpInside];
-    
-    // was y + 4. y + 15 aligns with the baseline of the subtitle, if title is one line.
-    self.mapButton.frame = CGRectMake(self.view.bounds.size.width - mapButtonSize, self.yForNextView + 12.0,
-                                      mapButtonSize, mapButtonSize);
-    
-    [self.scrollView addSubview:self.mapButton];
     
     self.yForNextView = CGRectGetMaxY(self.titleLabel.frame) + VERTICAL_SPACER_STANDARD;
     
@@ -255,7 +260,7 @@
         DLog(@"Failed to locate audio file named %@.caf in bundle", storyAudio);
     }
     
-    // data from the web can be noisy...
+    // data edited on the website can be noisy...
     NSString *summaryText = [[self.storyData objectForKey:kStorySummaryKey] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     self.summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 70.0)];
