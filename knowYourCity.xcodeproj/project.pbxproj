@@ -129,6 +129,7 @@
 		C95B4D14182169D800712DDA /* kyc-logo-text.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D11182169D800712DDA /* kyc-logo-text.jpg */; };
 		C95B4D15182169D800712DDA /* oacc-logo-300.png in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D12182169D800712DDA /* oacc-logo-300.png */; };
 		C95B4D16182169D800712DDA /* travel-portland-300.png in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D13182169D800712DDA /* travel-portland-300.png */; };
+		C95B4D191821B4E400712DDA /* EWAMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B4D181821B4E400712DDA /* EWAMapManager.m */; };
 		C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */; };
 		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
 		C960757F16AC59E7004B2672 /* theme_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757816AC59E7004B2672 /* theme_placeholder.png */; };
@@ -361,6 +362,8 @@
 		C95B4D11182169D800712DDA /* kyc-logo-text.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kyc-logo-text.jpg"; sourceTree = "<group>"; };
 		C95B4D12182169D800712DDA /* oacc-logo-300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oacc-logo-300.png"; sourceTree = "<group>"; };
 		C95B4D13182169D800712DDA /* travel-portland-300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "travel-portland-300.png"; sourceTree = "<group>"; };
+		C95B4D171821B4E400712DDA /* EWAMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWAMapManager.h; path = EWMShared/EWAMapManager.h; sourceTree = "<group>"; };
+		C95B4D181821B4E400712DDA /* EWAMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWAMapManager.m; path = EWMShared/EWAMapManager.m; sourceTree = "<group>"; };
 		C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitTableViewCell.h; path = Classes/TidbitTableViewCell.h; sourceTree = "<group>"; };
 		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
 		C95C30C11710FCA400E64F0C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -870,6 +873,8 @@
 			children = (
 				C921485016B59417007323D0 /* EWAAudioPlayerView.h */,
 				C921485116B59417007323D0 /* EWAAudioPlayerView.m */,
+				C95B4D171821B4E400712DDA /* EWAMapManager.h */,
+				C95B4D181821B4E400712DDA /* EWAMapManager.m */,
 				C921484B16B58AF8007323D0 /* EWWebViewController.h */,
 				C921484C16B58AF8007323D0 /* EWWebViewController.m */,
 			);
@@ -1241,6 +1246,7 @@
 				C921485216B59417007323D0 /* EWAAudioPlayerView.m in Sources */,
 				C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */,
 				C9118C1616BECC48009A890D /* KYCConfigurationProvider.m in Sources */,
+				C95B4D191821B4E400712DDA /* EWAMapManager.m in Sources */,
 				C916E15416C0C8DA00423344 /* MapViewController.m in Sources */,
 				C98C5EBE180EFF77004EE6DC /* SHGStaticPageViewController.m in Sources */,
 				C916E15B16C0D01F00423344 /* TidbitMapAnnotation.m in Sources */,
