@@ -12,6 +12,7 @@
 #import "GuestViewController.h"
 
 #import "SHGMapViewController.h"
+#import "EWAMapManager.h"
 
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
@@ -579,7 +580,7 @@
 - (void)showStoryLocation {
     
     CLLocationCoordinate2D storyCoordinate = [SHG_DATA coordinateFromDictionary:self.storyData];
-    MKCoordinateRegion storyRegion = [SHG_DATA walkableRegionAroundCoordinate:storyCoordinate];
+    MKCoordinateRegion storyRegion = [EWA_MM walkableRegionAroundCoordinate:storyCoordinate];
     
     SHGMapViewController *mapVC = [[SHGMapViewController alloc] initWithTitle:NSLocalizedString(@"Location", @"Title of story location map")
                                                                        region:storyRegion
