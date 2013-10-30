@@ -31,6 +31,12 @@
 
 + (EWAMapManager *)sharedInstance;
 
+- (void)startup;
+
+// are these properly handled by pausesLocationUpdatesAutomatically ?
+- (void)stopLocationUpdates;
+- (void)restartLocationUpdates;
+
 - (MKCoordinateRegion)launchRegion;
 - (BOOL)inLaunchRegion;
 
@@ -39,6 +45,9 @@
 - (BOOL)inDatasetRegion;
 
 - (BOOL)hasValidLocation;
+
+
+- (MKCoordinateRegion)currentOrLaunchRegion;
 
 // based on location if available
 // if location is not available, the walkable region is based on default center

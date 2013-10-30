@@ -66,7 +66,22 @@
     return self;
 }
 
-#pragma mark -
+- (void)stopLocationUpdates {
+    
+    [[self locationManager] stopUpdatingLocation];
+}
+
+- (void)restartLocationUpdates {
+    
+    [[self locationManager] startUpdatingLocation];
+}
+
+- (void)startup {
+    
+    DLog(@"EWA Map Manager started...");
+}
+
+#pragma mark - Regions and Centroids
 
 - (CLLocationCoordinate2D)launchCenter {
     
@@ -97,6 +112,17 @@
 - (BOOL)inDatasetRegion {
     
     return NO;
+}
+
+- (MKCoordinateRegion)currentOrLaunchRegion {
+    
+    if ([self hasValidLocation] ) {
+        
+        return [self walkableRegionAroundCoordinate:self.locationManager.location.coordinate];
+    } else {
+        
+        return [self launchRegion];
+    }
 }
 
 - (MKCoordinateRegion)walkableRegionForCurrentLocation {
@@ -141,28 +167,42 @@
 
 - (BOOL)recentEnoughLocation:(CLLocation *)location {
     
-	NSDate *locationDate = location.timestamp;
-	NSTimeInterval timeDiff = [locationDate timeIntervalSinceNow];
-    
-    return (abs(timeDiff) < RECENT_LOCATION_CUTOFF);
+    if (location) {
+        NSDate *locationDate = location.timestamp;
+        NSTimeInterval timeDiff = abs([locationDate timeIntervalSinceNow]);
+        
+        return (timeDiff >= 0.0) && (timeDiff < RECENT_LOCATION_CUTOFF);
+    } else {
+        return NO;
+    }
 }
 
 - (BOOL)accurateEnoughLocation:(CLLocation *)location {
     
-	CLLocationAccuracy accuracyRadius = location.horizontalAccuracy;
-    
-    // negative values indicate the location is invalid
-    return (accuracyRadius >= 0.0) && (accuracyRadius < LOCATION_ACCURACY_MINIMUM);
+    if (location) {
+        CLLocationAccuracy accuracyRadius = location.horizontalAccuracy;
+        
+        // negative values indicate the location is invalid
+        return (accuracyRadius >= 0.0) && (accuracyRadius < LOCATION_ACCURACY_MINIMUM);
+    } else {
+        
+        return NO;
+    }
 }
 
 - (BOOL)datasetContainsLocation:(CLLocation *)location {
     
-    CLLocation *datasetCentroid = [[CLLocation alloc] initWithLatitude:DATASET_CENTER_LATITUDE
-                                                             longitude:DATASET_CENTER_LONGITUDE];
-    
-	CLLocationDistance radius = [location distanceFromLocation:datasetCentroid];
-    
-    return radius < DATASET_RADIUS_MAX;
+    if (location) {
+        CLLocation *datasetCentroid = [[CLLocation alloc] initWithLatitude:DATASET_CENTER_LATITUDE
+                                                                 longitude:DATASET_CENTER_LONGITUDE];
+        
+        CLLocationDistance radius = [location distanceFromLocation:datasetCentroid];
+        
+        return radius > 0.0 && radius < DATASET_RADIUS_MAX;
+    } else {
+        
+        return NO;
+    }
 }
 
 
@@ -186,11 +226,12 @@
     
     // locations is an array of CLLocation objects in order received
     DLog(@"Location is: %@", [locations lastObject]);
-    
-    if ([self recentEnoughLocation:[locations lastObject]]) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kCurrentLocationAvailableNotification
-                                                            object:nil];
-    }
+
+    // send notifications only if needed, or throttle this using distanceFilter
+//    if ([self recentEnoughLocation:[locations lastObject]]) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:kCurrentLocationAvailableNotification
+//                                                            object:nil];
+//    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
