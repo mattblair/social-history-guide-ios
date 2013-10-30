@@ -106,6 +106,17 @@ CGFloat const kPhotoCreditFontSize = 12.0;
 NSString* const kItalicFontName = @"Futura-Medium"; // should probably match line Font
 CGFloat const kItalicFontSize = 12.0;
 
+// Flurry
+NSString* const kFlurryEventThemeView = @"ThemeView";
+NSString* const kFlurryEventThemeShare = @"ThemeShare";
+NSString* const kFlurryEventStoryView = @"StoryView";
+NSString* const kFlurryEventStoryViewFromMap = @"StoryViewFromMap";
+NSString* const kFlurryEventStoryShare = @"StoryShare";
+NSString* const kFlurryEventGuestView = @"GuestView";
+NSString* const kFlurryEventPageView = @"PageView";
+NSString* const kFlurryParamSlug = @"slug";
+NSString* const kFlurryParamActivity = @"activity";
+
 // Placeholder Text (temporary)
 NSString* const kPlaceholderTextWords36 = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 NSString* const kPlaceholderTextWords52 = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";

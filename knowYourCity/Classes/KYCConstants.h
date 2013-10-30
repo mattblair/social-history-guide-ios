@@ -131,6 +131,17 @@ extern CGFloat const kPhotoCreditFontSize;
 extern NSString* const kItalicFontName;
 extern CGFloat const kItalicFontSize;
 
+// Flurry
+extern NSString* const kFlurryEventThemeView;
+extern NSString* const kFlurryEventThemeShare;
+extern NSString* const kFlurryEventStoryView;
+extern NSString* const kFlurryEventStoryViewFromMap;
+extern NSString* const kFlurryEventStoryShare;
+extern NSString* const kFlurryEventGuestView;
+extern NSString* const kFlurryEventPageView;
+extern NSString* const kFlurryParamSlug;
+extern NSString* const kFlurryParamActivity;
+
 // Placeholder Text (temporary)
 extern NSString* const kPlaceholderTextWords36;
 extern NSString* const kPlaceholderTextWords52;
