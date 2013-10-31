@@ -14,7 +14,6 @@
 		C9118C1A16BEEFAF009A890D /* 08-chat.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1816BEEFAF009A890D /* 08-chat.png */; };
 		C9118C1C16BF013D009A890D /* 54_1974.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1B16BF013D009A890D /* 54_1974.jpg */; };
 		C9118C1E16BF07A6009A890D /* waterfront1879crop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1D16BF07A6009A890D /* waterfront1879crop.jpg */; };
-		C91406BE1753CB7F00BC142F /* kyc-demo-130527.json in Resources */ = {isa = PBXBuildFile; fileRef = C91406BD1753CB7F00BC142F /* kyc-demo-130527.json */; };
 		C916B8CF16BD99E4002E29BC /* 05-shuffle.png in Resources */ = {isa = PBXBuildFile; fileRef = C916B8B716BD99E3002E29BC /* 05-shuffle.png */; };
 		C916B8D016BD99E4002E29BC /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C916B8B816BD99E3002E29BC /* 07-map-marker.png */; };
 		C916B8D116BD99E4002E29BC /* 09-chat2.png in Resources */ = {isa = PBXBuildFile; fileRef = C916B8B916BD99E3002E29BC /* 09-chat2.png */; };
@@ -130,7 +129,6 @@
 		C95B4D16182169D800712DDA /* travel-portland-300.png in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D13182169D800712DDA /* travel-portland-300.png */; };
 		C95B4D191821B4E400712DDA /* EWAMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B4D181821B4E400712DDA /* EWAMapManager.m */; };
 		C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */; };
-		C960757516AC59C4004B2672 /* kyc-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C960757416AC59C4004B2672 /* kyc-data.json */; };
 		C960757F16AC59E7004B2672 /* theme_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757816AC59E7004B2672 /* theme_placeholder.png */; };
 		C960758016AC59E7004B2672 /* theme_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757916AC59E7004B2672 /* theme_placeholder@2x.png */; };
 		C960758116AC59E7004B2672 /* theme_tn_ph-b.png in Resources */ = {isa = PBXBuildFile; fileRef = C960757A16AC59E7004B2672 /* theme_tn_ph-b.png */; };
@@ -223,7 +221,6 @@
 		C9118C1816BEEFAF009A890D /* 08-chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "08-chat.png"; path = "Resources/glyphish-placeholders/08-chat.png"; sourceTree = "<group>"; };
 		C9118C1B16BF013D009A890D /* 54_1974.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 54_1974.jpg; path = "knowYourCity/Resources/placeholder-photos/54_1974.jpg"; sourceTree = SOURCE_ROOT; };
 		C9118C1D16BF07A6009A890D /* waterfront1879crop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waterfront1879crop.jpg; path = "knowYourCity/Resources/placeholder-photos/waterfront1879crop.jpg"; sourceTree = SOURCE_ROOT; };
-		C91406BD1753CB7F00BC142F /* kyc-demo-130527.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kyc-demo-130527.json"; sourceTree = "<group>"; };
 		C916B8B716BD99E3002E29BC /* 05-shuffle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "05-shuffle.png"; path = "Resources/glyphish-placeholders/05-shuffle.png"; sourceTree = "<group>"; };
 		C916B8B816BD99E3002E29BC /* 07-map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "07-map-marker.png"; path = "Resources/glyphish-placeholders/07-map-marker.png"; sourceTree = "<group>"; };
 		C916B8B916BD99E3002E29BC /* 09-chat2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "09-chat2.png"; path = "Resources/glyphish-placeholders/09-chat2.png"; sourceTree = "<group>"; };
@@ -362,7 +359,6 @@
 		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
 		C95C30C11710FCA400E64F0C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		C95C30C21710FCA400E64F0C /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
-		C960757416AC59C4004B2672 /* kyc-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kyc-data.json"; sourceTree = "<group>"; };
 		C960757816AC59E7004B2672 /* theme_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = theme_placeholder.png; path = "Resources/theme-illustrations/theme_placeholder.png"; sourceTree = "<group>"; };
 		C960757916AC59E7004B2672 /* theme_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "theme_placeholder@2x.png"; path = "Resources/theme-illustrations/theme_placeholder@2x.png"; sourceTree = "<group>"; };
 		C960757A16AC59E7004B2672 /* theme_tn_ph-b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "theme_tn_ph-b.png"; path = "Resources/theme-illustrations/theme_tn_ph-b.png"; sourceTree = "<group>"; };
@@ -754,8 +750,6 @@
 		C960757316AC59C4004B2672 /* json */ = {
 			isa = PBXGroup;
 			children = (
-				C91406BD1753CB7F00BC142F /* kyc-demo-130527.json */,
-				C960757416AC59C4004B2672 /* kyc-data.json */,
 			);
 			name = json;
 			path = Resources/json;
@@ -1028,7 +1022,6 @@
 				C97F49B8181AF728007F7164 /* kbb-x-1@2x.png in Resources */,
 				C91E4A8A1815A9420074E154 /* dkc-transient-services.caf in Resources */,
 				C9914943181749B100201598 /* guest-ed-edmo.jpg in Resources */,
-				C960757516AC59C4004B2672 /* kyc-data.json in Resources */,
 				C98345B4180CCBED00C120B1 /* old-town-text.jpg in Resources */,
 				C960757F16AC59E7004B2672 /* theme_placeholder.png in Resources */,
 				C960758016AC59E7004B2672 /* theme_placeholder@2x.png in Resources */,
@@ -1158,7 +1151,6 @@
 				C9914947181749B100201598 /* guest-doug-kenck-crispin.jpg in Resources */,
 				C9FDFD751819C224000BFE14 /* kbb-info-dark.png in Resources */,
 				C91E4A921815A9420074E154 /* am-7-the-bars.caf in Resources */,
-				C91406BE1753CB7F00BC142F /* kyc-demo-130527.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
