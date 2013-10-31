@@ -173,28 +173,6 @@
     
     self.yForNextView = CGRectGetMaxY(self.introLabel.frame) + VERTICAL_SPACER_EXTRA;
     
-    // Stories label? Does this section need to be titled?
-    
-    // Stories buttons (will use a UIView subclass)
-    /*
-    NSDictionary *storyDictionary = @{ @"thumbnail" : @"kycCCBA", @"title" : @"Fascinating Story", @"quote" : @"It was fascinating to think about.", @"mediaType" : @0};
-    
-    StoryStubView *storyStub = [[StoryStubView alloc] initWithDictionary:storyDictionary atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
-    
-    [self.scrollView addSubview:storyStub];
-    
-    self.yForNextView = CGRectGetMaxY(storyStub.frame) + VERTICAL_SPACER_STANDARD;
-    
-    
-    // no image
-    NSDictionary *storyTextDictionary = @{@"title" : @"Another Fascinating Story", @"quote" : @"It was even more fascinating to think about.", @"mediaType" : @2};
-    
-    StoryStubView *storyTextStub = [[StoryStubView alloc] initWithDictionary:storyTextDictionary atOrigin:CGPointMake(DEFAULT_LEFT_MARGIN, self.yForNextView)];
-    
-    [self.scrollView addSubview:storyTextStub];
-    
-    self.yForNextView = CGRectGetMaxY(storyTextStub.frame) + VERTICAL_SPACER_EXTRA;
-    */
     
     self.relatedStories = [SHG_DATA storiesForThemeID:self.themeID];
     
@@ -207,7 +185,6 @@
         StoryStubView *aStoryStub = [[StoryStubView alloc] initWithDictionary:storyData
                                                                      atOrigin:storyOrigin];
         
-        //aStoryStub.tag = STORY_TAG_OFFSET + storyCounter;
         aStoryStub.delegate = self;
         
         [self.scrollView addSubview:aStoryStub];
