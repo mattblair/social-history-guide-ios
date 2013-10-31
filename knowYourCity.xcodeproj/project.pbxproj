@@ -145,9 +145,6 @@
 		C97164B016FACFC800EA8B02 /* kycPlaceholder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C97164AF16FACFC800EA8B02 /* kycPlaceholder.mp3 */; };
 		C97164B216FAD49D00EA8B02 /* jan-dilg-temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C97164B116FAD49D00EA8B02 /* jan-dilg-temp.jpg */; };
 		C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */; };
-		C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EA169DCF48008A2793 /* Default-568h@2x.png */; };
-		C97B44EE169DCF48008A2793 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EB169DCF48008A2793 /* Default.png */; };
-		C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97B44EC169DCF48008A2793 /* Default@2x.png */; };
 		C97F49B7181AF728007F7164 /* kbb-x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C97F49B5181AF728007F7164 /* kbb-x-1.png */; };
 		C97F49B8181AF728007F7164 /* kbb-x-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97F49B6181AF728007F7164 /* kbb-x-1@2x.png */; };
 		C98345A1180C67A200C120B1 /* SHGDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98345A0180C67A200C120B1 /* SHGDataController.m */; };
@@ -383,9 +380,6 @@
 		C97164B116FAD49D00EA8B02 /* jan-dilg-temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "jan-dilg-temp.jpg"; path = "Resources/placeholder-photos/jan-dilg-temp.jpg"; sourceTree = "<group>"; };
 		C97B44DF169DCCDA008A2793 /* KYCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCAppDelegate.h; path = Classes/KYCAppDelegate.h; sourceTree = "<group>"; };
 		C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCAppDelegate.m; path = Classes/KYCAppDelegate.m; sourceTree = "<group>"; };
-		C97B44EA169DCF48008A2793 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/default/Default-568h@2x.png"; sourceTree = "<group>"; };
-		C97B44EB169DCF48008A2793 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/default/Default.png; sourceTree = "<group>"; };
-		C97B44EC169DCF48008A2793 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/default/Default@2x.png"; sourceTree = "<group>"; };
 		C97F49B5181AF728007F7164 /* kbb-x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kbb-x-1.png"; sourceTree = "<group>"; };
 		C97F49B6181AF728007F7164 /* kbb-x-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kbb-x-1@2x.png"; sourceTree = "<group>"; };
 		C983459F180C67A200C120B1 /* SHGDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGDataController.h; path = Classes/SHGDataController.h; sourceTree = "<group>"; };
@@ -817,7 +811,6 @@
 				C99149391817499B00201598 /* guests */,
 				C991494C181986DB00201598 /* Images.xcassets */,
 				C952427616B0350400BD8F74 /* placeholders */,
-				C97B44E9169DCD95008A2793 /* default */,
 				C960756D16AC59B2004B2672 /* graphics */,
 				C93030FF16AB34C40039D7B8 /* html */,
 				C960758516AC5A29004B2672 /* icons */,
@@ -879,16 +872,6 @@
 				C921484C16B58AF8007323D0 /* EWWebViewController.m */,
 			);
 			name = EWASharedClasses;
-			sourceTree = "<group>";
-		};
-		C97B44E9169DCD95008A2793 /* default */ = {
-			isa = PBXGroup;
-			children = (
-				C97B44EB169DCF48008A2793 /* Default.png */,
-				C97B44EC169DCF48008A2793 /* Default@2x.png */,
-				C97B44EA169DCF48008A2793 /* Default-568h@2x.png */,
-			);
-			name = default;
 			sourceTree = "<group>";
 		};
 		C98345A2180C718B00C120B1 /* data */ = {
@@ -1030,11 +1013,8 @@
 				C9FDFD761819C224000BFE14 /* kbb-info-dark@2x.png in Resources */,
 				C91E4A851815A9420074E154 /* jd-pwc-cornerstone.caf in Resources */,
 				C91E4A891815A9420074E154 /* jd-fcc-west-church.caf in Resources */,
-				C97B44ED169DCF48008A2793 /* Default-568h@2x.png in Resources */,
 				C91E4AA51815A9420074E154 /* gn-gay-history-brief.caf in Resources */,
-				C97B44EE169DCF48008A2793 /* Default.png in Resources */,
 				C9FDFD7C1819C224000BFE14 /* kbb-x-2@2x.png in Resources */,
-				C97B44EF169DCF48008A2793 /* Default@2x.png in Resources */,
 				C91E4AA01815A9420074E154 /* mm-introduction.caf in Resources */,
 				C91E4AB51815A9420074E154 /* rh-chinatown-gate.caf in Resources */,
 				C91E4A941815A9420074E154 /* am-3-collective-living.caf in Resources */,
