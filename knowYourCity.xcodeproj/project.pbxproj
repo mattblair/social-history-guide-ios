@@ -126,7 +126,6 @@
 		C98C5EC2180F1A19004EE6DC /* donate.html in Resources */ = {isa = PBXBuildFile; fileRef = C98C5EC0180F1A19004EE6DC /* donate.html */; };
 		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
 		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		C990649816B82B1B00421288 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649516B82B1B00421288 /* Twitter.framework */; };
 		C9914943181749B100201598 /* guest-ed-edmo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C991493A181749B100201598 /* guest-ed-edmo.jpg */; };
 		C9914944181749B100201598 /* guest-michael-munk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C991493B181749B100201598 /* guest-michael-munk.jpg */; };
 		C9914945181749B100201598 /* guest-ann-mussey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C991493C181749B100201598 /* guest-ann-mussey.jpg */; };
@@ -386,7 +385,6 @@
 				C90E5DE616C00C3200FFB1AF /* MessageUI.framework in Frameworks */,
 				C990649616B82B1B00421288 /* Accounts.framework in Frameworks */,
 				C990649716B82B1B00421288 /* Social.framework in Frameworks */,
-				C990649816B82B1B00421288 /* Twitter.framework in Frameworks */,
 				C921485B16B59B70007323D0 /* SystemConfiguration.framework in Frameworks */,
 				C921485616B598A3007323D0 /* AVFoundation.framework in Frameworks */,
 				C96075A116AC6DC8004B2672 /* libz.dylib in Frameworks */,
