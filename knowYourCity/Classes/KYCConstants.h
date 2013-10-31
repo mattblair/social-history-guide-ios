@@ -48,20 +48,6 @@ typedef NS_ENUM(NSUInteger, KYCWorkflowState) {
     KYCWorkflowStateTesting
 };
 
-// Core Data -- DEPRECATED?
-
-// EWCoreDataManager Configuration
-extern NSString* const kEWCoreDataModelName;
-extern NSString* const kEWCoreDataDatabaseFilenameInBundle;
-extern NSString* const kEWCoreDataDatabaseFilenameOnDisk;
-extern NSString* const kEWCoreDataDatabaseInLibrarySubdirectory;
-extern BOOL const kEWCoreDataBlockDatabaseFromiCloudBackup;
-extern BOOL const kEWCoreDataReplaceDatabase;
-
-// JSON Files
-extern NSString* const kSeedJSONFilename;
-extern NSString* const kLiveJSONURI;
-
 // Off-device images
 extern NSString* const kPhotosURL;
 extern NSString* const kAudioURL;

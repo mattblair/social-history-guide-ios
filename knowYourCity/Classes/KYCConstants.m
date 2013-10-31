@@ -8,20 +8,6 @@
 
 #import "KYCConstants.h"
 
-// EWCoreDataManager Configuration
-NSString* const kEWCoreDataModelName = @"knowyourcity"; // momd will be appended
-NSString* const kEWCoreDataDatabaseFilenameInBundle = @"knowyourcityTBD.sqlite";
-NSString* const kEWCoreDataDatabaseFilenameOnDisk = @"knowyourcityTBD.sqlite.sqlite";
-NSString* const kEWCoreDataDatabaseInLibrarySubdirectory = @""; // will default to /Documents
-BOOL const kEWCoreDataBlockDatabaseFromiCloudBackup = NO;
-// typically NO when shipping, YES while testing and sending beta builds with refreshed data
-BOOL const kEWCoreDataReplaceDatabase = YES;
-
-
-// JSON
-NSString* const kSeedJSONFilename = @"kyc-demo-130527"; // kyc-data will usually have a date code appended
-NSString* const kLiveJSONURI = @"TBD";
-
 // Off-device media
 NSString* const kPhotosURL = @"http://kycstatic.elsewiseapps.com/photos/";
 NSString* const kAudioURL = @"http://kycstatic.elsewiseapps.com/audio/";
