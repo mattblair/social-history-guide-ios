@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C90E5DE616C00C3200FFB1AF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E5DE516C00C3200FFB1AF /* MessageUI.framework */; };
 		C9108017180C5E9D0053870D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9108016180C5E9D0053870D /* libsqlite3.dylib */; };
-		C9118C1616BECC48009A890D /* KYCConfigurationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C9118C1516BECC48009A890D /* KYCConfigurationProvider.m */; };
 		C9118C1C16BF013D009A890D /* 54_1974.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1B16BF013D009A890D /* 54_1974.jpg */; };
 		C9118C1E16BF07A6009A890D /* waterfront1879crop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1D16BF07A6009A890D /* waterfront1879crop.jpg */; };
 		C916E15416C0C8DA00423344 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C916E15316C0C8DA00423344 /* MapViewController.m */; };
@@ -177,8 +176,6 @@
 		7261BF0B03AA4FDAB01A8F4A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		C90E5DE516C00C3200FFB1AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C9108016180C5E9D0053870D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		C9118C1416BECC48009A890D /* KYCConfigurationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCConfigurationProvider.h; path = Classes/KYCConfigurationProvider.h; sourceTree = "<group>"; };
-		C9118C1516BECC48009A890D /* KYCConfigurationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCConfigurationProvider.m; path = Classes/KYCConfigurationProvider.m; sourceTree = "<group>"; };
 		C9118C1B16BF013D009A890D /* 54_1974.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 54_1974.jpg; path = "knowYourCity/Resources/placeholder-photos/54_1974.jpg"; sourceTree = SOURCE_ROOT; };
 		C9118C1D16BF07A6009A890D /* waterfront1879crop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waterfront1879crop.jpg; path = "knowYourCity/Resources/placeholder-photos/waterfront1879crop.jpg"; sourceTree = SOURCE_ROOT; };
 		C916E15216C0C8DA00423344 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Classes/MapViewController.h; sourceTree = "<group>"; };
@@ -722,8 +719,6 @@
 				C930310C16AB43B50039D7B8 /* KYCPrivateConstants.m */,
 				C952427F16B03F4700BD8F74 /* UIColor+KYC.h */,
 				C952428016B03F4700BD8F74 /* UIColor+KYC.m */,
-				C9118C1416BECC48009A890D /* KYCConfigurationProvider.h */,
-				C9118C1516BECC48009A890D /* KYCConfigurationProvider.m */,
 				C9EB9752180DB46800932756 /* SHGMapAnnotation.h */,
 				C9EB9753180DB46800932756 /* SHGMapAnnotation.m */,
 				C983459F180C67A200C120B1 /* SHGDataController.h */,
@@ -1055,7 +1050,6 @@
 				C952428116B03F4700BD8F74 /* UIColor+KYC.m in Sources */,
 				C921485216B59417007323D0 /* EWAAudioPlayerView.m in Sources */,
 				C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */,
-				C9118C1616BECC48009A890D /* KYCConfigurationProvider.m in Sources */,
 				C95B4D191821B4E400712DDA /* EWAMapManager.m in Sources */,
 				C916E15416C0C8DA00423344 /* MapViewController.m in Sources */,
 				C98C5EBE180EFF77004EE6DC /* SHGStaticPageViewController.m in Sources */,

@@ -88,7 +88,7 @@
      NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
      KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : KYCStoryMediaTypePhotoInterview;
      
-     cell.imageView.image = [UIImage imageNamed:[KYCSTYLE imageNameForMediaType:mediaType]];
+     //cell.imageView.image = [UIImage imageNamed:[KYCSTYLE imageNameForMediaType:mediaType]];
      
      cell.textLabel.accessibilityLabel = cell.textLabel.text;
      cell.textLabel.accessibilityHint = NSLocalizedString(@"Tidbit Title", @"Hint for Tidbit title in tidbit list.");

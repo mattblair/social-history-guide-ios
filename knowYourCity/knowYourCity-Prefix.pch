@@ -14,7 +14,6 @@
 
     #import "KYCConstants.h"
     #import "UIColor+KYC.h"
-    #import "KYCConfigurationProvider.h"
     #import "SHGDataController.h"
 
     #import "TestFlight.h"
