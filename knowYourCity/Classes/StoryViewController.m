@@ -65,15 +65,17 @@
     
     self.title = NSLocalizedString(@"Story", @"Title for Story View Controller");
     
-    // to hide background image on nav bar on iOS 6?
-    //[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    // to hide background image on nav bar on iOS 6? This doesn't work
+    if (!ON_IOS7) {
+        [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    }
     
     // add share button
     
     self.shareButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kActionButton]
-                                                       style:UIBarButtonItemStylePlain
-                                                      target:self
-                                                      action:@selector(showShareSheet)];
+                                                        style:UIBarButtonItemStylePlain
+                                                       target:self
+                                                       action:@selector(showShareSheet)];
     
     self.shareButton.accessibilityLabel = NSLocalizedString(@"Share this story", @"Accessibility label for story sharing button");
     
@@ -272,8 +274,6 @@
     
     [self.summaryLabel sizeToFit];
     
-    // for layout testing, especially because of extra whitespace
-    //self.summaryLabel.backgroundColor = [UIColor yellowColor];
     
     [self.scrollView addSubview:self.summaryLabel];
     
