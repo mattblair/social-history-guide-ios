@@ -124,7 +124,6 @@
 		C98C5EBE180EFF77004EE6DC /* SHGStaticPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98C5EBD180EFF77004EE6DC /* SHGStaticPageViewController.m */; };
 		C98C5EC1180F1A19004EE6DC /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C98C5EBF180F1A19004EE6DC /* credits.html */; };
 		C98C5EC2180F1A19004EE6DC /* donate.html in Resources */ = {isa = PBXBuildFile; fileRef = C98C5EC0180F1A19004EE6DC /* donate.html */; };
-		C990649616B82B1B00421288 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649316B82B1B00421288 /* Accounts.framework */; };
 		C990649716B82B1B00421288 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C990649416B82B1B00421288 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C9914943181749B100201598 /* guest-ed-edmo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C991493A181749B100201598 /* guest-ed-edmo.jpg */; };
 		C9914944181749B100201598 /* guest-michael-munk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C991493B181749B100201598 /* guest-michael-munk.jpg */; };
@@ -383,7 +382,6 @@
 				C916E15716C0CAFC00423344 /* CoreLocation.framework in Frameworks */,
 				C916E15816C0CAFC00423344 /* MapKit.framework in Frameworks */,
 				C90E5DE616C00C3200FFB1AF /* MessageUI.framework in Frameworks */,
-				C990649616B82B1B00421288 /* Accounts.framework in Frameworks */,
 				C990649716B82B1B00421288 /* Social.framework in Frameworks */,
 				C921485B16B59B70007323D0 /* SystemConfiguration.framework in Frameworks */,
 				C921485616B598A3007323D0 /* AVFoundation.framework in Frameworks */,
