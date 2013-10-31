@@ -207,7 +207,7 @@
         StoryStubView *aStoryStub = [[StoryStubView alloc] initWithDictionary:storyData
                                                                      atOrigin:storyOrigin];
         
-        aStoryStub.tag = STORY_TAG_OFFSET + storyCounter;
+        //aStoryStub.tag = STORY_TAG_OFFSET + storyCounter;
         aStoryStub.delegate = self;
         
         [self.scrollView addSubview:aStoryStub];
@@ -216,27 +216,6 @@
                 
         storyCounter++;
     }
-    
-    // old string based button version
-    /*
-    for (NSString *storyName in fakeStories) {
-        
-        UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        
-        [aButton setTintColor:[UIColor lightGrayColor]];
-        [aButton setTitle:storyName forState:UIControlStateNormal];
-        [aButton setTag:STORY_TAG_OFFSET + storyCounter];
-        [aButton addTarget:self action:@selector(handleStorySelection:) forControlEvents:UIControlEventTouchUpInside];
-        
-        aButton.frame = CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView, DEFAULT_CONTENT_WIDTH, 44.0);
-        
-        [self.scrollView addSubview:aButton];
-        
-        self.yForNextView = CGRectGetMaxY(aButton.frame) + VERTICAL_SPACER_STANDARD;
-        
-        storyCounter++;
-    }
-    */
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -246,11 +225,6 @@
     self.scrollView.frame = self.view.bounds;
     // use a define for iPad in the future
     self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.yForNextView + 20.0);
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    
-    [self closeSharingMenu];
 }
 
 - (void)didReceiveMemoryWarning
@@ -269,7 +243,7 @@
         _storyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
                                                     title:NSLocalizedString(@"Stories", @"Title of stories map")
                                                    region:[SHG_DATA regionFromDictionary:self.themeDictionary]
-                                             navBarMargin:YES];
+                                             navBarMargin:NO];
         _storyMapView.delegate = self;
     }
     
@@ -280,7 +254,8 @@
     
     [self.storyMapView setAlpha:0.0];
     
-    [self.view addSubview:self.storyMapView];
+    // add to window, rather than view, to show over-top of navbar
+    [self.view.window addSubview:self.storyMapView];
     
     [UIView animateWithDuration:0.5
                      animations:^{self.storyMapView.alpha = 1.0;}
@@ -337,61 +312,8 @@
     }
 }
 
-#pragma mark - DEPRECATED JSONish STORY DISPLAY METHODS
-
-// old button way
-- (void)handleStorySelection:(id)sender {
-    
-    // may be temporary, pending UIView subclass with real identifier as property
-    // or use the tag as an index on an array of stories
-    UIView *selectedView = (UIView *)sender;
-    
-    // bounds check here? tag is an NSInteger, so this could go haywire...
-    NSUInteger selectedStoryIndex = selectedView.tag - STORY_TAG_OFFSET;
-    
-    // push a story VC for that story
-    
-    DLog(@"Would show story #%d", selectedStoryIndex);
-    
-    StoryViewController *storyVC = [[StoryViewController alloc] initWithNibName:nil bundle:nil];
-    
-    if (selectedStoryIndex < [self.relatedStories count]) {
-        
-        // inject intro text here?
-        storyVC.storyData = [self.relatedStories objectAtIndex:selectedStoryIndex];
-        
-    } else {
-        
-        // sub in a bogus dictionary for now
-        
-        NSString *introText;
-        
-        switch (selectedStoryIndex) {
-            case 0:
-                introText = kPlaceholderTextWords36;
-                break;
-                
-            case 1:
-                introText = kPlaceholderTextWords69;
-                break;
-                
-            case 2:
-                introText = kPlaceholderTextWords102;
-                break;
-                
-            default:
-                introText = kPlaceholderTextWords204;
-                break;
-        }
-        
-        storyVC.storyData = @{@"title" : @"A Story Title", @"mainText" : introText};
-    }    
-    
-    [self.navigationController pushViewController:storyVC animated:YES];
-}
 
 #pragma mark - Show sharing menu
-// might go in a category...
 
 - (void)showActivityViewController {
     
@@ -438,6 +360,7 @@
 
 // hang on to all this stuff until you finalize this functionality on iOS 6
 
+/*
 - (void)showSharingMenu:(id)sender {
     
     if (!self.sharingMenu) {
@@ -656,5 +579,6 @@
         DLog(@"No Facebook. Alert user?");
     }
 }
+*/
 
 @end
