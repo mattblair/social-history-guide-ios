@@ -49,6 +49,8 @@
 
 - (MKCoordinateRegion)currentOrLaunchRegion;
 
+- (MKCoordinateRegion)regionForLocationAndDataRegion:(MKCoordinateRegion)dataRegion;
+
 // based on location if available
 // if location is not available, the walkable region is based on default center
 - (MKCoordinateRegion)walkableRegionForCurrentLocation;

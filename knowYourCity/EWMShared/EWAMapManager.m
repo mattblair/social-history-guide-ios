@@ -8,6 +8,8 @@
 
 #import "EWAMapManager.h"
 
+// installed through CocoaPods
+#import "JSONKit.h"
 
 // ALL these defines would be read from JSON config file, too
 #define RECENT_LOCATION_CUTOFF 15.0 // in seconds
@@ -17,7 +19,10 @@
 // needs adjustment
 #define DATASET_CENTER_LATITUDE 45.516249
 #define DATASET_CENTER_LONGITUDE -122.678706
-#define DATASET_RADIUS_MAX 3500.0
+#define DATASET_RADIUS_MAX 3000.0
+
+#define kSearchResultsLatitudeDeltaMultiplier 1.15
+#define kSearchResultsLongitudeDeltaMultiplier 1.2
 
 // originally 45.505796, -122.678586
 #define MAP_LAUNCH_LATITUDE 45.516249
@@ -27,6 +32,8 @@
 #define DEFAULT_LONGITUDE_SPAN 0.038389
 
 @interface EWAMapManager ()
+
+@property (strong, nonatomic) NSDictionary *configDictionary;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
@@ -47,6 +54,8 @@
     self = [super init];
     if (self) {
         
+        //[self loadJSONConfigFile];
+        
         //[self loadRegionDefinitions];
         
         // try to start location services here
@@ -64,6 +73,30 @@
         //[self runCoordinateInRegionTests];
     }
     return self;
+}
+
+- (void)loadJSONConfigFile {
+    
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"EWAMapManagerConfig" ofType:@"json"];
+    
+    NSError *fileLoadError = nil;
+    
+    NSData *configJSONData = [NSData dataWithContentsOfFile:filepath
+                                                    options:NSDataReadingUncached
+                                                      error:&fileLoadError];
+    
+    if (!configJSONData) {
+        NSLog(@"Loading JSON config file failed: %@, %@", fileLoadError, [fileLoadError userInfo]);
+    }
+    
+    NSError *jsonDeserializeError = nil;
+    
+    _configDictionary = [configJSONData objectFromJSONDataWithParseOptions:JKParseOptionStrict
+                                                                     error:&jsonDeserializeError];
+    
+    if (!_configDictionary) {
+        NSLog(@"Deserialization of JSON config file failed: %@, %@", jsonDeserializeError, [jsonDeserializeError userInfo]);
+    }
 }
 
 - (void)stopLocationUpdates {
@@ -122,6 +155,40 @@
     } else {
         
         return [self launchRegion];
+    }
+}
+
+- (MKCoordinateRegion)regionForLocationAndDataRegion:(MKCoordinateRegion)dataRegion {
+    
+    if ([self hasValidLocation] ) {
+        
+        // get centroid of dataRegion
+        
+        CLLocationCoordinate2D dataCenter = dataRegion.center;
+        CLLocationCoordinate2D locationCenter = self.locationManager.location.coordinate;
+        
+        CLLocationDegrees minLatitude = MIN(dataCenter.latitude, locationCenter.latitude);
+        CLLocationDegrees maxLatitude = MAX(dataCenter.latitude, locationCenter.latitude);
+        
+        CLLocationDegrees minLongitude = MIN(dataCenter.longitude, locationCenter.longitude);
+        CLLocationDegrees maxLongitude = MAX(dataCenter.longitude, locationCenter.longitude);
+        
+        // build a region around that inclusive of both
+        
+        MKCoordinateRegion inclusiveRegion;
+        
+        // calculate centroid of user location and data centroid
+        inclusiveRegion.center.latitude = (maxLatitude - minLatitude)/2 + minLatitude;
+        inclusiveRegion.center.longitude = (maxLongitude - minLongitude)/2 + minLongitude;
+        
+        inclusiveRegion.span.latitudeDelta = (maxLatitude - minLatitude)*kSearchResultsLatitudeDeltaMultiplier;
+        inclusiveRegion.span.longitudeDelta = (maxLongitude - minLongitude)*kSearchResultsLongitudeDeltaMultiplier;
+        
+        return inclusiveRegion;
+        
+    } else {
+        
+        return dataRegion;
     }
 }
 
