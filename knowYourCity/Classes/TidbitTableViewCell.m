@@ -39,7 +39,7 @@
         CGFloat textWidth = 210.0;
         
         // media
-        
+        /*
         CGRect mediaRect = CGRectMake(10.0, MEDIA_BUTTON_Y, MEDIA_BUTTON_SIZE, MEDIA_BUTTON_SIZE);
         
         self.mediaImageView = [[UIImageView alloc] initWithFrame:mediaRect];
@@ -49,6 +49,7 @@
         self.mediaImageView.image = [UIImage imageNamed:mediaImage];
                 
         [self addSubview:self.mediaImageView];
+        */
         
         // title
         CGRect titleRect = CGRectMake(textX, TIDBIT_CELL_MARGIN, textWidth, 42.0);
@@ -121,9 +122,9 @@
         self.yearLabel.hidden = YES;
     }
     
-    NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
-    KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber unsignedIntegerValue] : KYCStoryMediaTypePhotoInterview;
-    self.mediaImageView.image = [UIImage imageNamed:[KYCSTYLE imageNameForMediaType:mediaType]];
+//    NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
+//    KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber unsignedIntegerValue] : KYCStoryMediaTypePhotoInterview;
+//    self.mediaImageView.image = [UIImage imageNamed:[KYCSTYLE imageNameForMediaType:mediaType]];
 }
 
 

@@ -136,35 +136,7 @@
         self.subtitleLabel.frame = CGRectMake(textX, subtitleY, textWidth, subtitleSize.height);
         
         [self addSubview:self.subtitleLabel];
-        
-        // media button -- probably deprecated, because they are almost all the same
-        
-        if (SHOW_MEDIA_TYPE_ICON) {
-        
-            CGFloat mediaX = textX + textWidth;
-            // calculate a vertically centered Y?
-            
-            CGRect mediaRect = CGRectMake(mediaX, MEDIA_BUTTON_Y, MEDIA_BUTTON_SIZE, MEDIA_BUTTON_SIZE);
-            
-            self.mediaButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            
-            NSNumber *mediaTypeNumber = [self.storyData objectForKey:@"mediaType"];
-            KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber unsignedIntegerValue] : KYCStoryMediaTypePhotoInterview;
-            NSString *mediaImage = [KYCSTYLE imageNameForMediaType:mediaType];
-            
-            [self.mediaButton setImage:[UIImage imageNamed:mediaImage]
-                              forState:UIControlStateNormal];
-            
-            [self.mediaButton addTarget:self
-                                 action:@selector(storyTapped:)
-                       forControlEvents:UIControlEventTouchUpInside];
-            
-            self.mediaButton.frame = mediaRect;
-            
-            [self addSubview:self.mediaButton];
-            
-        }
-        
+                
         UITapGestureRecognizer *storyTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                    action:@selector(storyTapped:)];
         

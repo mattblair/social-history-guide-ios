@@ -85,9 +85,8 @@
      cell.textLabel.text = [tidbitDictionary objectForKey:@"title"];
      }
      
-     NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
-     KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : KYCStoryMediaTypePhotoInterview;
-     
+     //NSNumber *mediaTypeNumber = [tidbitDictionary objectForKey:@"mediaType"];
+     //KYCStoryMediaType mediaType = mediaTypeNumber ? [mediaTypeNumber integerValue] : KYCStoryMediaTypePhotoInterview;     
      //cell.imageView.image = [UIImage imageNamed:[KYCSTYLE imageNameForMediaType:mediaType]];
      
      cell.textLabel.accessibilityLabel = cell.textLabel.text;
