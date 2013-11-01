@@ -19,7 +19,7 @@
 
 // presenting view controller should pull values from the story object:
 // expected keys: thumbnail, title, quote, mediaType
-// it should also set the tag and delegate
+// it should also set the delegate
 - (id)initWithDictionary:(NSDictionary *)storyDictionary atOrigin:(CGPoint)origin;
 
 @end

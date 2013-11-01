@@ -64,7 +64,8 @@
         
         CGFloat textX = STORY_STUB_MARGIN;
         
-        CGFloat textWidth = stubWidth - textX;
+        // used when there is no thumbnail
+        CGFloat textWidth = stubWidth - STORY_STUB_MARGIN*2.0;
         
         if (SHOW_MEDIA_TYPE_ICON) {
             textWidth = stubWidth - textX - MEDIA_BUTTON_SIZE - STORY_STUB_MARGIN;
