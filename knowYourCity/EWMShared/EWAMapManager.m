@@ -71,8 +71,26 @@
         }
         
         //[self runCoordinateInRegionTests];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(prepareToBeBackgrounded:)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
+        
     }
     return self;
+}
+
+- (void)prepareToBeBackgrounded:(NSNotification *)note {
+    
+    // Is this handled automatically by pausesLocationUpdatesAutomatically ?
+    
+    [self stopLocationUpdates];
+}
+
+- (void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)loadJSONConfigFile {

@@ -128,8 +128,28 @@
         
         // footer not handled yet
         
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(prepareToBeBackgrounded:)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
     }
     return self;
+}
+
+- (void)prepareToBeBackgrounded:(NSNotification *)note {
+    
+    DLog(@"Stopping location tracking");
+    
+    // Is MKMapView using its own CLLocationManager with
+    // pausesLocationUpdatesAutomatically set to YES?
+    // i.e. is this happening automatically? Or do we need to manage it?
+    
+    [self stopTrackingUser];
+}
+
+- (void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (MKCoordinateRegion)currentRegion {
