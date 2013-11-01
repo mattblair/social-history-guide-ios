@@ -21,8 +21,8 @@
 #define DATASET_CENTER_LONGITUDE -122.678706
 #define DATASET_RADIUS_MAX 3000.0
 
-#define kSearchResultsLatitudeDeltaMultiplier 1.15
-#define kSearchResultsLongitudeDeltaMultiplier 1.2
+#define kSearchResultsLatitudeDeltaMultiplier 1.5 //1.15
+#define kSearchResultsLongitudeDeltaMultiplier 1.3 //1.2
 
 // originally 45.505796, -122.678586
 #define MAP_LAUNCH_LATITUDE 45.516249
@@ -147,16 +147,7 @@
     return NO;
 }
 
-- (MKCoordinateRegion)currentOrLaunchRegion {
-    
-    if ([self hasValidLocation] ) {
-        
-        return [self walkableRegionAroundCoordinate:self.locationManager.location.coordinate];
-    } else {
-        
-        return [self launchRegion];
-    }
-}
+
 
 - (MKCoordinateRegion)regionForLocationAndDataRegion:(MKCoordinateRegion)dataRegion {
     
@@ -192,6 +183,11 @@
     }
 }
 
+- (MKCoordinateRegion)currentOrLaunchRegion {
+    
+    return [self regionForLocationAndDataRegion:[self launchRegion]];
+}
+
 - (MKCoordinateRegion)walkableRegionForCurrentLocation {
     
     if ([self hasValidLocation] ) {
@@ -200,6 +196,17 @@
     } else {
         
         return [self walkableRegionAroundCoordinate:[self launchCenter]];
+    }
+}
+
+- (MKCoordinateRegion)walkableCurrentRegionOrLaunchRegion {
+    
+    if ([self hasValidLocation] ) {
+        
+        return [self walkableRegionAroundCoordinate:self.locationManager.location.coordinate];
+    } else {
+        
+        return [self launchRegion];
     }
 }
 

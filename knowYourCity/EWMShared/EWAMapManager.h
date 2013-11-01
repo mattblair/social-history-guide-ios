@@ -47,13 +47,18 @@
 - (BOOL)hasValidLocation;
 
 
-- (MKCoordinateRegion)currentOrLaunchRegion;
-
 - (MKCoordinateRegion)regionForLocationAndDataRegion:(MKCoordinateRegion)dataRegion;
 
 // based on location if available
+
+// returns a region which combines current location and launch region, or just launch region
+- (MKCoordinateRegion)currentOrLaunchRegion;
+
 // if location is not available, the walkable region is based on default center
 - (MKCoordinateRegion)walkableRegionForCurrentLocation;
+
+// if location is not available, returns default region -- which may not be walkable
+- (MKCoordinateRegion)walkableCurrentRegionOrLaunchRegion;
 
 - (MKCoordinateRegion)walkableRegionAroundCoordinate:(CLLocationCoordinate2D)coordinate;
 
