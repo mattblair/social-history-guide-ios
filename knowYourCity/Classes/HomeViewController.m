@@ -325,9 +325,10 @@
     
     [self.nearbyMapView showUser];
     
+    // recenter on completion to avoid a user-centered map
     [UIView animateWithDuration:0.5
                      animations:^{self.nearbyMapView.alpha = 1.0;}
-                     completion:NULL];
+                     completion:^(BOOL finished){[self.nearbyMapView recenterMap];}];
 }
 
 // to close without a selection
