@@ -73,7 +73,7 @@
         //[self runCoordinateInRegionTests];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(prepareToBeBackgrounded:)
+                                                 selector:@selector(handleBackgrounding:)
                                                      name:UIApplicationDidEnterBackgroundNotification
                                                    object:nil];
         
@@ -81,7 +81,7 @@
     return self;
 }
 
-- (void)prepareToBeBackgrounded:(NSNotification *)note {
+- (void)handleBackgrounding:(NSNotification *)note {
     
     // Is this handled automatically by pausesLocationUpdatesAutomatically ?
     

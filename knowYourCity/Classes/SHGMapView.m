@@ -129,14 +129,14 @@
         // footer not handled yet
         
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(prepareToBeBackgrounded:)
+                                                 selector:@selector(handleBackgrounding:)
                                                      name:UIApplicationDidEnterBackgroundNotification
                                                    object:nil];
     }
     return self;
 }
 
-- (void)prepareToBeBackgrounded:(NSNotification *)note {
+- (void)handleBackgrounding:(NSNotification *)note {
     
     DLog(@"Stopping location tracking");
     
