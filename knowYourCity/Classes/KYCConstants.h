@@ -60,7 +60,6 @@ extern NSString* const kLocationButtonImage;
 
 // Map-related
 extern NSString* const kMapPinButtonImage;
-extern NSString* const kRefreshButtonImage; // not used?
 
 extern NSString* const kCloseButton;
 extern NSString* const kActionButton;

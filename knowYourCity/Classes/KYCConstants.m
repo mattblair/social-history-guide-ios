@@ -23,7 +23,6 @@ NSString* const kLocationButtonImage = @"kbb-location-filled";
 
 // Map-related
 NSString* const kMapPinButtonImage = @"kbb-map-pin";
-NSString* const kRefreshButtonImage = @""; // not used?
 
 
 NSString* const kCloseButton = @"kbb-x-1"; // kbb-x-2
