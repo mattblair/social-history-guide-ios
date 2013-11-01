@@ -507,7 +507,6 @@
 				C97B44E7169DCD54008A2793 /* Models */,
 				C97B44E6169DCD3C008A2793 /* ContentViewControllers */,
 				C95397FE18202A8F00D8A4B3 /* Maps */,
-				C95397FA1820293500D8A4B3 /* Deprecated */,
 				C98C5EBA180EFCF8004EE6DC /* Flashback */,
 				C97B44E8169DCD77008A2793 /* EWASharedClasses */,
 				C98C5EBB180EFD3A004EE6DC /* Deprecated */,
@@ -553,15 +552,6 @@
 			);
 			name = html;
 			path = Resources/html;
-			sourceTree = "<group>";
-		};
-		C95397FA1820293500D8A4B3 /* Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				C916E15216C0C8DA00423344 /* MapViewController.h */,
-				C916E15316C0C8DA00423344 /* MapViewController.m */,
-			);
-			name = Deprecated;
 			sourceTree = "<group>";
 		};
 		C95397FE18202A8F00D8A4B3 /* Maps */ = {
@@ -762,6 +752,8 @@
 		C98C5EBB180EFD3A004EE6DC /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
+				C916E15216C0C8DA00423344 /* MapViewController.h */,
+				C916E15316C0C8DA00423344 /* MapViewController.m */,
 				C916E15916C0D01F00423344 /* TidbitMapAnnotation.h */,
 				C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */,
 			);
