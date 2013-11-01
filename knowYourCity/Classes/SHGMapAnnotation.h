@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, SHGMapAnnotationType) {
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 
+// or just have init fail if the coordinate is not valid for this project region?
 @property (nonatomic) BOOL validCoordinate;
 
 @property (nonatomic) SHGMapAnnotationType annotationType;

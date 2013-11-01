@@ -39,7 +39,12 @@
 // expects an array of SHGMapAnnotation objects
 - (void)addAnnotations:(NSArray *)annotations;
 
+
+// includes user location and data region, where possible
 - (void)recenterMap;
+
+// only goes to data region, disregarding user location?
+//- (void)moveToDataRegion;
 
 // attempts to display user location on map
 - (void)showUser;
