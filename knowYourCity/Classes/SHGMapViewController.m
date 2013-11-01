@@ -43,6 +43,7 @@
                                               region:self.defaultRegion
                                         navBarMargin:NO];
     
+    self.mapView.dataRegion = self.defaultRegion;
     self.mapView.delegate = self;
     self.mapView.showCalloutAccessories = NO;
     
