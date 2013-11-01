@@ -256,6 +256,7 @@
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
     
+    [self.thumbTimer invalidate];
     self.thumbTimer = nil;
     
     NSLog(@"AudioPlayer finished %@", flag ? @"successfully." : @"badly!");
