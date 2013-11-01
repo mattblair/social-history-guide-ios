@@ -86,12 +86,14 @@
     
     NSMutableArray *stories = [[NSMutableArray alloc] initWithCapacity:10];
     
-    FMResultSet *resultSet = [self.shgDatabase executeQueryWithFormat:@"SELECT * FROM stories where theme_id = %d and workflow_state_id = %d;", themeID, PUBLISHED_WORKFLOW_STATE];
+    FMResultSet *resultSet = [self.shgDatabase executeQueryWithFormat:
+                              @"SELECT * FROM stories where theme_id = %d and workflow_state_id = %d order by display_order;",
+                              themeID,
+                              PUBLISHED_WORKFLOW_STATE];
 
     while ([resultSet next]) {
         
         [stories addObject:[resultSet resultDictionary]];
-        
     }
     
     return [NSArray arrayWithArray:stories];
