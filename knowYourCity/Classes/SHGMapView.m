@@ -213,7 +213,7 @@
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
     
-    DLog(@"");
+    self.locationButton.enabled = YES;
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
@@ -311,6 +311,8 @@
         [self.mapView setRegion:self.initialRegion
                        animated:YES];
     }
+    
+    self.locationButton.enabled = NO;
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
