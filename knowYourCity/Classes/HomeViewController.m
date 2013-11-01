@@ -310,30 +310,20 @@
 
 - (void)showMap {
     
-    //[self showComingSoon:@"Map View is not yet available."];
-    
-    /*
-    MapViewController *mapVC = [[MapViewController alloc] initWithNibName:nil bundle:nil];
-    mapVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    mapVC.delegate = self;
-    mapVC.dataArray = self.tidbitList;
-    [self presentViewController:mapVC animated:YES completion:NULL];
-     
-    */
-    
-    // or call it Nearby
     self.navigationItem.title = NSLocalizedString(@"Explore", @"Nav title when viewing map of nearby stories");
     self.navigationItem.leftBarButtonItem = self.listButton;
     self.navigationItem.rightBarButtonItem = self.locationButton;
     
     [self.view addSubview:self.nearbyMapView];
-    
-    // temporary -- this should try to use user location, and only fallback to a default
-    //MKCoordinateRegion nearbyRegion = MKCoordinateRegionMakeWithDistance([SHG_DATA defaultMapCenter], 4000.0, 3000.0);
-    
+        
     [self.nearbyMapView addAnnotations:[SHG_DATA mapAnnotationsOfType:SHGMapAnnotationTypeStory
                                                              inRegion:self.nearbyMapView.currentRegion
                                                              maxCount:45]];
+    
+    // set the center, which will be used for recentering
+    self.nearbyMapView.dataRegion = [EWA_MM launchRegion];
+    
+    [self.nearbyMapView showUser];
     
     [UIView animateWithDuration:0.5
                      animations:^{self.nearbyMapView.alpha = 1.0;}
@@ -349,6 +339,8 @@
 - (void)zoomMapToUser {
     
     DLog(@"Would tell the map view to zoom.");
+    
+    [self.nearbyMapView recenterMap];
 }
 
 
