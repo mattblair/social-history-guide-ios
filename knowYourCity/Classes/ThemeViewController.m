@@ -203,8 +203,8 @@
     [super viewWillAppear:animated];
     
     self.scrollView.frame = self.view.bounds;
-    // use a define for iPad in the future
-    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.yForNextView + 20.0);
+    // was adding 20.0 more to the bottom, but I don't like the white space.
+    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.yForNextView);
 }
 
 - (void)didReceiveMemoryWarning
