@@ -113,25 +113,20 @@
     
     NSArray *coordArray = [[geoJSON objectForKey:@"geometry"] objectForKey:@"coordinates"];
     
-    BOOL coordinateValid = YES;
-    
     CLLocationDegrees latitudeValue = [coordArray[1] doubleValue];
     CLLocationDegrees longitudeValue = [coordArray[0] doubleValue];
     
-    coordinateValid = [SHGMapAnnotation validLatitude:latitudeValue];
-    
-    coordinateValid = [SHGMapAnnotation validLongitude:longitudeValue];
-    
     // if it passed both tests
-    if (coordinateValid) {
+    if ([SHGMapAnnotation validLatitude:latitudeValue] && [SHGMapAnnotation validLongitude:longitudeValue]) {
+        
         _coordinate = CLLocationCoordinate2DMake(latitudeValue, longitudeValue);
+        return YES;
     } else {
         
         // defaulting to Portlandish
         _coordinate = CLLocationCoordinate2DMake(LATITUDE_ERROR_VALUE, LONGITUDE_ERROR_VALUE);
+        return NO;
     }
-    
-    return coordinateValid;
 }
 
 @end
