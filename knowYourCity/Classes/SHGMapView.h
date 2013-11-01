@@ -20,8 +20,12 @@
 
 @property (weak, nonatomic) id <SHGMapViewDelegate> delegate;
 
+@property (nonatomic) BOOL showLocationButton;
 @property (nonatomic) BOOL showCallouts;
 @property (nonatomic) BOOL showCalloutAccessories;
+
+// presenters should override this if initial region is inclusive of current location
+@property (nonatomic) MKCoordinateRegion dataRegion;
 
 // pass a nil title to omit the header
 // could add  footer:(NSString *)footer for explanatory text
@@ -34,6 +38,11 @@
 
 // expects an array of SHGMapAnnotation objects
 - (void)addAnnotations:(NSArray *)annotations;
+
+- (void)recenterMap;
+
+// attempts to display user location on map
+- (void)showUser;
 
 @end
 

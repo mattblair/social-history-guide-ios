@@ -8,6 +8,8 @@
 
 #import "SHGMapView.h"
 
+#import "EWAMapManager.h"
+
 @interface SHGMapView ()
 
 @property (nonatomic) MKCoordinateRegion initialRegion;
@@ -57,12 +59,14 @@
                                  forState:UIControlStateNormal];
             
             [self.locationButton addTarget:self
-                                    action:@selector(centerMapOnUser:)
+                                    action:@selector(recenterMap)
                           forControlEvents:UIControlEventTouchUpInside];
             
             self.locationButton.frame = CGRectMake(0.0, initialY, buttonSize, buttonSize);
             
             [self addSubview:self.locationButton];
+            
+            [self updateLocationButton];
             
             
             CGFloat titleWidth = self.bounds.size.width - buttonSize*2.0;
@@ -135,7 +139,8 @@
         return self.mapView.region;
     } else {
         
-        return [SHG_DATA defaultMapRegion];
+        // does it make any sense to return this here?
+        return [EWA_MM launchRegion];
     }
 }
 
@@ -148,6 +153,20 @@
     // reposition map automatically?
 }
 
+- (void)showUser {
+    
+    // in iOS 7, turning this on automatically centers the map on the user
+    // this is NOT what we want
+    
+    // definitely need to prevent this from happening if they are out of the city
+    
+    if ([EWA_MM hasValidLocation]) {
+        
+        self.mapView.showsUserLocation = YES;
+    } else {
+        DLog(@"Blocked attempt to show user on the map");
+    }
+}
 
 #pragma mark - MKMapView Delegate methods
 
@@ -203,15 +222,44 @@
     DLog(@"Map's center longitude is: %f", mapView.region.center.longitude);
     DLog(@"Map's latitude delta is: %f", mapView.region.span.latitudeDelta);
     DLog(@"Map's longitude delta is: %f", mapView.region.span.longitudeDelta);
+    
+    // check location availability here? throttle these calls?
+    
+    [self updateLocationButton];
 }
 
 #pragma mark - Managing Location
+
+- (void)setShowLocationButton:(BOOL)showLocation {
+    
+    _showLocationButton = showLocation;
+    
+    self.locationButton.hidden = _showLocationButton;
+}
+
+- (void)updateLocationButton {
+    
+    // in 1.0, this probably only turns on and off
+    // in later versions, imitate the stateful location behavior in Maps app, i.e.
+    // * solid if map is centered on user
+    // * outlined if user location is enabled but map is not centered on user
+    // * disabled if location services are disabled
+    
+    if (self.locationButton) {
+
+#warning Remove if not functional
+        // this isn't a good way to do this, because it blocks use of the
+        // location button to return to primary region if the location is not available
+        //self.locationButton.enabled = [EWA_MM hasValidLocation];
+    }
+}
 
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
     
     DLog(@"Will locate user");
     
-    [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading
+                             animated:YES];
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error {
@@ -236,22 +284,32 @@
     [self.delegate mapView:self didFinishWithSelectedID:NSNotFound ofType:SHGSearchResultTypeStory];
 }
 
-- (void)centerMapOnUser:(id)sender {
+- (void)recenterMap {
     
-    // if available, else return to initial region
+    // if available, combine user location and initial region?
     
-    if (NO) {
+    if ([EWA_MM hasValidLocation]) {
         
         if (!self.mapView.userLocationVisible) {
             // move map to center on user
-            DLog(@"User not visible. Will re-center on user.");
+            DLog(@"User not visible. Should re-center on user?");
             
             // user the user location from the map view? Or from CL directly?
         }
         
+        // make sure user is displayed on map
+        
+        // move to location that combines user and dataRegion
+        
+        self.mapView.showsUserLocation = YES; // does this auto-animate to center on user?
+        
+        [self.mapView setRegion:[EWA_MM regionForLocationAndDataRegion:self.dataRegion]
+                       animated:YES];
+        
     } else {
         
-        [self.mapView setRegion:self.initialRegion animated:YES];
+        [self.mapView setRegion:self.initialRegion
+                       animated:YES];
     }
 }
 
