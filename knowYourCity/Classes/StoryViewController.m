@@ -486,8 +486,9 @@
         
         NSString *moreInfoURLString = [self.storyData objectForKey:kContentMoreInfoURLKey];
         
-        // this field is noisy, so test it.
-        if ([moreInfoURLString length] > 8) {
+        // this field is noisy, with opening spaces, parenthesis, and plain text.
+        // Length testing isn't enough.
+        if ([moreInfoURLString hasPrefix:@"http"] || [moreInfoURLString hasPrefix:@"https"]) {
             
             UIButton *urlButton = [UIButton buttonWithType:UIButtonTypeCustom];
             
@@ -511,6 +512,8 @@
             [_moreInfoView addSubview:urlButton];
             
             nextLabelY = CGRectGetMaxY(urlButton.frame);
+        } else {
+            DLog(@"WARNING -- More info URL is not valid: %@", moreInfoURLString);
         }
         
         // reset height
