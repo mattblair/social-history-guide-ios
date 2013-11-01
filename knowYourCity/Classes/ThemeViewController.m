@@ -217,10 +217,14 @@
     
     if (!_storyMapView) {
         
+        MKCoordinateRegion themeRegion = [SHG_DATA regionFromDictionary:self.themeDictionary];
+        
         _storyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
                                                     title:NSLocalizedString(@"Stories", @"Title of stories map")
-                                                   region:[SHG_DATA regionFromDictionary:self.themeDictionary]
+                                                   region:themeRegion
                                              navBarMargin:NO];
+        _storyMapView.dataRegion = themeRegion;
+        [_storyMapView showUser];
         _storyMapView.delegate = self;
     }
     
@@ -236,7 +240,7 @@
     
     [UIView animateWithDuration:0.5
                      animations:^{self.storyMapView.alpha = 1.0;}
-                     completion:NULL];
+                     completion:^(BOOL finished){[self.storyMapView recenterMap];}];
     
     [self.storyMapView addAnnotations:[SHG_DATA storyMapAnnotationsForThemeID:self.themeID]];
 }
