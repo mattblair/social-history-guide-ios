@@ -24,6 +24,10 @@
 
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
+@property (nonatomic) BOOL playing;
+@property (nonatomic) NSTimeInterval lastPauseTime;
+
+
 @property (strong, nonatomic) UILabel *currentTime;
 @property (strong, nonatomic) UILabel *totalTime;
 @property (strong, nonatomic) UISlider *audioScrubber;
@@ -46,6 +50,11 @@
     if (self) {
         
         self.backgroundColor = [UIColor underPageBackgroundColor];
+        
+        self.playing = NO;
+        
+        // init this with a bogus value
+        self.lastPauseTime = -1.0;
         
         NSError *audioError = nil;
         
@@ -149,6 +158,17 @@
                   forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:self.playButton];
+        
+        // UIApplicationDidEnterBackgroundNotification is too late to handle audio
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleBackgrounding:)
+                                                     name:UIApplicationWillResignActiveNotification
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(prepareToBeForegrounded:)
+                                                     name:UIApplicationWillEnterForegroundNotification
+                                                   object:nil];
     }
     return self;
 }
@@ -159,14 +179,25 @@
     return nil;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (void)handleBackgrounding:(NSNotification *)note {
+    
+    DLog(@"Pausing audio player");
+    
+    [self pauseAudio];
 }
-*/
+
+- (void)prepareToBeForegrounded:(NSNotification *)note {
+    
+    // reset audio to 0, or to last time stored?
+    DLog(@"Foregrounded");
+    
+    [self resumePlayback];
+}
+
+- (void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)updateCurrentTimeDisplay {
     
@@ -207,8 +238,44 @@
 
 #pragma mark - Handling Listener Actions
 
+- (void)playAudio {
+    
+    if (!self.playing) {
+        
+        self.playing = YES;
+        
+        [self.audioPlayer play];
+        
+        self.thumbTimer = [NSTimer scheduledTimerWithTimeInterval:AUDIO_DISPLAY_UPDATE_INTERVAL
+                                                           target:self
+                                                         selector:@selector(updateThumbAndTime)
+                                                         userInfo:nil
+                                                          repeats:YES];
+        
+        self.playButton.selected = self.audioPlayer.playing;
+    }
+}
+
+- (void)pauseAudio {
+    
+    if (self.playing) {
+        
+        self.playing = NO;
+        
+        [self.audioPlayer pause];
+        [self.thumbTimer invalidate];
+        
+        if (self.audioPlayer.currentTime > 0.0) {
+            self.lastPauseTime = self.audioPlayer.currentTime;
+        }
+        
+        self.playButton.selected = self.audioPlayer.playing;
+    }
+}
+
 - (void)togglePlayStatus {
     
+    /*
     // flip the state
     if (self.audioPlayer.playing) {
         [self.audioPlayer pause];
@@ -225,6 +292,15 @@
     
     // if it's playing, switch to selected to show the pause graphic
     self.playButton.selected = self.audioPlayer.playing;
+    
+    */
+    
+    // manage state with superview property instead of audioplayer property:
+    if (self.playing) {
+        [self pauseAudio];
+    } else {
+        [self playAudio];
+    }
 }
 
 - (void)handleScrubbing {
@@ -238,17 +314,18 @@
 
 - (void)pausePlayback {
     
-    [self.audioPlayer pause];
-    [self.thumbTimer invalidate];
-    
-    // does invalidate set to nil?
+    [self pauseAudio];
 }
 
 - (void)resumePlayback {
     
-    // resume playback, or return to the start and play
+    // resume playback -- or return to the start and play?
     
-    // should re-init timers
+    if (self.lastPauseTime > 0.0) {
+        self.audioPlayer.currentTime = self.lastPauseTime;
+        
+        [self playAudio];
+    }
 }
 
 
