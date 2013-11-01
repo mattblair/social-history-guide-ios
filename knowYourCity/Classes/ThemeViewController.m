@@ -92,7 +92,13 @@
     [self.scrollView addSubview:self.themeGraphic];
     
     self.yForNextView = CGRectGetMaxY(self.themeGraphic.frame) + VERTICAL_SPACER_EXTRA;
-    CGFloat mapButtonSize = 44.0;
+    
+    // Native stories doesn't have any mappable stories within standard data region for v1.0
+    // Is this too expensive to run every time? Just hard code instead?!
+    
+    BOOL hasAnnotations = [SHG_DATA countOfValidStoryAnnotationsForThemeID:self.themeID] > 0;
+    
+    CGFloat mapButtonSize = hasAnnotations ? 44.0 : 0.0;
     
     // title and map button should have the same top y
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, self.yForNextView,
@@ -106,38 +112,35 @@
     
     [self.scrollView addSubview:self.titleLabel];
     
-    // map button
-    // Do we need to test for the existence of annotations at this point?
-    // or can we defer that? Do they all have at least one mappable story?
-    
-    self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    // use only image?
-    //[self.mapButton setTitle:@"Map" forState:UIControlStateNormal];
-    
-    UIImage *pinImage;
-    
-    if (ON_IOS7) {
+    if (hasAnnotations) {
         
-        // display it using our tint color
-        pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    } else {
+        self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        pinImage = [UIImage imageNamed:kMapPinButtonImage];
+        UIImage *pinImage;
+        
+        if (ON_IOS7) {
+            
+            // display it using our tint color
+            pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        } else {
+            
+            pinImage = [UIImage imageNamed:kMapPinButtonImage];
+        }
+        
+        [self.mapButton setImage:pinImage
+                        forState:UIControlStateNormal];
+        
+        [self.mapButton addTarget:self
+                           action:@selector(showMap)
+                 forControlEvents:UIControlEventTouchUpInside];
+        
+        // was y + 4. y + 15 aligns with the baseline of the subtitle, if title is one line.
+        self.mapButton.frame = CGRectMake(self.view.bounds.size.width - mapButtonSize, self.yForNextView + 12.0,
+                                          mapButtonSize, mapButtonSize);
+        
+        [self.scrollView addSubview:self.mapButton];
     }
     
-    [self.mapButton setImage:pinImage
-                    forState:UIControlStateNormal];
-    
-    [self.mapButton addTarget:self
-                       action:@selector(showMap)
-             forControlEvents:UIControlEventTouchUpInside];
-    
-    // was y + 4. y + 15 aligns with the baseline of the subtitle, if title is one line.
-    self.mapButton.frame = CGRectMake(self.view.bounds.size.width - mapButtonSize, self.yForNextView + 12.0,
-                                      mapButtonSize, mapButtonSize);
-    
-    [self.scrollView addSubview:self.mapButton];
     
     // after using the y value for the map button, we want the subtitle to be
     // just under  the title and not pushed down by the map button
