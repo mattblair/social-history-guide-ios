@@ -275,23 +275,25 @@
     self.playButton.enabled = NO;
 }
 
-#warning -- need to handle interruptions here...
-
+// doesn't get called on backgrounding ?
 - (void)audioPlayerBeginInterruption:(AVAudioPlayer *)player {
     
-    // freeze state
-}
-
-// iOS 4.0+, deprecated in iOS 6.0
-- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player withFlags:(NSUInteger)flags {
+    DLog(@"Audio player interrupted.");
     
-    
+    [self pausePlayback];
 }
 
 // iOS 6.0+
+// doesn't get called on backgrounding ?
 - (void)audioPlayerEndInterruption:(AVAudioPlayer *)player withOptions:(NSUInteger)flags {
     
+    //typedef enum : NSUInteger {
+    //    AVAudioSessionInterruptionOptionShouldResume = 1
+    //} AVAudioSessionInterruptionOptions;
     
+    DLog(@"Options: %d", flags);
+    
+    // don't restart
 }
 
 @end
