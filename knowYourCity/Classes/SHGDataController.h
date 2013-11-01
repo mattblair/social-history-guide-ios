@@ -108,6 +108,8 @@ typedef NS_ENUM(NSUInteger, SHGSearchResultType) {
 
 - (NSArray *)storyMapAnnotationsForThemeID:(NSUInteger)themeID;
 
+- (NSUInteger)countOfValidStoryAnnotationsForThemeID:(NSUInteger)themeID;
+
 - (NSArray *)mapAnnotationsOfType:(SHGSearchResultType)resultType inRegion:(MKCoordinateRegion)region maxCount:(NSUInteger)maxCount;
 
 - (NSDictionary *)dictionaryForStoryID:(NSUInteger)storyID;

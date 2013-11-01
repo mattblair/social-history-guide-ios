@@ -126,6 +126,25 @@
     }
 }
 
+// adapt to handle flashbacks in the future? Or have a distinct method for that?
+// more efficient:
+// altered version of storiesForThemeID that includes location_valid in where clause
+// but are those values always reliable? need further testing.
+- (NSUInteger)countOfValidStoryAnnotationsForThemeID:(NSUInteger)themeID {
+    
+    NSUInteger storyCount = 0;
+    
+    NSArray *storyArray = [self storyMapAnnotationsForThemeID:themeID];
+    
+    for (SHGMapAnnotation *annotation in storyArray) {
+        if (annotation.validCoordinate) {
+            storyCount++;
+        }
+    }
+    
+    return storyCount;
+}
+
 - (NSArray *)mapAnnotationsOfType:(SHGSearchResultType)resultType inRegion:(MKCoordinateRegion)region maxCount:(NSUInteger)maxCount {
     
     NSArray *results = nil;
