@@ -284,7 +284,7 @@
         _nearbyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
                                                      title:nil // title and buttons moved to nav bar
                                                     region:[EWA_MM currentOrLaunchRegion]
-                                              navBarMargin:YES];
+                                              navBarMargin:ON_IOS7]; // i.e. NO on iOS 6.x
         _nearbyMapView.delegate = self;
     }
     

@@ -35,7 +35,9 @@
         self.backgroundColor = [UIColor whiteColor]; // or some kind of transparency?
         
         CGFloat buttonSize = 0.0;
-        CGFloat initialY = navBar ? 64.0 : 20.0; // keep out of the way of a status bar
+        CGFloat statusBarAllowance = ON_IOS7 ? 20.0 : 0.0;
+        // should the YES return value be 44.0 + statusBarAllowance ? Magic #s -- blech.
+        CGFloat initialY = navBar ? 64.0 : statusBarAllowance;
         
         // only create the header if the title is defined
         if (title) {
