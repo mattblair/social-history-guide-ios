@@ -207,4 +207,10 @@
     }
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+    // give the user a sense of the text's length
+    [webView.scrollView flashScrollIndicators];
+}
+
 @end
