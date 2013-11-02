@@ -97,9 +97,30 @@
         // was black -- or make this gray?
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
         
-        // to use the same nav background for all view controllers
-        //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:kNavBarBackgroundiPhone]
-        //                                   forBarMetrics:UIBarMetricsDefault];
+        [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           UITextAttributeTextColor : [UIColor blackColor],
+                                                           UITextAttributeTextShadowColor : [UIColor kycLightGray],
+                                                           UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0.5, 0.5)],
+                                                           UITextAttributeFont : [UIFont fontWithName:kTitleFontName
+                                                                                                size:kTitleFontSize]
+                                                           }];
+        
+        // hack to prevent border on bar buttons:
+        [[UIBarButtonItem appearance] setBackgroundImage:[[UIImage alloc] init]
+                                                forState:UIControlStateNormal
+                                              barMetrics:UIBarMetricsDefault];
+        
+        // this breaks the back button
+//        [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[[UIImage alloc] init]
+//                                                          forState:UIControlStateNormal
+//                                                        barMetrics:UIBarMetricsDefault];
+        
+        // shadows look bad on this...
+        [[UIBarButtonItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor kycRed],
+                                                                UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0.0, 0.0)],
+                                                                UITextAttributeFont : [UIFont fontWithName:kBodyFontName
+                                                                                                      size:13.0]}
+                                                    forState:UIControlStateNormal];
     }
 }
 
