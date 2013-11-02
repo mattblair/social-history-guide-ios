@@ -28,6 +28,8 @@
 	<string>11</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
