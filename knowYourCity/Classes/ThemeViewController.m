@@ -222,7 +222,22 @@
         
         MKCoordinateRegion themeRegion = [SHG_DATA regionFromDictionary:self.themeDictionary];
         
-        _storyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
+        CGRect mapBounds;
+        
+        if (ON_IOS7) {
+            
+            mapBounds = self.view.bounds;
+        } else {
+         
+            // adjust for status bar, which is always on top when map view is
+            // presented as subview on iOS 6
+            CGRect windowBounds = self.view.window.bounds;
+            CGFloat statusBarHeight = 20.0;
+            mapBounds = CGRectMake(windowBounds.origin.x, windowBounds.origin.y + statusBarHeight,
+                                   windowBounds.size.width, windowBounds.size.height - statusBarHeight);
+        }
+        
+        _storyMapView = [[SHGMapView alloc] initWithFrame:mapBounds
                                                     title:NSLocalizedString(@"Stories", @"Title of stories map")
                                                    region:themeRegion
                                              navBarMargin:NO];
