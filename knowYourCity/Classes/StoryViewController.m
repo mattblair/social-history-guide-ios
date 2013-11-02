@@ -65,12 +65,6 @@
     
     self.title = NSLocalizedString(@"Story", @"Title for Story View Controller");
     
-    // to hide background image on nav bar on iOS 6? This doesn't work
-    if (!ON_IOS7) {
-        [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    }
-    
-    // add share button
     
     self.shareButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kActionButton]
                                                         style:UIBarButtonItemStylePlain
