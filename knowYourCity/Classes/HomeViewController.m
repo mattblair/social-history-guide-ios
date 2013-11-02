@@ -18,10 +18,6 @@
 // probably deprecated
 #import "MapViewController.h"
 
-// temporary, until data loading to Core Data is implemented and populated
-// then all data access should move to the singleton Core Data
-#import "JSONKit.h"
-
 #define THEME_THUMBNAIL_CELLS NO
 
 @interface HomeViewController ()
@@ -58,13 +54,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        [self loadDataFromJSON];
-        //self.themeList = [self.seedDictionary objectForKey:@"themes"];
         self.themeList = [SHG_DATA publishedThemes];
-        self.tidbitList = [self.seedDictionary objectForKey:@"tidbits"];
-        
-        // use this if you are showing standard text in nav bars and back buttons
-        //self.title = NSLocalizedString(@"Themes", @"Title for Home View Controller");
         
         // if you don't want a toolbar:
         self.hidesBottomBarWhenPushed = NO;
@@ -75,14 +65,6 @@
 - (void)loadView {
     
     [super loadView];
-    
-    // set background just for this nav bar:
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:kNavBarBackgroundiPhone]
-//                                                  forBarMetrics:UIBarMetricsDefault];
-    
-    // or configure header logo:
-    //UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kNavAppLogoiPhone] ];
-    //self.navigationItem.titleView = logoImage;
     
     self.title = NSLocalizedString(@"Themes", @"Title of list of themes on home view controller.");
     
@@ -250,8 +232,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
-#pragma mark - Loading JSON (temporary)
+#pragma mark - Loading JSON (DEPRECATED)
 
+/*
 - (void)loadDataFromJSON {
     
     NSString *filepath = [[NSBundle mainBundle] pathForResource:kSeedJSONFilename ofType:@"json"];
@@ -275,7 +258,7 @@
         NSLog(@"Loading JSON File Failed: %@, %@", jsonDeserializeError, [jsonDeserializeError userInfo]);
     }
 }
-
+*/
 
 #pragma mark - Show Static Pages
 
