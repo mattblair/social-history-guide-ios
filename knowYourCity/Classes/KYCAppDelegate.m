@@ -92,9 +92,8 @@
         // set default color for all active controls
         self.window.tintColor = [UIColor kycRed];
         
-    } else { // iOS 6.x -- keep using UIAppearance?
+    } else { // iOS 6.x -- keep using UIAppearance
         
-        // was black -- or make this gray?
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
         
         [[UINavigationBar appearance] setTitleTextAttributes:@{
@@ -102,10 +101,11 @@
                                                            UITextAttributeTextShadowColor : [UIColor kycLightGray],
                                                            UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0.5, 0.5)],
                                                            UITextAttributeFont : [UIFont fontWithName:kTitleFontName
-                                                                                                size:kTitleFontSize]
+                                                                                                 size:kSectionTitleFontSize]
                                                            }];
         
-        // hack to prevent border on bar buttons:
+        // Hack to prevent border on bar buttons.
+        // Alternative: use initWithCustomView with UIImageView for each button.
         [[UIBarButtonItem appearance] setBackgroundImage:[[UIImage alloc] init]
                                                 forState:UIControlStateNormal
                                               barMetrics:UIBarMetricsDefault];
