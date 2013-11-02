@@ -101,6 +101,13 @@
                                                                      @"Donate"
                                                                      ]];
     
+    if (PRE_IOS7) {
+        
+        // deprecated in iOS 7
+        self.selectionView.segmentedControlStyle = UISegmentedControlStyleBar;
+        self.selectionView.tintColor = [UIColor kycRed];
+    }
+    
     self.selectionView.selectedSegmentIndex = self.selectedSection;
     
     [self.selectionView addTarget:self
