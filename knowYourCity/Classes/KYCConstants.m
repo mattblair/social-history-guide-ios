@@ -29,7 +29,7 @@ NSString* const kMapPinButtonImage = @"kbb-map-pin";
 
 NSString* const kCloseButton = @"kbb-x-1"; // kbb-x-2
 NSString* const kActionButton = @"kbb-action-2";
-NSString* const kBackButtonImage = @""; // iOS 6 only
+NSString* const kBackButtonImage = @"kbb-back"; // iOS 6 only
 
 NSString* const kAppNameImage = @"pshg-title";
 
