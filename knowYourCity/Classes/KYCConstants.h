@@ -67,12 +67,6 @@ extern NSString* const kBackButtonImage;
 
 extern NSString* const kAppNameImage;
 
-// Nav Buttons
-extern NSString* const kNavAppLogoiPad;
-extern NSString* const kNavAppLogoiPhone;
-extern NSString* const kNavBarBackgroundiPhone;
-
-
 // Audio Player Images
 extern NSString* const kPlayButtonImage;
 extern NSString* const kPauseButtonImage;

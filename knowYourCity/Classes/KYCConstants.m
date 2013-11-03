@@ -24,21 +24,11 @@ NSString* const kLocationButtonImage = @"kbb-location-filled";
 // Map-related
 NSString* const kMapPinButtonImage = @"kbb-map-pin";
 
-
 NSString* const kCloseButton = @"kbb-x-1"; // kbb-x-2
 NSString* const kActionButton = @"kbb-action-2";
-NSString* const kBackButtonImage = @"";
+NSString* const kBackButtonImage = @""; // iOS 6 only
 
 NSString* const kAppNameImage = @"pshg-title";
-
-
-// Nav Toolbar -- deprecated?
-NSString* const kNavAppLogoiPad = @"";
-
-#warning These graphics have been removed
-NSString* const kNavAppLogoiPhone = @"logo_header_black";
-NSString* const kNavBarBackgroundiPhone = @"kycNavBarBlack";
-
 
 // Audio Player Images
 NSString* const kPlayButtonImage = @"kbb-play";
