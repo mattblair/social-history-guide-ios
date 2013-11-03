@@ -110,16 +110,19 @@
                                                 forState:UIControlStateNormal
                                               barMetrics:UIBarMetricsDefault];
         
-        // this breaks the back button
-//        [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[[UIImage alloc] init]
-//                                                          forState:UIControlStateNormal
-//                                                        barMetrics:UIBarMetricsDefault];
+        // This is tough to resize precisely because of non-parallel lines
+        UIImage *backButtonImage = [[UIImage imageNamed:kBackButtonImage] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 25.0, 1.0, 20.0)];
+        //UIImage *backButtonImage = [UIImage imageNamed:kBackButtonImage];
+        [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage
+                                                          forState:UIControlStateNormal
+                                                        barMetrics:UIBarMetricsDefault];
         
         // shadows look bad on this...
+        // kBodyFontName @ 13.0 looks best with standard UIKit back button
         [[UIBarButtonItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor kycRed],
                                                                 UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0.0, 0.0)],
-                                                                UITextAttributeFont : [UIFont fontWithName:kBodyFontName
-                                                                                                      size:13.0]}
+                                                                UITextAttributeFont : [UIFont fontWithName:kTitleFontName
+                                                                                                      size:15.0]}
                                                     forState:UIControlStateNormal];
     }
 }
