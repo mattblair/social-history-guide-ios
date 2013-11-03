@@ -38,11 +38,6 @@ NSString* const kMinimumTrackImage = @"kbb-slider-2-filled"; // i.e. played
 NSString* const kMaximumTrackImage = @"kbb-slider-2-empty"; // i.e. yet to be played
 
 
-// Image Defaults
-
-NSString* const kDetailBackgroundImageiPad = @"";
-NSString* const kDetailBackgroundImageiPhone = @"";
-
 // URLs, social sharing & contact information
 NSString* const kProjectName = @"PDX Social History Guide";
 NSString* const kProjectURL = @"http://pdxsocialhistory.org";

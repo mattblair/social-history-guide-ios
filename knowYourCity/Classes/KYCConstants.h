@@ -74,10 +74,6 @@ extern NSString* const kThumbButtonImage; // UISlider
 extern NSString* const kMinimumTrackImage; // UISlider
 extern NSString* const kMaximumTrackImage; // UISlider
 
-// Image Defaults
-
-extern NSString* const kDetailBackgroundImageiPad;
-extern NSString* const kDetailBackgroundImageiPhone;
 
 // URLs, social sharing & contact information
 extern NSString* const kProjectName;
