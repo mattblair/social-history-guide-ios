@@ -11,10 +11,18 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 
+#import <Reachability/Reachability.h>
+
 #import "EWAMapManager.h"
 
 #import "KYCPrivateConstants.h"
 #import "HomeViewController.h"
+
+@interface KYCAppDelegate ()
+
+@property (strong, nonatomic) Reachability *internetReach;
+
+@end
 
 
 @implementation KYCAppDelegate
@@ -40,6 +48,8 @@
     [TestFlight takeOff:kTestFlightAppToken];
     
     [Flurry startSession:kFlurryAPIKey];
+    
+    [self setupReachability];
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
@@ -85,6 +95,8 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - UI Customization
+
 - (void)configureAppearance {
     
     if (ON_IOS7) {
@@ -124,6 +136,49 @@
                                                                 UITextAttributeFont : [UIFont fontWithName:kTitleFontName
                                                                                                       size:15.0]}
                                                     forState:UIControlStateNormal];
+    }
+}
+
+#pragma mark - Reachability Management
+
+- (void)setupReachability {
+    
+    self.internetReach = [Reachability reachabilityForInternetConnection];
+    
+    // returns a BOOL that could be tested/logged
+    [self.internetReach startNotifier];
+}
+
+- (BOOL)currentlyOnline {
+    
+    // could also use isReachableViaWiFi or isReachableViaWWAN for more control
+	return [self.internetReach isReachable];
+}
+
+- (void)warnAboutOfflineMaps {
+    
+    DLog(@"");
+}
+
+- (void)warnAboutOfflinePhotos {
+    
+    // could turn this into an integer if we wanted to warn occasionally
+    BOOL warned = [[NSUserDefaults standardUserDefaults] boolForKey:kOfflinePhotosWarningKey];
+    
+    if (!warned) {
+        
+        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Photos Unavailable Offline"
+                                                               message:@"An internet connection is required to display photos"
+                                                              delegate:nil
+                                                     cancelButtonTitle:nil
+                                                     otherButtonTitles:@"OK", nil];
+        
+        [warningAlert show];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES
+                                                forKey:kOfflinePhotosWarningKey];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 

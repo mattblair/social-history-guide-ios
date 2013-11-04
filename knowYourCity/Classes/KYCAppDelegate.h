@@ -17,4 +17,8 @@
 @property (strong, nonatomic) UINavigationController *navVC;
 @property (strong, nonatomic) HomeViewController *homeViewController;
 
+// Internet availability
+- (BOOL)currentlyOnline;
+- (void)warnAboutOfflinePhotos;
+
 @end
