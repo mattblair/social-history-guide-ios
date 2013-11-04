@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C90E5DE616C00C3200FFB1AF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E5DE516C00C3200FFB1AF /* MessageUI.framework */; };
 		C9108017180C5E9D0053870D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9108016180C5E9D0053870D /* libsqlite3.dylib */; };
-		C9118C1C16BF013D009A890D /* 54_1974.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1B16BF013D009A890D /* 54_1974.jpg */; };
-		C9118C1E16BF07A6009A890D /* waterfront1879crop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9118C1D16BF07A6009A890D /* waterfront1879crop.jpg */; };
 		C916E15416C0C8DA00423344 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C916E15316C0C8DA00423344 /* MapViewController.m */; };
 		C916E15716C0CAFC00423344 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15516C0CAFC00423344 /* CoreLocation.framework */; };
 		C916E15816C0CAFC00423344 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15616C0CAFC00423344 /* MapKit.framework */; };
@@ -185,8 +183,6 @@
 		7261BF0B03AA4FDAB01A8F4A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		C90E5DE516C00C3200FFB1AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C9108016180C5E9D0053870D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		C9118C1B16BF013D009A890D /* 54_1974.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 54_1974.jpg; path = "knowYourCity/Resources/placeholder-photos/54_1974.jpg"; sourceTree = SOURCE_ROOT; };
-		C9118C1D16BF07A6009A890D /* waterfront1879crop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waterfront1879crop.jpg; path = "knowYourCity/Resources/placeholder-photos/waterfront1879crop.jpg"; sourceTree = SOURCE_ROOT; };
 		C916E15216C0C8DA00423344 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Classes/MapViewController.h; sourceTree = "<group>"; };
 		C916E15316C0C8DA00423344 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Classes/MapViewController.m; sourceTree = "<group>"; };
 		C916E15516C0CAFC00423344 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -550,8 +546,6 @@
 			isa = PBXGroup;
 			children = (
 				C991494E181989D800201598 /* pshg-photo-placeholder.png */,
-				C9118C1D16BF07A6009A890D /* waterfront1879crop.jpg */,
-				C9118C1B16BF013D009A890D /* 54_1974.jpg */,
 			);
 			name = photos;
 			path = Resources/photos;
@@ -1001,10 +995,8 @@
 				C9FDFD771819C224000BFE14 /* kbb-info-light.png in Resources */,
 				C98345B2180CCBED00C120B1 /* suffrage.jpg in Resources */,
 				C98345B0180CCBED00C120B1 /* old-town.jpg in Resources */,
-				C9118C1C16BF013D009A890D /* 54_1974.jpg in Resources */,
 				C91E4A881815A9420074E154 /* jd-duniway.caf in Resources */,
 				C98345B3180CCBED00C120B1 /* stark-clubs.jpg in Resources */,
-				C9118C1E16BF07A6009A890D /* waterfront1879crop.jpg in Resources */,
 				C91E4ABA1815A9430074E154 /* bh-gw-walk-by.caf in Resources */,
 				C91E4A871815A9420074E154 /* jd-pwc-clubhouse.caf in Resources */,
 				C98345B5180CCBED00C120B1 /* no-on-9.jpg in Resources */,
