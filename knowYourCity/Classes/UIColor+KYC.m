@@ -40,6 +40,7 @@
     return [UIColor colorWithRed:77.0/255.0 green:77.0/255.0 blue:77.0/255.0 alpha:1.0];
 }
 
+// aka #eb0000
 + (UIColor *)kycRed {
     return [UIColor colorWithRed:235.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
 }
