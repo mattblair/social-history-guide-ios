@@ -1100,7 +1100,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_SPECIFIC_BUNDLE_ID = com.elsewiseapps.pdxSHG.debug;
-				BUILD_SPECIFIC_DISPLAY_NAME = "PDX History";
+				BUILD_SPECIFIC_DISPLAY_NAME = "PDXHistoryβ";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1130,7 +1130,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_SPECIFIC_BUNDLE_ID = com.elsewiseapps.pdxSHG.release;
-				BUILD_SPECIFIC_DISPLAY_NAME = "PDX History";
+				BUILD_SPECIFIC_DISPLAY_NAME = "PDXHistoryβ";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1200,7 +1200,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_SPECIFIC_BUNDLE_ID = com.elsewiseapps.pdxSHG.adhoc;
-				BUILD_SPECIFIC_DISPLAY_NAME = "PDX History";
+				BUILD_SPECIFIC_DISPLAY_NAME = "PDXHistoryβ";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
