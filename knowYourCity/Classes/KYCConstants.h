@@ -65,6 +65,9 @@ extern NSString* const kCloseButton;
 extern NSString* const kActionButton;
 extern NSString* const kBackButtonImage;
 
+extern NSString* const kPhotoPlaceholderImage;
+extern NSString* const kOfflinePhotoPlaceholderImage;
+
 extern NSString* const kAppNameImage;
 
 // Audio Player Images
@@ -91,6 +94,10 @@ extern NSString* const kCurrentLocationAvailableNotification;
 extern NSString* const kCurrentLocationFailureNotification;
 extern NSString* const kMapDataRefreshNeededNotification;
 extern NSString* const kFullScreenCameraRequestedNotification;
+
+// User Defaults
+extern NSString* const kOfflineMapsWarningKey;
+extern NSString* const kOfflinePhotosWarningKey;
 
 // Fonts
 extern NSString* const kTitleFontName;

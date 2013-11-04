@@ -31,6 +31,9 @@ NSString* const kCloseButton = @"kbb-x-1"; // kbb-x-2
 NSString* const kActionButton = @"kbb-action-2";
 NSString* const kBackButtonImage = @"kbb-back"; // iOS 6 only
 
+NSString* const kPhotoPlaceholderImage = @"pshg-photo-placeholder";
+NSString* const kOfflinePhotoPlaceholderImage = @"pshg-photo-offline-placeholder";
+
 NSString* const kAppNameImage = @"pshg-title";
 
 // Audio Player Images
@@ -57,6 +60,10 @@ NSString* const kCurrentLocationAvailableNotification = @"kCurrentLocationAvaila
 NSString* const kCurrentLocationFailureNotification = @"kCurrentLocationFailureNotification";
 NSString* const kMapDataRefreshNeededNotification = @"kMapDataRefreshNeededNotification";
 NSString* const kFullScreenCameraRequestedNotification = @"kFullScreenCameraRequestedNotification";
+
+// User Defaults
+NSString* const kOfflineMapsWarningKey = @"kOfflineMapsWarningKey";
+NSString* const kOfflinePhotosWarningKey = @"kOfflinePhotosWarningKey";
 
 // Fonts
 
