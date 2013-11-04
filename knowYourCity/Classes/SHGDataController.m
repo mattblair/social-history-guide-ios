@@ -9,6 +9,7 @@
 #import "SHGDataController.h"
 
 #import <FMDB/FMDatabase.h>
+
 #import "SHGMapAnnotation.h"
 #import "EWAMapManager.h"
 
@@ -269,9 +270,21 @@
     return [NSURL URLWithString:urlString];
 }
 
+// always return the text-less image, because the offline warning is too small to read
+- (UIImage *)thumbnailPlaceholder {
+    
+    return [UIImage imageNamed:kPhotoPlaceholderImage];
+}
+
 - (UIImage *)photoPlaceholder {
     
-    return [UIImage imageNamed:@"pshg-photo-placeholder"];
+    if ([SHG_APP_DELEGATE currentlyOnline]) {
+        
+        return [UIImage imageNamed:kPhotoPlaceholderImage];
+    } else {
+        
+        return [UIImage imageNamed:kOfflinePhotoPlaceholderImage];
+    }
 }
 
 - (NSURL *)urlForAudiofileNamed:(NSString *)audiofile {

@@ -121,6 +121,7 @@ typedef NS_ENUM(NSUInteger, SHGSearchResultType) {
 // URLs
 
 - (NSURL *)urlForPhotoNamed:(NSString *)photoName;
+- (UIImage *)thumbnailPlaceholder;
 - (UIImage *)photoPlaceholder;
 
 // probably won't be used in v1.0
