@@ -98,8 +98,24 @@
                 
                 self.mainPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, MAIN_PHOTO_WIDTH, MAIN_PHOTO_HEIGHT)];
                 
-                [self.mainPhoto setImageWithURL:[SHG_DATA urlForPhotoNamed:imageName]
-                               placeholderImage:[SHG_DATA photoPlaceholder]];
+//                [self.mainPhoto setImageWithURL:[SHG_DATA urlForPhotoNamed:imageName]
+//                               placeholderImage:[SHG_DATA photoPlaceholder]];
+                
+                
+                NSURLRequest *photoRequest = [NSURLRequest requestWithURL:[SHG_DATA urlForPhotoNamed:imageName]];
+                
+                __weak UIImageView *weakPhotoView = self.mainPhoto;
+                
+                [self.mainPhoto setImageWithURLRequest:photoRequest
+                                      placeholderImage:[SHG_DATA photoPlaceholder]
+                                               success:NULL
+                                               failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
+                                                   
+                                                   weakPhotoView.image = [UIImage imageNamed:kOfflinePhotoPlaceholderImage];
+                                                   
+                                                   [SHG_APP_DELEGATE warnAboutOfflinePhotos];
+                                               }];
+                
                 
                 self.mainPhoto.userInteractionEnabled = YES;
                 
