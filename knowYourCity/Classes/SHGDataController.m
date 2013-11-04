@@ -59,6 +59,15 @@
     }
 }
 
+
+#pragma mark - Testing Utilities
+
+- (BOOL)appStoreBuild {
+    
+    return [[[NSBundle mainBundle] bundleIdentifier] isEqualToString:kAppStoreBundleID];
+}
+
+
 #pragma mark - Themes
 
 - (NSArray *)publishedThemes {

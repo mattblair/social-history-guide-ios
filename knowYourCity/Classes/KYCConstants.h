@@ -45,6 +45,8 @@ typedef NS_ENUM(NSUInteger, KYCWorkflowState) {
     KYCWorkflowStateTesting
 };
 
+extern NSString* const kAppStoreBundleID;
+
 // Off-device images
 extern NSString* const kPhotosURL;
 extern NSString* const kAudioURL;

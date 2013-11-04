@@ -8,6 +8,8 @@
 
 #import "KYCConstants.h"
 
+NSString* const kAppStoreBundleID = @"com.elsewiseapps.pdxshg";
+
 // Off-device media
 //NSString* const kPhotosURL = @"http://kycstatic.elsewiseapps.com/photos/";
 NSString* const kPhotosURL = @"https://s3-us-west-2.amazonaws.com/pdxshg.media/photos/";

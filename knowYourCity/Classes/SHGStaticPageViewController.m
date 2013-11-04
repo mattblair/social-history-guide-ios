@@ -74,8 +74,19 @@
     yForNextView = 25.0;
     
     self.appNameImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10.0, yForNextView, 300.0, 100.0)];
-    //self.appNameImageView.image = [UIImage imageNamed:kAppNameImage];
+    
     self.appNameImageView.image = [UIImage imageNamed:@"pshg-two-line-banner"];
+    
+    if (![SHG_DATA appStoreBuild]) {
+        
+        UITapGestureRecognizer *doubleTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                      action:@selector(showVersionNumber)];
+        doubleTapGR.numberOfTapsRequired = 2;
+        
+        self.appNameImageView.userInteractionEnabled = YES;
+        
+        [self.appNameImageView addGestureRecognizer:doubleTapGR];
+    }
     
     [self.view addSubview:self.appNameImageView];
     
@@ -134,6 +145,8 @@
     
 }
 
+#pragma mark - Respond to User Actions
+
 - (void)close:(id)sender {
     
     DLog(@"Would close this.");
@@ -147,6 +160,22 @@
     self.selectedSection = self.selectionView.selectedSegmentIndex;
     
     [self loadTextForCurrentSection];
+}
+
+- (void)showVersionNumber {
+    
+    NSString *versionNumber = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *buildNumber = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    
+    NSString *message = [NSString stringWithFormat:@"Version: %@\nBuild: %@", versionNumber, buildNumber];
+    
+    UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"App Version", @"Title of app version alert")
+                                                           message:message
+                                                          delegate:nil
+                                                 cancelButtonTitle:nil
+                                                 otherButtonTitles:@"OK", nil];
+    
+    [warningAlert show];
 }
 
 - (void)loadTextForCurrentSection {

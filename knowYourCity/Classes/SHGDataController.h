@@ -97,6 +97,7 @@ typedef NS_ENUM(NSUInteger, SHGSearchResultType) {
 
 + (SHGDataController *)sharedInstance;
 
+- (BOOL)appStoreBuild;
 
 // Themes
 
