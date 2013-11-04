@@ -1252,7 +1252,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_SPECIFIC_BUNDLE_ID = com.elsewiseapps.pdxSHG;
+				BUILD_SPECIFIC_BUNDLE_ID = com.elsewiseapps.pdxshg;
 				BUILD_SPECIFIC_DISPLAY_NAME = "PDX History";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
