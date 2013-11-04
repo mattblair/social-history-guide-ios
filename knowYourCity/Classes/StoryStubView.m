@@ -79,9 +79,8 @@
             
             self.thumbnailView = [[UIImageView alloc] initWithFrame:thumbnailRect];
             
-            // retina or thumbnail-specific url?
             [self.thumbnailView setImageWithURL:[SHG_DATA urlForPhotoNamed:thumbnailName]
-                               placeholderImage:[SHG_DATA photoPlaceholder]];
+                               placeholderImage:[SHG_DATA thumbnailPlaceholder]];
             
             [self addSubview:self.thumbnailView];
             
