@@ -12,6 +12,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
+    #import "KYCAppDelegate.h"
     #import "KYCConstants.h"
     #import "UIColor+KYC.h"
     #import "SHGDataController.h"
@@ -33,7 +34,7 @@
 
 #define PRE_IOS7 kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_iOS_7_0
 
-#define HAS_SOCIAL_FRAMEWORK NSClassFromString(@"SLComposeViewController")
+#define SHG_APP_DELEGATE (KYCAppDelegate *)[[UIApplication sharedApplication] delegate]
 
 #define IN_LANDSCAPE UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
 
