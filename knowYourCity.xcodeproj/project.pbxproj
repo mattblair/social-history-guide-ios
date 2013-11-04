@@ -101,6 +101,7 @@
 		C95B4D16182169D800712DDA /* travel-portland-300.png in Resources */ = {isa = PBXBuildFile; fileRef = C95B4D13182169D800712DDA /* travel-portland-300.png */; };
 		C95B4D191821B4E400712DDA /* EWAMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B4D181821B4E400712DDA /* EWAMapManager.m */; };
 		C95B595716BE1EF1000E1FFB /* TidbitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */; };
+		C95D4C3C1827564100BF5146 /* pshg-photo-offline-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C95D4C3B1827564100BF5146 /* pshg-photo-offline-placeholder.png */; };
 		C96075A116AC6DC8004B2672 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C96075A016AC6DC8004B2672 /* libz.dylib */; };
 		C97B44E3169DCCDA008A2793 /* KYCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */; };
 		C97F49B7181AF728007F7164 /* kbb-x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C97F49B5181AF728007F7164 /* kbb-x-1.png */; };
@@ -298,6 +299,7 @@
 		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
 		C95C30C11710FCA400E64F0C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		C95C30C21710FCA400E64F0C /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
+		C95D4C3B1827564100BF5146 /* pshg-photo-offline-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-photo-offline-placeholder.png"; sourceTree = "<group>"; };
 		C96075A016AC6DC8004B2672 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C97B44DF169DCCDA008A2793 /* KYCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCAppDelegate.h; path = Classes/KYCAppDelegate.h; sourceTree = "<group>"; };
 		C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYCAppDelegate.m; path = Classes/KYCAppDelegate.m; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 		C93030E316AB320E0039D7B8 /* photos */ = {
 			isa = PBXGroup;
 			children = (
+				C95D4C3B1827564100BF5146 /* pshg-photo-offline-placeholder.png */,
 				C991494E181989D800201598 /* pshg-photo-placeholder.png */,
 			);
 			name = photos;
@@ -915,6 +918,7 @@
 				C98345B4180CCBED00C120B1 /* old-town-text.jpg in Resources */,
 				C91E4AA91815A9420074E154 /* po-urban-renewal-and-hippies.caf in Resources */,
 				C9FDFD7A1819C224000BFE14 /* kbb-action-2@2x.png in Resources */,
+				C95D4C3C1827564100BF5146 /* pshg-photo-offline-placeholder.png in Resources */,
 				C98345B6180CCBED00C120B1 /* native.jpg in Resources */,
 				C9FDFD7E1819C224000BFE14 /* kbb-map@2x.png in Resources */,
 				C91E4A9E1815A9420074E154 /* mm-john-reed.caf in Resources */,
