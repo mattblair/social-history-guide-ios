@@ -36,16 +36,13 @@
     
     [super loadView];
     
-    // Do we want to use title for anything?
-    //self.title = NSLocalizedString(@"About", @"Name of About View Controller");
-    
     self.view.backgroundColor = [UIColor whiteColor];
     
     CGFloat yForNextView = ON_IOS7 ? 25.0 : 10.0; // 70.0 if pushed on nav stack
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    // feels like the x button could be a little higher on iOS 6.x
+    // feels like the close button could be a little higher on iOS 6.x
     CGFloat buttonY = ON_IOS7 ? yForNextView : yForNextView - 8.0;
     
     // when the button was 22 wide, x was 278
