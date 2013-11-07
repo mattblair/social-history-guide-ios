@@ -41,12 +41,15 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CGFloat yForNextView = 25.0; // 70.0 if pushed on nav stack
+    CGFloat yForNextView = ON_IOS7 ? 25.0 : 10.0; // 70.0 if pushed on nav stack
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
+    // feels like the x button could be a little higher on iOS 6.x
+    CGFloat buttonY = ON_IOS7 ? yForNextView : yForNextView - 8.0;
+    
     // when the button was 22 wide, x was 278
-    self.closeButton.frame = CGRectMake(267.0, yForNextView, 44.0, 44.0);
+    self.closeButton.frame = CGRectMake(267.0, buttonY, 44.0, 44.0);
     
     UIImage *closeImage;
     
@@ -70,8 +73,6 @@
     
     [self.view addSubview:self.closeButton];
     
-    // was 60.0 to clear the close button completely
-    yForNextView = 25.0;
     
     self.appNameImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10.0, yForNextView, 300.0, 100.0)];
     
@@ -112,6 +113,8 @@
                                                                      @"Donate"
                                                                      ]];
     
+    CGFloat selectHeight = ON_IOS7 ? 31.0 : 26.0;
+    
     if (PRE_IOS7) {
         
         // deprecated in iOS 7
@@ -125,7 +128,7 @@
                            action:@selector(handleSelection:)
                  forControlEvents:UIControlEventValueChanged];
     
-    self.selectionView.frame = CGRectMake(10.0, yForNextView, 300.0, 31.0);
+    self.selectionView.frame = CGRectMake(10.0, yForNextView, 300.0, selectHeight);
     
     [self.view addSubview:self.selectionView];
     
