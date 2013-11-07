@@ -81,10 +81,20 @@
         
         [self addSubview:self.currentTime];
         
-        // adjust for different UIKit metrics
+        // adjust/calculate for different UIKit metrics
         // would also need to be adjusted for custom images with different metrics
-        CGFloat sliderY = ON_IOS7 ? 4.0 : 9.0;
+        // On-device test results using KBB graphics:
+        // iPhone 5 running 7.0.2: y=4 was better. Not so after 7.0.3 update.
+        // iPhone 4 running 6.0.1: y=9 looks best.
+        // iPhone 4 running 7.0.3: y=9 looks too high, by about 3-4 pts
+        // try adjusting the height of the UISlider? Is making it too short causing a side effect?
+        
+        //CGFloat sliderY = ON_IOS7 ? 4.0 : 9.0;
+        
+        CGFloat sliderY = 9.0; // seems to work better on most device/iOS combinations
         CGRect sliderFrame = CGRectMake(42.0, sliderY, 192.0, 14.0);
+        
+        DLog(@"sliderFrame: %@", NSStringFromCGRect(sliderFrame));
         
         self.audioScrubber = [[UISlider alloc] initWithFrame:sliderFrame];
         
