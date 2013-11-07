@@ -137,15 +137,6 @@
 		C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */; };
 		C9A5290117C2C17500EB0362 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528F717C2BF8100EB0362 /* libTestFlight.a */; };
 		C9EB9754180DB46800932756 /* SHGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB9753180DB46800932756 /* SHGMapAnnotation.m */; };
-		C9F5BD0D1826B00A005DA176 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD041826B00A005DA176 /* Icon-60@2x.png */; };
-		C9F5BD0E1826B00A005DA176 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD051826B00A005DA176 /* Icon-72.png */; };
-		C9F5BD0F1826B00A005DA176 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD061826B00A005DA176 /* Icon-72@2x.png */; };
-		C9F5BD101826B00A005DA176 /* Icon-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD071826B00A005DA176 /* Icon-Small-40@2x.png */; };
-		C9F5BD111826B00A005DA176 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD081826B00A005DA176 /* Icon-Small-50.png */; };
-		C9F5BD121826B00A005DA176 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD091826B00A005DA176 /* Icon-Small.png */; };
-		C9F5BD131826B00A005DA176 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD0A1826B00A005DA176 /* Icon-Small@2x.png */; };
-		C9F5BD141826B00A005DA176 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD0B1826B00A005DA176 /* Icon.png */; };
-		C9F5BD151826B00A005DA176 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD0C1826B00A005DA176 /* Icon@2x.png */; };
 		C9F5BD181826C976005DA176 /* kbb-back.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD161826C976005DA176 /* kbb-back.png */; };
 		C9F5BD191826C976005DA176 /* kbb-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD171826C976005DA176 /* kbb-back@2x.png */; };
 		C9FDFD711819C224000BFE14 /* pshg-title.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FDFD551819C224000BFE14 /* pshg-title.png */; };
@@ -345,15 +336,6 @@
 		C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.3.a; sourceTree = "<group>"; };
 		C9EB9752180DB46800932756 /* SHGMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGMapAnnotation.h; path = Classes/SHGMapAnnotation.h; sourceTree = "<group>"; };
 		C9EB9753180DB46800932756 /* SHGMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGMapAnnotation.m; path = Classes/SHGMapAnnotation.m; sourceTree = "<group>"; };
-		C9F5BD041826B00A005DA176 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
-		C9F5BD051826B00A005DA176 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
-		C9F5BD061826B00A005DA176 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
-		C9F5BD071826B00A005DA176 /* Icon-Small-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-40@2x.png"; sourceTree = "<group>"; };
-		C9F5BD081826B00A005DA176 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
-		C9F5BD091826B00A005DA176 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
-		C9F5BD0A1826B00A005DA176 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
-		C9F5BD0B1826B00A005DA176 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		C9F5BD0C1826B00A005DA176 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		C9F5BD161826C976005DA176 /* kbb-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kbb-back.png"; sourceTree = "<group>"; };
 		C9F5BD171826C976005DA176 /* kbb-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kbb-back@2x.png"; sourceTree = "<group>"; };
 		C9FDFD551819C224000BFE14 /* pshg-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-title.png"; sourceTree = "<group>"; };
@@ -659,23 +641,6 @@
 			path = "Resources/theme-illustrations";
 			sourceTree = "<group>";
 		};
-		C960758516AC5A29004B2672 /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				C9F5BD041826B00A005DA176 /* Icon-60@2x.png */,
-				C9F5BD051826B00A005DA176 /* Icon-72.png */,
-				C9F5BD061826B00A005DA176 /* Icon-72@2x.png */,
-				C9F5BD071826B00A005DA176 /* Icon-Small-40@2x.png */,
-				C9F5BD081826B00A005DA176 /* Icon-Small-50.png */,
-				C9F5BD091826B00A005DA176 /* Icon-Small.png */,
-				C9F5BD0A1826B00A005DA176 /* Icon-Small@2x.png */,
-				C9F5BD0B1826B00A005DA176 /* Icon.png */,
-				C9F5BD0C1826B00A005DA176 /* Icon@2x.png */,
-			);
-			name = icons;
-			path = Resources/icons;
-			sourceTree = "<group>";
-		};
 		C960758E16AC6CDF004B2672 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,7 +660,6 @@
 				C991494C181986DB00201598 /* Images.xcassets */,
 				C960756D16AC59B2004B2672 /* graphics */,
 				C93030FF16AB34C40039D7B8 /* html */,
-				C960758516AC5A29004B2672 /* icons */,
 				C960757316AC59C4004B2672 /* json */,
 				C93030E316AB320E0039D7B8 /* photos */,
 				C960757616AC59E7004B2672 /* theme-illustrations */,
@@ -903,12 +867,10 @@
 				C95B4D0D1820AAEE00712DDA /* pshg-two-line-banner.png in Resources */,
 				C9FDFD801819C224000BFE14 /* kbb-map-pin@2x.png in Resources */,
 				C95B4D15182169D800712DDA /* oacc-logo-300.png in Resources */,
-				C9F5BD141826B00A005DA176 /* Icon.png in Resources */,
 				C91E4A8F1815A9420074E154 /* dkc-erickson-flood.caf in Resources */,
 				C930310116AB34C40039D7B8 /* about.html in Resources */,
 				C97F49B7181AF728007F7164 /* kbb-x-1.png in Resources */,
 				C9FDFD7D1819C224000BFE14 /* kbb-map.png in Resources */,
-				C9F5BD0E1826B00A005DA176 /* Icon-72.png in Resources */,
 				C91E4AB61815A9420074E154 /* bh-restoring-gw-2.caf in Resources */,
 				C9FDFD711819C224000BFE14 /* pshg-title.png in Resources */,
 				C9914944181749B100201598 /* guest-michael-munk.jpg in Resources */,
@@ -931,7 +893,6 @@
 				C9FDFD871819C224000BFE14 /* kbb-audio-thumb.png in Resources */,
 				C91E4A981815A9420074E154 /* ee-she-who-watches.caf in Resources */,
 				C91E4A8E1815A9420074E154 /* dkc-ericksons-saloon.caf in Resources */,
-				C9F5BD151826B00A005DA176 /* Icon@2x.png in Resources */,
 				C9FDFD861819C224000BFE14 /* kbb-slider-2-filled@2x.png in Resources */,
 				C9F5BD191826C976005DA176 /* kbb-back@2x.png in Resources */,
 				C91E4AA31815A9420074E154 /* gn-oregon-gay-mvmt.caf in Resources */,
@@ -941,12 +902,10 @@
 				C9FDFD831819C224000BFE14 /* kbb-slider-2-empty.png in Resources */,
 				C9FDFD851819C224000BFE14 /* kbb-slider-2-filled.png in Resources */,
 				C95B4D101821688B00712DDA /* app.css in Resources */,
-				C9F5BD0F1826B00A005DA176 /* Icon-72@2x.png in Resources */,
 				C91E4AA61815A9420074E154 /* gn-accomplishments.caf in Resources */,
 				C91E4AB91815A9420074E154 /* bh-gw-intro.caf in Resources */,
 				C91E4A8C1815A9420074E154 /* dkc-flood-waterfront-park.caf in Resources */,
 				C91E4AA41815A9420074E154 /* gn-complacency.caf in Resources */,
-				C9F5BD0D1826B00A005DA176 /* Icon-60@2x.png in Resources */,
 				C991494B181749B100201598 /* guest-bill-hart.jpg in Resources */,
 				C91E4AB21815A9420074E154 /* rh-exclusion-intro.caf in Resources */,
 				C98345B9180CCBED00C120B1 /* ccba.jpg in Resources */,
@@ -954,7 +913,6 @@
 				C98345B1180CCBED00C120B1 /* magic-gardens.jpg in Resources */,
 				C91E4A8B1815A9420074E154 /* jd-daily-life-sharing-long.caf in Resources */,
 				C91E4AAC1815A9420074E154 /* po-waldorf-location.caf in Resources */,
-				C9F5BD111826B00A005DA176 /* Icon-Small-50.png in Resources */,
 				C9FDFD891819C224000BFE14 /* kbb-play.png in Resources */,
 				C9FDFD8B1819C224000BFE14 /* kbb-pause.png in Resources */,
 				C91E4A991815A9420074E154 /* ee-personal-story.caf in Resources */,
@@ -968,7 +926,6 @@
 				C91E4A9C1815A9420074E154 /* mm-south-of-burnside-bridge.caf in Resources */,
 				C91E4AAF1815A9420074E154 /* po-apartments.caf in Resources */,
 				C991494F181989D800201598 /* pshg-photo-placeholder.png in Resources */,
-				C9F5BD131826B00A005DA176 /* Icon-Small@2x.png in Resources */,
 				C91E4ABE1815A9430074E154 /* bh-gw-history-1.caf in Resources */,
 				C9914946181749B100201598 /* guest-jan-dilg.jpg in Resources */,
 				C91E4AB81815A9420074E154 /* bh-pdx-and-gw.caf in Resources */,
@@ -982,7 +939,6 @@
 				C91E4AB71815A9420074E154 /* bh-restoring-gw.caf in Resources */,
 				C95B4D16182169D800712DDA /* travel-portland-300.png in Resources */,
 				C9FDFD721819C224000BFE14 /* pshg-title@2x.png in Resources */,
-				C9F5BD121826B00A005DA176 /* Icon-Small.png in Resources */,
 				C91E4A911815A9420074E154 /* dkc-crimping.caf in Resources */,
 				C91E4ABD1815A9430074E154 /* bh-cc-and-gw-1.caf in Resources */,
 				C9FDFD791819C224000BFE14 /* kbb-action-2.png in Resources */,
@@ -995,7 +951,6 @@
 				C9FDFD7B1819C224000BFE14 /* kbb-x-2.png in Resources */,
 				C9FDFD781819C224000BFE14 /* kbb-info-light@2x.png in Resources */,
 				C9FDFD741819C224000BFE14 /* kbb-list@2x.png in Resources */,
-				C9F5BD101826B00A005DA176 /* Icon-Small-40@2x.png in Resources */,
 				C9FDFD771819C224000BFE14 /* kbb-info-light.png in Resources */,
 				C98345B2180CCBED00C120B1 /* suffrage.jpg in Resources */,
 				C98345B0180CCBED00C120B1 /* old-town.jpg in Resources */,
