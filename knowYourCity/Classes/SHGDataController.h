@@ -34,6 +34,8 @@ typedef NS_ENUM(NSUInteger, SHGSearchResultType) {
 #define kContentSlugKey @"slug"
 #define kContentDisplayOrderKey @"display_order"
 
+#define kContentThemeIDKey @"theme_id"
+
 #define kContentLocationValidKey @"location_valid"
 #define kContentLatitudeKey @"latitude"
 #define kContentLongitudeKey @"longitude"

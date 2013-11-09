@@ -70,6 +70,23 @@
 
 #pragma mark - Themes
 
+// performance might be better if all themes were lazy-loaded once?
+- (NSString *)nameForThemeID:(NSUInteger)themeID {
+    
+    NSString *themeName = nil;
+    
+    NSString *selectString = [NSString stringWithFormat:@"select title from themes where id = %d;", themeID];
+    
+    FMResultSet *results = [self.shgDatabase executeQuery:selectString];
+    
+    while ([results next]) {
+        
+        themeName = [results stringForColumn:@"title"];
+    }
+    
+    return themeName;
+}
+
 - (NSArray *)publishedThemes {
     
     if (!_publishedThemes) {
@@ -170,7 +187,7 @@
     NSUInteger rowLimit = MAX(10, maxCount); // at least 10, but the argument can override?
     
     // set maxCount in query, or in annotation-creating loop?
-    NSString *queryTemplate = @"select id, title, subtitle, latitude, longitude "
+    NSString *queryTemplate = @"select id, title, subtitle, theme_id, latitude, longitude "
                                "from %@ where "
                                "latitude>%.6lf AND latitude<%.6lf AND longitude>%.6lf AND longitude<%.6lf "
                                "and workflow_state_id = %d "
@@ -201,6 +218,14 @@
                 SHGMapAnnotation *anAnnotation = [[SHGMapAnnotation alloc] initWithDictionary:[resultSet resultDictionary]];
                 
                 if (anAnnotation) {
+                    
+                    NSNumber *themeID = [[resultSet resultDictionary] objectForKey:kContentThemeIDKey];
+                    
+                    // themes are 1-indexed
+                    if ([themeID integerValue] > 0) {
+                        anAnnotation.subtitle = [self nameForThemeID:[themeID unsignedIntegerValue]];
+                    }
+                    
                     [annotations addObject:anAnnotation];
                 } else {
                     DLog(@"Unable to create an annotation with dictionary: %@", [resultSet resultDictionary]);
