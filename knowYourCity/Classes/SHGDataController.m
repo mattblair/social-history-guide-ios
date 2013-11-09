@@ -75,13 +75,13 @@
     
     NSString *themeName = nil;
     
-    NSString *selectString = [NSString stringWithFormat:@"select title from themes where id = %d;", themeID];
+    NSString *selectString = [NSString stringWithFormat:@"select %@ from themes where id = %d;", kContentTitleKey, themeID];
     
     FMResultSet *results = [self.shgDatabase executeQuery:selectString];
     
     while ([results next]) {
         
-        themeName = [results stringForColumn:@"title"];
+        themeName = [results stringForColumn:kContentTitleKey];
     }
     
     return themeName;
