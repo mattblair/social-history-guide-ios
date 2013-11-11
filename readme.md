@@ -2,7 +2,7 @@
 
 ![The app's story view](https://s3-us-west-2.amazonaws.com/pdxshg.media/promo/psha-promo-story-view-300.png "Story View")
 
-This app is available on the App Store.
+This app is available on the <a href="https://itunes.apple.com/us/app/pdx-social-history-guide/id737566738?ls=1&mt=8">App Store</a>.
 
 ## Known Issues
 
