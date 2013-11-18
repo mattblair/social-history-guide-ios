@@ -17,7 +17,9 @@ extern NSString* const kFlurryAPIKey;
 
 // =======================================================================
 
-// Add a KYCPrivateConstants.m files that looks like:
+// Rename KYCPrivateConstants-example.m to KYCPrivateConstants.m
+
+// Or, add a KYCPrivateConstants.m files that looks like:
 
 // Or comment out all reference to TestFlight if not using it.
 // NSString* const kTestFlightAppToken = @"appToken";
