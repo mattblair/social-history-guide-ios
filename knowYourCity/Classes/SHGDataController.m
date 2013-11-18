@@ -10,6 +10,8 @@
 
 #import <FMDB/FMDatabase.h>
 
+#import "KYCPrivateConstants.h"
+
 #import "SHGMapAnnotation.h"
 #import "EWAMapManager.h"
 
@@ -412,6 +414,26 @@
 		
     return MKCoordinateRegionMakeWithDistance([self coordinateFromDictionary:contentDictionary],
                                               latitudeSpan, longitudeSpan);
+}
+
+
+#pragma mark - 3rd Party Utility Methods
+
+- (void)logFlurryEventNamed:(NSString *)eventName withParameters:(NSDictionary *)params {
+    
+    if (kFlurryAPIKey && eventName) {
+        
+        if (params) {
+            
+            [Flurry logEvent:eventName withParameters:params];
+        } else {
+            
+            [Flurry logEvent:eventName];
+        }
+    } else {
+        
+        DLog(@"Flurry not configured: Can't log %@ event with params: %@", eventName, params);
+    }
 }
 
 @end

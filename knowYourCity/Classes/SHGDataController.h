@@ -142,4 +142,6 @@ typedef NS_ENUM(NSUInteger, SHGSearchResultType) {
 //- (CLLocationCoordinate2D)defaultMapCenter;
 //- (MKCoordinateRegion)defaultMapRegion;
 
+- (void)logFlurryEventNamed:(NSString *)eventName withParameters:(NSDictionary *)params;
+
 @end
