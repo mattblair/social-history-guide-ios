@@ -62,7 +62,7 @@
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
-    // make sure location starts so we ahve location when we need it
+    // make sure location starts so we have location when we need it
     [EWA_MM startup];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
