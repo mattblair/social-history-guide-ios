@@ -568,8 +568,8 @@
     
     guestVC.guestData = [SHG_DATA dictionaryForGuestID:[guestNumber unsignedIntegerValue]];
     
-    [Flurry logEvent:kFlurryEventGuestView
-      withParameters:@{ kFlurryParamSlug : [guestVC.guestData objectForKey:kGuestNameKey] }];
+    [SHG_DATA logFlurryEventNamed:kFlurryEventGuestView
+                   withParameters:@{ kFlurryParamSlug : [guestVC.guestData objectForKey:kGuestNameKey] }];
     
     guestVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
@@ -638,9 +638,9 @@
         if (completed) {
             DLog(@"User chose %@", activityType);
             
-            [Flurry logEvent:kFlurryEventThemeShare
-              withParameters:@{ kFlurryParamSlug : storySlug,
-                                kFlurryParamActivity : activityType }];
+            [SHG_DATA logFlurryEventNamed:kFlurryEventThemeShare
+                           withParameters:@{ kFlurryParamSlug : storySlug,
+                                             kFlurryParamActivity : activityType }];
         }
     };
     

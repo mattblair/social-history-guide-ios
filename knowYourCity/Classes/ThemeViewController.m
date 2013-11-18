@@ -288,8 +288,8 @@
         
         NSString *flurryEvent = fromMap ? kFlurryEventStoryViewFromMap : kFlurryEventStoryView;
         
-        [Flurry logEvent:flurryEvent
-          withParameters:@{ kFlurryParamSlug : [storyDictionary objectForKey:kContentSlugKey] }];
+        [SHG_DATA logFlurryEventNamed:flurryEvent
+                       withParameters:@{ kFlurryParamSlug : [storyDictionary objectForKey:kContentSlugKey] }];
         
         StoryViewController *storyVC = [[StoryViewController alloc] initWithNibName:nil bundle:nil];
         
@@ -340,9 +340,9 @@
         if (completed) {
             DLog(@"User chose %@", activityType);
             
-            [Flurry logEvent:kFlurryEventThemeShare
-              withParameters:@{ kFlurryParamSlug : themeSlug,
-                                kFlurryParamActivity : activityType }];
+            [SHG_DATA logFlurryEventNamed:kFlurryEventThemeShare
+                           withParameters:@{ kFlurryParamSlug : themeSlug,
+                                             kFlurryParamActivity : activityType }];
         }
     };
 

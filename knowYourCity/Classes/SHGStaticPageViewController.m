@@ -202,8 +202,8 @@
     
     DLog(@"Will load %@", contentFilename);
     
-    [Flurry logEvent:kFlurryEventPageView
-      withParameters:@{ kFlurryParamSlug : contentFilename }];
+    [SHG_DATA logFlurryEventNamed:kFlurryEventPageView
+                   withParameters:@{ kFlurryParamSlug : contentFilename }];
     
     NSString *localHTMLPath = [[NSBundle mainBundle] pathForResource:contentFilename
                                                                ofType:@"html"];
