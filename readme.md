@@ -2,16 +2,28 @@
 
 ![The app's story view](https://s3-us-west-2.amazonaws.com/pdxshg.media/promo/psha-promo-story-view-300.png "Story View")
 
-This app is available on the <a href="https://itunes.apple.com/us/app/pdx-social-history-guide/id737566738?ls=1&mt=8">App Store</a>.
+The PDX Social History App is an iOS app featuring location-based stories reflecting the multicultural history of downtown Portland, OR, USA. The app brings these stories to the surface through interviews, mapping, art and photos. Each story features a summary, audio clip, and an image or map.
 
-## Known Issues
+To see the project in action:
+* [Website](http://pdxsocialhistoryguide.org "PDX Social History Guide")
+* [On the App Store](https://itunes.apple.com/us/app/pdx-social-history-guide/id737566738?ls=1&mt=8 "PDX Social History App")
 
-Stuff
+My goal is for this platform (the app and the site) to be reusable in whole, or at least in parts, in other communities and locations who want to gather and share their stories. 
 
+To achieve this, a lot of the Portland-specific elements need to be factored out into JSON files, the database, etc. Admittedly, I took a few shortcuts just so we could get this project launched without over-optimizing for imagined contingencies. Generalizing the codebases will be a non-trivial amount of work, but I've made decisions along the way with that in mind. Suggestions are welcome.
 
 ## Related Project
 
-This is the app version of the  websiteAn [PDX Social History Guide](http://pdxsocialhistoryguide.org "PDX Social History Guide"). The source for that is available here: (add once posted)
+This is the app version of the [PDX Social History Guide](http://pdxsocialhistoryguide.org "PDX Social History Guide") website. The source for that site is available [here](https://github.com/mattblair/social-history-guide-rails).
+
+## Known Issues
+
+* There may be some problems building a fresh clone of the repo. The main one relates to the private constants: If you change the name of KYCPrivateConstants-example.m to KYCPrivateConstants.m, you should be okay. If you run into other problems, contact me or create an issue and I'll work on it.
+* The name of the project changed mid-way through (as the Dill Pickle Club took on the name Know Your City) and the new name of the project wasn't finalized until late in the development cycle. The name needs to be updated throughout the project files and directory structure. This is why some classes use the prefix KYC and later classes use SHG. This will be normalized over time.
+
+## Credits
+
+See the [full list of credits](http://pdxsocialhistory.org/credits "PDX Social History Credits") on the project's website.
 
 ## Software License
 
@@ -39,11 +51,12 @@ THE SOFTWARE.
 
 ## Content License
 
-I've included some of the media files in the repo for convenience, so the project will build with less hassle, but these media files are not available under the MIT License.
+I've included some of the media files in the repo for convenience, so the project will build with less hassle, but these media files are *not* available under the MIT License.
 
 Specifically:
 
 * Hand-drawn icons and illustrations are copyright KBB
 * Audio files are copyright Know Your City, with permission of the interviewees
+* Photos owned by third-parties which have been licensed for use by Know Your City
 
-For more information:
+If you have questions, please contact us.
