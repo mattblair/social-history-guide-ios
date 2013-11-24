@@ -638,7 +638,7 @@
         if (completed) {
             DLog(@"User chose %@", activityType);
             
-            [SHG_DATA logFlurryEventNamed:kFlurryEventThemeShare
+            [SHG_DATA logFlurryEventNamed:kFlurryEventStoryShare
                            withParameters:@{ kFlurryParamSlug : storySlug,
                                              kFlurryParamActivity : activityType }];
         }
