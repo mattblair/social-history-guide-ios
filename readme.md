@@ -55,7 +55,7 @@ I've included some of the media files in the repo for convenience, so the projec
 
 Specifically:
 
-* Hand-drawn icons and illustrations are copyright KBB
+* Hand-drawn icons and illustrations are copyright [Kate Bingaman-Burt](http://katebingamanburt.com/)
 * Audio files are copyright Know Your City, with permission of the interviewees
 * Photos owned by third-parties which have been licensed for use by Know Your City
 
