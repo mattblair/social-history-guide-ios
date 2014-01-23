@@ -22,7 +22,7 @@ audio_files_for_ios = CSV.read(audio_file_list)
 # themes to process:
 
 themes_to_process = [
-
+=begin
   { "name" => "African-American History", "prefix" => "bh", "subdirectory" => "africanAmericanHistory" },
   { "name" => "Chinese History", "prefix" => "rh", "subdirectory" => "chineseHistory" },
   { "name" => "Jewish History", "prefix" => "po", "subdirectory" => "jewishHistory" },
@@ -42,9 +42,9 @@ themes_to_process = [
   # mp3 versions are already prevised
   { "name" => "Old Town", "prefix" => "dkc", "subdirectory" => "oldTown-mp3" },
   { "name" => "Women's History", "prefix" => "jd", "subdirectory" => "janDilg-mp3" }
-  
+=end
   # yet to be completed, probably deferred until after launch:
-  #{ "name" => "Japanese-American History", "prefix" => "hs", "subdirectory" => "japaneseAmericanHistory" },
+  { "name" => "Japanese-American History", "prefix" => "hs", "subdirectory" => "HenrySakamotoErinYankeEdited" }
   #{ "name" => "Public Art", "prefix" => "cb", "subdirectory" => "caryeBye" }
   #{ "name" => "Pearl District", "prefix" => "ml", "subdirectory" => "pearlDistrictArtists" }
   ]
@@ -86,7 +86,7 @@ themes_to_process.each do |theme|
   
     # mp3 conversion not supported without a 3rd party encoder
     # `afconvert -v -c 1 -f MPG3 -d mp3 -s 3 -b 128000 #{filename} #{output_file}`
-=begin    
+    
     # if it's already an mp3, just copy it to the mp3 folder, without changing the filename
     if filename.end_with?(".mp3")
       `cp \"#{filename}\" "#{preview_output_directory}/#{new_file_name}.mp3"`
@@ -97,9 +97,9 @@ themes_to_process.each do |theme|
       `lame -h \"#{filename}\" #{mp3_output_file}`
     end
   
-    # mp4 for the web:
+    # or, use mp4 for the web:
     #`afconvert -v -c 1 -f mp4f -d aac -s 3 -b 128000 \"#{filename}\" #{web_output_file}`
-=end
+
     # convert the file for the app:
     if audio_files_for_ios.include?(["#{new_file_name}"])
       `afconvert -v -c 1 -f caff -d aac -s 3 -b 128000 \"#{filename}\" #{ios_output_file}`
@@ -108,7 +108,7 @@ themes_to_process.each do |theme|
     end
     
     # ogg for Firefox and Opera -- switch to overwrite what's there?
-    #`ffmpeg -i \"#{filename}\" -acodec libvorbis -aq 5 #{ogg_output_file}`
+    `ffmpeg -i \"#{filename}\" -acodec libvorbis -aq 5 #{ogg_output_file}`
     
     # add an object to the output list, with id, original name, new filenames?
     $processed_files << new_file_name
