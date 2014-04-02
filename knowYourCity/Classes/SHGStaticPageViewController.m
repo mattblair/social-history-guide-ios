@@ -10,8 +10,6 @@
 
 @interface SHGStaticPageViewController ()
 
-@property (strong, nonatomic) UILabel *appNameLabel; // deprecated
-
 @property (strong, nonatomic) UIImageView *appNameImageView;
 @property (strong, nonatomic) UILabel *appCreditLabel;
 @property (strong, nonatomic) UISegmentedControl *selectionView;
@@ -142,7 +140,6 @@
     [self.view addSubview:self.webView];
     
     [self loadTextForCurrentSection];
-    
 }
 
 #pragma mark - Respond to User Actions
@@ -169,13 +166,13 @@
     
     NSString *message = [NSString stringWithFormat:@"Version: %@\nBuild: %@", versionNumber, buildNumber];
     
-    UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"App Version", @"Title of app version alert")
+    UIAlertView *versionAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"App Version", @"Title of app version alert")
                                                            message:message
                                                           delegate:nil
                                                  cancelButtonTitle:nil
                                                  otherButtonTitles:@"OK", nil];
     
-    [warningAlert show];
+    [versionAlert show];
 }
 
 - (void)loadTextForCurrentSection {
@@ -206,7 +203,7 @@
                    withParameters:@{ kFlurryParamSlug : contentFilename }];
     
     NSString *localHTMLPath = [[NSBundle mainBundle] pathForResource:contentFilename
-                                                               ofType:@"html"];
+                                                              ofType:@"html"];
 	
     if (localHTMLPath) {
         NSURL *url = [NSURL fileURLWithPath:localHTMLPath];
