@@ -3,7 +3,9 @@ require 'csv'
 
 require_relative 'kyc-filename-cleanup'
 
-media_source_directory = "/Users/matt/Dropbox/kycInterviewsEdited"
+#media_source_directory = "/Users/matt/Dropbox/kycInterviewsEdited"
+# updated for the ones edited by Emily Mercer:
+media_source_directory = "/Users/matt/Dropbox/PSHG-Interviews"
 
 ios_output_directory = "/Users/matt/Documents/codeProjects/knowYourCity/knowYourCity/Resources/audio"
 web_output_directory = "/Users/matt/Dropbox/appWorkingNotes/knowYourCity/mp4"
@@ -17,7 +19,7 @@ web_suffix = "mp4"
 # select audio_filename from stories where workflow_state_id = 2
 audio_file_list = "/Users/matt/Documents/codeProjects/knowYourCity/contentScripts/included-audio-files.txt"
 
-audio_files_for_ios = CSV.read(audio_file_list)
+#audio_files_for_ios = CSV.read(audio_file_list)
 
 # themes to process:
 
@@ -42,11 +44,17 @@ themes_to_process = [
   # mp3 versions are already prevised
   { "name" => "Old Town", "prefix" => "dkc", "subdirectory" => "oldTown-mp3" },
   { "name" => "Women's History", "prefix" => "jd", "subdirectory" => "janDilg-mp3" }
-=end
+
   # yet to be completed, probably deferred until after launch:
   { "name" => "Japanese-American History", "prefix" => "hs", "subdirectory" => "HenrySakamotoErinYankeEdited" }
   #{ "name" => "Public Art", "prefix" => "cb", "subdirectory" => "caryeBye" }
   #{ "name" => "Pearl District", "prefix" => "ml", "subdirectory" => "pearlDistrictArtists" }
+=end  
+  { "name" => "Museums and Public Art", "prefix" => "cb", "subdirectory" => "CaryeByeEdited" },
+  { "name" => "Punks History", "prefix" => "ml", "subdirectory" => "MikeLastraEdited" },
+  { "name" => "Union Station", "prefix" => "sd", "subdirectory" => "SteveDottererEdited" },
+  { "name" => "Old Town Plaques", "prefix" => "sh", "subdirectory" => "SuennHoEdited" }
+  
   ]
   
 
@@ -67,7 +75,7 @@ themes_to_process.each do |theme|
   
     # clean up the name, prepend the prefix -- and add an id number?
     # prevent duplicate prefixing, since those mp3's are already prefixed
-    prefix = filename.start_with?(theme['prefix']) ? "" : "#{theme['prefix']}-"
+    prefix = filename.start_with?(theme['prefix']) || filename.start_with?(theme['prefix'].upcase()) ? "" : "#{theme['prefix']}-"
     new_file_name = "#{prefix}#{clean_audio_filename(filename)}"
     
     # inject theme-specific prefix, because original filenames are inconsistent
@@ -101,11 +109,15 @@ themes_to_process.each do |theme|
     #`afconvert -v -c 1 -f mp4f -d aac -s 3 -b 128000 \"#{filename}\" #{web_output_file}`
 
     # convert the file for the app:
+=begin
     if audio_files_for_ios.include?(["#{new_file_name}"])
       `afconvert -v -c 1 -f caff -d aac -s 3 -b 128000 \"#{filename}\" #{ios_output_file}`
     else
       puts "Will not add #{new_file_name} to iOS project because it's not published."
     end
+=end
+    # switched to always including this:
+    `afconvert -v -c 1 -f caff -d aac -s 3 -b 128000 \"#{filename}\" #{ios_output_file}`
     
     # ogg for Firefox and Opera -- switch to overwrite what's there?
     `ffmpeg -i \"#{filename}\" -acodec libvorbis -aq 5 #{ogg_output_file}`
