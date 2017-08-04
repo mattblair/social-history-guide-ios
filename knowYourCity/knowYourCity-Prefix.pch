@@ -17,8 +17,8 @@
     #import "UIColor+KYC.h"
     #import "SHGDataController.h"
 
-    #import "TestFlight.h"
-    #import "Flurry.h"
+    //#import "TestFlight.h"
+    //#import "Flurry.h"
 
 #endif
 

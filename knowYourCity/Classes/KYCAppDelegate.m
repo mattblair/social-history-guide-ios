@@ -47,6 +47,7 @@
     
     
     // only start TestFlight if the token is defined
+    /*
     if (kTestFlightAppToken) {
         
         [TestFlight takeOff:kTestFlightAppToken];
@@ -57,6 +58,7 @@
         
         [Flurry startSession:kFlurryAPIKey];
     }
+    */
     
     [self setupReachability];
     

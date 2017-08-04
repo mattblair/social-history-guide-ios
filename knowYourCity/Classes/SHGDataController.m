@@ -425,10 +425,10 @@
         
         if (params) {
             
-            [Flurry logEvent:eventName withParameters:params];
+            //[Flurry logEvent:eventName withParameters:params];
         } else {
             
-            [Flurry logEvent:eventName];
+            //[Flurry logEvent:eventName];
         }
     } else {
         
