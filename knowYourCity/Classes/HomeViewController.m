@@ -177,7 +177,7 @@
         cell.textLabel.text = [themeDictionary objectForKey:kContentTitleKey];
     } else {
         cell.textLabel.text = NSLocalizedString(@"Not Found.", @"Not found descriptive text.");
-        DLog(@"Couldn't convert section %d and row %d into a theme.", indexPath.section, indexPath.row);
+        DLog(@"Couldn't convert section %ld and row %ld into a theme.", (long)indexPath.section, (long)indexPath.row);
     }
     
     cell.textLabel.accessibilityLabel = cell.textLabel.text;
@@ -216,7 +216,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    DLog(@"Tapped section %d and row %d", indexPath.section, indexPath.row);
+    DLog(@"Tapped section %ld and row %ld", (long)indexPath.section, (long)indexPath.row);
     
     NSDictionary *themeDictionary = self.themeList[indexPath.row];
     
@@ -347,7 +347,7 @@
         
     } else {
         
-        DLog(@"No story found for id %d", storyID);
+        DLog(@"No story found for id %lu", (unsigned long)storyID);
     }
 }
 
@@ -366,7 +366,7 @@
                          
                          // push if needed
                          if (itemID != NSNotFound) {
-                             DLog(@"Would show story with id %d", itemID);
+                             DLog(@"Would show story with id %lu", (unsigned long)itemID);
                              
                              [self showStoryWithID:itemID];
                          }

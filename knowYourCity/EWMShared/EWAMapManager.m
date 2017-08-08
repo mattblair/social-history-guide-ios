@@ -330,7 +330,7 @@
 	
 	 DLog(@"Location Failure.");
 	 DLog(@"Error: %@", [error localizedDescription]);
-	 DLog(@"Error code %d in domain: %@", [error code], [error domain]);
+	 DLog(@"Error code %ld in domain: %@", (long)[error code], [error domain]);
 	
     [[self locationManager] stopUpdatingLocation];
     

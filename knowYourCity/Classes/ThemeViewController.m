@@ -271,7 +271,7 @@
                          
                          // push if needed
                          if (itemID != NSNotFound) {
-                             DLog(@"Would show story with id %d", itemID);
+                             DLog(@"Would show story with id %lu", (unsigned long)itemID);
                              
                              [self showStoryWithID:itemID fromMap:YES];
                          }
@@ -298,7 +298,7 @@
         [self.navigationController pushViewController:storyVC animated:YES];
     } else {
         
-        DLog(@"No story found for id %d", storyID);
+        DLog(@"No story found for id %lu", (unsigned long)storyID);
     }
 }
 

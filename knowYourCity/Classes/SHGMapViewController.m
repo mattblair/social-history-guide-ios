@@ -91,7 +91,7 @@
         
     } else {
      
-        DLog(@"Tapped item: %d", itemID);
+        DLog(@"Tapped item: %lu", (unsigned long)itemID);
     }
 }
 

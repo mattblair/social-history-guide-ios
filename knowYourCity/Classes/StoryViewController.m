@@ -165,7 +165,7 @@
         }
             
         default:
-            DLog(@"Unhandled media type: %d", mediaType);
+            DLog(@"Unhandled media type: %lu", (unsigned long)mediaType);
             break;
     }
     

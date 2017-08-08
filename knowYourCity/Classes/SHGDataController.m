@@ -77,7 +77,7 @@
     
     NSString *themeName = nil;
     
-    NSString *selectString = [NSString stringWithFormat:@"select %@ from themes where id = %d;", kContentTitleKey, themeID];
+    NSString *selectString = [NSString stringWithFormat:@"select %@ from themes where id = %lu;", kContentTitleKey, (unsigned long)themeID];
     
     FMResultSet *results = [self.shgDatabase executeQuery:selectString];
     
@@ -116,8 +116,8 @@
     NSMutableArray *stories = [[NSMutableArray alloc] initWithCapacity:10];
     
     FMResultSet *resultSet = [self.shgDatabase executeQueryWithFormat:
-                              @"SELECT * FROM stories where theme_id = %d and workflow_state_id = %d order by display_order;",
-                              themeID,
+                              @"SELECT * FROM stories where theme_id = %lu and workflow_state_id = %d order by display_order;",
+                              (unsigned long)themeID,
                               PUBLISHED_WORKFLOW_STATE];
 
     while ([resultSet next]) {
@@ -259,7 +259,7 @@
             
             
         default:
-            DLog(@"Unhandled search request of type %d", resultType);
+            DLog(@"Unhandled search request of type %lu", (unsigned long)resultType);
             break;
     }
     
@@ -270,7 +270,7 @@
     
     NSDictionary *guestDictionary = nil;
     
-    FMResultSet *resultSet = [self.shgDatabase executeQueryWithFormat:@"SELECT * FROM stories where id = %d;", storyID];
+    FMResultSet *resultSet = [self.shgDatabase executeQueryWithFormat:@"SELECT * FROM stories where id = %lu;", (unsigned long)storyID];
     
     while ([resultSet next]) {
         
@@ -286,7 +286,7 @@
     
     NSDictionary *guestDictionary = nil;
     
-    FMResultSet *resultSet = [self.shgDatabase executeQueryWithFormat:@"SELECT * FROM guests where id = %d;", guestID];
+    FMResultSet *resultSet = [self.shgDatabase executeQueryWithFormat:@"SELECT * FROM guests where id = %lu;", (unsigned long)guestID];
     
     while ([resultSet next]) {
         

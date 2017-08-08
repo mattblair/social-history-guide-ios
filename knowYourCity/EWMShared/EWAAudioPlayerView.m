@@ -378,7 +378,7 @@
     //    AVAudioSessionInterruptionOptionShouldResume = 1
     //} AVAudioSessionInterruptionOptions;
     
-    DLog(@"Options: %d", flags);
+    DLog(@"Options: %lu", (unsigned long)flags);
     
     // don't restart
 }
