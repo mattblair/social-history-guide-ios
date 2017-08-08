@@ -261,7 +261,7 @@
     
     if (location) {
         NSDate *locationDate = location.timestamp;
-        NSTimeInterval timeDiff = abs([locationDate timeIntervalSinceNow]);
+        NSTimeInterval timeDiff = fabs([locationDate timeIntervalSinceNow]);
         
         return (timeDiff >= 0.0) && (timeDiff < RECENT_LOCATION_CUTOFF);
     } else {
