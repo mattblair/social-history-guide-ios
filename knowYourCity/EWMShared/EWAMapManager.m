@@ -8,8 +8,6 @@
 
 #import "EWAMapManager.h"
 
-// installed through CocoaPods
-#import "JSONKit.h"
 
 // ALL these defines would be read from JSON config file, too
 #define RECENT_LOCATION_CUTOFF 15.0 // in seconds
@@ -109,8 +107,17 @@
     
     NSError *jsonDeserializeError = nil;
     
-    _configDictionary = [configJSONData objectFromJSONDataWithParseOptions:JKParseOptionStrict
-                                                                     error:&jsonDeserializeError];
+    //_configDictionary = [configJSONData objectFromJSONDataWithParseOptions:JKParseOptionStrict
+    //                                                                 error:&jsonDeserializeError];
+    
+    NSString *response = [[NSString alloc] initWithData:configJSONData
+                                               encoding:NSUTF8StringEncoding];
+    NSError *serializationError = nil;
+    _configDictionary = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding]
+                                                         options:NSJSONReadingMutableContainers
+                                                           error:&serializationError];
+    
+    // TODO: nil-test serializationError too?
     
     if (!_configDictionary) {
         NSLog(@"Deserialization of JSON config file failed: %@, %@", jsonDeserializeError, [jsonDeserializeError userInfo]);
