@@ -74,7 +74,7 @@
     
     // close button (under image. A red x over a person's photo would look weird...)
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    
+    /*
     UIImage *closeImage;
     
     if (ON_IOS7) {
@@ -85,6 +85,9 @@
         
         closeImage = [UIImage imageNamed:kCloseButton];
     }
+    */
+    
+    UIImage *closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     [self.closeButton setImage:closeImage
                       forState:UIControlStateNormal];

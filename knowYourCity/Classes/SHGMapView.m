@@ -35,7 +35,10 @@
         self.backgroundColor = [UIColor whiteColor]; // or some kind of transparency?
         
         CGFloat buttonSize = 0.0;
-        CGFloat statusBarAllowance = ON_IOS7 ? 20.0 : 0.0;
+        
+        // TODO: switch all this to Auto Layout
+        //CGFloat statusBarAllowance = ON_IOS7 ? 20.0 : 0.0;
+        CGFloat statusBarAllowance = 20.0;
         // should the YES return value be 44.0 + statusBarAllowance ? Magic #s -- blech.
         CGFloat initialY = navBar ? 64.0 : statusBarAllowance;
         
@@ -46,6 +49,7 @@
             
             self.locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
             
+            /*
             UIImage *locationImage;
             
             if (ON_IOS7) {
@@ -56,6 +60,9 @@
                 
                 locationImage = [UIImage imageNamed:kLocationButtonImage];
             }
+            */
+            
+            UIImage *locationImage = [[UIImage imageNamed:kLocationButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             
             [self.locationButton setImage:locationImage
                                  forState:UIControlStateNormal];
@@ -86,7 +93,7 @@
             
             
             self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            
+            /*
             UIImage *closeImage;
             
             if (ON_IOS7) {
@@ -97,6 +104,9 @@
                 
                 closeImage = [UIImage imageNamed:kCloseButton];
             }
+            */
+            
+            UIImage *closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             
             [self.closeButton setImage:closeImage
                               forState:UIControlStateNormal];
@@ -121,10 +131,7 @@
         self.initialRegion = region;
         
         self.mapView.region = self.initialRegion;
-        
-        if (ON_IOS7) {
-            self.mapView.showsPointsOfInterest = NO;
-        }
+        self.mapView.showsPointsOfInterest = NO;
         
         [self addSubview:self.mapView];
         

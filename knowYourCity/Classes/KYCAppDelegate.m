@@ -27,10 +27,8 @@
 
 @implementation KYCAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOption {
     
-    DLog(@"iOS Version is: %@", ON_IOS7 ? @"7+" : @"< 7");
     
     // Configure audio session
     NSError *audioSessionError = nil;
@@ -110,6 +108,9 @@
 
 - (void)configureAppearance {
     
+    // set default color for all active controls
+    self.window.tintColor = [UIColor kycRed];
+    /*
     if (ON_IOS7) {
         
         // set default color for all active controls
@@ -148,6 +149,7 @@
                                                                                                       size:15.0]}
                                                     forState:UIControlStateNormal];
     }
+    */
 }
 
 #pragma mark - Reachability Management

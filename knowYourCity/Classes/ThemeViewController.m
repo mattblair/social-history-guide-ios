@@ -115,7 +115,7 @@
     if (hasAnnotations) {
         
         self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        
+        /*
         UIImage *pinImage;
         
         if (ON_IOS7) {
@@ -126,6 +126,9 @@
             
             pinImage = [UIImage imageNamed:kMapPinButtonImage];
         }
+        */
+        
+        UIImage *pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         
         [self.mapButton setImage:pinImage
                         forState:UIControlStateNormal];
@@ -222,6 +225,7 @@
         
         MKCoordinateRegion themeRegion = [SHG_DATA regionFromDictionary:self.themeDictionary];
         
+        /*
         CGRect mapBounds;
         
         if (ON_IOS7) {
@@ -236,8 +240,9 @@
             mapBounds = CGRectMake(windowBounds.origin.x, windowBounds.origin.y + statusBarHeight,
                                    windowBounds.size.width, windowBounds.size.height - statusBarHeight);
         }
+        */
         
-        _storyMapView = [[SHGMapView alloc] initWithFrame:mapBounds
+        _storyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
                                                     title:NSLocalizedString(@"Stories", @"Title of stories map")
                                                    region:themeRegion
                                              navBarMargin:NO];

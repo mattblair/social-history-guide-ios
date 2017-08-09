@@ -195,7 +195,7 @@
         
         // use only image?
         //[self.mapButton setTitle:@"Map" forState:UIControlStateNormal];
-        
+        /*
         UIImage *pinImage;
         
         if (ON_IOS7) {
@@ -206,6 +206,9 @@
             
             pinImage = [UIImage imageNamed:kMapPinButtonImage];
         }
+        */
+        
+        UIImage *pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         
         [self.mapButton setImage:pinImage
                         forState:UIControlStateNormal];

@@ -36,16 +36,18 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CGFloat yForNextView = ON_IOS7 ? 25.0 : 10.0; // 70.0 if pushed on nav stack
+    //CGFloat yForNextView = ON_IOS7 ? 25.0 : 10.0; // 70.0 if pushed on nav stack
+    CGFloat yForNextView = 25.0; // 70.0 if pushed on nav stack
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     // feels like the close button could be a little higher on iOS 6.x
-    CGFloat buttonY = ON_IOS7 ? yForNextView : yForNextView - 8.0;
+    //CGFloat buttonY = ON_IOS7 ? yForNextView : yForNextView - 8.0;
+    CGFloat buttonY = yForNextView;
     
     // when the button was 22 wide, x was 278
     self.closeButton.frame = CGRectMake(267.0, buttonY, 44.0, 44.0);
-    
+    /*
     UIImage *closeImage;
     
     if (ON_IOS7) {
@@ -56,6 +58,9 @@
         
         closeImage = [UIImage imageNamed:kCloseButton];
     }
+    */
+    
+    UIImage *closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     [self.closeButton setImageEdgeInsets:UIEdgeInsetsMake(11.0, 11.0, 11.0, 11.0)];
     
@@ -108,14 +113,11 @@
                                                                      @"Donate"
                                                                      ]];
     
-    CGFloat selectHeight = ON_IOS7 ? 31.0 : 26.0;
+    //CGFloat selectHeight = ON_IOS7 ? 31.0 : 26.0;
+    CGFloat selectHeight = 31.0;
     
-    if (PRE_IOS7) {
-        
-        // deprecated in iOS 7
-        self.selectionView.segmentedControlStyle = UISegmentedControlStyleBar;
-        self.selectionView.tintColor = [UIColor kycRed];
-    }
+    // Is this still neeeded?
+    //self.selectionView.tintColor = [UIColor kycRed];
     
     self.selectionView.selectedSegmentIndex = self.selectedSection;
     
