@@ -299,7 +299,7 @@
     
     [self.view addSubview:self.nearbyMapView];
         
-    [self.nearbyMapView addAnnotations:[SHG_DATA mapAnnotationsOfType:SHGMapAnnotationTypeStory
+    [self.nearbyMapView addAnnotations:[SHG_DATA mapAnnotationsOfType:SHGSearchResultTypeStory
                                                              inRegion:self.nearbyMapView.currentRegion
                                                              maxCount:45]];
     

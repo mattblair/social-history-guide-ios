@@ -310,7 +310,7 @@
     
     [self stopTrackingUser];
     
-    [self.delegate mapView:self didFinishWithSelectedID:NSNotFound ofType:SHGSearchResultTypeStory];
+    [self.delegate mapView:self didFinishWithSelectedID:NSNotFound ofType:SHGMapAnnotationTypeStory];
 }
 
 - (void)recenterMap {

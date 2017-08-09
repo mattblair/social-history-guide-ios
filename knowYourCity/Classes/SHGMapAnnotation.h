@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
+
+// TODO: This can probably be deprecated, unless flashbacks/tidbits are implemented
 typedef NS_ENUM(NSUInteger, SHGMapAnnotationType) {
     SHGMapAnnotationTypeTheme = 0,
     SHGMapAnnotationTypeStory,
