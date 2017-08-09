@@ -135,7 +135,6 @@
 		C991494B181749B100201598 /* guest-bill-hart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9914942181749B100201598 /* guest-bill-hart.jpg */; };
 		C991494D181986DB00201598 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C991494C181986DB00201598 /* Images.xcassets */; };
 		C991494F181989D800201598 /* pshg-photo-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C991494E181989D800201598 /* pshg-photo-placeholder.png */; };
-		C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */; };
 		C9EB9754180DB46800932756 /* SHGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB9753180DB46800932756 /* SHGMapAnnotation.m */; };
 		C9F5BD181826C976005DA176 /* kbb-back.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD161826C976005DA176 /* kbb-back.png */; };
 		C9F5BD191826C976005DA176 /* kbb-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD171826C976005DA176 /* kbb-back@2x.png */; };
@@ -289,8 +288,6 @@
 		C95B4D181821B4E400712DDA /* EWAMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWAMapManager.m; path = EWMShared/EWAMapManager.m; sourceTree = "<group>"; };
 		C95B595516BE1EF0000E1FFB /* TidbitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitTableViewCell.h; path = Classes/TidbitTableViewCell.h; sourceTree = "<group>"; };
 		C95B595616BE1EF0000E1FFB /* TidbitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitTableViewCell.m; path = Classes/TidbitTableViewCell.m; sourceTree = "<group>"; };
-		C95C30C11710FCA400E64F0C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		C95C30C21710FCA400E64F0C /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		C95D4C3B1827564100BF5146 /* pshg-photo-offline-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-photo-offline-placeholder.png"; sourceTree = "<group>"; };
 		C96075A016AC6DC8004B2672 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C97B44DF169DCCDA008A2793 /* KYCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYCAppDelegate.h; path = Classes/KYCAppDelegate.h; sourceTree = "<group>"; };
@@ -329,8 +326,6 @@
 		C9914942181749B100201598 /* guest-bill-hart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "guest-bill-hart.jpg"; path = "Resources/photos/guest-bill-hart.jpg"; sourceTree = "<group>"; };
 		C991494C181986DB00201598 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C991494E181989D800201598 /* pshg-photo-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-photo-placeholder.png"; sourceTree = "<group>"; };
-		C9A528FE17C2BFFE00EB0362 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.3.a; sourceTree = "<group>"; };
 		C9EB9752180DB46800932756 /* SHGMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGMapAnnotation.h; path = Classes/SHGMapAnnotation.h; sourceTree = "<group>"; };
 		C9EB9753180DB46800932756 /* SHGMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHGMapAnnotation.m; path = Classes/SHGMapAnnotation.m; sourceTree = "<group>"; };
 		C9F5BD161826C976005DA176 /* kbb-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kbb-back.png"; sourceTree = "<group>"; };
@@ -382,7 +377,6 @@
 				C92666ED169DC6920061F9AD /* UIKit.framework in Frameworks */,
 				C92666EF169DC6920061F9AD /* Foundation.framework in Frameworks */,
 				C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */,
-				C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */,
 				3530CAF9014698455FB24818 /* libPods-knowYourCity.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,16 +564,6 @@
 			name = Maps;
 			sourceTree = "<group>";
 		};
-		C95C30C01710FCA400E64F0C /* Flurry */ = {
-			isa = PBXGroup;
-			children = (
-				C95C30C11710FCA400E64F0C /* Flurry.h */,
-				C95C30C21710FCA400E64F0C /* libFlurry.a */,
-			);
-			name = Flurry;
-			path = 3rdParty/Flurry;
-			sourceTree = "<group>";
-		};
 		C960756D16AC59B2004B2672 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,7 +637,6 @@
 			isa = PBXGroup;
 			children = (
 				C9A528FD17C2BFFE00EB0362 /* Flurry */,
-				C95C30C01710FCA400E64F0C /* Flurry */,
 			);
 			name = 3rdParty;
 			sourceTree = "<group>";
@@ -774,8 +757,6 @@
 		C9A528FD17C2BFFE00EB0362 /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
-				C9A528FE17C2BFFE00EB0362 /* Flurry.h */,
-				C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */,
 			);
 			name = Flurry;
 			path = 3rdParty/Flurry;
