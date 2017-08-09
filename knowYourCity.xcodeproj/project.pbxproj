@@ -136,7 +136,6 @@
 		C991494D181986DB00201598 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C991494C181986DB00201598 /* Images.xcassets */; };
 		C991494F181989D800201598 /* pshg-photo-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C991494E181989D800201598 /* pshg-photo-placeholder.png */; };
 		C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */; };
-		C9A5290117C2C17500EB0362 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A528F717C2BF8100EB0362 /* libTestFlight.a */; };
 		C9EB9754180DB46800932756 /* SHGMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB9753180DB46800932756 /* SHGMapAnnotation.m */; };
 		C9F5BD181826C976005DA176 /* kbb-back.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD161826C976005DA176 /* kbb-back.png */; };
 		C9F5BD191826C976005DA176 /* kbb-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F5BD171826C976005DA176 /* kbb-back@2x.png */; };
@@ -330,10 +329,6 @@
 		C9914942181749B100201598 /* guest-bill-hart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "guest-bill-hart.jpg"; path = "Resources/photos/guest-bill-hart.jpg"; sourceTree = "<group>"; };
 		C991494C181986DB00201598 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C991494E181989D800201598 /* pshg-photo-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pshg-photo-placeholder.png"; sourceTree = "<group>"; };
-		C9A528F717C2BF8100EB0362 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		C9A528F817C2BF8100EB0362 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
-		C9A528F917C2BF8100EB0362 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
-		C9A528FA17C2BF8100EB0362 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		C9A528FE17C2BFFE00EB0362 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		C9A528FF17C2BFFE00EB0362 /* libFlurry_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.3.a; sourceTree = "<group>"; };
 		C9EB9752180DB46800932756 /* SHGMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHGMapAnnotation.h; path = Classes/SHGMapAnnotation.h; sourceTree = "<group>"; };
@@ -387,7 +382,6 @@
 				C92666ED169DC6920061F9AD /* UIKit.framework in Frameworks */,
 				C92666EF169DC6920061F9AD /* Foundation.framework in Frameworks */,
 				C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */,
-				C9A5290117C2C17500EB0362 /* libTestFlight.a in Frameworks */,
 				C9A5290017C2BFFE00EB0362 /* libFlurry_4.2.3.a in Frameworks */,
 				3530CAF9014698455FB24818 /* libPods-knowYourCity.a in Frameworks */,
 			);
@@ -659,7 +653,6 @@
 			isa = PBXGroup;
 			children = (
 				C9A528FD17C2BFFE00EB0362 /* Flurry */,
-				C9A528F617C2BF8100EB0362 /* TestFlightSDK2.0.0 */,
 				C95C30C01710FCA400E64F0C /* Flurry */,
 			);
 			name = 3rdParty;
@@ -776,18 +769,6 @@
 				C9914942181749B100201598 /* guest-bill-hart.jpg */,
 			);
 			name = guests;
-			sourceTree = "<group>";
-		};
-		C9A528F617C2BF8100EB0362 /* TestFlightSDK2.0.0 */ = {
-			isa = PBXGroup;
-			children = (
-				C9A528F717C2BF8100EB0362 /* libTestFlight.a */,
-				C9A528F817C2BF8100EB0362 /* TestFlight+AsyncLogging.h */,
-				C9A528F917C2BF8100EB0362 /* TestFlight+ManualSessions.h */,
-				C9A528FA17C2BF8100EB0362 /* TestFlight.h */,
-			);
-			name = TestFlightSDK2.0.0;
-			path = 3rdParty/TestFlightSDK2.0.0;
 			sourceTree = "<group>";
 		};
 		C9A528FD17C2BFFE00EB0362 /* Flurry */ = {
