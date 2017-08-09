@@ -26,6 +26,6 @@
 
 @protocol MapViewControllerDelegate <NSObject>
 
-- (void)mapViewController:(MapViewController *)mapVC didFinishWithSelection:(NSUInteger *)itemIndex;
+- (void)mapViewController:(MapViewController *)mapVC didFinishWithSelection:(NSInteger)itemIndex;
 
 @end
