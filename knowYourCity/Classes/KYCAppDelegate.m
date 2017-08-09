@@ -43,14 +43,7 @@
         DLog(@"Error setting audio session: %@ with info: %@", audioSessionError, [audioSessionError userInfo]);
     }
     
-    
-    // only start TestFlight if the token is defined
     /*
-    if (kTestFlightAppToken) {
-        
-        [TestFlight takeOff:kTestFlightAppToken];
-    }
-    
     // only start Flurry if the API Key is defined
     if (kFlurryAPIKey) {
         
