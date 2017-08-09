@@ -204,26 +204,30 @@
     [self.scrollView flashScrollIndicators];
     
     // Since most of the guest photos are dark, black text looks crappy on top of them...
-    if (ON_IOS7) {
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent
-                                                    animated:YES];
-    }
+//    if (ON_IOS7) {
+//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent
+//                                                    animated:YES];
+//    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
     
-    if (ON_IOS7) {
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    }
+//    if (ON_IOS7) {
+//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+//    }
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - Respone to User Taps
 
