@@ -109,11 +109,17 @@
         // In iOS 7+, use sizeWithAttributes, and UITextAttributeFont, etc.?
         // or boundingRectWithSize:options:attributes:context:
         
-        CGSize titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font
-                                            constrainedToSize:CGSizeMake(textWidth, MAXFLOAT)
-                                                lineBreakMode:NSLineBreakByWordWrapping];
+//        CGSize titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font
+//                                            constrainedToSize:CGSizeMake(textWidth, MAXFLOAT)
+//                                                lineBreakMode:NSLineBreakByWordWrapping];
         
-        self.titleLabel.frame = CGRectMake(textX, STORY_STUB_MARGIN-5.0, textWidth, titleSize.height);
+        // Do you need to get a NSStringDrawingContext to pass into context?
+        CGRect titleRect = [self.titleLabel.text boundingRectWithSize:CGSizeMake(textWidth, MAXFLOAT)
+                                                       options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                                    attributes:@{ NSFontAttributeName : self.titleLabel.font}
+                                                       context:nil];
+        
+        self.titleLabel.frame = CGRectMake(textX, STORY_STUB_MARGIN-5.0, textWidth, ceilf(titleRect.size.height));
         
         [self addSubview:self.titleLabel];
         
@@ -129,11 +135,17 @@
         self.subtitleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.subtitleLabel.backgroundColor = [UIColor clearColor];
         
-        CGSize subtitleSize = [self.subtitleLabel.text sizeWithFont:self.subtitleLabel.font
-                                                  constrainedToSize:CGSizeMake(textWidth, MAXFLOAT)
-                                                      lineBreakMode:NSLineBreakByWordWrapping];
+//        CGSize subtitleSize = [self.subtitleLabel.text sizeWithFont:self.subtitleLabel.font
+//                                                  constrainedToSize:CGSizeMake(textWidth, MAXFLOAT)
+//                                                      lineBreakMode:NSLineBreakByWordWrapping];
         
-        self.subtitleLabel.frame = CGRectMake(textX, subtitleY, textWidth, subtitleSize.height);
+        // Do you need to get a NSStringDrawingContext to pass into context?
+        subtitleRect = [self.subtitleLabel.text boundingRectWithSize:CGSizeMake(textWidth, MAXFLOAT)
+                                                             options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                                          attributes:@{ NSFontAttributeName : self.subtitleLabel.font}
+                                                             context:nil];
+        
+        self.subtitleLabel.frame = CGRectMake(textX, subtitleY, textWidth, ceilf(subtitleRect.size.height));
         
         [self addSubview:self.subtitleLabel];
                 
