@@ -7,7 +7,6 @@
 //
 
 #import "StoryStubView.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
 
 #define STORY_STUB_WIDTH_IPHONE 300.0
 #define STORY_STUB_HEIGHT_IPHONE 120.0
@@ -41,6 +40,8 @@
 
 // probably deprecated
 @property (strong, nonatomic) UIButton *mediaButton;
+
+@property(strong, nonatomic) NSURLSession *imageSession;
 
 @end
 
@@ -78,9 +79,13 @@
             CGRect thumbnailRect = CGRectMake(STORY_STUB_MARGIN, STORY_STUB_MARGIN, STORY_THUMBNAIL_WIDTH, STORY_THUMBNAIL_HEIGHT);
             
             self.thumbnailView = [[UIImageView alloc] initWithFrame:thumbnailRect];
+            self.thumbnailView.image = [SHG_DATA thumbnailPlaceholder];
             
-            [self.thumbnailView setImageWithURL:[SHG_DATA urlForPhotoNamed:thumbnailName]
-                               placeholderImage:[SHG_DATA thumbnailPlaceholder]];
+            [self requestRemoteImageAtURL:[SHG_DATA urlForPhotoNamed:thumbnailName]];
+            
+            
+            //[self.thumbnailView setImageWithURL:[SHG_DATA urlForPhotoNamed:thumbnailName]
+            //                   placeholderImage:[SHG_DATA thumbnailPlaceholder]];
             
             [self addSubview:self.thumbnailView];
             
@@ -165,6 +170,48 @@
     
     return self;
 }
+
+- (void)requestRemoteImageAtURL:(NSURL *)imageURL {
+    
+    self.imageSession = [NSURLSession sharedSession];
+    
+    __weak __typeof(self) weakSelf = self;
+    NSURLSessionDataTask *imageTask = [self.imageSession dataTaskWithURL:imageURL
+                                                       completionHandler:^(NSData *data,
+                                                                           NSURLResponse *response,
+                                                                           NSError *error){
+                                                           
+                                                           __strong __typeof(weakSelf)strongSelf = weakSelf;
+                                                           
+                                                           NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+                                                           
+                                                           // TODO: what is the response code if it's cached?
+                                                           
+                                                           if (statusCode == 200) {
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   
+                                                                   if (strongSelf) {
+                                                                       UIImage *fetchedImage = [UIImage imageWithData:data];
+                                                                       
+                                                                       strongSelf.thumbnailView.image = fetchedImage;
+                                                                   }
+                                                               });
+                                                           } else if (error) {
+                                                               
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   
+                                                                   DLog(@"WARNING: Image request failed with error: %@", error);
+                                                                   
+                                                                   // Any UI change needed other than failing silently?
+                                                               });
+                                                           } else {
+                                                               
+                                                               DLog(@"WARNING: Image request failed with status code: %lu", (long)statusCode);
+                                                           }
+                                                       }];
+    [imageTask resume];
+}
+
 
 - (void)storyTapped:(id)sender {
     

@@ -14,7 +14,6 @@
 #import "SHGMapViewController.h"
 #import "EWAMapManager.h"
 
-#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface StoryViewController ()
 
@@ -43,7 +42,10 @@
 
 @property (strong, nonatomic) UIView *moreInfoView;
 
+@property(strong, nonatomic) NSURLSession *imageSession;
+
 @end
+
 
 @implementation StoryViewController
 
@@ -95,13 +97,13 @@
             
             if ([imageName length] > 0) {
                 
-                
                 self.mainPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, MAIN_PHOTO_WIDTH, MAIN_PHOTO_HEIGHT)];
                 
-//                [self.mainPhoto setImageWithURL:[SHG_DATA urlForPhotoNamed:imageName]
-//                               placeholderImage:[SHG_DATA photoPlaceholder]];
+                self.mainPhoto.image = [SHG_DATA photoPlaceholder];
                 
+                [self requestRemoteImageAtURL:[SHG_DATA urlForPhotoNamed:imageName]];
                 
+                /*
                 NSURLRequest *photoRequest = [NSURLRequest requestWithURL:[SHG_DATA urlForPhotoNamed:imageName]];
                 
                 __weak UIImageView *weakPhotoView = self.mainPhoto;
@@ -117,7 +119,7 @@
                                                    [weakSelf warnAboutOfflinePhotos];
                                                }];
                 
-                
+                */
                 self.mainPhoto.userInteractionEnabled = YES;
                 
                 UITapGestureRecognizer *photoTap = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -363,22 +365,59 @@
     // Dispose of any resources that can be recreated.
 }
 
-// Might be overkill: the placeholder image has text that says the same thing.
+
+#pragma mark - Image Downloads
+
+- (void)requestRemoteImageAtURL:(NSURL *)imageURL {
+    
+    self.imageSession = [NSURLSession sharedSession];
+    
+    __weak __typeof(self) weakSelf = self;
+    NSURLSessionDataTask *imageTask = [self.imageSession dataTaskWithURL:imageURL
+                                                       completionHandler:^(NSData *data,
+                                                                           NSURLResponse *response,
+                                                                           NSError *error){
+                                                           
+                                                           __strong __typeof(weakSelf)strongSelf = weakSelf;
+                                                           
+                                                           NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+                                                           
+                                                           if (!error && statusCode == 200) {
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   
+                                                                   if (strongSelf) {
+                                                                       UIImage *fetchedImage = [UIImage imageWithData:data];
+                                                                       
+                                                                       strongSelf.mainPhoto.image = fetchedImage;
+                                                                   }
+                                                               });
+                                                           } else {
+                                                               
+                                                               if (error) {
+                                                                   DLog(@"WARNING: Image request failed with error: %@", error);
+                                                               } else {
+                                                                   DLog(@"WARNING: Image request failed with status code: %lu", (long)statusCode);
+                                                               }
+                                                               
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   
+                                                                   if (strongSelf) {
+                                                                       strongSelf.mainPhoto.image = [UIImage imageNamed:kOfflinePhotoPlaceholderImage];
+                                                                       
+                                                                       [strongSelf warnAboutOfflinePhotos];
+                                                                   }
+                                                               });
+                                                           }
+                                                       }];
+    [imageTask resume];
+}
+
 - (void)warnAboutOfflinePhotos {
     
     // could turn this into an integer if we wanted to warn occasionally
     BOOL warned = [[NSUserDefaults standardUserDefaults] boolForKey:kOfflinePhotosWarningKey];
     
     if (!warned) {
-        /*
-        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Photos Unavailable Offline"
-                                                               message:@"An internet connection is required to display photos"
-                                                              delegate:nil
-                                                     cancelButtonTitle:nil
-                                                     otherButtonTitles:@"OK", nil];
-        
-        [warningAlert show];
-        */
         
         UIAlertController *warningAC = [UIAlertController alertControllerWithTitle:@"Photos Unavailable Offline"
                                                                            message:@"An internet connection is required to display photos"

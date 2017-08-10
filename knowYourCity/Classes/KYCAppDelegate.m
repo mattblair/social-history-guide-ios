@@ -9,7 +9,6 @@
 #import "KYCAppDelegate.h"
 
 #import <AVFoundation/AVFoundation.h>
-#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 
 #import <Reachability/Reachability.h>
 
@@ -52,8 +51,6 @@
     */
     
     [self setupReachability];
-    
-    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     // make sure location starts so we have location when we need it
     [EWA_MM startup];
