@@ -49,7 +49,7 @@
     self = [super initWithFrame:defaultFrame];
     if (self) {
         
-        self.backgroundColor = [UIColor underPageBackgroundColor];
+        self.backgroundColor = [UIColor whiteColor];
         
         self.playing = NO;
         
