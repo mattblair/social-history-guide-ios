@@ -75,8 +75,6 @@
             
             [self addSubview:self.locationButton];
             
-            [self updateLocationButton];
-            
             
             CGFloat titleWidth = self.bounds.size.width - buttonSize*2.0;
             
@@ -251,10 +249,6 @@
     DLog(@"Map's center longitude is: %f", mapView.region.center.longitude);
     DLog(@"Map's latitude delta is: %f", mapView.region.span.latitudeDelta);
     DLog(@"Map's longitude delta is: %f", mapView.region.span.longitudeDelta);
-    
-    // check location availability here? throttle these calls?
-    
-    [self updateLocationButton];
 }
 
 #pragma mark - Managing Location
@@ -264,23 +258,6 @@
     _showLocationButton = showLocation;
     
     self.locationButton.hidden = _showLocationButton;
-}
-
-- (void)updateLocationButton {
-    
-    // in 1.0, this probably only turns on and off
-    // in later versions, imitate the stateful location behavior in Maps app, i.e.
-    // * solid if map is centered on user
-    // * outlined if user location is enabled but map is not centered on user
-    // * disabled if location services are disabled
-    
-    if (self.locationButton) {
-
-#warning Remove if not functional
-        // this isn't a good way to do this, because it blocks use of the
-        // location button to return to primary region if the location is not available
-        //self.locationButton.enabled = [EWA_MM hasValidLocation];
-    }
 }
 
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
