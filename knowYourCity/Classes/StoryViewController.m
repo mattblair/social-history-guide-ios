@@ -635,6 +635,7 @@
                                          UIActivityTypeAssignToContact,
                                          UIActivityTypeSaveToCameraRoll];
     
+    /*
     __weak NSString *storySlug = [self.storyData objectForKey:kContentSlugKey];
     
     activityVC.completionHandler = ^(NSString *activityType, BOOL completed) {
@@ -646,9 +647,7 @@
                                              kFlurryParamActivity : activityType }];
         }
     };
-    
-    // is this necessary for iOS 6?
-    //activityVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    */
     
     [self presentViewController:activityVC
                        animated:YES

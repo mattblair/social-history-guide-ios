@@ -339,7 +339,11 @@
                                          UIActivityTypeAssignToContact,
                                          UIActivityTypeSaveToCameraRoll];
 
+    /*
     __weak NSString *themeSlug = [self.themeDictionary objectForKey:kContentSlugKey];
+    
+    // adopt new API, or just get rid of this?
+    // (^UIActivityViewControllerCompletionWithItemsHandler)(UIActivityType activityType, BOOL completed, NSArray *returnedItems, NSError *activityError)
     
     activityVC.completionHandler = ^(NSString *activityType, BOOL completed) {
         if (completed) {
@@ -350,10 +354,7 @@
                                              kFlurryParamActivity : activityType }];
         }
     };
-
-    // is this necessary for iOS 6?
-    //activityVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-
+    */
     [self presentViewController:activityVC
                        animated:YES
                      completion:nil];
