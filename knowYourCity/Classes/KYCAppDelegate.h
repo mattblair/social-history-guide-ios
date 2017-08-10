@@ -19,6 +19,5 @@
 
 // Internet availability
 - (BOOL)currentlyOnline;
-- (void)warnAboutOfflinePhotos;
 
 @end

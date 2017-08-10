@@ -161,31 +161,5 @@
 	return [self.internetReach isReachable];
 }
 
-- (void)warnAboutOfflineMaps {
-    
-    DLog(@"");
-}
-
-- (void)warnAboutOfflinePhotos {
-    
-    // could turn this into an integer if we wanted to warn occasionally
-    BOOL warned = [[NSUserDefaults standardUserDefaults] boolForKey:kOfflinePhotosWarningKey];
-    
-    if (!warned) {
-        
-        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Photos Unavailable Offline"
-                                                               message:@"An internet connection is required to display photos"
-                                                              delegate:nil
-                                                     cancelButtonTitle:nil
-                                                     otherButtonTitles:@"OK", nil];
-        
-        [warningAlert show];
-        
-        [[NSUserDefaults standardUserDefaults] setBool:YES
-                                                forKey:kOfflinePhotosWarningKey];
-        
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-}
 
 @end

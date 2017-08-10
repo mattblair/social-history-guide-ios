@@ -105,6 +105,7 @@
                 NSURLRequest *photoRequest = [NSURLRequest requestWithURL:[SHG_DATA urlForPhotoNamed:imageName]];
                 
                 __weak UIImageView *weakPhotoView = self.mainPhoto;
+                __weak __typeof__(self) weakSelf = self;
                 
                 [self.mainPhoto setImageWithURLRequest:photoRequest
                                       placeholderImage:[SHG_DATA photoPlaceholder]
@@ -113,7 +114,7 @@
                                                    
                                                    weakPhotoView.image = [UIImage imageNamed:kOfflinePhotoPlaceholderImage];
                                                    
-                                                   [SHG_APP_DELEGATE warnAboutOfflinePhotos];
+                                                   [weakSelf warnAboutOfflinePhotos];
                                                }];
                 
                 
@@ -356,11 +357,48 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+// Might be overkill: the placeholder image has text that says the same thing.
+- (void)warnAboutOfflinePhotos {
+    
+    // could turn this into an integer if we wanted to warn occasionally
+    BOOL warned = [[NSUserDefaults standardUserDefaults] boolForKey:kOfflinePhotosWarningKey];
+    
+    if (!warned) {
+        /*
+        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Photos Unavailable Offline"
+                                                               message:@"An internet connection is required to display photos"
+                                                              delegate:nil
+                                                     cancelButtonTitle:nil
+                                                     otherButtonTitles:@"OK", nil];
+        
+        [warningAlert show];
+        */
+        
+        UIAlertController *warningAC = [UIAlertController alertControllerWithTitle:@"Photos Unavailable Offline"
+                                                                           message:@"An internet connection is required to display photos"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@""
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action){}];
+        
+        [warningAC addAction:okAction];
+        
+        [self presentViewController:warningAC animated:YES completion:NULL];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES
+                                                forKey:kOfflinePhotosWarningKey];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
 
 #pragma mark - Subviews
 
@@ -402,7 +440,8 @@
         NSString *copyrightString = rawCopyright ? rawCopyright : NSLocalizedString(@"Used by Permission", @"Default copyright notice");
         
         // would metadata be shown in the footer of the map?
-        NSString *creditPrefix = NO ? @"Map Data" : @"Image";
+        //NSString *creditPrefix = NO ? @"Map Data" : @"Image";
+        NSString *creditPrefix = @"Image";
         
         UILabel *creditLabel = [[UILabel alloc] initWithFrame:CGRectMake(DEFAULT_LEFT_MARGIN, nextLabelY,
                                                                          DEFAULT_CONTENT_WIDTH, 31.0)];
