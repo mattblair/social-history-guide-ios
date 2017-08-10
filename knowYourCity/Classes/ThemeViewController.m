@@ -31,7 +31,7 @@
 
 @property (strong, nonatomic) UIButton *mapButton;
 
-@property (strong, nonatomic) UIActionSheet *sharingMenu;
+//@property (strong, nonatomic) UIActionSheet *sharingMenu;
 
 @end
 
