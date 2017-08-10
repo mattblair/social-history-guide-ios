@@ -459,13 +459,15 @@
 }
 
 - (void)showComingSoon:(NSString *)thePromise {
-    
+    DLog(@"Convert to UIAlertController if needed in the future.");
+    /*
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Coming Soon"
 													message:thePromise
 												   delegate:nil
 										  cancelButtonTitle:nil
 										  otherButtonTitles:@"OK", nil];
 	[alert show];
+    */
 }
 
 @end
