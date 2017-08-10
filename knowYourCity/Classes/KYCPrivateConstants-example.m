@@ -10,6 +10,4 @@
 
 // If these constants are nil, the app won't try to initiate the third-party services
 
-NSString* const kTestFlightAppToken = nil;
-
 NSString* const kFlurryAPIKey = nil;
