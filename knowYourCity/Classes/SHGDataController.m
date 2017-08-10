@@ -421,19 +421,23 @@
 
 - (void)logFlurryEventNamed:(NSString *)eventName withParameters:(NSDictionary *)params {
     
+    /*
     if (kFlurryAPIKey && eventName) {
         
         if (params) {
             
-            //[Flurry logEvent:eventName withParameters:params];
+            [Flurry logEvent:eventName withParameters:params];
         } else {
             
-            //[Flurry logEvent:eventName];
+            [Flurry logEvent:eventName];
         }
     } else {
         
         DLog(@"Flurry not configured: Can't log %@ event with params: %@", eventName, params);
     }
+    */
+    
+    DLog(@"Flurry not configured: Can't log %@ event with params: %@", eventName, params);
 }
 
 @end
