@@ -168,6 +168,7 @@
     
     NSString *message = [NSString stringWithFormat:@"Version: %@\nBuild: %@", versionNumber, buildNumber];
     
+    /*
     UIAlertView *versionAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"App Version", @"Title of app version alert")
                                                            message:message
                                                           delegate:nil
@@ -175,6 +176,19 @@
                                                  otherButtonTitles:@"OK", nil];
     
     [versionAlert show];
+    */
+    
+    UIAlertController *versionAC = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"App Version", @"Title of app version alert")
+                                                                       message:message
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action){}];
+    
+    [versionAC addAction:okAction];
+    
+    [self presentViewController:versionAC animated:YES completion:NULL];
 }
 
 - (void)loadTextForCurrentSection {
