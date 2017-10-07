@@ -57,11 +57,14 @@ NSString* const kEmailFooter = @"\n\n\n-----\nSent via the Portland Social Histo
 NSString* const kFeedbackEmailAddress = @"feedback@pdxsocialhistory.org";
 NSString* const kSubmissionEmailAddress = @"support@pdxsocialhistory.org";
 
+
 // Notifications
+
+NSString* const kLocationPermissionGrantedNotification = @"kLocationPermissionGrantedNotification";
+NSString* const kLocationPermissionRefusedNotification = @"kLocationPermissionRefusedNotification";
+
 NSString* const kCurrentLocationAvailableNotification = @"kCurrentLocationAvailableNotification";
 NSString* const kCurrentLocationFailureNotification = @"kCurrentLocationFailureNotification";
-NSString* const kMapDataRefreshNeededNotification = @"kMapDataRefreshNeededNotification";
-NSString* const kFullScreenCameraRequestedNotification = @"kFullScreenCameraRequestedNotification";
 
 // User Defaults
 NSString* const kOfflineMapsWarningKey = @"kOfflineMapsWarningKey";

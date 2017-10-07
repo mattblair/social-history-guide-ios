@@ -91,11 +91,13 @@ extern NSString* const kEmailFooter;
 extern NSString* const kFeedbackEmailAddress;
 extern NSString* const kSubmissionEmailAddress;
 
+
 // Notifications
+extern NSString* const kLocationPermissionGrantedNotification;
+extern NSString* const kLocationPermissionRefusedNotification;
+
 extern NSString* const kCurrentLocationAvailableNotification;
 extern NSString* const kCurrentLocationFailureNotification;
-extern NSString* const kMapDataRefreshNeededNotification;
-extern NSString* const kFullScreenCameraRequestedNotification;
 
 // User Defaults
 extern NSString* const kOfflineMapsWarningKey;
