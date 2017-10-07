@@ -47,7 +47,7 @@
 - (BOOL)hasValidLocation;
 
 
-- (MKCoordinateRegion)regionForLocationAndDataRegion:(MKCoordinateRegion)dataRegion;
+- (MKCoordinateRegion)regionForUserLocationAndDataRegion:(MKCoordinateRegion)dataRegion;
 
 // based on location if available
 

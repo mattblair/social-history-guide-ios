@@ -174,7 +174,7 @@
 
 
 
-- (MKCoordinateRegion)regionForLocationAndDataRegion:(MKCoordinateRegion)dataRegion {
+- (MKCoordinateRegion)regionForUserLocationAndDataRegion:(MKCoordinateRegion)dataRegion {
     
     if ([self hasValidLocation] ) {
         
@@ -210,7 +210,7 @@
 
 - (MKCoordinateRegion)currentOrLaunchRegion {
     
-    return [self regionForLocationAndDataRegion:[self launchRegion]];
+    return [self regionForUserLocationAndDataRegion:[self launchRegion]];
 }
 
 - (MKCoordinateRegion)walkableRegionForCurrentLocation {

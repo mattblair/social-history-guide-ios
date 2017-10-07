@@ -309,7 +309,7 @@
         
         self.mapView.showsUserLocation = YES; // does this auto-animate to center on user?
         
-        [self.mapView setRegion:[EWA_MM regionForLocationAndDataRegion:self.dataRegion]
+        [self.mapView setRegion:[EWA_MM regionForUserLocationAndDataRegion:self.dataRegion]
                        animated:YES];
         
     } else {
