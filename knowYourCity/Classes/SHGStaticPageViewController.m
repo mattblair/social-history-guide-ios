@@ -243,7 +243,9 @@
     } else {
         
         // let Safari deal with it...
-        [[UIApplication sharedApplication] openURL:[request URL]];
+        [[UIApplication sharedApplication] openURL:[request URL]
+                                           options:@{}
+                                 completionHandler:NULL];
         
         return NO;
     }

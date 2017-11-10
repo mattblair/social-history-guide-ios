@@ -237,7 +237,9 @@
     
     if (moreInfoURLString) {
         DLog(@"Handing URL off to Safari: %@", moreInfoURLString);
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:moreInfoURLString]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:moreInfoURLString]
+                                           options:@{}
+                                 completionHandler:NULL];
     } else {
         DLog(@"No More Info URL in data...");
     }
