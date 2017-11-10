@@ -49,19 +49,6 @@
             
             self.locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
             
-            /*
-            UIImage *locationImage;
-            
-            if (ON_IOS7) {
-                
-                // display it using our tint color
-                locationImage = [[UIImage imageNamed:kLocationButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            } else {
-                
-                locationImage = [UIImage imageNamed:kLocationButtonImage];
-            }
-            */
-            
             UIImage *locationImage = [[UIImage imageNamed:kLocationButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             
             [self.locationButton setImage:locationImage
@@ -91,18 +78,6 @@
             
             
             self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            /*
-            UIImage *closeImage;
-            
-            if (ON_IOS7) {
-                
-                // display it using our tint color
-                closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            } else {
-                
-                closeImage = [UIImage imageNamed:kCloseButton];
-            }
-            */
             
             UIImage *closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             
@@ -125,7 +100,6 @@
         
         self.mapView.delegate = self;
         
-        // set region
         self.initialRegion = region;
         
         self.mapView.region = self.initialRegion;
@@ -146,10 +120,6 @@
 - (void)handleBackgrounding:(NSNotification *)note {
     
     DLog(@"Stopping location tracking");
-    
-    // Is MKMapView using its own CLLocationManager with
-    // pausesLocationUpdatesAutomatically set to YES?
-    // i.e. is this happening automatically? Or do we need to manage it?
     
     [self stopTrackingUser];
 }
@@ -292,26 +262,14 @@
 
 - (void)recenterMap {
     
-    // if available, combine user location and initial region?
-    
     if ([EWA_MM hasValidLocation]) {
-        
-        if (!self.mapView.userLocationVisible) {
-            // move map to center on user
-            DLog(@"User not visible. Should re-center on user?");
-            
-            // user the user location from the map view? Or from CL directly?
-        }
-        
-        // make sure user is displayed on map
         
         // move to location that combines user and dataRegion
         
-        self.mapView.showsUserLocation = YES; // does this auto-animate to center on user?
+        self.mapView.showsUserLocation = YES;
         
         [self.mapView setRegion:[EWA_MM regionForUserLocationAndDataRegion:self.dataRegion]
                        animated:YES];
-        
     } else {
         
         [self.mapView setRegion:self.initialRegion
