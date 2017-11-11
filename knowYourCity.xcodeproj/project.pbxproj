@@ -606,14 +606,6 @@
 			path = Resources/graphics;
 			sourceTree = "<group>";
 		};
-		C960757316AC59C4004B2672 /* json */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = json;
-			path = Resources/json;
-			sourceTree = "<group>";
-		};
 		C960757616AC59E7004B2672 /* theme-illustrations */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,7 +642,6 @@
 				C991494C181986DB00201598 /* Images.xcassets */,
 				C960756D16AC59B2004B2672 /* graphics */,
 				C93030FF16AB34C40039D7B8 /* html */,
-				C960757316AC59C4004B2672 /* json */,
 				C93030E316AB320E0039D7B8 /* photos */,
 				C960757616AC59E7004B2672 /* theme-illustrations */,
 			);
