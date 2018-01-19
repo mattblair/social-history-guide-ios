@@ -20,7 +20,7 @@
 
 @property (weak, nonatomic) id <SHGMapViewDelegate> delegate;
 
-@property (nonatomic) BOOL showLocationButton;
+//@property (nonatomic) BOOL showLocationButton;
 @property (nonatomic) BOOL showCallouts;
 @property (nonatomic) BOOL showCalloutAccessories;
 
@@ -42,9 +42,6 @@
 
 // includes user location and data region, where possible
 - (void)recenterMap;
-
-// only goes to data region, disregarding user location?
-//- (void)moveToDataRegion;
 
 // attempts to display user location on map
 - (void)showUser;

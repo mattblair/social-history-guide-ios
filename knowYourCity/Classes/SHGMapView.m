@@ -221,15 +221,16 @@
     DLog(@"Map's longitude delta is: %f", mapView.region.span.longitudeDelta);
 }
 
-#pragma mark - Managing Location
 
+#pragma mark - Managing Location
+/*
 - (void)setShowLocationButton:(BOOL)showLocation {
     
     _showLocationButton = showLocation;
     
     self.locationButton.hidden = _showLocationButton;
 }
-
+*/
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
     
     DLog(@"Will locate user");
@@ -276,7 +277,8 @@
                        animated:YES];
     }
     
-    self.locationButton.enabled = NO;
+    // Leave location enabled all the time. Better experience.
+    //self.locationButton.enabled = NO;
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
