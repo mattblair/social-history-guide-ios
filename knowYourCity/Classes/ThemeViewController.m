@@ -325,7 +325,7 @@
                              [self.themeDictionary objectForKey:kContentTitleKey],
                              kAppHashTag]; // or kProjectName
     
-    NSString *themeURLString = [NSString stringWithFormat:@"%@/%@",
+    NSString *themeURLString = [NSString stringWithFormat:@"%@/%@.html",
                                 kThemeURL,
                                 [self.themeDictionary objectForKey:kContentSlugKey]];
     

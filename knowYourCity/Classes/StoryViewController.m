@@ -701,7 +701,7 @@
                              [self.storyData objectForKey:kContentTitleKey],
                              kAppHashTag]; // or kProjectName
     
-    NSString *themeURLString = [NSString stringWithFormat:@"%@/%@",
+    NSString *themeURLString = [NSString stringWithFormat:@"%@/%@.html",
                                 kStoryURL,
                                 [self.storyData objectForKey:kContentSlugKey]];
     
