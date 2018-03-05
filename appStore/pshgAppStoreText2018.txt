@@ -1,0 +1,53 @@
+Bundle ID: com.elsewiseapps.pdxshg
+SKU: ewaPDXSocialHistoryGuide
+Apple ID: 737566738
+Name: PDX Social History Guide
+
+================================================
+Categories
+================================================
+
+1. Education
+2. Travel
+
+================================================
+Subtitle (30 characters, optional)
+================================================
+(A summary of your app that will appear under your app’s name on the App Store for customers with devices running iOS 11 or later.)
+
+
+================================================
+App Description
+================================================
+
+The PDX Social History Guide features stories about people and places vital to the city of Portland's cultural heritage. Portland has been home to many ethnic groups and cultures — including Native American, African American, Chinese, Japanese, Greeks and Jews, among others. Because of urban development, some of these communities have little physical remnants of their neighborhoods. Consequently, many visiting Portland for the first time — and even those that have lived here many years — are unaware of the city's history.
+
+This app brings these stories to the surface through:
+* audio clips from interviews with a dozen local experts
+* theme illustrations and historical photos
+* summary text (in case you forgot your headphones, and don't want to listen out loud)
+* maps to help you find the historical locations
+* links to read more about many of these topics
+
+Portland-based non-profit Know Your City conducted the interviews and research. Illustrations and icons by Kate Bingaman-Burt give this app a unique, hand-crafted style.
+
+Please note: This app covers historical places, people and events centered around the downtown area of Portland, Oregon, USA.
+
+
+================================================
+Keywords
+================================================
+Portland, Oregon, PDX, know your city, social history, history tour, dill pickle club, interviews
+
+================================================
+What's New in This Version
+================================================
+
+Updates and bug fixes to support iOS 11
+
+================================================
+Promotional Text
+================================================
+(Promotional text lets you inform your App Store visitors of any current app features without requiring an updated submission. This text will appear above your description on the App Store for customers with devices running iOS 11 or later, and macOS 10.13 or later.)
+
+
