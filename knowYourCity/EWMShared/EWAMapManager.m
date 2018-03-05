@@ -31,8 +31,6 @@
 
 @interface EWAMapManager ()
 
-@property (strong, nonatomic) NSDictionary *configDictionary;
-
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
@@ -52,13 +50,7 @@
     self = [super init];
     if (self) {
         
-        //[self loadJSONConfigFile];
-        
-        //[self loadRegionDefinitions];
-        
         // try to start location services here
-        
-        // Start the location manager and put the user on the map
         if ([CLLocationManager locationServicesEnabled]) {
             
             DLog(@"About to turn Location on...");
@@ -89,39 +81,6 @@
 - (void)dealloc {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)loadJSONConfigFile {
-    
-    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"EWAMapManagerConfig" ofType:@"json"];
-    
-    NSError *fileLoadError = nil;
-    
-    NSData *configJSONData = [NSData dataWithContentsOfFile:filepath
-                                                    options:NSDataReadingUncached
-                                                      error:&fileLoadError];
-    
-    if (!configJSONData) {
-        NSLog(@"Loading JSON config file failed: %@, %@", fileLoadError, [fileLoadError userInfo]);
-    }
-    
-    NSError *jsonDeserializeError = nil;
-    
-    //_configDictionary = [configJSONData objectFromJSONDataWithParseOptions:JKParseOptionStrict
-    //                                                                 error:&jsonDeserializeError];
-    
-    NSString *response = [[NSString alloc] initWithData:configJSONData
-                                               encoding:NSUTF8StringEncoding];
-    NSError *serializationError = nil;
-    _configDictionary = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding]
-                                                         options:NSJSONReadingMutableContainers
-                                                           error:&serializationError];
-    
-    // TODO: nil-test serializationError too?
-    
-    if (!_configDictionary) {
-        NSLog(@"Deserialization of JSON config file failed: %@, %@", jsonDeserializeError, [jsonDeserializeError userInfo]);
-    }
 }
 
 - (void)stopLocationUpdates {
