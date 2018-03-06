@@ -62,4 +62,11 @@
 
 - (MKCoordinateRegion)walkableRegionAroundCoordinate:(CLLocationCoordinate2D)coordinate;
 
+
+// Permissions
+
+- (BOOL)hasLocationPermissions;
+- (void)verifyOrStartLocationUpdates;
+- (void)stopTrackingLocation;
+
 @end

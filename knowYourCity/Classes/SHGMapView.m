@@ -113,6 +113,18 @@
                                                  selector:@selector(handleBackgrounding:)
                                                      name:UIApplicationDidEnterBackgroundNotification
                                                    object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(showUser)
+                                                     name:kLocationPermissionGrantedNotification
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(stopTrackingUser)
+                                                     name:kLocationPermissionRefusedNotification
+                                                   object:nil];
+        
+        [EWA_MM verifyOrStartLocationUpdates];
     }
     return self;
 }
@@ -157,6 +169,7 @@
     
     // definitely need to prevent this from happening if they are out of the city
     
+    // permissions check is built in
     if ([EWA_MM hasValidLocation]) {
         
         self.mapView.showsUserLocation = YES;
@@ -208,11 +221,6 @@
 	return pinView;
 }
 
-- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
-    
-    self.locationButton.enabled = YES;
-}
-
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     
     DLog(@"Map's center latitude is: %f", mapView.region.center.latitude);
@@ -223,14 +231,7 @@
 
 
 #pragma mark - Managing Location
-/*
-- (void)setShowLocationButton:(BOOL)showLocation {
-    
-    _showLocationButton = showLocation;
-    
-    self.locationButton.hidden = _showLocationButton;
-}
-*/
+
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
     
     DLog(@"Will locate user");
@@ -241,9 +242,8 @@
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error {
     
-    // disable the user location button
-    
-    // show an alert?
+    // hiding is more effective than setting enabled to NO, because of the color
+    self.locationButton.hidden = YES;
 }
 
 - (void)stopTrackingUser {
@@ -257,6 +257,8 @@
 - (void)closeMapView:(id)sender {
     
     [self stopTrackingUser];
+    
+    [EWA_MM stopTrackingLocation];
     
     [self.delegate mapView:self didFinishWithSelectedID:NSNotFound ofType:SHGMapAnnotationTypeStory];
 }
@@ -288,7 +290,7 @@
     // cast annotation to pull relevant data
     SHGMapAnnotation *tappedAnnotation = (SHGMapAnnotation *)view.annotation;
     
-    DLog(@"Would handle tap on %@", [tappedAnnotation description]);
+    DLog(@"Handle tap on %@", tappedAnnotation);
     
     NSUInteger tappedID = [tappedAnnotation.contentID unsignedIntegerValue];
     

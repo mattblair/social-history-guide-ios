@@ -360,6 +360,10 @@
     self.navigationItem.leftBarButtonItem = self.mapButton;
     self.navigationItem.rightBarButtonItem = self.infoButton;
     
+    if (self.nearbyMapView) {
+        [EWA_MM stopTrackingLocation];
+    }
+    
     [UIView animateWithDuration:0.5
                      animations:^{self.nearbyMapView.alpha = 0.0;}
                      completion:^(BOOL finished){
