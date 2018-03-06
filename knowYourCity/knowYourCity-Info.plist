@@ -23,13 +23,13 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>19</string>
+	<string>23</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationUsageDescription</key>
-	<string>We&apos;ll show your location on the map of stories, if you&apos;re in the Portland area.</string>
+	<string>We'll show your location on the map of stories, if you're in the Portland area.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We&apos;ll show your location on the map of stories, if you&apos;re in the Portland area.</string>
+	<string>We'll show your location on the map of stories, if you're in the Portland area.</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
