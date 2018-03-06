@@ -12,7 +12,6 @@
 		C9108017180C5E9D0053870D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9108016180C5E9D0053870D /* libsqlite3.dylib */; };
 		C916E15416C0C8DA00423344 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C916E15316C0C8DA00423344 /* MapViewController.m */; };
 		C916E15716C0CAFC00423344 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15516C0CAFC00423344 /* CoreLocation.framework */; };
-		C916E15816C0CAFC00423344 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C916E15616C0CAFC00423344 /* MapKit.framework */; };
 		C916E15B16C0D01F00423344 /* TidbitMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */; };
 		C91E4A851815A9420074E154 /* jd-pwc-cornerstone.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A4B1815A9420074E154 /* jd-pwc-cornerstone.caf */; };
 		C91E4A861815A9420074E154 /* jd-first-cong-suffrage-oregon.caf in Resources */ = {isa = PBXBuildFile; fileRef = C91E4A4C1815A9420074E154 /* jd-first-cong-suffrage-oregon.caf */; };
@@ -81,6 +80,7 @@
 		C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92666F0169DC6920061F9AD /* CoreGraphics.framework */; };
 		C92666F7169DC6920061F9AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C92666F5169DC6920061F9AD /* InfoPlist.strings */; };
 		C92666F9169DC6920061F9AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C92666F8169DC6920061F9AD /* main.m */; };
+		C9266B8B204F21FE003419BC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9266B8A204F21FE003419BC /* MapKit.framework */; };
 		C93030EF16AB32E10039D7B8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030EE16AB32E10039D7B8 /* HomeViewController.m */; };
 		C93030F216AB33050039D7B8 /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030F116AB33050039D7B8 /* ThemeViewController.m */; };
 		C93030F516AB33260039D7B8 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93030F416AB33260039D7B8 /* StoryViewController.m */; };
@@ -178,7 +178,6 @@
 		C916E15216C0C8DA00423344 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Classes/MapViewController.h; sourceTree = "<group>"; };
 		C916E15316C0C8DA00423344 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Classes/MapViewController.m; sourceTree = "<group>"; };
 		C916E15516C0CAFC00423344 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		C916E15616C0CAFC00423344 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C916E15916C0D01F00423344 /* TidbitMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TidbitMapAnnotation.h; path = Classes/TidbitMapAnnotation.h; sourceTree = "<group>"; };
 		C916E15A16C0D01F00423344 /* TidbitMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TidbitMapAnnotation.m; path = Classes/TidbitMapAnnotation.m; sourceTree = "<group>"; };
 		C91E4A4B1815A9420074E154 /* jd-pwc-cornerstone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "jd-pwc-cornerstone.caf"; path = "Resources/audio/jd-pwc-cornerstone.caf"; sourceTree = "<group>"; };
@@ -253,6 +252,8 @@
 		C92666F6169DC6920061F9AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C92666F8169DC6920061F9AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C92666FA169DC6920061F9AD /* knowYourCity-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "knowYourCity-Prefix.pch"; sourceTree = "<group>"; };
+		C9266B89204F21C3003419BC /* knowYourCity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = knowYourCity.entitlements; sourceTree = "<group>"; };
+		C9266B8A204F21FE003419BC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C93030ED16AB32E10039D7B8 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Classes/HomeViewController.h; sourceTree = "<group>"; };
 		C93030EE16AB32E10039D7B8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Classes/HomeViewController.m; sourceTree = "<group>"; };
 		C93030F016AB33050039D7B8 /* ThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThemeViewController.h; path = Classes/ThemeViewController.h; sourceTree = "<group>"; };
@@ -368,7 +369,6 @@
 			files = (
 				C9108017180C5E9D0053870D /* libsqlite3.dylib in Frameworks */,
 				C916E15716C0CAFC00423344 /* CoreLocation.framework in Frameworks */,
-				C916E15816C0CAFC00423344 /* MapKit.framework in Frameworks */,
 				C90E5DE616C00C3200FFB1AF /* MessageUI.framework in Frameworks */,
 				C990649716B82B1B00421288 /* Social.framework in Frameworks */,
 				C921485B16B59B70007323D0 /* SystemConfiguration.framework in Frameworks */,
@@ -377,6 +377,7 @@
 				C92666ED169DC6920061F9AD /* UIKit.framework in Frameworks */,
 				C92666EF169DC6920061F9AD /* Foundation.framework in Frameworks */,
 				C92666F1169DC6920061F9AD /* CoreGraphics.framework in Frameworks */,
+				C9266B8B204F21FE003419BC /* MapKit.framework in Frameworks */,
 				3530CAF9014698455FB24818 /* libPods-knowYourCity.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,9 +482,9 @@
 		C92666EB169DC6920061F9AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9266B8A204F21FE003419BC /* MapKit.framework */,
 				C9108016180C5E9D0053870D /* libsqlite3.dylib */,
 				C916E15516C0CAFC00423344 /* CoreLocation.framework */,
-				C916E15616C0CAFC00423344 /* MapKit.framework */,
 				C90E5DE516C00C3200FFB1AF /* MessageUI.framework */,
 				C990649316B82B1B00421288 /* Accounts.framework */,
 				C990649416B82B1B00421288 /* Social.framework */,
@@ -502,6 +503,7 @@
 		C92666F2169DC6920061F9AD /* knowYourCity */ = {
 			isa = PBXGroup;
 			children = (
+				C9266B89204F21C3003419BC /* knowYourCity.entitlements */,
 				C97B44DF169DCCDA008A2793 /* KYCAppDelegate.h */,
 				C97B44E0169DCCDA008A2793 /* KYCAppDelegate.m */,
 				C97B44E7169DCD54008A2793 /* Models */,
@@ -789,6 +791,14 @@
 					C92666E7169DC6920061F9AD = {
 						DevelopmentTeam = J9XLSVYHVZ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -1135,6 +1145,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = J9XLSVYHVZ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "knowYourCity/knowYourCity-Prefix.pch";
 				INFOPLIST_FILE = "knowYourCity/knowYourCity-Info.plist";
@@ -1155,6 +1166,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = J9XLSVYHVZ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "knowYourCity/knowYourCity-Prefix.pch";
 				INFOPLIST_FILE = "knowYourCity/knowYourCity-Info.plist";
@@ -1223,6 +1235,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = J9XLSVYHVZ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "knowYourCity/knowYourCity-Prefix.pch";
 				INFOPLIST_FILE = "knowYourCity/knowYourCity-Info.plist";
@@ -1285,7 +1298,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Elsewise LLC (J9XLSVYHVZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J9XLSVYHVZ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "knowYourCity/knowYourCity-Prefix.pch";
 				INFOPLIST_FILE = "knowYourCity/knowYourCity-Info.plist";
