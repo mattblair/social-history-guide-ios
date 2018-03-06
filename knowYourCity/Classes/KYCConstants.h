@@ -65,7 +65,6 @@ extern NSString* const kMapPinButtonImage;
 
 extern NSString* const kCloseButton;
 extern NSString* const kActionButton;
-extern NSString* const kBackButtonImage;
 
 extern NSString* const kPhotoPlaceholderImage;
 extern NSString* const kOfflinePhotoPlaceholderImage;

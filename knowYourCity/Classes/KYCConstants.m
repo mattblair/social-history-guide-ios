@@ -31,7 +31,6 @@ NSString* const kMapPinButtonImage = @"kbb-map-pin";
 
 NSString* const kCloseButton = @"kbb-x-1"; // kbb-x-2
 NSString* const kActionButton = @"kbb-action-2";
-NSString* const kBackButtonImage = @"kbb-back"; // iOS 6 only
 
 NSString* const kPhotoPlaceholderImage = @"pshg-photo-placeholder";
 NSString* const kOfflinePhotoPlaceholderImage = @"pshg-photo-offline-placeholder";
