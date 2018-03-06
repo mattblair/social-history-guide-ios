@@ -15,6 +15,7 @@ Subtitle (30 characters, optional)
 ================================================
 (A summary of your app that will appear under your app’s name on the App Store for customers with devices running iOS 11 or later.)
 
+Stories from Portland, Oregon
 
 ================================================
 App Description
@@ -43,11 +44,19 @@ Portland, Oregon, PDX, know your city, social history, history tour, dill pickle
 What's New in This Version
 ================================================
 
-Updates and bug fixes to support iOS 11
+Updates and bug fixes to support iOS 11.
 
 ================================================
-Promotional Text
+Promotional Text (170 characters)
 ================================================
 (Promotional text lets you inform your App Store visitors of any current app features without requiring an updated submission. This text will appear above your description on the App Store for customers with devices running iOS 11 or later, and macOS 10.13 or later.)
 
+Learn about some of the people, places, and events which made the city of Portland what it is today.
 
+
+================================================
+URLs
+================================================
+
+Support URL: http://pdxsocialhistory.org/about.html
+Marketing URL: http://pdxsocialhistory.org
