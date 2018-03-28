@@ -103,23 +103,6 @@
                 
                 [self requestRemoteImageAtURL:[SHG_DATA urlForPhotoNamed:imageName]];
                 
-                /*
-                NSURLRequest *photoRequest = [NSURLRequest requestWithURL:[SHG_DATA urlForPhotoNamed:imageName]];
-                
-                __weak UIImageView *weakPhotoView = self.mainPhoto;
-                __weak __typeof__(self) weakSelf = self;
-                
-                [self.mainPhoto setImageWithURLRequest:photoRequest
-                                      placeholderImage:[SHG_DATA photoPlaceholder]
-                                               success:NULL
-                                               failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
-                                                   
-                                                   weakPhotoView.image = [UIImage imageNamed:kOfflinePhotoPlaceholderImage];
-                                                   
-                                                   [weakSelf warnAboutOfflinePhotos];
-                                               }];
-                
-                */
                 self.mainPhoto.userInteractionEnabled = YES;
                 
                 UITapGestureRecognizer *photoTap = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -196,21 +179,6 @@
         
         self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        // use only image?
-        //[self.mapButton setTitle:@"Map" forState:UIControlStateNormal];
-        /*
-        UIImage *pinImage;
-        
-        if (ON_IOS7) {
-            
-            // display it using our tint color
-            pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        } else {
-            
-            pinImage = [UIImage imageNamed:kMapPinButtonImage];
-        }
-        */
-        
         UIImage *pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         
         [self.mapButton setImage:pinImage
@@ -253,12 +221,11 @@
     
     if (bundleAudioURL) {
         
-        NSDictionary *imageNames = @{
-                                     kEWAAudioPlayerPlayImageKey : kPlayButtonImage,
+        NSDictionary *imageNames = @{kEWAAudioPlayerPlayImageKey : kPlayButtonImage,
                                      kEWAAudioPlayerPauseImageKey : kPauseButtonImage,
                                      kEWAAudioPlayerThumbImageKey : kThumbButtonImage,
                                      kEWAAudioPlayerUnplayedTrackImageKey : kMaximumTrackImage,
-                                     kEWAAudioPlayerPlayedTrackImageKey : kMinimumTrackImage };
+                                     kEWAAudioPlayerPlayedTrackImageKey : kMinimumTrackImage};
         
         self.theAudioPlayerView = [[EWAAudioPlayerView alloc] initWithAudioURL:bundleAudioURL
                                                                         images:imageNames];

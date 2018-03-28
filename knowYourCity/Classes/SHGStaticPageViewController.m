@@ -36,29 +36,14 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    //CGFloat yForNextView = ON_IOS7 ? 25.0 : 10.0; // 70.0 if pushed on nav stack
     CGFloat yForNextView = 25.0; // 70.0 if pushed on nav stack
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    // feels like the close button could be a little higher on iOS 6.x
-    //CGFloat buttonY = ON_IOS7 ? yForNextView : yForNextView - 8.0;
     CGFloat buttonY = yForNextView;
     
     // when the button was 22 wide, x was 278
     self.closeButton.frame = CGRectMake(267.0, buttonY, 44.0, 44.0);
-    /*
-    UIImage *closeImage;
-    
-    if (ON_IOS7) {
-        
-        // display it using our tint color
-        closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    } else {
-        
-        closeImage = [UIImage imageNamed:kCloseButton];
-    }
-    */
     
     UIImage *closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
@@ -116,9 +101,6 @@
     //CGFloat selectHeight = ON_IOS7 ? 31.0 : 26.0;
     CGFloat selectHeight = 31.0;
     
-    // Is this still neeeded?
-    //self.selectionView.tintColor = [UIColor kycRed];
-    
     self.selectionView.selectedSegmentIndex = self.selectedSection;
     
     [self.selectionView addTarget:self
@@ -167,16 +149,6 @@
     NSString *buildNumber = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     
     NSString *message = [NSString stringWithFormat:@"Version: %@\nBuild: %@", versionNumber, buildNumber];
-    
-    /*
-    UIAlertView *versionAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"App Version", @"Title of app version alert")
-                                                           message:message
-                                                          delegate:nil
-                                                 cancelButtonTitle:nil
-                                                 otherButtonTitles:@"OK", nil];
-    
-    [versionAlert show];
-    */
     
     UIAlertController *versionAC = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"App Version", @"Title of app version alert")
                                                                        message:message

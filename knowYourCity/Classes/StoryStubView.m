@@ -83,10 +83,6 @@
             
             [self requestRemoteImageAtURL:[SHG_DATA urlForPhotoNamed:thumbnailName]];
             
-            
-            //[self.thumbnailView setImageWithURL:[SHG_DATA urlForPhotoNamed:thumbnailName]
-            //                   placeholderImage:[SHG_DATA thumbnailPlaceholder]];
-            
             [self addSubview:self.thumbnailView];
             
             // move text to the right of the thumbnail
@@ -109,20 +105,11 @@
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.numberOfLines = 0;
         
-        // NOTE: Several NSString sizing methods are deprecated in iOS 7.0, including:
-        // sizeWithFont:constrainedToSize:lineBreakMode:
-        // In iOS 7+, use sizeWithAttributes, and UITextAttributeFont, etc.?
-        // or boundingRectWithSize:options:attributes:context:
         
-//        CGSize titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font
-//                                            constrainedToSize:CGSizeMake(textWidth, MAXFLOAT)
-//                                                lineBreakMode:NSLineBreakByWordWrapping];
-        
-        // Do you need to get a NSStringDrawingContext to pass into context?
         CGRect titleRect = [self.titleLabel.text boundingRectWithSize:CGSizeMake(textWidth, MAXFLOAT)
-                                                       options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                                    attributes:@{ NSFontAttributeName : self.titleLabel.font}
-                                                       context:nil];
+                                                              options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                                           attributes:@{ NSFontAttributeName : self.titleLabel.font}
+                                                              context:nil];
         
         self.titleLabel.frame = CGRectMake(textX, STORY_STUB_MARGIN-5.0, textWidth, ceilf(titleRect.size.height));
         
@@ -140,11 +127,6 @@
         self.subtitleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.subtitleLabel.backgroundColor = [UIColor clearColor];
         
-//        CGSize subtitleSize = [self.subtitleLabel.text sizeWithFont:self.subtitleLabel.font
-//                                                  constrainedToSize:CGSizeMake(textWidth, MAXFLOAT)
-//                                                      lineBreakMode:NSLineBreakByWordWrapping];
-        
-        // Do you need to get a NSStringDrawingContext to pass into context?
         subtitleRect = [self.subtitleLabel.text boundingRectWithSize:CGSizeMake(textWidth, MAXFLOAT)
                                                              options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                                           attributes:@{ NSFontAttributeName : self.subtitleLabel.font}

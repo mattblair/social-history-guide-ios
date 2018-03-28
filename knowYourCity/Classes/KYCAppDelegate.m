@@ -100,46 +100,6 @@
     
     // set default color for all active controls
     self.window.tintColor = [UIColor kycRed];
-    /*
-    if (ON_IOS7) {
-        
-        // set default color for all active controls
-        self.window.tintColor = [UIColor kycRed];
-        
-    } else { // iOS 6.x -- keep using UIAppearance
-        
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-        
-        [[UINavigationBar appearance] setTitleTextAttributes:@{
-                                                           UITextAttributeTextColor : [UIColor blackColor],
-                                                           UITextAttributeTextShadowColor : [UIColor kycLightGray],
-                                                           UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0.5, 0.5)],
-                                                           UITextAttributeFont : [UIFont fontWithName:kTitleFontName
-                                                                                                 size:kSectionTitleFontSize]
-                                                           }];
-        
-        // Hack to prevent border on bar buttons.
-        // Alternative: use initWithCustomView with UIImageView for each button.
-        [[UIBarButtonItem appearance] setBackgroundImage:[[UIImage alloc] init]
-                                                forState:UIControlStateNormal
-                                              barMetrics:UIBarMetricsDefault];
-        
-        // This is tough to resize precisely because of non-parallel lines
-        UIImage *backButtonImage = [[UIImage imageNamed:kBackButtonImage] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 25.0, 1.0, 20.0)];
-        //UIImage *backButtonImage = [UIImage imageNamed:kBackButtonImage];
-        [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage
-                                                          forState:UIControlStateNormal
-                                                        barMetrics:UIBarMetricsDefault];
-        
-        // shadows look bad on this...
-        // kBodyFontName @ 13.0 looks best with standard UIKit back button
-        [[UIBarButtonItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor kycRed],
-                                                                UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0.0, 0.0)],
-                                                                UITextAttributeFont : [UIFont fontWithName:kTitleFontName
-                                                                                                      size:15.0]}
-                                                    forState:UIControlStateNormal];
-    }
-    */
 }
 
 #pragma mark - Reachability Management

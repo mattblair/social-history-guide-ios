@@ -74,18 +74,6 @@
     
     // close button (under image. A red x over a person's photo would look weird...)
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    /*
-    UIImage *closeImage;
-    
-    if (ON_IOS7) {
-        
-        // display it using our tint color
-        closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    } else {
-        
-        closeImage = [UIImage imageNamed:kCloseButton];
-    }
-    */
     
     UIImage *closeImage = [[UIImage imageNamed:kCloseButton] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
@@ -202,27 +190,13 @@
     [super viewDidAppear:animated];
     
     [self.scrollView flashScrollIndicators];
-    
-    // Since most of the guest photos are dark, black text looks crappy on top of them...
-//    if (ON_IOS7) {
-//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent
-//                                                    animated:YES];
-//    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
-    
-//    if (ON_IOS7) {
-//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-//    }
 }
-/*
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-*/
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

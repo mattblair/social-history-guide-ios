@@ -50,25 +50,10 @@
     self = [super init];
     if (self) {
         
-        // try to start location services here
-        /*
-        if ([CLLocationManager locationServicesEnabled]) {
-            
-            DLog(@"About to turn Location on...");
-            [[self locationManager] startUpdatingLocation];
-        }
-        else {
-            DLog(@"Location not enabled.");
-        }
-        */
-        
-        //[self runCoordinateInRegionTests];
-        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(handleBackgrounding:)
                                                      name:UIApplicationDidEnterBackgroundNotification
                                                    object:nil];
-        
     }
     return self;
 }
@@ -341,57 +326,9 @@
     } else {
         [self updateLocationHandlingWithAuthorizationStatus:status];
     }
-    /*
-    switch (status) {
-        case kCLAuthorizationStatusNotDetermined: {
-            
-            [self.locationManager requestWhenInUseAuthorization];
-            break;
-        }
-            
-        case kCLAuthorizationStatusAuthorizedWhenInUse:
-        case kCLAuthorizationStatusAuthorizedAlways: {
-            [self updateLocationHandlingWithAuthorizationStatus:status];
-            break;
-        }
-            
-        case kCLAuthorizationStatusDenied:
-        case kCLAuthorizationStatusRestricted: {
-            DLog(@"Location permissions not available. Don't bother the user.");
-            
-            // TODO: Send no auth notification here?
-            
-            // TODO: stop updating location here?
-            break;
-        }
-        default: {
-            NSLog(@"");
-            break;
-        }
-    }
-    
-    if (status == kCLAuthorizationStatusNotDetermined) {
-        // TODO: request permission
-        [self.locationManager requestWhenInUseAuthorization];
-    } else if (status == kCLAuthorizationStatusAuthorizedWhenInUse ||
-               status == kCLAuthorizationStatusAuthorizedAlways) {
-        
-        [self updateLocationHandlingWithAuthorizationStatus:status];
-    } else {
-        
-        // kCLAuthorizationStatusDenied || kCLAuthorizationStatusRestricted
-        
-        DLog(@"Location turned off. Don't bother the user.");
-        
-    }
-     */
 }
 
 - (void)updateLocationHandlingWithAuthorizationStatus:(CLAuthorizationStatus)status {
-    
-    // TODO: Re-use method above
-//    BOOL hasAuth = (status == kCLAuthorizationStatusAuthorizedWhenInUse ||
-//                    status == kCLAuthorizationStatusAuthorizedAlways);
     
     NSString *notificationName = nil;
     if ([self hasLocationPermissions] && [CLLocationManager locationServicesEnabled]) {

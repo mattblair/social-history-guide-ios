@@ -73,15 +73,7 @@
     
     self.themeTableView.dataSource = self;
     self.themeTableView.delegate = self;
-    
-    // turn off section index, if you use sections
-    //self.themeTableView.sectionIndexMinimumDisplayRowCount = 0;
-    
     [self.view addSubview:self.themeTableView];
-    
-    //[self configureToolbar];
-    
-    // add buttons to the nav bar instead of toolbar
     
     self.mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kMapButtonImage]
                                                       style:UIBarButtonItemStylePlain
@@ -93,7 +85,7 @@
     self.navigationItem.leftBarButtonItem = self.mapButton;
     
     
-    // kInfoButtonDarkImage feels to heavy
+    // kInfoButtonDarkImage feels too heavy
     self.infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kInfoButtonLightImage]
                                                        style:UIBarButtonItemStylePlain
                                                       target:self
@@ -126,7 +118,6 @@
     
     [super viewWillAppear:animated];
     
-    //[self.navigationController setToolbarHidden:NO];
     self.themeTableView.frame = [self.view bounds];
 }
 
@@ -170,8 +161,6 @@
     }
     
     NSDictionary *themeDictionary = self.themeList[indexPath.row];
-    
-    // Configure the cell...
     
     if (indexPath.row < [self.themeList count]) {
         cell.textLabel.text = [themeDictionary objectForKey:kContentTitleKey];
@@ -232,45 +221,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
-#pragma mark - Loading JSON (DEPRECATED)
-
-/*
-- (void)loadDataFromJSON {
-    
-    NSString *filepath = [[NSBundle mainBundle] pathForResource:kSeedJSONFilename ofType:@"json"];
-	
-	NSError *fileLoadError = nil;
-	
-    NSData *seedJSONData = [NSData dataWithContentsOfFile:filepath
-                                                  options:NSDataReadingUncached
-                                                    error:&fileLoadError];
-    
-    if (!seedJSONData) {
-        NSLog(@"Loading JSON File Failed: %@, %@", fileLoadError, [fileLoadError userInfo]);
-    }
-    
-    NSError *jsonDeserializeError = nil;
-    
-    self.seedDictionary = [seedJSONData objectFromJSONDataWithParseOptions:JKParseOptionStrict
-                                                                     error:&jsonDeserializeError];
-    
-    if (!self.seedDictionary) {
-        NSLog(@"Loading JSON File Failed: %@, %@", jsonDeserializeError, [jsonDeserializeError userInfo]);
-    }
-}
-*/
-
 #pragma mark - Show Static Pages
 
 - (void)showStaticPages {
     
     SHGStaticPageViewController *pageVC = [[SHGStaticPageViewController alloc] initWithNibName:nil
                                                                                         bundle:nil];
-    
     pageVC.hidesBottomBarWhenPushed = YES; // probably won't be needed
-    
-    //[self.navigationController pushViewController:aboutVC animated:YES];
-    
     [self presentViewController:pageVC animated:YES completion:NULL];
 }
 
@@ -382,9 +339,6 @@
 
 - (void)configureToolbar {
     
-    // first, create all the buttons you need:
-    //self.navigationController.toolbar.tintColor = [UIColor kycNavBarColor];
-    
     // MapView
     self.mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"103-map"]
                                                       style:UIBarButtonItemStylePlain
@@ -445,9 +399,7 @@
     TidbitListViewController *tidbitVC = [[TidbitListViewController alloc] initWithNibName:nil
                                                                                     bundle:nil];
     tidbitVC.tidbitList = self.tidbitList;
-    
     tidbitVC.hidesBottomBarWhenPushed = YES;
-    
     [self.navigationController pushViewController:tidbitVC animated:YES];
 }
 

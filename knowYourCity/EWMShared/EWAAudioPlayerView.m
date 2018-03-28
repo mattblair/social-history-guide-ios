@@ -286,26 +286,6 @@
 
 - (void)togglePlayStatus {
     
-    /*
-    // flip the state
-    if (self.audioPlayer.playing) {
-        [self.audioPlayer pause];
-        [self.thumbTimer invalidate];
-    } else {
-        [self.audioPlayer play];
-        
-        self.thumbTimer = [NSTimer scheduledTimerWithTimeInterval:AUDIO_DISPLAY_UPDATE_INTERVAL
-                                                           target:self
-                                                         selector:@selector(updateThumbAndTime)
-                                                         userInfo:nil
-                                                          repeats:YES];
-    }
-    
-    // if it's playing, switch to selected to show the pause graphic
-    self.playButton.selected = self.audioPlayer.playing;
-    
-    */
-    
     // manage state with superview property instead of audioplayer property:
     if (self.playing) {
         [self pauseAudio];

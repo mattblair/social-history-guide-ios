@@ -11,10 +11,9 @@
 NSString* const kAppStoreBundleID = @"com.elsewiseapps.pdxshg";
 
 // Off-device media
-//NSString* const kPhotosURL = @"http://kycstatic.elsewiseapps.com/photos/";
 NSString* const kPhotosURL = @"https://s3-us-west-2.amazonaws.com/pdxshg.media/photos/";
 
-// hand on to this for 1.1+
+// hang on to this for 1.1+
 NSString* const kAudioURL = @"http://kycstatic.elsewiseapps.com/audio/";
 
 // Home

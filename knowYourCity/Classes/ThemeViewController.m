@@ -58,15 +58,6 @@
     
     self.themeID = [[self.themeDictionary objectForKey:kThemeIDKey] unsignedIntegerValue];
     
-    // to hide background image on nav bar
-    //[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    
-    // keep this around to show difference between sytem and kbb buttons
-//    self.sharingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-//                                                                       target:self
-//                                                                       action:@selector(showSharingMenu:)];
-    
-    
     self.shareButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kActionButton]
                                                         style:UIBarButtonItemStylePlain
                                                        target:self
@@ -115,18 +106,6 @@
     if (hasAnnotations) {
         
         self.mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        /*
-        UIImage *pinImage;
-        
-        if (ON_IOS7) {
-            
-            // display it using our tint color
-            pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        } else {
-            
-            pinImage = [UIImage imageNamed:kMapPinButtonImage];
-        }
-        */
         
         UIImage *pinImage = [[UIImage imageNamed:kMapPinButtonImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         
@@ -225,23 +204,6 @@
         
         MKCoordinateRegion themeRegion = [SHG_DATA regionFromDictionary:self.themeDictionary];
         
-        /*
-        CGRect mapBounds;
-        
-        if (ON_IOS7) {
-            
-            mapBounds = self.view.bounds;
-        } else {
-         
-            // adjust for status bar, which is always on top when map view is
-            // presented as subview on iOS 6
-            CGRect windowBounds = self.view.window.bounds;
-            CGFloat statusBarHeight = 20.0;
-            mapBounds = CGRectMake(windowBounds.origin.x, windowBounds.origin.y + statusBarHeight,
-                                   windowBounds.size.width, windowBounds.size.height - statusBarHeight);
-        }
-        */
-        
         _storyMapView = [[SHGMapView alloc] initWithFrame:self.view.bounds
                                                     title:NSLocalizedString(@"Stories", @"Title of stories map")
                                                    region:themeRegion
@@ -339,22 +301,6 @@
                                          UIActivityTypeAssignToContact,
                                          UIActivityTypeSaveToCameraRoll];
 
-    /*
-    __weak NSString *themeSlug = [self.themeDictionary objectForKey:kContentSlugKey];
-    
-    // adopt new API, or just get rid of this?
-    // (^UIActivityViewControllerCompletionWithItemsHandler)(UIActivityType activityType, BOOL completed, NSArray *returnedItems, NSError *activityError)
-    
-    activityVC.completionHandler = ^(NSString *activityType, BOOL completed) {
-        if (completed) {
-            DLog(@"User chose %@", activityType);
-            
-            [SHG_DATA logFlurryEventNamed:kFlurryEventThemeShare
-                           withParameters:@{ kFlurryParamSlug : themeSlug,
-                                             kFlurryParamActivity : activityType }];
-        }
-    };
-    */
     [self presentViewController:activityVC
                        animated:YES
                      completion:nil];
